@@ -41,6 +41,37 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
   window.addEventListener("resize", function () { if (window.matchMedia("(min-width: 901px)").matches) setMenu(false); });
 
+  /* secondary site background — separate from the homepage hero video */
+  (function contentVideoBackground() {
+    var host = document.querySelector(".home-main, .page-sub");
+    if (!host || host.querySelector(".content-video-bg")) return;
+
+    var shell = document.createElement("div");
+    shell.className = "content-video-bg";
+    shell.setAttribute("aria-hidden", "true");
+
+    var stage = document.createElement("div");
+    stage.className = "content-video-stage";
+
+    var video = document.createElement("video");
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.tabIndex = -1;
+    video.src = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260723_145606_ab143199-b593-4941-bb1b-9afca215416b.mp4";
+
+    function reveal() { shell.classList.add("is-ready"); }
+    video.addEventListener("canplay", reveal, { once: true });
+    video.addEventListener("error", function () { shell.classList.add("has-error"); }, { once: true });
+
+    stage.appendChild(video);
+    shell.appendChild(stage);
+    host.insertBefore(shell, host.firstChild);
+    if (video.readyState >= 2) reveal();
+  })();
+
   /* auto active link fallback (in case markup missed) */
   try {
     var path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
@@ -55,10 +86,90 @@
     }
   } catch (e) {}
 
-  /* premium loader — eased 000→100 tied to real load + curtain exit */
+  /* multilingual greeting loader; retains the previous markup path as a safe fallback */
   (function loader() {
     var l = document.getElementById("loader");
     if (!l) return;
+    var greetingHost = l.querySelector(".loader-greetings");
+    if (greetingHost) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { l.remove(); return; }
+      document.body.classList.add("is-loading");
+
+      var greetings = Array.prototype.slice.call(greetingHost.querySelectorAll("span")),
+          language = document.getElementById("loaderLanguage"),
+          count = document.getElementById("loaderCount"),
+          greetingBar = document.getElementById("loaderBar"),
+          active = -1,
+          finished = false,
+          loaded = document.readyState === "complete",
+          started = performance.now(),
+          sequenceTimer,
+          readyTimer;
+      var repeatGreeting = false;
+      try { repeatGreeting = sessionStorage.getItem("zykken_boot") === "1"; } catch (e) {}
+      var minimum = repeatGreeting ? 760 : 2480;
+      var maximum = repeatGreeting ? 1500 : 3800;
+
+      function twoDigits(value) { return value < 9 ? "0" + (value + 1) : String(value + 1); }
+      function showGreeting(index) {
+        active = Math.max(0, Math.min(greetings.length - 1, index));
+        greetings.forEach(function (word, i) {
+          var distance = i - active;
+          word.classList.remove("is-current", "is-prev", "is-next", "is-past");
+          if (distance === 0) word.classList.add("is-current");
+          else if (distance === -1) word.classList.add("is-prev");
+          else if (distance === 1) word.classList.add("is-next");
+          else if (distance < -1) word.classList.add("is-past");
+        });
+        if (language) language.textContent = greetings[active].getAttribute("data-language") || "WELCOME";
+        if (count) count.textContent = twoDigits(active) + " / " + (greetings.length < 10 ? "0" : "") + greetings.length;
+        if (greetingBar) greetingBar.style.transform = "scaleX(" + ((active + 1) / greetings.length) + ")";
+      }
+      function replayEntrance() {
+        try {
+          var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
+          els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
+          void l.offsetWidth;
+          els.forEach(function (el) { el.style.animation = ""; });
+        } catch (e) {}
+      }
+      function finishGreeting() {
+        if (finished) return;
+        finished = true;
+        clearInterval(sequenceTimer);
+        clearInterval(readyTimer);
+        showGreeting(greetings.length - 1);
+        try { sessionStorage.setItem("zykken_boot", "1"); } catch (e) {}
+        setTimeout(function () {
+          l.classList.add("done");
+          document.body.classList.remove("is-loading");
+          document.body.classList.add("is-ready");
+          replayEntrance();
+        }, repeatGreeting ? 120 : 240);
+        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, 1120);
+      }
+
+      if (repeatGreeting) {
+        requestAnimationFrame(function () { showGreeting(greetings.length - 1); });
+      } else {
+        requestAnimationFrame(function () { showGreeting(0); });
+        sequenceTimer = setInterval(function () {
+          if (active < greetings.length - 1) showGreeting(active + 1);
+          else clearInterval(sequenceTimer);
+        }, 315);
+      }
+      window.addEventListener("load", function () { loaded = true; }, { once: true });
+      readyTimer = setInterval(function () {
+        if (loaded && performance.now() - started >= minimum) finishGreeting();
+      }, 80);
+      setTimeout(finishGreeting, maximum);
+      l.addEventListener("click", function () {
+        if (performance.now() - started < 700 || finished) return;
+        showGreeting(greetings.length - 1);
+        setTimeout(finishGreeting, 220);
+      });
+      return;
+    }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { l.remove(); return; }
     document.body.classList.add("is-loading");
     var bar = document.getElementById("loaderBar"),
