@@ -107,8 +107,8 @@
           readyTimer;
       var repeatGreeting = false;
       try { repeatGreeting = sessionStorage.getItem("zykken_boot") === "1"; } catch (e) {}
-      var minimum = repeatGreeting ? 760 : 2480;
-      var maximum = repeatGreeting ? 1500 : 3800;
+      var minimum = repeatGreeting ? 1080 : 3760;
+      var maximum = repeatGreeting ? 2100 : 5200;
 
       function twoDigits(value) { return value < 9 ? "0" + (value + 1) : String(value + 1); }
       function showGreeting(index) {
@@ -140,13 +140,14 @@
         clearInterval(readyTimer);
         showGreeting(greetings.length - 1);
         try { sessionStorage.setItem("zykken_boot", "1"); } catch (e) {}
+        var exitDelay = repeatGreeting ? 220 : 340;
         setTimeout(function () {
           l.classList.add("done");
           document.body.classList.remove("is-loading");
           document.body.classList.add("is-ready");
           replayEntrance();
-        }, repeatGreeting ? 120 : 240);
-        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, 1120);
+        }, exitDelay);
+        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, exitDelay + 1180);
       }
 
       if (repeatGreeting) {
@@ -156,7 +157,7 @@
         sequenceTimer = setInterval(function () {
           if (active < greetings.length - 1) showGreeting(active + 1);
           else clearInterval(sequenceTimer);
-        }, 315);
+        }, 430);
       }
       window.addEventListener("load", function () { loaded = true; }, { once: true });
       readyTimer = setInterval(function () {
@@ -164,9 +165,9 @@
       }, 80);
       setTimeout(finishGreeting, maximum);
       l.addEventListener("click", function () {
-        if (performance.now() - started < 700 || finished) return;
+        if (performance.now() - started < 950 || finished) return;
         showGreeting(greetings.length - 1);
-        setTimeout(finishGreeting, 220);
+        setTimeout(finishGreeting, 320);
       });
       return;
     }
