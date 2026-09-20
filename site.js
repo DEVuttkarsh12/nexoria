@@ -86,10 +86,127 @@
     }
   } catch (e) {}
 
-  /* multilingual greeting loader; retains the previous markup path as a safe fallback */
+  /* pyramid loader; previous loader markup paths remain as safe fallbacks */
   (function loader() {
     var l = document.getElementById("loader");
     if (!l) return;
+    var pyramidHost = l.querySelector(".pyramid-loader");
+    var pyramidBlocks = document.getElementById("pyramidBlocks");
+    if (pyramidHost && pyramidBlocks) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { l.remove(); return; }
+      document.body.classList.add("is-loading");
+
+      var svgNS = "http://www.w3.org/2000/svg";
+      var cubeData = [];
+      var cubeWidth = 44, cubeDepth = 22, cubeHeight = 30, buildIndex = 0;
+      for (var level = 0; level < 4; level++) {
+        var side = 4 - level;
+        for (var row = 0; row < side; row++) {
+          for (var column = 0; column < side; column++) {
+            var worldX = column + level * 0.5;
+            var worldY = row + level * 0.5;
+            cubeData.push({
+              level: level,
+              order: buildIndex++,
+              x: 210 + (worldX - worldY) * cubeWidth / 2,
+              y: 195 + (worldX + worldY - 3) * cubeDepth / 2 - level * cubeHeight
+            });
+          }
+        }
+      }
+      cubeData.sort(function (a, b) { return a.level - b.level || a.y - b.y || a.x - b.x; });
+
+      function polygon(className, points) {
+        var face = document.createElementNS(svgNS, "polygon");
+        face.setAttribute("class", className);
+        face.setAttribute("points", points);
+        return face;
+      }
+      cubeData.forEach(function (cube) {
+        var position = document.createElementNS(svgNS, "g");
+        position.setAttribute("transform", "translate(" + cube.x + " " + cube.y + ")");
+        var block = document.createElementNS(svgNS, "g");
+        block.setAttribute("class", "pyramid-block");
+        block.style.setProperty("--build-delay", (180 + cube.order * 48) + "ms");
+        block.style.setProperty("--out-delay", ((cubeData.length - cube.order - 1) * 28) + "ms");
+        block.appendChild(polygon("pyramid-face-left", "-22,0 0,11 0,41 -22,30"));
+        block.appendChild(polygon("pyramid-face-right", "0,11 22,0 22,30 0,41"));
+        block.appendChild(polygon("pyramid-face-top", "0,-11 22,0 0,11 -22,0"));
+        position.appendChild(block);
+        pyramidBlocks.appendChild(position);
+      });
+
+      var pyramidStatus = document.getElementById("loaderStatus"),
+          pyramidPhase = document.getElementById("loaderPhase"),
+          pyramidBar = document.getElementById("loaderBar"),
+          pyramidFinished = false,
+          pyramidLoaded = document.readyState === "complete",
+          pyramidStarted = performance.now(),
+          pyramidReadyTimer,
+          pyramidTimers = [];
+      var repeatPyramid = false;
+      try { repeatPyramid = sessionStorage.getItem("zykken_boot") === "1"; } catch (e) {}
+      var pyramidMinimum = repeatPyramid ? 1280 : 4900;
+      var pyramidMaximum = repeatPyramid ? 2300 : 7000;
+
+      function setPyramidPhase(name, phase, progress) {
+        if (pyramidStatus) pyramidStatus.textContent = name;
+        if (pyramidPhase) pyramidPhase.textContent = phase;
+        if (pyramidBar) pyramidBar.style.transform = "scaleX(" + progress + ")";
+      }
+      function replayPyramidEntrance() {
+        try {
+          var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
+          els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
+          void l.offsetWidth;
+          els.forEach(function (el) { el.style.animation = ""; });
+        } catch (e) {}
+      }
+      function finishPyramid() {
+        if (pyramidFinished) return;
+        pyramidFinished = true;
+        pyramidTimers.forEach(clearTimeout);
+        clearInterval(pyramidReadyTimer);
+        try { sessionStorage.setItem("zykken_boot", "1"); } catch (e) {}
+        setTimeout(function () {
+          l.classList.add("done");
+          document.body.classList.remove("is-loading");
+          document.body.classList.add("is-ready");
+          replayPyramidEntrance();
+        }, repeatPyramid ? 180 : 240);
+        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, 1440);
+      }
+
+      if (repeatPyramid) {
+        pyramidHost.classList.add("is-thinking");
+        setPyramidPhase("Systems ready", "03 / 03", 1);
+      } else {
+        requestAnimationFrame(function () {
+          pyramidHost.classList.add("is-building");
+          setPyramidPhase("Building an idea", "01 / 03", 0.12);
+        });
+        pyramidTimers.push(setTimeout(function () {
+          pyramidHost.classList.remove("is-building");
+          pyramidHost.classList.add("is-thinking");
+          setPyramidPhase("Thinking it through", "02 / 03", 0.72);
+        }, 2380));
+        pyramidTimers.push(setTimeout(function () {
+          pyramidHost.classList.remove("is-thinking");
+          pyramidHost.classList.add("is-dismantling");
+          setPyramidPhase("Making room again", "03 / 03", 0.94);
+        }, 3540));
+      }
+      window.addEventListener("load", function () { pyramidLoaded = true; }, { once: true });
+      pyramidReadyTimer = setInterval(function () {
+        if (pyramidLoaded && performance.now() - pyramidStarted >= pyramidMinimum) finishPyramid();
+      }, 80);
+      setTimeout(finishPyramid, pyramidMaximum);
+      l.addEventListener("click", function () {
+        if (performance.now() - pyramidStarted < 900 || pyramidFinished) return;
+        finishPyramid();
+      });
+      return;
+    }
     var greetingHost = l.querySelector(".loader-greetings");
     if (greetingHost) {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { l.remove(); return; }
