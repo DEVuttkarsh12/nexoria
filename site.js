@@ -284,6 +284,7 @@
           language = document.getElementById("loaderLanguage"),
           count = document.getElementById("loaderCount"),
           greetingBar = document.getElementById("loaderBar"),
+          greetingTrack = l.querySelector(".loader-progress"),
           active = -1,
           finished = false,
           loaded = document.readyState === "complete",
@@ -291,9 +292,9 @@
           sequenceTimer,
           readyTimer;
       var repeatGreeting = false;
-      try { repeatGreeting = sessionStorage.getItem("zykken_greeting_boot") === "1"; } catch (e) {}
-      var minimum = repeatGreeting ? 1080 : 3760;
-      var maximum = repeatGreeting ? 2100 : 5200;
+      try { repeatGreeting = sessionStorage.getItem("zykken_greeting_boot_v2") === "1"; } catch (e) {}
+      var minimum = repeatGreeting ? 1180 : 4380;
+      var maximum = repeatGreeting ? 2200 : 6000;
 
       function twoDigits(value) { return value < 9 ? "0" + (value + 1) : String(value + 1); }
       function showGreeting(index) {
@@ -306,9 +307,11 @@
           else if (distance === 1) word.classList.add("is-next");
           else if (distance < -1) word.classList.add("is-past");
         });
+        var greetingProgress = (active + 1) / greetings.length;
         if (language) language.textContent = greetings[active].getAttribute("data-language") || "WELCOME";
         if (count) count.textContent = twoDigits(active) + " / " + (greetings.length < 10 ? "0" : "") + greetings.length;
-        if (greetingBar) greetingBar.style.transform = "scaleX(" + ((active + 1) / greetings.length) + ")";
+        if (greetingBar) greetingBar.style.transform = "scaleX(" + greetingProgress + ")";
+        if (greetingTrack) greetingTrack.style.setProperty("--loader-progress", (greetingProgress * 100) + "%");
       }
       function replayEntrance() {
         try {
@@ -324,15 +327,15 @@
         clearInterval(sequenceTimer);
         clearInterval(readyTimer);
         showGreeting(greetings.length - 1);
-        try { sessionStorage.setItem("zykken_greeting_boot", "1"); } catch (e) {}
-        var exitDelay = repeatGreeting ? 220 : 340;
+        try { sessionStorage.setItem("zykken_greeting_boot_v2", "1"); } catch (e) {}
+        var exitDelay = repeatGreeting ? 260 : 420;
         setTimeout(function () {
           l.classList.add("done");
           document.body.classList.remove("is-loading");
           document.body.classList.add("is-ready");
           replayEntrance();
         }, exitDelay);
-        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, exitDelay + 1180);
+        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, exitDelay + 1320);
       }
 
       if (repeatGreeting) {
@@ -342,7 +345,7 @@
         sequenceTimer = setInterval(function () {
           if (active < greetings.length - 1) showGreeting(active + 1);
           else clearInterval(sequenceTimer);
-        }, 430);
+        }, 520);
       }
       window.addEventListener("load", function () { loaded = true; }, { once: true });
       readyTimer = setInterval(function () {
@@ -350,9 +353,9 @@
       }, 80);
       setTimeout(finishGreeting, maximum);
       l.addEventListener("click", function () {
-        if (performance.now() - started < 950 || finished) return;
+        if (performance.now() - started < 1050 || finished) return;
         showGreeting(greetings.length - 1);
-        setTimeout(finishGreeting, 320);
+        setTimeout(finishGreeting, 380);
       });
       return;
     }
