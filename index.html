@@ -3,375 +3,47 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NEXORA — AI Automation, Websites & Software</title>
-<meta name="description" content="NEXORA — AI automation, voice agents, premium websites & custom software. Calm systems that print revenue. Live in 21 days." />
+<title>zykken — AI Automation, Websites & Software</title>
+<meta name="description" content="zykken — AI automation, voice agents, premium websites & custom software. Calm systems that print revenue. Live in 21 days." />
+<link rel="canonical" href="https://zykken.com/" />
 <meta name="theme-color" content="#000000" />
-<meta property="og:title" content="NEXORA — AI Automation, Websites & Software" />
+<meta property="og:title" content="zykken — AI Automation, Websites & Software" />
 <meta property="og:description" content="Calm AI systems that print revenue. Automation, voice agents, websites & software — live in 21 days." />
 <meta property="og:type" content="website" />
+<meta property="og:url" content="https://zykken.com/" />
+<meta property="og:site_name" content="zykken" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="zykken — AI Automation, Websites & Software" />
+<meta name="twitter:description" content="Calm AI systems that print revenue. Automation, voice agents, websites & software — live in 21 days." />
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"zykken","url":"https://zykken.com/","description":"AI automation agency: automation, voice agents, websites, custom software.","priceRange":"$$","email":"hello@zykken.com"}</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cg transform='rotate(-30 12 12)'%3E%3Ccircle cx='7.3' cy='3.2' r='1.45'/%3E%3Crect x='5.5' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Crect x='14.9' y='4.7' width='3.6' height='14.6' rx='1.8'/%3E%3Ccircle cx='16.7' cy='20.8' r='1.45'/%3E%3C/g%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap" />
-<style>
-html, body { background: #000000 !important; color: #ffffff; }
-@font-face {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url("inter.woff2") format("woff2");
-}
-@font-face {
-  font-family: "Instrument Serif";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("instrument-serif-italic.woff2") format("woff2");
-}
-html, body { background: #000000; background: var(--bg, #000000); color: #ffffff; color: var(--text, #ffffff); }
-:root {
-  --bg: #000000;
-  --text: #ffffff;
-  --muted: #9a9a9a;
-  --stat: #d8d8d8;
-  --border: rgba(255, 255, 255, 0.16);
-  --border-soft: rgba(255, 255, 255, 0.12);
-  --logo: 15.5px;
-  --logo-mark: 22px;
-  --nav: 14px;
-  --nav-h: 40px;
-  --btn: 13.5px;
-  --btn-h: 40px;
-  --hero-btn-h: 42px;
-  --h1: 48px;
-  --lede: 15.5px;
-  --badge: 12.5px;
-  --stat-size: 13.5px;
-  --header-y: 22px;
-  --header-x: 40px;
-  --stats-x: 72px;
-  --stats-y: 36px;
-  --hero-gap: 85px;
-  --copy-max: 860px;
-  --lede-max: 470px;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-  position: relative;
-  background: #000000;
-  min-height: 100vh;
-}
-a { color: inherit; text-decoration: none; }
-button { font-family: inherit; }
-::selection { background: #ffffff; color: #000000; }
-:focus-visible { outline: 1px solid rgba(255,255,255,0.65); outline-offset: 3px; }
-/* layers */
-.hero-photo { position: fixed; inset: 0; z-index: 0; background: #000000; overflow: hidden; }
-.hero-photo video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; display: block; }
-.hero-photo::after { content: ""; position: absolute; inset: 0; background: transparent; }
-.page { position: relative; z-index: 1; display: grid; grid-template-rows: auto 1fr auto; min-height: 100vh; min-height: 100dvh; }
-.grain {
-  position: fixed; inset: 0; z-index: 100; pointer-events: none; opacity: 0.07;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-}
-/* header */
-.header {
-  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
-  padding: var(--header-y) var(--header-x) 10px;
-  z-index: 50; position: relative;
-}
-.logo {
-  display: inline-flex; align-items: center; gap: 9px; justify-self: start;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: var(--logo); font-weight: 600; letter-spacing: -0.03em; color: #fff;
-}
-.logo svg { width: var(--logo-mark); height: var(--logo-mark); display: block; }
-.logo-suffix { font-weight: 400; }
-#site-nav { display: flex; align-items: center; gap: 8px; justify-self: center; }
-#site-nav a {
-  height: var(--nav-h); padding: 0 18px; border-radius: 7px; overflow: hidden; position: relative;
-  display: inline-flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.14);
-  background: transparent;
-  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  color: #e8e8e8;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: var(--nav); font-weight: 400; letter-spacing: -0.01em; white-space: nowrap;
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
-}
-#site-nav a::before {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%);
-  transform: translateX(-120%); transition: none;
-}
-#site-nav a:hover::before { transform: translateX(120%); transition: transform 0.6s ease; }
-#site-nav a:hover {
-  border-color: rgba(255,255,255,0.38);
-  background: rgba(255,255,255,0.06);
-  color: #ffffff;
-  box-shadow: 0 0 18px rgba(200,210,230,0.12);
-}
-/* buttons */
-.btn {
-  position: relative; isolation: isolate; overflow: hidden;
-  display: inline-flex; align-items: center; justify-content: center;
-  height: var(--btn-h); padding: 0 16px; border-radius: 6px;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: var(--btn); font-weight: 500; letter-spacing: -0.02em; line-height: 1;
-  white-space: nowrap; cursor: pointer;
-  transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease, color 0.35s ease, filter 0.35s ease;
-}
-.btn::after {
-  content: ""; position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(115deg, transparent 20%, rgba(255,255,255,0.45) 48%, transparent 76%);
-  transform: translateX(-130%);
-}
-.btn:hover::after { transform: translateX(130%); transition: transform 0.65s ease; }
-.btn-solid {
-  background: linear-gradient(180deg, #ffffff 0%, #e7e7e7 48%, #cfcfcf 100%);
-  color: #111111; border: 1px solid #ffffff;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.95);
-}
-.btn-solid:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f6ff 42%, #d5def2 100%);
-  border-color: #f2f6ff;
-  box-shadow: inset 0 1px 0 #ffffff, 0 0 22px rgba(186,208,255,0.35), 0 8px 18px rgba(255,255,255,0.12);
-}
-.hero .btn-solid:hover {
-  box-shadow: inset 0 1px 0 #ffffff, 0 0 26px rgba(186,208,255,0.4), 0 8px 18px rgba(255,255,255,0.14);
-}
-.btn-ghost {
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.45) 50%, rgba(160,175,200,0.08));
-  color: #ffffff; border: 1px solid rgba(198,198,198,0.45);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12);
-}
-.btn-ghost:hover {
-  background: linear-gradient(135deg, rgba(210,225,255,0.18), rgba(0,0,0,0.35) 48%, rgba(180,195,220,0.16));
-  border-color: rgba(220,230,255,0.75);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 0 20px rgba(170,200,255,0.22);
-}
-.hero .btn-ghost {
-  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.5) 46%, rgba(150,170,200,0.1));
-  border: 1px solid rgba(198,198,198,0.55);
-  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-}
-.hero .btn-ghost:hover {
-  border-color: rgba(220,230,255,0.8);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.22), 0 0 24px rgba(170,200,255,0.28);
-}
-.header-cta { justify-self: end; }
-.hero-actions .btn { height: var(--hero-btn-h); padding: 0 18px; }
-/* burger */
-.burger {
-  display: none; width: 42px; height: 42px; border-radius: 6px;
-  border: 1px solid var(--border); background: rgba(8,8,8,0.55);
-  z-index: 60; cursor: pointer; place-items: center; align-content: center; justify-items: center;
-  transition: border-color 0.25s ease, background 0.25s ease;
-}
-.burger:hover { border-color: rgba(255,255,255,0.32); background: rgba(255,255,255,0.05); }
-.burger span { display: block; width: 16px; height: 1.5px; background: #ffffff; border-radius: 1px; transition: transform 0.25s ease, opacity 0.2s ease; }
-.burger span + span { margin-top: 5px; }
-body.menu-open .burger span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-body.menu-open .burger span:nth-child(2) { opacity: 0; }
-body.menu-open .burger span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-.menu-backdrop {
-  display: block; position: fixed; inset: 0; z-index: 40;
-  background: rgba(8,8,8,0.42);
-  opacity: 0; visibility: hidden; transition: opacity 0.28s ease, visibility 0.28s ease;
-}
-body.menu-open .menu-backdrop {
-  opacity: 1; visibility: visible;
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
-}
-body.menu-open { overflow: hidden; }
-/* hero */
-.hero { display: flex; align-items: flex-end; justify-content: center; padding: 8px 24px var(--hero-gap); min-height: 0; }
-.hero-copy {
-  position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center;
-  text-align: center; max-width: var(--copy-max); width: 100%;
-}
-.badge {
-  display: inline-flex; align-items: center; gap: 8px; margin-bottom: 22px; padding: 9px 15px;
-  border: 0; border-radius: 5px;
-  background: linear-gradient(90deg, #7d7d7d 0%, #2a2a2a 52%, #0a0a0a 100%);
-  color: #f2f2f2;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: var(--badge); font-weight: 400; letter-spacing: -0.01em; white-space: nowrap;
-}
-.badge-star { width: 18px; height: 20px; display: block; filter: drop-shadow(0 0 3px rgba(255,255,255,0.45)); animation: in-star 0.9s cubic-bezier(0.16,1,0.3,1) both; animation-delay: 0.28s; }
-.hero h1 {
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-weight: 500; letter-spacing: -0.045em; line-height: 1.12; color: #ffffff;
-  font-size: var(--h1);
-  display: flex; flex-direction: column; align-items: center; text-align: center;
-}
-.headline-line { display: block; overflow: hidden; padding: 0.06em 0.15em 0.14em; }
-.hero h1 em {
-  font-family: "Instrument Serif", "Times New Roman", Times, serif;
-  font-style: italic; font-weight: 400; font-size: 1.08em; letter-spacing: -0.03em; color: #9a9a9a;
-  animation: in-em 1.2s cubic-bezier(0.16,1,0.3,1) both; animation-delay: 0.72s;
-}
-.lede {
-  max-width: var(--lede-max); margin-top: 18px; color: #9a9a9a;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: var(--lede); font-weight: 400; line-height: 1.55; letter-spacing: -0.015em;
-}
-.hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 26px; }
-/* stats */
-.stats {
-  display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  padding: 0 var(--stats-x) var(--stats-y);
-  padding-bottom: max(var(--stats-y), env(safe-area-inset-bottom));
-  color: #d8d8d8;
-}
-.stat {
-  display: inline-flex; align-items: center; gap: 14px;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: var(--stat-size); letter-spacing: -0.015em; white-space: nowrap;
-}
-.stat svg { width: 20px; height: 20px; display: block; flex: none; }
-.stat svg.stat-icon-wide { width: 38px; height: 21px; }
-/* entrance */
-.appear {
-  opacity: 1;
-  animation-duration: 1.05s; animation-fill-mode: both;
-  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
-  animation-delay: var(--d, 0.08s);
-}
-.appear--scale { animation-name: in-scale; }
-.appear--soft { animation-name: in-soft; }
-.appear--mask { animation-name: in-mask; }
-.appear--pop { animation-name: in-pop; }
-.appear--btn { animation-name: in-btn; }
-.appear--side { animation-name: in-side; }
-.appear--stat { animation-name: in-stat; }
-.appear.is-in, .hero-photo.is-in { animation: none; opacity: 1; transform: none; clip-path: none; filter: none; }
-.hero-photo.is-in::after { background: transparent; }
-@keyframes in-scale { from { opacity: 0; transform: scale(0.84); } to { opacity: 1; transform: scale(1); } }
-@keyframes in-soft { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes in-mask { from { opacity: 0; transform: translateY(40%); } to { opacity: 1; transform: translateY(0); } }
-@keyframes in-pop { 0% { opacity: 0; transform: scale(0.9); } 70% { opacity: 1; transform: scale(1.03); } 100% { opacity: 1; transform: scale(1); } }
-@keyframes in-btn { from { opacity: 0; transform: translateY(18px) scale(0.94); } to { opacity: 1; transform: none; } }
-@keyframes in-side { from { opacity: 0; transform: translateX(22px); } to { opacity: 1; transform: none; } }
-@keyframes in-stat { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes in-star { 0% { opacity: 0; transform: scale(0.2) rotate(-50deg); } 65% { opacity: 1; transform: scale(1.2) rotate(8deg); } 100% { opacity: 1; transform: scale(1) rotate(0deg); } }
-@keyframes in-em { from { opacity: 0.35; filter: blur(4px); } to { opacity: 1; filter: blur(0); } }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { transition: none !important; animation: none !important; }
-  .appear, .hero-photo, .hero h1 em, .badge-star { opacity: 1 !important; transform: none !important; clip-path: none !important; filter: none !important; }
-}
-/* responsive */
-@media (min-width: 1600px) {
-  :root {
-    --logo: 17px; --logo-mark: 24px; --nav: 15px; --nav-h: 44px;
-    --btn: 15px; --btn-h: 44px; --hero-btn-h: 48px;
-    --h1: 64px; --lede: 18px; --badge: 13.5px; --stat-size: 15px;
-    --header-y: 28px; --header-x: 64px; --stats-x: 96px; --stats-y: 44px;
-    --copy-max: 980px; --lede-max: 540px;
-  }
-  #site-nav a { padding: 0 20px; }
-  .badge { margin-bottom: 26px; }
-  .lede { margin-top: 22px; }
-  .hero-actions { margin-top: 30px; gap: 12px; }
-  .stat svg { width: 22px; height: 22px; }
-  .stat svg.stat-icon-wide { width: 45px; height: 24px; }
-}
-@media (min-width: 1920px) {
-  :root {
-    --logo: 18px; --logo-mark: 26px; --nav: 16px; --nav-h: 48px;
-    --btn: 16px; --btn-h: 48px; --hero-btn-h: 52px;
-    --h1: 76px; --lede: 20px; --badge: 14.5px; --stat-size: 16px;
-    --header-y: 32px; --header-x: 80px; --stats-x: 120px; --stats-y: 52px;
-    --copy-max: 1120px; --lede-max: 620px;
-  }
-  #site-nav { gap: 10px; }
-  #site-nav a { padding: 0 22px; }
-  .btn { padding: 0 22px; }
-  .badge { padding: 10px 15px; }
-  .stat svg.stat-icon-wide { width: 48px; height: 26px; }
-}
-@media (min-width: 2560px) {
-  :root { --h1: 88px; --lede: 22px; --header-x: 120px; --stats-x: 160px; --copy-max: 1280px; --lede-max: 680px; }
-}
-@media (min-width: 1280px) and (max-width: 1599px) {
-  :root { --h1: 54px; --lede: 16px; --header-x: 48px; --stats-x: 80px; --copy-max: 900px; }
-}
-@media (min-width: 901px) and (max-width: 1279px) {
-  :root {
-    --logo: 15px; --nav: 13px; --nav-h: 36px; --btn: 13px; --btn-h: 38px; --hero-btn-h: 40px;
-    --h1: 42px; --lede: 15px; --badge: 12px; --stat-size: 12.5px;
-    --header-y: 16px; --header-x: 28px; --stats-x: 36px; --stats-y: 28px;
-    --hero-gap: 64px; --copy-max: 760px; --lede-max: 440px;
-  }
-  #site-nav a { padding: 0 14px; }
-  .badge { margin-bottom: 16px; }
-  .lede { margin-top: 14px; }
-  .hero-actions { margin-top: 20px; }
-}
-@media (min-width: 901px) and (max-height: 850px) {
-  :root { --header-y: 14px; --stats-y: 24px; --hero-gap: 48px; --h1: 40px; }
-  .badge { margin-bottom: 12px; }
-  .lede { margin-top: 12px; }
-  .hero-actions { margin-top: 16px; }
-}
-@media (min-width: 901px) and (max-height: 720px) {
-  :root { --h1: 34px; --lede: 14px; --hero-gap: 32px; --stats-y: 18px; --nav-h: 30px; --btn-h: 34px; --hero-btn-h: 36px; }
-  .badge { margin-bottom: 8px; }
-}
-@media (min-width: 901px) {
-  html, body { height: 100%; overflow: hidden; }
-  .page { height: 100vh; height: 100dvh; overflow: hidden; }
-}
-@media (max-width: 900px) {
-  :root {
-    --logo: 16px; --btn: 15px; --btn-h: 46px; --hero-btn-h: 48px;
-    --h1: 36px; --lede: 16.5px; --badge: 13.5px; --stat-size: 15px;
-    --header-y: 16px; --header-x: 18px; --stats-x: 20px; --stats-y: 28px; --hero-gap: 36px;
-  }
-  html, body { height: auto; overflow-y: auto; }
-  .header {
-    grid-template-columns: 1fr auto auto; gap: 8px;
-    padding: var(--header-y) var(--header-x) 10px;
-    padding-top: max(var(--header-y), env(safe-area-inset-top));
-  }
-  .logo, .header-cta, .burger { z-index: 80; }
-  .burger { display: grid; }
-  #site-nav {
-    position: fixed; inset: 0; z-index: 45;
-    display: flex; flex-direction: column; align-items: stretch; justify-content: center;
-    gap: 12px; padding: 96px 22px 32px;
-    padding-top: max(96px, calc(env(safe-area-inset-top) + 88px));
-    background: transparent; opacity: 0; visibility: hidden;
-    transition: opacity 0.28s ease, visibility 0.28s ease;
-  }
-  body.menu-open #site-nav { opacity: 1; visibility: visible; }
-  #site-nav a { width: 100%; height: 56px; font-size: 19px; border-radius: 10px; }
-  .hero { padding: 20px 20px 64px; align-items: flex-end; }
-  .hero-copy, .lede { max-width: 100%; }
-  .stats { flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; }
-  .stat { white-space: normal; }
-}
-@media (max-width: 560px) {
-  :root { --h1: 34px; --lede: 16px; --header-x: 16px; }
-  .hero-actions { flex-direction: column; align-items: stretch; }
-  .hero-actions .btn { width: 100%; }
-}
-</style>
+<link rel="stylesheet" href="site.css" />
 </head>
 <body style="background:#000;color:#fff">
+<div id="loader" aria-hidden="true"><div class="loader-ghost" id="loaderGhost" aria-hidden="true">000</div><div class="loader-inner">
+<div class="loader-top"><span>zykken</span><span>CALM SYSTEMS</span></div>
+<div class="loader-mark"><svg class="mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg><svg class="loader-ring-svg" viewBox="0 0 60 60" aria-hidden="true"><circle class="ring-bg" cx="30" cy="30" r="26"/><circle class="ring-fg" id="loaderRing" cx="30" cy="30" r="26"/></svg></div>
+<div class="loader-word" aria-hidden="true"><span>z</span><span>y</span><span>k</span><span>k</span><span>e</span><span>n</span></div>
+<p class="loader-tag">AI automation · voice · web · software — live in 21 days</p>
+<div class="loader-bottom"><span id="loaderStatus">mapping workflows</span><span id="loaderPct">000</span></div>
+<div class="loader-line"><span id="loaderBar"></span><i id="loaderHead"></i></div>
+</div></div>
+<div id="pixelveil" aria-hidden="true"></div>
 <div class="grain" aria-hidden="true"></div>
-<div class="hero-photo" aria-hidden="true"><video autoplay muted loop playsinline preload="auto" src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260818_072341_50851634-bbc3-4c33-9acc-7647d4db44aa.mp4"></video></div>
+<div class="hero-photo" aria-hidden="true">
+  <video autoplay muted loop playsinline preload="metadata" tabindex="-1">
+    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260808_112712_da9d53df-6d27-4b12-bdf6-aa9dc2622bdf.mp4" type="video/mp4" />
+  </video>
+</div>
 <div class="page">
   <div class="menu-backdrop" aria-hidden="true"></div>
   <header class="header">
-    <a class="logo appear appear--scale" style="--d:0.08s" href="#top" aria-label="NEXORA">
+    <a class="logo appear appear--scale" style="--d:0.08s" href="#top" aria-label="zykken">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><g transform="rotate(-30 12 12)"><circle cx="7.3" cy="3.2" r="1.45"/><rect x="5.5" y="4.7" width="3.6" height="14.6" rx="1.8"/><rect x="14.9" y="4.7" width="3.6" height="14.6" rx="1.8"/><circle cx="16.7" cy="20.8" r="1.45"/></g></svg>
-      <span>NEXORA<span class="logo-suffix">®</span></span>
+      <span class="logo-word">zykken</span>
     </a>
     <nav id="site-nav" aria-label="Primary">
       <a class="appear appear--scale" style="--d:0.16s" href="services.html">Services</a>
@@ -379,8 +51,8 @@ body.menu-open { overflow: hidden; }
       <a class="appear appear--scale" style="--d:0.40s" href="about.html">About</a>
       <a class="appear appear--soft" style="--d:0.52s" href="pricing.html">Pricing</a>
     </nav>
-    <div style="display:flex;align-items:center;gap:10px;justify-self:end">
-      <a class="btn btn-solid header-cta appear appear--scale" style="--d:0.34s" href="#start">Book a Call</a>
+    <div class="header-actions">
+      <a class="btn btn-solid header-cta appear appear--scale" style="--d:0.34s" href="pricing.html#start">Book a Call</a>
       <button class="burger appear appear--scale" style="--d:0.34s" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </header>
@@ -394,10 +66,10 @@ body.menu-open { overflow: hidden; }
         <span class="headline-line appear appear--mask" style="--d:0.42s"><span>Build <em>AI systems</em> that</span></span>
         <span class="headline-line appear appear--mask" style="--d:0.62s"><span>print revenue fast.</span></span>
       </h1>
-      <p class="lede appear appear--soft" style="--d:0.82s;animation-duration:1.25s">NEXORA designs AI automation, voice agents, premium websites & custom software — live in 21 days.</p>
+      <p class="lede appear appear--soft" style="--d:0.82s;animation-duration:1.25s">zykken designs AI automation, voice agents, premium websites &amp; custom software — live in 21 days. Senior-only, fixed-price, owned 100% by you.</p>
       <div class="hero-actions">
-        <a class="btn btn-solid appear appear--btn" style="--d:0.96s" href="#start">Get Free Audit</a>
-        <a class="btn btn-ghost appear appear--side" style="--d:1.10s" href="#demo">See Our Work</a>
+        <a class="btn btn-solid appear appear--btn" style="--d:0.96s" href="pricing.html#start">Get Free Audit</a>
+        <a class="btn btn-ghost appear appear--side" style="--d:1.10s" href="work.html">See Our Work</a>
       </div>
     </div>
   </main>
@@ -415,53 +87,143 @@ body.menu-open { overflow: hidden; }
       98% clients stay with us
     </span>
   </footer>
+  <div class="home-main">
+    <section class="section"><div class="wrap">
+      <p class="kicker" data-reveal>What we do — zykken</p>
+      <h2 class="h2" data-reveal>Five fixed-scope systems that <em>pay for themselves.</em></h2>
+      <p class="lede2" data-reveal>Every project starts with a free audit on zykken — one 30-min call, one workflow recording, one fixed quote. No hourly fog. Pick the pain that costs most; we compound from there.</p>
+      <div class="logo-strip" data-reveal aria-label="Selected clients">
+        <span>LUXE ESTATES</span><span><i>●</i>VELVET &amp; CO</span><span><i>●</i>PULSE FIT</span><span><i>●</i>NOIR CLINIC</span><span><i>●</i>KINETIC</span><span><i>●</i>HEARTH &amp; HOME</span>
+      </div>
+      <div class="home-grid" data-reveal>
+        <div><span class="tag">01 · 48HRS → 14 DAYS · FROM $1,900</span><h4>AI automation &amp; workflows</h4><p>Lead routing, onboarding, reporting — the 3 workflows burning 25–35 hrs/week, automated first. Exception inbox + Slack alerts so nothing slips.</p><a class="more" href="services.html#automation">Explore automation →</a></div>
+        <div><span class="tag">02 · 7–12 DAYS · FROM $2,400</span><h4>Voice &amp; chat agents</h4><p>Hindi + English agents for web, WhatsApp &amp; phone. Qualify, book, summarize, hand off hot cases with transcripts. 73% resolved with zero hold.</p><a class="more" href="services.html#voice">Explore voice →</a></div>
+        <div><span class="tag">03 · 10–18 DAYS · FROM $1,450</span><h4>Premium websites</h4><p>Editorial Next.js builds, sub-second on 4G, CMS you can edit, AI concierge that turns browsers into booked calls. 3× conversion typical.</p><a class="more" href="services.html#web">Explore web →</a></div>
+      </div>
+      <div class="home-grid" data-reveal style="margin-top:16px">
+        <div><span class="tag">04 · 3–8 WEEKS · FROM $8,000</span><h4>Custom software &amp; SaaS</h4><p>Portals, dashboards, member OS &amp; MVPs with auth, roles, billing from day one. Weekly sprints, 100% your code on your infra.</p><a class="more" href="services.html#software">Explore software →</a></div>
+        <div><span class="tag">05 · 7–14 DAYS · FROM $1,600</span><h4>CRM, funnels &amp; nurture</h4><p>Pipelines that mirror how you sell, cold outreach with deliverability done right, 90-day WhatsApp + email nurture. Speed-to-lead under 60s.</p><a class="more" href="services.html#crm">Explore CRM →</a></div>
+        <div style="display:flex;flex-direction:column;justify-content:center"><span class="tag">FREE · 12-HR REPLY</span><h4>Not sure where to start?</h4><p>We map your 3 highest-ROI automations and fix-quote them. If we can't save 10× our fee, we tell you not to hire us.</p><a class="more" href="pricing.html#start">Get free audit →</a></div>
+      </div>
+      <div class="proof-band" data-reveal>
+        <div><strong>38s</strong><span>median speed-to-lead, 24/7</span></div>
+        <div><strong>1.1s</strong><span>loads on 4G, 95+ Lighthouse</span></div>
+        <div><strong>3.4×</strong><span>typical conversion lift</span></div>
+        <div><strong>10×</strong><span>min. payback we propose</span></div>
+      </div>
+    </div></section>
+    <section class="section"><div class="wrap">
+      <p class="kicker" data-reveal>How we work</p>
+      <h2 class="h2" data-reveal>Live in 21 days, <em>without chaos.</em></h2>
+      <p class="lede2" data-reveal>Senior-only, 3 clients a month max. The person who scopes your system is the person who ships it — with a Loom every 48 hours.</p>
+      <div class="steps" data-reveal>
+        <div><span class="n">01</span><b>Free audit — day 0</b><p>30-min call + screen recording. We return 3 ROI-ranked opportunities with fixed price + go-live date in 12 hours.</p></div>
+        <div><span class="n">02</span><b>Prototype — 48 hours</b><p>First automation or agent live on your real data. You feel relief before committing to the full build.</p></div>
+        <div><span class="n">03</span><b>Build — 1–3 weeks</b><p>Fixed-scope sprints, tested on real volume. Calendar, CRM, inbox wired cleanly. Team trained on Loom.</p></div>
+        <div><span class="n">04</span><b>Tune-up — 14–30 days</b><p>We monitor opens, bookings, transcripts. Misfires fixed free + guardrail added so they can't recur. You own everything.</p></div>
+      </div>
+      <div class="two-col" data-reveal>
+        <div>
+          <h3 class="h2" style="font-size:24px">Why teams stay calm</h3>
+          <ul class="check-list">
+            <li>One decision-maker on WhatsApp — no committees, no status calls</li>
+            <li>Built in your accounts — code, prompts, CRM, analytics you own</li>
+            <li>Guardrails + evals — hallucinations and misfires can't recur</li>
+            <li>Fixed price locked pre-build — new work is a fixed add-on you approve</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="h2" style="font-size:24px">What you get every time</h3>
+          <ul class="check-list">
+            <li>Workflow blueprint + Loom walkthrough your team actually uses</li>
+            <li>Exception inbox + Slack alerts — only humans-needed cases surface</li>
+            <li>SOP doc + 60-min training — handover in days, not months</li>
+            <li>14–30 day tune-up — we watch numbers until they hold</li>
+          </ul>
+        </div>
+      </div>
+    </div></section>
+    <section class="section"><div class="wrap">
+      <p class="kicker" data-reveal>Featured work</p>
+      <h2 class="h2" data-reveal>Proof, <em>not promises.</em></h2>
+      <p class="lede2" data-reveal>Four live systems on <a href="work.html" style="border-bottom:1px solid rgba(255,255,255,0.3)">work.html</a> — what broke, what shipped in days, what compounded.</p>
+      <div class="work-mini" data-reveal>
+        <div><h4>Luxe Estates — 38-sec follow-up</h4><p>WhatsApp + voice qualifier, CRM routing, 90-day nurture. Real estate, 16 days.</p><strong>+312%</strong><span class="m">qualified viewings · ₹12.4Cr pipeline</span></div>
+        <div><h4>Velvet &amp; Co — 1.1-sec storefront</h4><p>Editorial Next.js rebuild + AI concierge in Hindi + English. E-commerce, 18 days.</p><strong>3.4×</strong><span class="m">conversion · −41% support tickets</span></div>
+        <div><h4>Pulse Fit OS — 1,100 hrs back</h4><p>Member app + trainer dashboard + AI plans. SaaS, 19 days after a 6-month stall.</p><strong>+28%</strong><span class="m">retention · admin back per year</span></div>
+        <div><h4>Noir Clinic — zero missed calls</h4><p>Hindi + English voice agent on the clinic line + WhatsApp. Voice AI, 11 days.</p><strong>0</strong><span class="m">missed calls in 4 months · 4.9★</span></div>
+      </div>
+      <div class="t-wall" data-reveal>
+        <div class="t-full"><div class="t-head"><div class="avatar" aria-hidden="true">AM</div><div><b>Aarav Mehta</b><small>Luxe Estates · Mumbai</small></div></div><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>"Follow-up went from six hours to thirty-eight seconds. Agents only meet people ready to visit."</p><span class="t-chip">✓ VERIFIED · +312% VIEWINGS</span></div>
+        <div class="t-full"><div class="t-head"><div class="avatar" aria-hidden="true">SK</div><div><b>Sara Kapoor</b><small>Velvet &amp; Co · Delhi</small></div></div><div class="stars" aria-label="5 out of 5 stars">★★★★★</div><p>"Loads instantly, feels editorial, concierge handles sizing better than our FAQ ever did."</p><span class="t-chip">✓ VERIFIED · 3.4× CONVERSION</span></div>
+      </div>
+      <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap" data-reveal>
+        <a class="btn btn-solid" href="work.html">Read case studies</a>
+        <a class="btn btn-ghost" href="about.html#voices">Client voices</a>
+      </div>
+    </div></section>
+    <section class="section"><div class="wrap">
+      <p class="kicker" data-reveal>Pricing — fixed, fair</p>
+      <h2 class="h2" data-reveal>Start sharp, <em>scale calm.</em></h2>
+      <p class="lede2" data-reveal>Launch from $1,450 · Autopilot from $3,900 · Empire custom. All fixed in writing after your free audit. You own code, prompts, accounts.</p>
+      <div class="price-grid" data-reveal>
+        <div class="p-card"><label>LAUNCH</label><div class="p-price">$1,450</div><p class="p-sub">One sharp asset, live in days.</p><ul><li>✓ Landing + chatbot + CRM basics</li><li>✓ Analytics + speed setup</li><li>✓ 14-day bug-fix support</li></ul><a class="link-quiet" href="pricing.html">Start with Launch →</a></div>
+        <div class="p-card featured"><label>AUTOPILOT — MOST CHOSEN</label><div class="p-price">$3,900<small> from</small></div><p class="p-sub">Agents + automations + funnel.</p><ul><li>✓ Voice + WhatsApp, Hindi + English</li><li>✓ 3 automations + 90-day nurture</li><li>✓ Speed-to-lead under 60s</li></ul><a class="btn btn-solid" style="width:100%" href="pricing.html#start">Scale me →</a></div>
+        <div class="p-card"><label>EMPIRE</label><div class="p-price">Custom</div><p class="p-sub">SaaS + partnership.</p><ul><li>✓ Portal / OS with billing + roles</li><li>✓ Dedicated senior team + SLA</li><li>✓ You own 100% of code</li></ul><a class="link-quiet" href="pricing.html">Talk to us →</a></div>
+      </div>
+      <p class="kicker" data-reveal style="margin-top:44px">FAQ — quick answers</p>
+      <div class="faq" data-reveal>
+        <div class="f-item"><button type="button" aria-expanded="false">How fast do we see something live?<span>+</span></button><p>First win in 48 hours, full system in 14 days for automation. Voice 7–12 days, web 10–18 days. Loom every 48 hours.</p></div>
+        <div class="f-item"><button type="button" aria-expanded="false">Do we own everything?<span>+</span></button><p>Yes — code, prompts, workflows, accounts, docs in your accounts from day one. Leave anytime; 98% stay.</p></div>
+        <div class="f-item"><button type="button" aria-expanded="false">What if it breaks after launch?<span>+</span></button><p>14-day tune-up on Launch, 30-day priority on Autopilot, SLA on Empire. Misfires fixed free + guardrail added.</p></div>
+        <div class="f-item"><button type="button" aria-expanded="false">How do we start?<span>+</span></button><p>Request the free audit below — 30-min call + workflow recording. Fixed price + go-live date within 12 hours.</p></div>
+      </div>
+      <div class="contact-grid" data-reveal id="start">
+        <div>
+          <p class="kicker">Start — free audit</p>
+          <h2 class="h2">Request your <em>free audit.</em></h2>
+          <p class="lede2">One call + one recording = 3 ROI-ranked opportunities, fixed-quoted. If we can't save 10×, we tell you not to hire us.</p>
+          <div class="c-rows">
+            <a href="mailto:hello@zykken.com"><span>EMAIL</span><b>hello@zykken.com</b></a>
+            <a href="https://wa.me/919000000000"><span>WHATSAPP</span><b>Chat in 5 min →</b></a>
+            <div><span>RESPONSE</span><b>Under 12 hours</b></div>
+          </div>
+        </div>
+        <div>
+          <form class="lead" action="#" method="post" novalidate>
+            <label>NAME<input name="name" type="text" placeholder="Aarav Mehta" autocomplete="name" required minlength="2" /><span class="field-err">Please add your name.</span></label>
+            <label>EMAIL<input name="email" type="email" placeholder="you@company.com" autocomplete="email" required /><span class="field-err">That email doesn't look right.</span></label>
+            <label>PHONE / WHATSAPP<input name="phone" type="tel" placeholder="+91 90000 00000" autocomplete="tel" /><span class="field-err">Add 7+ digits, or leave blank.</span></label>
+            <label class="sr-only" aria-hidden="true">COMPANY SITE<input name="company_site" type="text" tabindex="-1" autocomplete="off" /></label>
+            <label>I NEED<select name="need"><option value="automation">AI automation &amp; workflows</option><option value="website">Premium website</option><option value="voice">Voice / WhatsApp agent</option><option value="software">Custom software / SaaS</option><option value="crm">CRM, funnels &amp; nurture</option></select></label>
+            <label>WHAT BURNS MOST TIME?<textarea name="message" rows="3" placeholder="e.g. Leads wait 6 hours, bookings in DMs…" maxlength="1200"></textarea></label>
+            <button class="btn btn-solid" type="submit">Request audit →</button>
+            <small>No spam. One sharp reply within 12 hours.</small>
+          </form>
+          <div class="form-ok" role="status" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="cta-band" data-reveal>
+        <h2>Your bottleneck, <em>gone in 21 days?</em></h2>
+        <p>Tell us what burns most time at hello@zykken.com — we reply within 12 hours with plan, price and go-live date.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <a class="btn btn-solid" href="pricing.html#start">Request free audit</a>
+          <a class="btn btn-ghost" href="https://wa.me/919000000000">WhatsApp us</a>
+        </div>
+      </div>
+    </div></section>
+    <footer class="footer-min"><div class="wrap">
+      <div class="foot-grid">
+        <div><label>zykken</label><p>Calm AI systems — automation, voice, websites, software. Senior-only, fixed-price, live in 21 days.</p></div>
+        <div><label>Site</label><a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="pricing.html">Pricing</a></div>
+        <div><label>Systems</label><a href="services.html#automation">Automation</a><a href="services.html#voice">Voice agents</a><a href="services.html#web">Websites</a><a href="services.html#software">SaaS</a></div>
+        <div><label>Contact</label><a href="mailto:hello@zykken.com">hello@zykken.com</a><a href="pricing.html#start">Book a call ↗</a><a href="https://zykken.com/">zykken ↗</a></div>
+      </div>
+      <div class="foot-base"><span>© <span class="js-year">2026</span> zykken</span><span>HOME ● CALM SYSTEMS</span></div>
+    </div></footer>
+  </div>
 </div>
-<script>
-(function () {
-  var appears = Array.prototype.slice.call(document.querySelectorAll(".appear"));
-  appears.forEach(function (el) {
-    el.addEventListener("animationend", function () { el.classList.add("is-in"); }, { once: true });
-  });
-  requestAnimationFrame(function () {
-    requestAnimationFrame(function () {
-      var ok = false;
-      try {
-        var probe = document.querySelector(".appear");
-        var anims = probe && probe.getAnimations ? probe.getAnimations() : [];
-        ok = anims.some(function (a) { return a.playState === "running" || a.playState === "finished"; });
-      } catch (e) { ok = false; }
-      if (!ok) {
-        document.querySelectorAll(".appear, .hero-photo").forEach(function (el) { el.classList.add("is-in"); });
-      }
-    });
-  });
-  var burger = document.querySelector(".burger");
-  var nav = document.getElementById("site-nav");
-  function setMenu(open) {
-    document.body.classList.toggle("menu-open", open);
-    if (burger) {
-      burger.setAttribute("aria-expanded", open ? "true" : "false");
-      burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    }
-  }
-  if (burger) {
-    burger.addEventListener("click", function () {
-      setMenu(!document.body.classList.contains("menu-open"));
-    });
-  }
-  if (nav) {
-    nav.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () { setMenu(false); });
-    });
-  }
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") setMenu(false);
-  });
-  function closeOnDesktop() {
-    if (window.matchMedia("(min-width: 901px)").matches) setMenu(false);
-  }
-  window.addEventListener("resize", closeOnDesktop);
-})();
-</script>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="site.js" defer></script>
 </body>
 </html>

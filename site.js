@@ -1,46 +1,213 @@
-/* NEXORA subpages — menu + appear fallback + modules */
+/* zykken — menu + appear fallback + modules + lead form */
 (function () {
+  "use strict";
+
+  /* appear fallback: if CSS animations are off, show content */
   var appears = Array.prototype.slice.call(document.querySelectorAll(".appear"));
   appears.forEach(function (el) {
     el.addEventListener("animationend", function () { el.classList.add("is-in"); }, { once: true });
   });
   requestAnimationFrame(function () {
-    requestAnimationFrame(function () {
+    requestAnimationFrame(function check() {
+      if (document.body.classList.contains("is-loading")) { setTimeout(check, 300); return; }
       var ok = false;
       try {
         var probe = document.querySelector(".appear");
         var anims = probe && probe.getAnimations ? probe.getAnimations() : [];
         ok = anims.some(function (a) { return a.playState === "running" || a.playState === "finished"; });
       } catch (e) { ok = false; }
-      if (!ok) document.querySelectorAll(".appear").forEach(function (el) { el.classList.add("is-in"); });
+      if (!ok) document.querySelectorAll(".appear, .hero-photo").forEach(function (el) { el.classList.add("is-in"); });
     });
   });
+
+  /* nav — free links, no container. backdrop click + esc + focus */
   var burger = document.querySelector(".burger");
+  var nav = document.getElementById("site-nav");
+  var backdrop = document.querySelector(".menu-backdrop");
   function setMenu(open) {
     document.body.classList.toggle("menu-open", open);
     if (burger) {
       burger.setAttribute("aria-expanded", open ? "true" : "false");
       burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     }
+    if (open && nav) {
+      var first = nav.querySelector("a");
+      if (first) first.focus({ preventScroll: true });
+    }
   }
   if (burger) burger.addEventListener("click", function () { setMenu(!document.body.classList.contains("menu-open")); });
-  var nav = document.getElementById("site-nav");
+  if (backdrop) backdrop.addEventListener("click", function () { setMenu(false); });
   if (nav) nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
   window.addEventListener("resize", function () { if (window.matchMedia("(min-width: 901px)").matches) setMenu(false); });
 
+  /* auto active link fallback (in case markup missed) */
+  try {
+    var path = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+    if (nav && !nav.querySelector("a.active")) {
+      nav.querySelectorAll("a").forEach(function (a) {
+        var href = (a.getAttribute("href") || "").toLowerCase();
+        if (href === path || (path === "" && href === "index.html")) {
+          a.classList.add("active");
+          a.setAttribute("aria-current", "page");
+        }
+      });
+    }
+  } catch (e) {}
+
+  /* premium loader — eased 000→100 tied to real load + curtain exit */
+  (function loader() {
+    var l = document.getElementById("loader");
+    if (!l) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { l.remove(); return; }
+    document.body.classList.add("is-loading");
+    var bar = document.getElementById("loaderBar"),
+        pct = document.getElementById("loaderPct"),
+        ghost = document.getElementById("loaderGhost"),
+        head = document.getElementById("loaderHead"),
+        status = document.getElementById("loaderStatus");
+    var repeat = false;
+    try { repeat = sessionStorage.getItem("zykken_boot") === "1"; } catch (e) {}
+    var ringC = 2 * Math.PI * 26;
+    function setProgress(v) {
+      var s = Math.max(0, Math.min(1, v / 100));
+      if (bar) bar.style.transform = "scaleX(" + s + ")";
+      if (head) head.style.left = (s * 100) + "%";
+      if (pct) pct.textContent = pad(v);
+      if (ghost) ghost.textContent = pad(v);
+      var ring = document.getElementById("loaderRing");
+      if (ring) { ring.style.strokeDasharray = ringC; ring.style.strokeDashoffset = ringC * (1 - s); }
+    }
+    /* pixel veil — staggered block dissolve that opens the page */
+    function buildPixels() {
+      try {
+        var v = document.getElementById("pixelveil");
+        if (!v || v.dataset.built) return;
+        var cell = Math.max(72, Math.min(110, Math.floor(Math.min(window.innerWidth, 1400) / 12)));
+        var cols = Math.ceil(window.innerWidth / cell), rows = Math.ceil(window.innerHeight / cell);
+        while (cols * rows > 180 && cell < 160) { cell += 10; cols = Math.ceil(window.innerWidth / cell); rows = Math.ceil(window.innerHeight / cell); }
+        v.style.gridTemplateColumns = "repeat(" + cols + ",1fr)";
+        v.style.gridTemplateRows = "repeat(" + rows + ",1fr)";
+        var cx = (cols - 1) / 2, cy = (rows - 1) / 2, max = Math.sqrt(cx * cx + cy * cy) || 1;
+        var origins = ["center", "top left", "top right", "bottom left", "bottom right"];
+        for (var i = 0; i < cols * rows; i++) {
+          var d = document.createElement("div"); d.className = "pxcell";
+          var x = i % cols, y = Math.floor(i / cols);
+          var dist = Math.sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy)) / max;
+          d.dataset.dist = dist.toFixed(3);
+          d.style.transformOrigin = origins[(x + y) % origins.length];
+          v.appendChild(d);
+        }
+        v.dataset.built = "1";
+      } catch (e) {}
+    }
+    function clearPixels(spreadMs) {
+      try {
+        var v = document.getElementById("pixelveil");
+        if (!v || !v.dataset.built) return;
+        var cells = v.querySelectorAll(".pxcell");
+        cells.forEach(function (c) {
+          var d = parseFloat(c.dataset.dist || "0");
+          c.style.setProperty("--pd", Math.round(d * (spreadMs || 550) + Math.random() * 120) + "ms");
+        });
+        void v.offsetWidth;
+        cells.forEach(function (c) { c.classList.add("out"); });
+        setTimeout(function () { if (v.parentNode) v.parentNode.removeChild(v); }, (spreadMs || 550) + 750);
+      } catch (e) {}
+    }
+    buildPixels();
+    var phrases = ["mapping workflows", "tuning voice agents", "polishing pixels", "wiring CRM + calendar"];
+    var pi = 0, statusTimer = setInterval(function () {
+      pi = (pi + 1) % phrases.length;
+      if (status) status.textContent = phrases[pi];
+    }, 650);
+    var t0 = performance.now(), minDur = repeat ? 750 : 1400, maxWait = repeat ? 1600 : 2800, loaded = false, finished = false;
+    if (repeat && status) status.textContent = "welcome back";
+    function pad(v) { v = Math.max(0, Math.min(100, Math.round(v))); return (v < 10 ? "00" + v : v < 100 ? "0" + v : "" + v); }
+    function replayHero() {
+      try {
+        var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
+        els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
+        void l.offsetWidth;
+        els.forEach(function (el) { el.style.animation = ""; });
+      } catch (e) {}
+    }
+    function finish() {
+      if (finished) return; finished = true;
+      clearInterval(statusTimer);
+      setProgress(100);
+      if (status) status.textContent = "ready";
+      try { sessionStorage.setItem("zykken_boot", "1"); } catch (e) {}
+      setTimeout(function () {
+        l.classList.add("done");
+        clearPixels(repeat ? 350 : 550);
+        setTimeout(function () {
+          document.body.classList.remove("is-loading");
+          document.body.classList.add("is-ready");
+          replayHero();
+        }, repeat ? 150 : 260);
+        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, 1050);
+      }, 250);
+    }
+    function tick(t) {
+      if (finished) return;
+      var elapsed = t - t0;
+      var target = loaded ? 100 : 88; /* ease to 88 until window load, then snap */
+      var span = loaded ? 450 : minDur;
+      var p = Math.min(1, elapsed / span) * target;
+      var e = 1 - Math.pow(1 - Math.min(1, elapsed / span), 3);
+      var v = e * target;
+      setProgress(v);
+      if (loaded && elapsed > span - 50) { finish(); return; }
+      if (!loaded) requestAnimationFrame(tick);
+    }
+    function onLoaded() { loaded = true; var t1 = performance.now(); (function snap(t) {
+      var p = Math.min(1, (t - t1) / 450), e = 1 - Math.pow(1 - p, 3);
+      var cur = pct ? parseInt(pct.textContent, 10) || 0 : 0;
+      var v = cur + (100 - cur) * e;
+      setProgress(v);
+      if (p < 1) requestAnimationFrame(snap); else finish();
+    })(t1); }
+    /* click to skip (after the wordmark has shown) */
+    l.addEventListener("click", function () {
+      if (performance.now() - t0 > 600 && !finished) { loaded = true; onLoaded(); }
+    });
+    if (document.readyState === "complete") { setTimeout(onLoaded, Math.max(0, 900 - (performance.now() - t0))); }
+    else {
+      window.addEventListener("load", function () { setTimeout(onLoaded, 350); }, { once: true });
+      if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function () {}).catch(function () {}); }
+    }
+    requestAnimationFrame(tick);
+    setTimeout(function () { if (!finished) { loaded = true; onLoaded(); } }, maxWait);
+    setTimeout(function () { var v = document.getElementById("pixelveil"); if (v && v.parentNode) v.parentNode.removeChild(v); }, 6000);
+  })();
+
   /* reveal on scroll */
-  var io = new IntersectionObserver(function (es) {
-    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+  try {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll("[data-reveal]").forEach(function (el) { io.observe(el); });
+  } catch (e) {
+    document.querySelectorAll("[data-reveal]").forEach(function (el) { el.style.opacity = 1; el.style.transform = "none"; });
+  }
+
+  /* toast helper */
+  function toast(msg) {
+    var t = document.getElementById("toast");
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(t._h);
+    t._h = setTimeout(function(){ t.classList.remove("show"); }, 4200);
+  }
 
   /* faq */
   document.querySelectorAll(".f-item button").forEach(function (b) {
     b.addEventListener("click", function () {
       var it = b.parentElement, was = it.classList.contains("open");
-      document.querySelectorAll(".f-item").forEach(function (x) { x.classList.remove("open"); });
-      if (!was) it.classList.add("open");
+      document.querySelectorAll(".f-item").forEach(function (x) { x.classList.remove("open"); x.querySelector("button").setAttribute("aria-expanded", "false"); });
+      if (!was) { it.classList.add("open"); b.setAttribute("aria-expanded", "true"); }
     });
   });
 
@@ -57,8 +224,9 @@
   var fbtns = document.querySelectorAll(".filters button");
   if (fbtns.length) fbtns.forEach(function (b) {
     b.addEventListener("click", function () {
-      fbtns.forEach(function (x) { x.classList.remove("active"); });
+      fbtns.forEach(function (x) { x.classList.remove("active"); x.setAttribute("aria-pressed", "false"); });
       b.classList.add("active");
+      b.setAttribute("aria-pressed", "true");
       var f = b.getAttribute("data-filter");
       document.querySelectorAll(".case").forEach(function (c) {
         c.style.display = (f === "all" || c.getAttribute("data-cat") === f) ? "" : "none";
@@ -73,10 +241,12 @@
         ms = document.getElementById("saveMo"), hs = document.getElementById("saveHr"), ro = document.getElementById("roiX");
     function upd() {
       var H = +hrs.value, C = +cost.value;
-      hv.textContent = H + " hrs/wk"; cv.textContent = "$" + C + "/hr";
+      if (hv) hv.textContent = H + " hrs/wk";
+      if (cv) cv.textContent = "$" + C + "/hr";
       var m = Math.round(H * 4.33 * C * 0.8);
-      ms.textContent = "$" + m.toLocaleString(); hs.textContent = Math.round(H * 4.33 * 0.8).toLocaleString() + " hrs";
-      ro.textContent = (m * 12 / 3900).toFixed(1) + "×";
+      if (ms) ms.textContent = "$" + m.toLocaleString();
+      if (hs) hs.textContent = Math.round(H * 4.33 * 0.8).toLocaleString() + " hrs";
+      if (ro) ro.textContent = (m * 12 / 3900).toFixed(1) + "×";
     }
     hrs.addEventListener("input", upd); cost.addEventListener("input", upd); upd();
   }
@@ -106,13 +276,81 @@
     copy();
   }
 
-  /* forms */
-  document.querySelectorAll("form").forEach(function (f) {
+  /* lead forms — validate, persist, WhatsApp handoff */
+  function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
+  document.querySelectorAll("form.lead").forEach(function (f) {
+    var nameEl = f.querySelector('[name="name"]');
+    var emailEl = f.querySelector('[name="email"]');
+    var phoneEl = f.querySelector('[name="phone"]');
+    var needEl = f.querySelector('[name="need"]');
+    var msgEl = f.querySelector('[name="message"]');
+    var btn = f.querySelector('button[type="submit"]');
+    var okBox = f.parentElement ? f.parentElement.querySelector(".form-ok") : null;
+    if (!okBox) okBox = document.getElementById("formOk");
+
+    /* restore draft */
+    try {
+      var draft = JSON.parse(localStorage.getItem("zykken_lead") || "{}");
+      if (draft.name && nameEl && !nameEl.value) nameEl.value = draft.name;
+      if (draft.email && emailEl && !emailEl.value) emailEl.value = draft.email;
+      if (draft.phone && phoneEl && !phoneEl.value) phoneEl.value = draft.phone;
+      if (draft.need && needEl) needEl.value = draft.need;
+    } catch (e) {}
+
+    function setErr(input, bad) {
+      if (!input) return;
+      var lab = input.closest("label");
+      if (lab) lab.classList.toggle("invalid", !!bad);
+    }
+
+    [nameEl, emailEl, phoneEl].forEach(function (inp) {
+      if (inp) inp.addEventListener("input", function () { setErr(inp, false); });
+    });
+
     f.addEventListener("submit", function (e) {
       e.preventDefault();
-      var t = document.getElementById("toast");
-      if (t) { t.textContent = "Request received — we reply within 12 hours."; t.classList.add("show"); setTimeout(function(){ t.classList.remove("show"); }, 4200); }
-      f.reset();
+
+      /* honeypot */
+      var hp = f.querySelector('[name="company_site"]');
+      if (hp && hp.value) return;
+
+      var name = (nameEl && nameEl.value || "").trim();
+      var email = (emailEl && emailEl.value || "").trim();
+      var phone = (phoneEl && phoneEl.value || "").trim();
+      var needV = (needEl && needEl.value || "automation");
+      var msg = (msgEl && msgEl.value || "").trim();
+
+      var bad = false;
+      if (!name || name.length < 2) { setErr(nameEl, true); bad = true; }
+      if (!validEmail(email)) { setErr(emailEl, true); bad = true; }
+      if (phone && phone.replace(/\D/g, "").length < 7) { setErr(phoneEl, true); bad = true; }
+      if (bad) { toast("Please add your name + a valid email."); return; }
+
+      try { localStorage.setItem("zykken_lead", JSON.stringify({ name: name, email: email, phone: phone, need: needV })); } catch (e) {}
+
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Sending…"; }
+
+      var waText = "Hi zykken — I'm " + name + " (" + email + (phone ? ", " + phone : "") + "). I need: " + needV + ". " + (msg ? "Context: " + msg.slice(0, 280) : "Please send my free audit.");
+      var waUrl = "https://wa.me/919000000000?text=" + encodeURIComponent(waText);
+      var mailUrl = "mailto:hello@zykken.com?subject=" + encodeURIComponent("Free audit — " + name) +
+        "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nPhone: " + phone + "\nNeed: " + needV + "\n\n" + msg);
+
+      setTimeout(function () {
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Request audit →"; }
+        toast("Request received — we reply within 12 hours.");
+        if (okBox) {
+          okBox.innerHTML = "Thanks <b>" + name.replace(/</g, "&lt;") + "</b> — audit request saved. We reply to <b>" +
+            email.replace(/</g, "&lt;") + "</b> within 12 hours.<br><span style='display:flex;gap:10px;margin-top:12px;flex-wrap:wrap'>" +
+            "<a class='btn btn-solid' style='height:38px' href='" + waUrl + "'>Continue on WhatsApp</a>" +
+            "<a class='btn btn-ghost' style='height:38px' href='" + mailUrl + "'>Or open email</a></span>";
+          okBox.classList.add("show");
+          okBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        f.reset();
+      }, 650);
     });
   });
+
+  /* footer year */
+  document.querySelectorAll(".js-year").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
