@@ -86,10 +86,78 @@
     }
   } catch (e) {}
 
-  /* pyramid loader; previous loader markup paths remain as safe fallbacks */
+  /* Framer-style counter loader; legacy branches remain as safe fallbacks */
   (function loader() {
     var l = document.getElementById("loader");
     if (!l) return;
+    var counterMask = l.querySelector(".counter-loader-mask");
+    if (counterMask) {
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) { l.remove(); return; }
+      document.body.classList.add("is-loading");
+
+      var counter = document.getElementById("loaderCount"),
+          counterBar = document.getElementById("loaderBar"),
+          counterStarted = performance.now(),
+          counterLoaded = document.readyState === "complete",
+          counterFinished = false,
+          counterFrame = 0;
+      var repeatCounter = false;
+      try { repeatCounter = sessionStorage.getItem("zykken_boot") === "1"; } catch (e) {}
+      var counterDuration = repeatCounter ? 1350 : 3200;
+      var counterMaximum = repeatCounter ? 2400 : 5200;
+
+      function counterEase(value) {
+        return 1 - Math.pow(1 - Math.max(0, Math.min(1, value)), 3);
+      }
+      function renderCounter(progress) {
+        var safe = Math.max(0, Math.min(1, progress));
+        if (counter) counter.textContent = String(Math.round(safe * 100));
+        if (counterBar) counterBar.style.transform = "scaleX(" + safe.toFixed(4) + ")";
+      }
+      function replayCounterEntrance() {
+        try {
+          var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
+          els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
+          void l.offsetWidth;
+          els.forEach(function (el) { el.style.animation = ""; });
+        } catch (e) {}
+      }
+      function finishCounter() {
+        if (counterFinished) return;
+        counterFinished = true;
+        cancelAnimationFrame(counterFrame);
+        renderCounter(1);
+        try { sessionStorage.setItem("zykken_boot", "1"); } catch (e) {}
+        document.body.classList.remove("is-loading");
+        document.body.classList.add("is-ready");
+        replayCounterEntrance();
+        l.classList.add("is-closing");
+        setTimeout(function () { l.classList.add("done"); }, 700);
+        setTimeout(function () { if (l.parentNode) l.parentNode.removeChild(l); }, 1080);
+      }
+      function tickCounter(now) {
+        if (counterFinished) return;
+        var elapsed = now - counterStarted;
+        var linear = Math.min(1, elapsed / counterDuration);
+        var progress = counterEase(linear);
+        if (!counterLoaded && linear >= 1) progress = 0.96;
+        renderCounter(progress);
+        if (counterLoaded && linear >= 1) { finishCounter(); return; }
+        counterFrame = requestAnimationFrame(tickCounter);
+      }
+
+      requestAnimationFrame(function () {
+        l.classList.add("is-running");
+        counterFrame = requestAnimationFrame(tickCounter);
+      });
+      window.addEventListener("load", function () { counterLoaded = true; }, { once: true });
+      setTimeout(finishCounter, counterMaximum);
+      l.addEventListener("click", function () {
+        if (performance.now() - counterStarted < 800 || counterFinished) return;
+        finishCounter();
+      });
+      return;
+    }
     var pyramidHost = l.querySelector(".pyramid-loader");
     var pyramidBlocks = document.getElementById("pyramidBlocks");
     if (pyramidHost && pyramidBlocks) {
