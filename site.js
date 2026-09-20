@@ -86,7 +86,7 @@
     }
   } catch (e) {}
 
-  /* Framer-style counter loader; legacy branches remain as safe fallbacks */
+  /* multilingual greeting loader; alternate markup paths remain as safe fallbacks */
   (function loader() {
     var l = document.getElementById("loader");
     if (!l) return;
@@ -291,7 +291,7 @@
           sequenceTimer,
           readyTimer;
       var repeatGreeting = false;
-      try { repeatGreeting = sessionStorage.getItem("zykken_boot") === "1"; } catch (e) {}
+      try { repeatGreeting = sessionStorage.getItem("zykken_greeting_boot") === "1"; } catch (e) {}
       var minimum = repeatGreeting ? 1080 : 3760;
       var maximum = repeatGreeting ? 2100 : 5200;
 
@@ -324,7 +324,7 @@
         clearInterval(sequenceTimer);
         clearInterval(readyTimer);
         showGreeting(greetings.length - 1);
-        try { sessionStorage.setItem("zykken_boot", "1"); } catch (e) {}
+        try { sessionStorage.setItem("zykken_greeting_boot", "1"); } catch (e) {}
         var exitDelay = repeatGreeting ? 220 : 340;
         setTimeout(function () {
           l.classList.add("done");
