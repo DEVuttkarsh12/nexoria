@@ -20,12 +20,45 @@
     });
   });
 
+  /* hero scroll fade — subtle parallax on homepage */
+  (function heroScrollFade() {
+    var hero = document.querySelector(".hero");
+    var heroPhoto = document.querySelector(".hero-photo");
+    if (!hero || !heroPhoto) return;
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var heroH = hero.offsetHeight || 600;
+        var progress = Math.min(1, Math.max(0, scrollY / heroH));
+        var eased = progress * progress;
+        hero.style.opacity = (1 - eased * 0.55).toFixed(3);
+        hero.style.transform = "translateY(" + (scrollY * 0.25).toFixed(1) + "px)";
+        heroPhoto.style.opacity = (0.72 - eased * 0.45).toFixed(3);
+        ticking = false;
+      });
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  })();
+
   /* nav — free links, no container. backdrop click + esc + focus */
   var burger = document.querySelector(".burger");
   var nav = document.getElementById("site-nav");
   var backdrop = document.querySelector(".menu-backdrop");
+  var savedScroll = 0;
   function setMenu(open) {
+    if (open) {
+      savedScroll = window.scrollY || window.pageYOffset || 0;
+      document.body.style.top = "-" + savedScroll + "px";
+    }
     document.body.classList.toggle("menu-open", open);
+    if (!open) {
+      document.body.style.top = "";
+      window.scrollTo(0, savedScroll);
+    }
     if (burger) {
       burger.setAttribute("aria-expanded", open ? "true" : "false");
       burger.setAttribute("aria-label", open ? "Close menu" : "Open menu");
@@ -117,9 +150,7 @@
       function replayCounterEntrance() {
         try {
           var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
-          els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
-          void l.offsetWidth;
-          els.forEach(function (el) { el.style.animation = ""; });
+          els.forEach(function (el) { el.classList.add("is-in"); });
         } catch (e) {}
       }
       function finishCounter() {
@@ -225,9 +256,7 @@
       function replayPyramidEntrance() {
         try {
           var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
-          els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
-          void l.offsetWidth;
-          els.forEach(function (el) { el.style.animation = ""; });
+          els.forEach(function (el) { el.classList.add("is-in"); });
         } catch (e) {}
       }
       function finishPyramid() {
@@ -314,11 +343,10 @@
         if (greetingTrack) greetingTrack.style.setProperty("--loader-progress", (greetingProgress * 100) + "%");
       }
       function replayEntrance() {
+        /* Safe: just ensure all appear elements are visible — no flash */
         try {
           var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
-          els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
-          void l.offsetWidth;
-          els.forEach(function (el) { el.style.animation = ""; });
+          els.forEach(function (el) { el.classList.add("is-in"); });
         } catch (e) {}
       }
       function finishGreeting() {
@@ -427,9 +455,9 @@
     function replayHero() {
       try {
         var els = Array.prototype.slice.call(document.querySelectorAll(".page .appear, .page-sub .appear"));
-        els.forEach(function (el) { el.style.animation = "none"; el.classList.remove("is-in"); });
-        void l.offsetWidth;
-        els.forEach(function (el) { el.style.animation = ""; });
+        els.forEach(function (el) { el.classList.add("is-in"); });
+        var heroPhoto = document.querySelector(".hero-photo");
+        if (heroPhoto) heroPhoto.classList.add("is-in");
       } catch (e) {}
     }
     function finish() {
