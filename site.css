@@ -10,7 +10,7 @@
   --copy-max: 860px; --lede-max: 470px;
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: auto; }
 html, body { background: #000000; background: var(--bg, #000000); color: #ffffff; color: var(--text, #ffffff); }
 body {
   font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -319,11 +319,8 @@ form.lead small { color: var(--muted); text-align: center; margin-top: 12px; fon
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; margin-top: 26px; }
 .hero-actions .btn { height: var(--hero-btn-h); padding: 0 18px; }
 .hero .btn-ghost { background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.5) 46%, rgba(150,170,200,0.1)); border: 1px solid rgba(198,198,198,0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-/* hero scroll fade — smooth parallax-like effect */
-.hero.is-scrolling { transition: opacity 0.15s ease-out, transform 0.15s ease-out; }
-.hero-photo.is-scrolling { transition: opacity 0.15s ease-out; }
 /* mobile menu scroll lock — prevents scroll position jump */
-body.menu-open { overflow: hidden; position: fixed; width: 100%; top: 0; left: 0; }
+body.menu-open { overflow: hidden; }
 /* section separator glow */
 .section::before { content: ""; position: absolute; pointer-events: none; left: 50%; top: 0; width: min(880px, 86vw); height: 1px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent); }
 /* smooth focus ring for accessibility */
