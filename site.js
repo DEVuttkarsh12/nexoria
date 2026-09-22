@@ -28,12 +28,17 @@
   var backdrop = document.querySelector(".menu-backdrop");
   var savedScroll = 0;
   function setMenu(open) {
+    var isOpen = document.body.classList.contains("menu-open");
+    if (open === isOpen) return;
     if (open) {
       savedScroll = window.scrollY || window.pageYOffset || 0;
-    }
-    document.body.classList.toggle("menu-open", open);
-    if (!open) {
-      window.scrollTo(0, savedScroll);
+      document.body.classList.add("menu-open");
+    } else {
+      document.body.classList.remove("menu-open");
+      if (savedScroll) {
+        window.scrollTo(0, savedScroll);
+        savedScroll = 0;
+      }
     }
     if (burger) {
       burger.setAttribute("aria-expanded", open ? "true" : "false");
@@ -48,7 +53,11 @@
   if (backdrop) backdrop.addEventListener("click", function () { setMenu(false); });
   if (nav) nav.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setMenu(false); }); });
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") setMenu(false); });
-  window.addEventListener("resize", function () { if (window.matchMedia("(min-width: 901px)").matches) setMenu(false); });
+  window.addEventListener("resize", function () {
+    if (window.matchMedia("(min-width: 901px)").matches && document.body.classList.contains("menu-open")) {
+      setMenu(false);
+    }
+  });
 
   /* secondary site background — separate from the homepage hero video */
   (function contentVideoBackground() {
