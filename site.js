@@ -551,7 +551,7 @@
   var hrs = document.getElementById("hrs"), cost = document.getElementById("cost");
   if (hrs && cost) {
     var hv = document.getElementById("hrsV"), cv = document.getElementById("costV"),
-        ms = document.getElementById("saveMo"), hs = document.getElementById("saveHr"), ro = document.getElementById("roiX");
+        ms = document.getElementById("saveMo"), hs = document.getElementById("saveHr"), yearly = document.getElementById("valueYr");
     function upd() {
       var H = +hrs.value, C = +cost.value;
       if (hv) hv.textContent = H + " hrs/wk";
@@ -559,7 +559,7 @@
       var m = Math.round(H * 4.33 * C * 0.8);
       if (ms) ms.textContent = "$" + m.toLocaleString();
       if (hs) hs.textContent = Math.round(H * 4.33 * 0.8).toLocaleString() + " hrs";
-      if (ro) ro.textContent = (m * 12 / 3900).toFixed(1) + "×";
+      if (yearly) yearly.textContent = "$" + (m * 12).toLocaleString();
     }
     hrs.addEventListener("input", upd); cost.addEventListener("input", upd); upd();
   }
@@ -567,26 +567,25 @@
   /* triage */
   var tri = document.querySelector(".triage");
   if (tri) {
-    var out = document.getElementById("triageOut"), budget = "3-8k", need = "automation";
-    function copy() {
-      var pkg = budget === "under3" ? "Launch" : (need === "software" || budget === "8k+" ? "Empire" : "Autopilot");
-      var time = need === "website" ? "~14 days" : need === "software" ? "4–8 weeks" : "21 days";
-      out.innerHTML = "Suggested fit → <b>" + pkg + "</b> · typical timeline <b>" + time + "</b>. " +
-        (budget === "under3" ? "We start with one sharp win, then compound." : "We map 3 automations in your free audit, then fix-scope the rest.");
-    }
-    tri.querySelectorAll("[data-budget]").forEach(function (b) {
+    var out = document.getElementById("triageOut");
+    var fits = {
+      starter: ["Automation Starter", "$900"],
+      growth: ["Growth System", "$2,250"],
+      revenue: ["Revenue System", "$4,000"],
+      custom: ["Custom Build", "$6,000+"]
+    };
+    tri.querySelectorAll("[data-package-fit]").forEach(function (b) {
       b.addEventListener("click", function () {
-        tri.querySelectorAll("[data-budget]").forEach(function (x) { x.classList.remove("on"); });
-        b.classList.add("on"); budget = b.getAttribute("data-budget"); copy();
+        tri.querySelectorAll("[data-package-fit]").forEach(function (x) {
+          x.classList.remove("on");
+          x.setAttribute("aria-pressed", "false");
+        });
+        b.classList.add("on");
+        b.setAttribute("aria-pressed", "true");
+        var fit = fits[b.getAttribute("data-package-fit")];
+        if (fit && out) out.innerHTML = "Suggested starting point → <b>" + fit[0] + "</b> · from " + fit[1] + ". We’ll confirm your scope and fixed quote after discovery.";
       });
     });
-    tri.querySelectorAll("[data-need]").forEach(function (b) {
-      b.addEventListener("click", function () {
-        tri.querySelectorAll("[data-need]").forEach(function (x) { x.classList.remove("on"); });
-        b.classList.add("on"); need = b.getAttribute("data-need"); copy();
-      });
-    });
-    copy();
   }
 
   /* lead forms — validate, persist, WhatsApp handoff */
