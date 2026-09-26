@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://zykken.com/pricing.html" />
 <meta property="og:site_name" content="zykken" />
 <meta name="twitter:card" content="summary_large_image" />
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"zykken","url":"https://zykken.com/pricing.html","description":"AI automation agency: automation, voice agents, websites, custom software.","priceRange":"$$","email":"hello@zykken.com"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"zykken","url":"https://zykken.com/pricing.html","description":"AI automation agency: automation, voice agents, websites, custom software.","priceRange":"$$","email":"info@zykken.com"}</script>
 <link rel="stylesheet" href="site.css" />
 </head>
 <body>
@@ -172,8 +172,7 @@
 <h2 class="h2">Request your <em>free audit.</em></h2>
 <p class="lede2">One call + one workflow recording = 3 highest-ROI opportunities, fixed-quoted. If we cannot save you 10× our fee in a year, we tell you not to hire us.</p>
 <div class="c-rows">
-<a href="mailto:hello@zykken.com"><span>EMAIL</span><b>hello@zykken.com</b></a>
-<a href="https://wa.me/919000000000"><span>WHATSAPP</span><b>Chat in 5 min →</b></a>
+<a href="mailto:info@zykken.com"><span>EMAIL</span><b>info@zykken.com</b></a>
 <div><span>RESPONSE</span><b>Under 12 hours</b></div>
 <div><span>THIS WEEK</span><b>Tuesday — 2 slots left</b></div>
 </div>
@@ -184,10 +183,10 @@
 <span style="font-size:13px;color:var(--muted)">Joined by 120+ founders who stopped doing ops.</span>
 </div>
 </div>
-<form class="lead" data-reveal action="#" method="post" novalidate>
-<label>NAME<input id="fName" name="name" type="text" placeholder="Aarav Mehta" autocomplete="name" required minlength="2" /><span class="field-err">Please add your name.</span></label>
-<label>EMAIL<input id="fEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" required /><span class="field-err">That email doesn't look right.</span></label>
-<label>PHONE / WHATSAPP<input id="fPhone" name="phone" type="tel" placeholder="+91 90000 00000" autocomplete="tel" /><span class="field-err">Add 7+ digits, or leave blank.</span></label>
+<form class="lead" data-reveal action="/api/contact" method="post" novalidate>
+<label>NAME<input id="fName" name="name" type="text" placeholder="Aarav Mehta" autocomplete="name" required minlength="2" maxlength="120" /><span class="field-err">Please add your name.</span></label>
+<label>EMAIL<input id="fEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" required maxlength="254" /><span class="field-err">That email doesn't look right.</span></label>
+<label>PHONE / WHATSAPP<input id="fPhone" name="phone" type="tel" placeholder="+91 90000 00000" autocomplete="tel" maxlength="40" /><span class="field-err">Add 7+ digits, or leave blank.</span></label>
 <label class="sr-only" aria-hidden="true">COMPANY SITE<input name="company_site" type="text" tabindex="-1" autocomplete="off" /></label>
 <label>I NEED
 <select id="fNeed" name="need">
@@ -223,10 +222,10 @@
 </main>
 <footer class="footer-min"><div class="wrap">
 <div class="foot-grid">
-<div><label>zykken</label><p>Calm AI systems — automation, voice, websites, software. Fixed price, live in weeks. hello@zykken.com</p></div>
+<div><label>zykken</label><p>Calm AI systems — automation, voice, websites, software. Fixed price, live in weeks. info@zykken.com</p></div>
 <div><label>Site</label><a href="services.html">Services</a><a href="work.html">Work</a><a href="about.html">About</a><a href="pricing.html">Pricing</a></div>
 <div><label>Packages</label><a href="pricing.html#automation-starter">Automation Starter</a><a href="pricing.html#growth-system">Growth System</a><a href="pricing.html#revenue-system">Revenue System</a><a href="pricing.html#custom-build">Custom Build</a></div>
-<div><label>Contact</label><a href="mailto:hello@zykken.com">hello@zykken.com</a><a href="#start">Book a call ↗</a><a href="index.html">Home ↗</a></div>
+<div><label>Contact</label><a href="mailto:info@zykken.com">info@zykken.com</a><a href="#start">Book a call ↗</a><a href="index.html">Home ↗</a></div>
 </div>
 <div class="foot-base"><span>© <span class="js-year">2026</span> zykken</span><span>Pricing ● Fixed, fair</span></div>
 </div></footer>

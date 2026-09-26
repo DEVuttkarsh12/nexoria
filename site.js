@@ -588,7 +588,7 @@
     });
   }
 
-  /* lead forms — validate, persist, WhatsApp handoff */
+  /* lead forms — validate and send through the server-side email endpoint */
   function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
   document.querySelectorAll("form.lead").forEach(function (f) {
     var nameEl = f.querySelector('[name="name"]');
@@ -600,15 +600,6 @@
     var okBox = f.parentElement ? f.parentElement.querySelector(".form-ok") : null;
     if (!okBox) okBox = document.getElementById("formOk");
 
-    /* restore draft */
-    try {
-      var draft = JSON.parse(localStorage.getItem("zykken_lead") || "{}");
-      if (draft.name && nameEl && !nameEl.value) nameEl.value = draft.name;
-      if (draft.email && emailEl && !emailEl.value) emailEl.value = draft.email;
-      if (draft.phone && phoneEl && !phoneEl.value) phoneEl.value = draft.phone;
-      if (draft.need && needEl) needEl.value = draft.need;
-    } catch (e) {}
-
     function setErr(input, bad) {
       if (!input) return;
       var lab = input.closest("label");
@@ -619,12 +610,10 @@
       if (inp) inp.addEventListener("input", function () { setErr(inp, false); });
     });
 
-    f.addEventListener("submit", function (e) {
+    f.addEventListener("submit", async function (e) {
       e.preventDefault();
-
-      /* honeypot */
-      var hp = f.querySelector('[name="company_site"]');
-      if (hp && hp.value) return;
+      if (btn && btn.disabled) return;
+      if (okBox) { okBox.classList.remove("show", "error"); okBox.textContent = ""; }
 
       var name = (nameEl && nameEl.value || "").trim();
       var email = (emailEl && emailEl.value || "").trim();
@@ -633,33 +622,49 @@
       var msg = (msgEl && msgEl.value || "").trim();
 
       var bad = false;
-      if (!name || name.length < 2) { setErr(nameEl, true); bad = true; }
-      if (!validEmail(email)) { setErr(emailEl, true); bad = true; }
-      if (phone && phone.replace(/\D/g, "").length < 7) { setErr(phoneEl, true); bad = true; }
+      if (!name || name.length < 2 || name.length > 120) { setErr(nameEl, true); bad = true; }
+      if (!validEmail(email) || email.length > 254) { setErr(emailEl, true); bad = true; }
+      if (phone.length > 40 || (phone && phone.replace(/\D/g, "").length < 7)) { setErr(phoneEl, true); bad = true; }
       if (bad) { toast("Please add your name + a valid email."); return; }
 
-      try { localStorage.setItem("zykken_lead", JSON.stringify({ name: name, email: email, phone: phone, need: needV })); } catch (e) {}
-
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent; btn.textContent = "Sending…"; }
+      try {
+        var response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: name, email: email, phone: phone, need: needV, message: msg,
+            company_site: (f.querySelector('[name="company_site"]') || {}).value || ""
+          })
+        });
+        var result = await response.json().catch(function () { return {}; });
+        if (!response.ok || !result.ok) throw new Error(result.error || "Unable to send your request.");
 
-      var waText = "Hi zykken — I'm " + name + " (" + email + (phone ? ", " + phone : "") + "). I need: " + needV + ". " + (msg ? "Context: " + msg.slice(0, 280) : "Please send my free audit.");
-      var waUrl = "https://wa.me/919000000000?text=" + encodeURIComponent(waText);
-      var mailUrl = "mailto:hello@zykken.com?subject=" + encodeURIComponent("Free audit — " + name) +
-        "&body=" + encodeURIComponent("Name: " + name + "\nEmail: " + email + "\nPhone: " + phone + "\nNeed: " + needV + "\n\n" + msg);
-
-      setTimeout(function () {
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Request audit →"; }
-        toast("Request received — we reply within 12 hours.");
+        toast("Request sent — we'll be in touch soon.");
         if (okBox) {
-          okBox.innerHTML = "Thanks <b>" + name.replace(/</g, "&lt;") + "</b> — audit request saved. We reply to <b>" +
-            email.replace(/</g, "&lt;") + "</b> within 12 hours.<br><span style='display:flex;gap:10px;margin-top:12px;flex-wrap:wrap'>" +
-            "<a class='btn btn-solid' style='height:38px' href='" + waUrl + "'>Continue on WhatsApp</a>" +
-            "<a class='btn btn-ghost' style='height:38px' href='" + mailUrl + "'>Or open email</a></span>";
+          okBox.textContent = "Thanks, " + name + " — your request was sent. We’ll reply to " + email + " soon.";
+          okBox.setAttribute("role", "status");
           okBox.classList.add("show");
           okBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
         }
         f.reset();
-      }, 650);
+        try { localStorage.removeItem("zykken_lead"); } catch (ignore) {}
+      } catch (error) {
+        if (okBox) {
+          okBox.textContent = "We couldn't send your request. Your details are still here — please try again, or email ";
+          var fallback = document.createElement("a");
+          fallback.href = "mailto:info@zykken.com";
+          fallback.textContent = "info@zykken.com";
+          okBox.appendChild(fallback);
+          okBox.appendChild(document.createTextNode("."));
+          okBox.setAttribute("role", "alert");
+          okBox.classList.add("show", "error");
+          okBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+        toast("Could not send. Please try again.");
+      } finally {
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Request audit →"; }
+      }
     });
   });
 
