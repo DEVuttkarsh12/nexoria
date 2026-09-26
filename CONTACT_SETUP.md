@@ -4,7 +4,7 @@ The forms on the homepage and pricing page send to `/api/contact`. That Vercel F
 
 To activate live delivery:
 
-1. In Resend, verify `zykken.com` as a sending domain using the DNS records it provides. The domain currently uses Hostinger name servers, so add those records in Hostinger DNS. Keep the existing Hostinger MX records for incoming mail. A live send test currently returns `403: The zykken.com domain is not verified`.
+1. In Resend, verify `zykken.com` as a sending domain using the DNS records it provides. The domain uses Hostinger name servers, so add those records in Hostinger DNS. Keep the existing Hostinger MX records for incoming mail. The domain was verified on September 26, 2026.
 2. Create a Resend API key with permission to send email. Add it as `RESEND_API_KEY` in the Vercel project hosting `zykken.com`, for Production (and Preview if desired). Keep the key server-side; do not commit it.
 3. Add `RESEND_FROM_EMAIL` in Vercel as `Zykken Website <website@zykken.com>` (or another sender on the verified domain). The destination is fixed in the server code to `info@zykken.com`.
 4. Redeploy. Submit one real test from each form and confirm receipt in `info@zykken.com`, including Spam/Junk. Check the Resend delivery log if a message is accepted but not visible in the mailbox.
