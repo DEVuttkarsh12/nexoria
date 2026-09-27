@@ -1,5 +1,15 @@
 # Hero DitherVeil integration checkpoint
 
+## Responsive site audit
+
+- Before these edits: commit `2750e4734952aedc08536cd36a5a29d2941e3b85`. Branch `codex/checkpoint-pre-responsive-audit` points to that exact version.
+- Goal: make the homepage and secondary pages responsive across phone, tablet, and desktop widths. On smartphones, the hero should fill the viewport while all later homepage sections remain reachable by scrolling.
+- [x] Measured homepage and secondary pages from 280px phones through 1440px desktop, including compact portrait and landscape screens. No horizontal page overflow found.
+- [x] Put the header, hero, and stats in a dedicated viewport-height screen. On phones the artwork sits behind readable copy; from 700px to 900px the hero uses two columns. Compact phone spacing and shared mobile section spacing were adjusted.
+- [x] Verified the mobile menu, the DitherVeil canvas, and scrolling from the first screen to the first content section, including scrolling over the artwork.
+- [x] Final checks: `git diff --check` is clean, the existing contact test suite passes (6/6), and the hero canvas has no browser errors at phone and tablet sizes.
+- [ ] Commit and publish the result and checkpoint branch.
+
 ## Follow-up: frameless artwork
 
 - Before the follow-up edits, `codex/dither-hero` was at commit `6ef13d25ccfb468022285cb4ba3e03a38a30871b`. Branch `codex/checkpoint-pre-frameless-dither` points to that version.
