@@ -1,11 +1,11 @@
 import { createRoot } from "react-dom/client";
-import BlackHole from "../components/ui/optimized-black-hole";
+import GalaxyBackground from "../components/ui/galaxy-background";
 
 const host = document.querySelector<HTMLElement>(".home-main, .page-sub");
 
 if (host) {
   const mount = document.createElement("div");
-  mount.id = "black-hole-root";
+  mount.id = "galaxy-root";
   mount.setAttribute("aria-hidden", "true");
   host.insertBefore(mount, host.firstChild);
 
@@ -18,8 +18,8 @@ if (host) {
   window.addEventListener("resize", positionBelowHero, { passive: true });
 
   createRoot(mount).render(
-    <div className="black-hole-stage">
-      <BlackHole />
+    <div className="galaxy-stage">
+      <GalaxyBackground />
     </div>,
   );
 }

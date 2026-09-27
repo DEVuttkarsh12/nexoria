@@ -1,5 +1,13 @@
 # Hero DitherVeil integration checkpoint
 
+## Falling-star galaxy background
+
+- Before edits: commit `eac2f473643c7b4d52c42d5471963d17d1110b12`; branch `codex/checkpoint-pre-meteor-galaxy` points to this exact version.
+- User requests replacing the black-hole background across all non-hero sections with a tasteful animated galaxy, falling stars, and occasional meteors. Keep text readable and do not change the homepage hero or secondary-page heroes.
+- [x] Replaced the black-hole bundle with a canvas galaxy behind `.home-main` and below `.page-hero` on all four secondary pages. The homepage hero markup and styling are unchanged. Removed the old renderer and assets; the recovery branch preserves them.
+- [x] Browser checks at 1280px and 390px showed the new canvas beginning exactly after each hero, readable section text, no horizontal overflow, and no console errors. Captured frames differ as the stars move. The renderer pauses offscreen and has a static reduced-motion path, though reduced-motion emulation was not available in this browser check. `npm run build:galaxy`, `npm run typecheck`, six contact tests, and `git diff --check` pass.
+- [ ] Commit the finished work and update this checkpoint with the result.
+
 ## Hero galaxy treatment
 
 - Before edits: commit `37afb0540b89a7e5f3d61b429184392502465b2f`. Branch `codex/checkpoint-pre-hero-galaxy` points to this completed black-hole background integration.

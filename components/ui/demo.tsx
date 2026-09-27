@@ -1,4 +1,4 @@
-import Component from "@/components/ui/optimized-black-hole";
+import Component from "@/components/ui/galaxy-background";
 
 export default function Default() {
   return (

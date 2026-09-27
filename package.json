@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "build:hero": "esbuild src/hero-entry.jsx --bundle --minify --jsx=automatic --target=es2020 --outfile=assets/hero-dither.js",
-    "build:black-hole": "esbuild src/black-hole-entry.tsx --bundle --minify --jsx=automatic --target=es2020 --outfile=assets/black-hole.js && tailwindcss -i src/black-hole-tailwind.css -o assets/black-hole-tailwind.css --minify",
+    "build:galaxy": "esbuild src/galaxy-entry.tsx --bundle --minify --jsx=automatic --target=es2020 --outfile=assets/galaxy.js && tailwindcss -i src/galaxy-tailwind.css -o assets/galaxy-tailwind.css --minify",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
