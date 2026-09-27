@@ -6,7 +6,7 @@
 - User now requests a galaxy or neuron-inspired hero background that matches the site and remains visually distinct from the DitherVeil portrait. Keep the new black-hole treatment restricted to non-hero sections.
 - [x] Added `assets/hero-galaxy.svg` as a restrained hero-only constellation and mist layer. It fades before the DitherVeil portrait, and the portrait renderer and markup are unchanged.
 - [x] Checked the homepage at 1280px and 390×844: the portrait stays distinct, the phone hero fills exactly one viewport, the next section remains scrollable, and there is no horizontal overflow. The mobile menu still opens over the hero. Homepage and Services black-hole transitions were checked before this hero styling; no browser console errors were observed. `npm run typecheck`, `npm run build:black-hole`, SVG parsing, and `git diff --check` pass.
-- [ ] Commit and push the finished work and both new recovery branches.
+- [x] Committed the hero layer as `a0ec6ad` and pushed the finished work to `origin/main` and `origin/codex/dither-hero`. Pushed `codex/checkpoint-pre-black-hole-background` and `codex/checkpoint-pre-hero-galaxy` as recovery branches.
 
 ## Black-hole background integration
 
