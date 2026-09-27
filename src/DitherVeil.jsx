@@ -362,7 +362,10 @@ void main() {
   vec2 aspect = vec2(uResolution.x / uResolution.y, 1.0);
   float spread = length((cellUv - 0.5) * aspect) / length(aspect * 0.5);
   float appear = step(spread * 0.72 + bayer(cell + vec2(3.0, 5.0)) * 0.28, uIntro * 1.001);
-  fragColor = vec4(mix(uInk, color, appear), 1.0);
+  vec3 finalColor = mix(uInk, color, appear);
+  float contrastFromInk = max(max(abs(finalColor.r - uInk.r), abs(finalColor.g - uInk.g)), abs(finalColor.b - uInk.b));
+  float opacity = smoothstep(0.015, 0.075, contrastFromInk);
+  fragColor = vec4(finalColor, opacity);
 }
 `;
 
@@ -421,8 +424,9 @@ const DitherVeil = ({
     if (!container) return undefined;
 
     const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-    const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio || 1, 2), alpha: false, antialias: false });
+    const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio || 1, 2), alpha: true, antialias: false });
     const gl = renderer.gl;
+    gl.clearColor(0, 0, 0, 0);
     const canvas = gl.canvas;
     canvas.style.display = 'block';
     canvas.style.width = '100%';

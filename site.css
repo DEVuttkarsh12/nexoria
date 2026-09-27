@@ -328,9 +328,9 @@ form.lead small { color: var(--muted); text-align: center; margin-top: 12px; fon
 }
 @media (max-width: 560px) { :root { --h1: 34px; --header-x: 16px; } .team { grid-template-columns: 1fr; } .page-hero .hero-actions .btn { width: 100%; } .case-vis { min-height: 180px; } .retainer-grid { grid-template-columns: 1fr; } }
 /* Home hero: copy and interactive artwork. */
-.page { position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh; background: radial-gradient(ellipse 60% 70% at 83% 42%, rgba(67,57,83,0.18), transparent 74%), #050506; }
+.page { position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh; background: radial-gradient(ellipse 58% 65% at 74% 43%, rgba(96,108,132,0.10), transparent 75%), #050506; }
 .hero-screen { display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; min-height: 100dvh; }
-.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr); align-items: center; gap: clamp(30px, 5vw, 88px); width: 100%; max-width: 1480px; margin: 0 auto; padding: 30px clamp(28px, 5vw, 80px) 40px; min-height: 0; flex: 1 0 auto; }
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: clamp(24px, 3.5vw, 60px); width: 100%; max-width: 1540px; margin: 0 auto; padding: 24px clamp(28px, 4vw, 72px) 34px; min-height: 0; flex: 1 0 auto; }
 .hero-copy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; max-width: 680px; width: 100%; min-width: 0; }
 .hero h1 { font-weight: 540; letter-spacing: -0.047em; line-height: 1.08; color: #fff; font-size: clamp(42px, 4.2vw, 70px); display: block; text-align: left; width: 100%; }
 .headline-line { display: block; overflow: hidden; padding: 0.06em 0 0.14em; }
@@ -339,9 +339,10 @@ form.lead small { color: var(--muted); text-align: center; margin-top: 12px; fon
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 10px; margin-top: 26px; }
 .hero-actions .btn { height: var(--hero-btn-h); padding: 0 18px; }
 .hero .btn-ghost { background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(0,0,0,0.5) 46%, rgba(150,170,200,0.1)); border: 1px solid rgba(198,198,198,0.55); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-.hero-visual { position: relative; min-width: 0; height: clamp(430px, 65vh, 700px); overflow: hidden; background: transparent; -webkit-mask-image: radial-gradient(ellipse 63% 68% at 50% 50%, #000 58%, transparent 100%); mask-image: radial-gradient(ellipse 63% 68% at 50% 50%, #000 58%, transparent 100%); }
+.hero-visual { position: relative; min-width: 0; height: clamp(500px, 78vh, 820px); overflow: hidden; background: transparent; -webkit-mask-image: radial-gradient(ellipse 78% 80% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 78% 80% at 50% 50%, #000 62%, transparent 100%); }
 .hero-visual-fallback, .hero-dither-root { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero-visual-fallback { object-fit: contain; }
+.hero-visual-fallback { object-fit: contain; mix-blend-mode: screen; transition: opacity 0.35s ease; }
+.hero-visual.is-ready .hero-visual-fallback { opacity: 0; }
 .hero-dither-root { opacity: 0; transition: opacity 0.35s ease; }
 .hero-visual.is-ready .hero-dither-root { opacity: 1; }
 /* mobile menu scroll lock — prevents scroll position jump */
@@ -466,7 +467,7 @@ form.lead .btn[disabled] { opacity: 0.65; cursor: wait; }
   .hero .lede { margin-top: 10px; max-width: 410px; font-size: clamp(13px, 3.7vw, 15px); line-height: 1.48; color: #dedede; }
   .hero-actions { margin-top: 16px; gap: 8px; }
   .hero-actions .btn { height: 40px; padding: 0 14px; font-size: 12.5px; }
-  .hero-visual { position: absolute; z-index: 0; inset: 0 0 auto; width: 100%; height: min(70svh, 560px); opacity: 0.86; -webkit-mask-image: radial-gradient(ellipse 82% 65% at 50% 30%, #000 48%, transparent 100%); mask-image: radial-gradient(ellipse 82% 65% at 50% 30%, #000 48%, transparent 100%); }
+  .hero-visual { position: absolute; z-index: 0; inset: -24px auto auto 50%; width: min(125vw, 700px); height: min(82svh, 680px); transform: translateX(-50%); opacity: 0.9; -webkit-mask-image: radial-gradient(ellipse 90% 72% at 50% 32%, #000 53%, transparent 100%); mask-image: radial-gradient(ellipse 90% 72% at 50% 32%, #000 53%, transparent 100%); }
   .hero-screen .stats { position: relative; z-index: 2; padding-bottom: max(16px, env(safe-area-inset-bottom)); }
   .home-main .section, .page-sub .section { padding: 54px 0; }
   .page-hero { padding: 64px 0 44px; }
@@ -476,7 +477,7 @@ form.lead .btn[disabled] { opacity: 0.65; cursor: wait; }
 @media (min-width: 700px) and (max-width: 900px) {
   .hero { grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr); gap: 24px; padding: 20px 28px; }
   .hero h1 { font-size: clamp(36px, 4.6vw, 46px); }
-  .hero-visual { height: min(64svh, 550px); }
+  .hero-visual { height: min(70svh, 610px); }
 }
 @media (max-width: 420px) {
   .hero-screen .stats { gap: 4px; padding: 6px 16px max(12px, env(safe-area-inset-bottom)); }
@@ -492,7 +493,7 @@ form.lead .btn[disabled] { opacity: 0.65; cursor: wait; }
   .hero .lede { margin-top: 5px; font-size: 11.5px; line-height: 1.35; }
   .hero-actions { margin-top: 9px; }
   .hero-actions .btn { height: 34px; padding: 0 11px; font-size: 11px; }
-  .hero-visual { position: relative; inset: auto; width: 100%; height: min(58svh, 290px); opacity: 1; -webkit-mask-image: radial-gradient(ellipse 63% 68% at 50% 50%, #000 58%, transparent 100%); mask-image: radial-gradient(ellipse 63% 68% at 50% 50%, #000 58%, transparent 100%); }
+  .hero-visual { position: relative; inset: auto; width: 100%; height: min(64svh, 320px); transform: none; opacity: 1; -webkit-mask-image: radial-gradient(ellipse 78% 80% at 50% 50%, #000 62%, transparent 100%); mask-image: radial-gradient(ellipse 78% 80% at 50% 50%, #000 62%, transparent 100%); }
   .hero-screen .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; padding: 0 18px 10px; }
   .hero-screen .stat { justify-content: center; white-space: normal; text-align: center; font-size: 10px; }
 }
