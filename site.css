@@ -330,7 +330,10 @@ form.lead small { color: var(--muted); text-align: center; margin-top: 12px; fon
 /* Home hero: copy and interactive artwork. */
 .page { position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh; background: radial-gradient(ellipse 58% 65% at 74% 43%, rgba(96,108,132,0.10), transparent 75%), #050506; }
 .hero-screen { position: relative; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; min-height: 100dvh; }
-.hero-screen::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: url("assets/hero-galaxy.svg") center / 100% 100% no-repeat; opacity: 0.72; -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); }
+.hero-screen::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: url("assets/hero-galaxy.svg") center / 100% 100% no-repeat; opacity: 0.72; -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); animation: hero-neuron-drift 16s ease-in-out infinite alternate; }
+.hero-screen::after { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: radial-gradient(circle at 11.5% 24.3%, rgba(212,231,255,0.42) 0 1px, rgba(132,180,237,0.17) 3px, transparent 22px), radial-gradient(circle at 27.1% 23.8%, rgba(212,231,255,0.38) 0 1px, rgba(132,180,237,0.14) 3px, transparent 20px), radial-gradient(circle at 19.2% 60.3%, rgba(212,231,255,0.38) 0 1px, rgba(132,180,237,0.14) 3px, transparent 20px), radial-gradient(circle at 40.4% 77.4%, rgba(212,231,255,0.34) 0 1px, rgba(132,180,237,0.12) 3px, transparent 18px); opacity: 0.28; -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); animation: hero-neuron-signal 6s ease-in-out infinite alternate; }
+@keyframes hero-neuron-drift { from { transform: translate3d(-3px, 2px, 0) scale(1.01); opacity: 0.68; } to { transform: translate3d(5px, -4px, 0) scale(1.02); opacity: 0.80; } }
+@keyframes hero-neuron-signal { from { opacity: 0.16; } to { opacity: 0.48; } }
 .hero-screen > .header { position: relative; z-index: 50; }
 .hero-screen > .hero, .hero-screen > .stats { position: relative; z-index: 1; }
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: clamp(24px, 3.5vw, 60px); width: 100%; max-width: 1540px; margin: 0 auto; padding: 24px clamp(28px, 4vw, 72px) 34px; min-height: 0; flex: 1 0 auto; }
@@ -592,5 +595,6 @@ body.is-loading { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   #loader { display: none; }
   .loader-greetings > span, .loader-mast, .loader-foot, .loader-aura, .loader-stage::before, .loader-stage::after, .loader-progress::after { animation: none !important; transition: none !important; }
+  .hero-screen::before, .hero-screen::after { animation: none !important; }
   .home-main::before, .page-sub::before { animation: none !important; }
 }

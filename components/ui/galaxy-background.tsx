@@ -23,7 +23,7 @@ export default function GalaxyBackground() {
   }, []);
 
   return (
-    <div className="relative h-full w-full overflow-hidden bg-[#03050b]">
+    <div className="relative h-full w-full overflow-hidden bg-[#010204]">
       <canvas
         ref={canvasRef}
         aria-hidden="true"

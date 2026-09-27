@@ -66,19 +66,19 @@ export function createRenderer(canvas: HTMLCanvasElement): Renderer {
     backdrop.width = width;
     backdrop.height = height;
     if (backdropContext) {
-      backdropContext.fillStyle = "#03050b";
+      backdropContext.fillStyle = "#010204";
       backdropContext.fillRect(0, 0, width, height);
 
       // Keep the brightest nebulae near the sides, away from the main copy.
       const span = Math.max(width, height);
-      addGlow(width * 0.08, height * 0.22, span * 0.7, "rgba(26,57,92,0.38)");
-      addGlow(width * 0.94, height * 0.72, span * 0.65, "rgba(66,42,88,0.32)");
-      addGlow(width * 0.63, height * 1.08, span * 0.57, "rgba(24,61,83,0.16)");
+      addGlow(width * 0.08, height * 0.22, span * 0.7, "rgba(26,57,92,0.20)");
+      addGlow(width * 0.94, height * 0.72, span * 0.65, "rgba(66,42,88,0.17)");
+      addGlow(width * 0.63, height * 1.08, span * 0.57, "rgba(24,61,83,0.08)");
       backdropContext.save();
       backdropContext.translate(width * 0.87, height * 0.52);
       backdropContext.rotate(-0.35);
       backdropContext.scale(0.35, 1.08);
-      addGlow(0, 0, span * 0.69, "rgba(93,105,153,0.17)");
+      addGlow(0, 0, span * 0.69, "rgba(93,105,153,0.09)");
       backdropContext.restore();
 
       const edge = backdropContext.createRadialGradient(
@@ -102,14 +102,14 @@ export function createRenderer(canvas: HTMLCanvasElement): Renderer {
       }
     }
 
-    const count = Math.min(160, Math.max(75, Math.round(width * height / 7600)));
+    const count = Math.min(185, Math.max(90, Math.round(width * height / 6800)));
     stars = Array.from({ length: count }, () => {
       const x = random() * width;
       return {
         x,
         y: random() * height,
-        radius: random() > 0.91 ? 1.45 : 0.45 + random() * 0.65,
-        opacity: (0.11 + random() * 0.27) * (x > width * 0.24 && x < width * 0.76 ? 0.68 : 1),
+        radius: random() > 0.93 ? 1.55 : 0.48 + random() * 0.7,
+        opacity: (0.19 + random() * 0.31) * (x > width * 0.24 && x < width * 0.76 ? 0.76 : 1),
         fallSpeed: 3 + random() * 10,
         phase: random() * Math.PI * 2,
         shimmer: 0.6 + random() * 1.1,
@@ -158,14 +158,14 @@ export function createRenderer(canvas: HTMLCanvasElement): Renderer {
     resize();
     if (backdropContext) context.drawImage(backdrop, 0, 0, width, height);
     else {
-      context.fillStyle = "#03050b";
+      context.fillStyle = "#010204";
       context.fillRect(0, 0, width, height);
     }
 
     for (const star of stars) {
       if (!reducedMotion.matches) star.y = (star.y + star.fallSpeed * elapsed) % height;
       const pulse = reducedMotion.matches ? 1 : 0.82 + 0.18 * Math.sin(now * 0.001 * star.shimmer + star.phase);
-      context.fillStyle = `rgba(195,215,248,${Math.max(0, star.opacity * pulse).toFixed(3)})`;
+      context.fillStyle = `rgba(210,225,251,${Math.max(0, star.opacity * pulse).toFixed(3)})`;
       context.beginPath();
       context.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
       context.fill();
