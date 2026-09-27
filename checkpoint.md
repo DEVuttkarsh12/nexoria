@@ -6,7 +6,7 @@
 - User requested removing the visible frame around DitherVeil so the artwork sits directly on the hero background, then pushing the result to GitHub.
 - [x] Removed the artwork border, rounded card, shadow, and overlaid caption. The dither uses the hero background colour and fades at its edges.
 - [x] Verified the canvas, desktop side-by-side layout, mobile stacked layout, no horizontal overflow, no browser errors, and click-to-reveal colour interaction.
-- [ ] Commit and push `codex/dither-hero` to `origin`.
+- [x] Committed the frameless change as `cb46e1c` and pushed `codex/dither-hero` to `origin`. Also pushed `codex/checkpoint-pre-frameless-dither` so the previous framed version is recoverable from GitHub.
 
 ## Recovery point
 
