@@ -329,7 +329,10 @@ form.lead small { color: var(--muted); text-align: center; margin-top: 12px; fon
 @media (max-width: 560px) { :root { --h1: 34px; --header-x: 16px; } .team { grid-template-columns: 1fr; } .page-hero .hero-actions .btn { width: 100%; } .case-vis { min-height: 180px; } .retainer-grid { grid-template-columns: 1fr; } }
 /* Home hero: copy and interactive artwork. */
 .page { position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh; background: radial-gradient(ellipse 58% 65% at 74% 43%, rgba(96,108,132,0.10), transparent 75%), #050506; }
-.hero-screen { display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; min-height: 100dvh; }
+.hero-screen { position: relative; display: flex; flex-direction: column; min-height: 100vh; min-height: 100svh; min-height: 100dvh; }
+.hero-screen::before { content: ""; position: absolute; z-index: 0; inset: 0; pointer-events: none; background: url("assets/hero-galaxy.svg") center / 100% 100% no-repeat; opacity: 0.72; -webkit-mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); mask-image: linear-gradient(90deg, #000 0%, #000 42%, transparent 76%); }
+.hero-screen > .header { position: relative; z-index: 50; }
+.hero-screen > .hero, .hero-screen > .stats { position: relative; z-index: 1; }
 .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); align-items: center; gap: clamp(24px, 3.5vw, 60px); width: 100%; max-width: 1540px; margin: 0 auto; padding: 24px clamp(28px, 4vw, 72px) 34px; min-height: 0; flex: 1 0 auto; }
 .hero-copy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; text-align: left; max-width: 680px; width: 100%; min-width: 0; }
 .hero h1 { font-weight: 540; letter-spacing: -0.047em; line-height: 1.08; color: #fff; font-size: clamp(42px, 4.2vw, 70px); display: block; text-align: left; width: 100%; }

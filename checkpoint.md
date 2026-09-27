@@ -1,5 +1,13 @@
 # Hero DitherVeil integration checkpoint
 
+## Hero galaxy treatment
+
+- Before edits: commit `37afb0540b89a7e5f3d61b429184392502465b2f`. Branch `codex/checkpoint-pre-hero-galaxy` points to this completed black-hole background integration.
+- User now requests a galaxy or neuron-inspired hero background that matches the site and remains visually distinct from the DitherVeil portrait. Keep the new black-hole treatment restricted to non-hero sections.
+- [x] Added `assets/hero-galaxy.svg` as a restrained hero-only constellation and mist layer. It fades before the DitherVeil portrait, and the portrait renderer and markup are unchanged.
+- [x] Checked the homepage at 1280px and 390×844: the portrait stays distinct, the phone hero fills exactly one viewport, the next section remains scrollable, and there is no horizontal overflow. The mobile menu still opens over the hero. Homepage and Services black-hole transitions were checked before this hero styling; no browser console errors were observed. `npm run typecheck`, `npm run build:black-hole`, SVG parsing, and `git diff --check` pass.
+- [ ] Commit and push the finished work and both new recovery branches.
+
 ## Black-hole background integration
 
 - Before edits: commit `154a54c8587d0bb3ecc0052ddf1583ce1ede89a6`. Branch `codex/checkpoint-pre-black-hole-background` points to this version.
@@ -8,7 +16,7 @@
 - [x] Added TypeScript, Tailwind without Preflight, `components/ui`, the supplied TSX component, an isolated demo, and a self-contained WebGL renderer. The static JS/CSS assets build and `npm run typecheck` passes.
 - [x] Replaced the existing secondary-section video background with the new component on the homepage and all four secondary pages. The homepage hero source, markup, and styles are untouched at this stage.
 - [x] Browser checks showed the background begins exactly below the homepage and Services heroes, follows pointer movement, stays behind readable content, and has no console errors. Mobile Services at 390px has no horizontal overflow. The 6 contact tests pass and `git diff --check` is clean.
-- [ ] Commit this integration and save a new checkpoint before the requested hero galaxy treatment.
+- [x] Committed the integration as `37afb0540b89a7e5f3d61b429184392502465b2f` and created `codex/checkpoint-pre-hero-galaxy` before changing hero styling.
 
 ## Hover reveal repair
 
