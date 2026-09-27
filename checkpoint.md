@@ -7,7 +7,7 @@
 - [x] Enabled WebGL alpha and made ink-coloured pixels transparent, so the shared hero background shows through the canvas. The static image fallback fades out once the canvas is ready.
 - [x] Increased the artwork's desktop column and height, expanded the phone artwork behind the copy, and kept a restrained cool glow behind the whole hero. No star field was added.
 - [x] Rebuilt `assets/hero-dither.js`. Browser checks at 280×500, 390×844, 768×1024, and 1440×900 showed the artwork without a visible panel edge, no horizontal overflow, and no console errors. On phones, the next section starts exactly one viewport below the top and scrolling over the artwork reaches it.
-- [ ] Commit and publish the change and recovery branch; record the pushed commit below.
+- [x] Committed as `17266b66912d8c68b4ccf67e38fde067140c136d` and pushed to `origin/main` and `origin/codex/dither-hero`. Pushed `codex/checkpoint-pre-seamless-hero` as the recovery branch.
 
 ## Zykken logo replacement
 
