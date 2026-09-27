@@ -7,11 +7,12 @@
 - [x] Removed the artwork border, rounded card, shadow, and overlaid caption. The dither uses the hero background colour and fades at its edges.
 - [x] Verified the canvas, desktop side-by-side layout, mobile stacked layout, no horizontal overflow, no browser errors, and click-to-reveal colour interaction.
 - [x] Committed the frameless change as `cb46e1c` and pushed `codex/dither-hero` to `origin`. Also pushed `codex/checkpoint-pre-frameless-dither` so the previous framed version is recoverable from GitHub.
+- [x] Published the frameless version to `origin/main` on 2026-09-27. `main` and `codex/dither-hero` now include the hero change.
 
 ## Recovery point
 
 - Before changes: commit `b9fff5c3db7168b6b9f24bdf214842c15fd2481b` on `main`.
-- Git branch `codex/checkpoint-pre-dither-hero` points to that exact commit. Implementation is on `codex/dither-hero`. To see the original site again after saving any new work, run `git switch main` (or `git switch codex/checkpoint-pre-dither-hero`). Switch back to `codex/dither-hero` to see this version.
+- Git branch `codex/checkpoint-pre-dither-hero` points to that exact commit. The current implementation is on `main` and `codex/dither-hero`. To see the original site again after saving any new work, run `git switch codex/checkpoint-pre-dither-hero`. Switch to `codex/checkpoint-pre-frameless-dither` for the earlier framed version.
 - `framer-shim.js` was already untracked before this task and is unrelated. Leave it in place.
 
 ## Requested result
