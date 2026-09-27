@@ -6,7 +6,7 @@
 - User requests a blacker non-hero galaxy with slightly brighter stars, still minimal and readable. Add restrained motion to the existing hero neuron pattern without changing its layout or DitherVeil artwork.
 - [x] Darkened the non-hero canvas base and nebulae while raising star count and brightness. Gently strengthened the existing hero lines and nodes, and added slow drift plus node pulses; reduced-motion CSS disables both animations.
 - [x] Browser checks at 1280px and 390×844 showed readable copy, clearer stars on a blacker background, no horizontal overflow, and the galaxy beginning exactly after the full-screen phone hero. Computed hero transform and pulse opacity changed over time. No browser console errors appeared. `npm run build:galaxy`, `npm run typecheck`, SVG parsing, and `git diff --check` pass.
-- [ ] Commit and push the finished work and the recovery branch.
+- [x] Committed the visual update as `1b57e30` and pushed it to `origin/main` and `origin/codex/dither-hero`. Pushed `codex/checkpoint-pre-black-galaxy-neuron-motion` as the recovery branch.
 
 ## Falling-star galaxy background
 
