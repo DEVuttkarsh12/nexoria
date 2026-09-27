@@ -8,7 +8,7 @@
 - [x] Put the header, hero, and stats in a dedicated viewport-height screen. On phones the artwork sits behind readable copy; from 700px to 900px the hero uses two columns. Compact phone spacing and shared mobile section spacing were adjusted.
 - [x] Verified the mobile menu, the DitherVeil canvas, and scrolling from the first screen to the first content section, including scrolling over the artwork.
 - [x] Final checks: `git diff --check` is clean, the existing contact test suite passes (6/6), and the hero canvas has no browser errors at phone and tablet sizes.
-- [ ] Commit and publish the result and checkpoint branch.
+- [x] Committed the responsive changes as `b4f1dc0` and pushed them to `origin/main` and `origin/codex/dither-hero`. Pushed `codex/checkpoint-pre-responsive-audit` as the recovery branch.
 
 ## Follow-up: frameless artwork
 
