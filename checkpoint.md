@@ -6,7 +6,7 @@
 - User requests replacing the black-hole background across all non-hero sections with a tasteful animated galaxy, falling stars, and occasional meteors. Keep text readable and do not change the homepage hero or secondary-page heroes.
 - [x] Replaced the black-hole bundle with a canvas galaxy behind `.home-main` and below `.page-hero` on all four secondary pages. The homepage hero markup and styling are unchanged. Removed the old renderer and assets; the recovery branch preserves them.
 - [x] Browser checks at 1280px and 390px showed the new canvas beginning exactly after each hero, readable section text, no horizontal overflow, and no console errors. Captured frames differ as the stars move. The renderer pauses offscreen and has a static reduced-motion path, though reduced-motion emulation was not available in this browser check. `npm run build:galaxy`, `npm run typecheck`, six contact tests, and `git diff --check` pass.
-- [ ] Commit the finished work and update this checkpoint with the result.
+- [x] Committed the implementation as `672ab2c` and pushed it to `origin/main` and `origin/codex/dither-hero`. Pushed `codex/checkpoint-pre-meteor-galaxy` so the previous black-hole version remains recoverable.
 
 ## Hero galaxy treatment
 
