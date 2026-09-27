@@ -1,7 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "build:hero": "esbuild src/hero-entry.jsx --bundle --minify --jsx=automatic --target=es2020 --outfile=assets/hero-dither.js"
+    "build:hero": "esbuild src/hero-entry.jsx --bundle --minify --jsx=automatic --target=es2020 --outfile=assets/hero-dither.js",
+    "build:black-hole": "esbuild src/black-hole-entry.tsx --bundle --minify --jsx=automatic --target=es2020 --outfile=assets/black-hole.js && tailwindcss -i src/black-hole-tailwind.css -o assets/black-hole-tailwind.css --minify",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "ogl": "^1.0.11",
@@ -9,6 +11,11 @@
     "react-dom": "^19.1.1"
   },
   "devDependencies": {
-    "esbuild": "^0.25.9"
+    "@tailwindcss/cli": "^4.3.3",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.25.9",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2"
   }
 }

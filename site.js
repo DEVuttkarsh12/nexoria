@@ -59,37 +59,6 @@
     }
   });
 
-  /* secondary site background — separate from the homepage hero video */
-  (function contentVideoBackground() {
-    var host = document.querySelector(".home-main, .page-sub");
-    if (!host || host.querySelector(".content-video-bg")) return;
-
-    var shell = document.createElement("div");
-    shell.className = "content-video-bg";
-    shell.setAttribute("aria-hidden", "true");
-
-    var stage = document.createElement("div");
-    stage.className = "content-video-stage";
-
-    var video = document.createElement("video");
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = "metadata";
-    video.tabIndex = -1;
-    video.src = "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260723_145606_ab143199-b593-4941-bb1b-9afca215416b.mp4";
-
-    function reveal() { shell.classList.add("is-ready"); }
-    video.addEventListener("canplay", reveal, { once: true });
-    video.addEventListener("error", function () { shell.classList.add("has-error"); }, { once: true });
-
-    stage.appendChild(video);
-    shell.appendChild(stage);
-    host.insertBefore(shell, host.firstChild);
-    if (video.readyState >= 2) reveal();
-  })();
-
   /* auto active link fallback (in case markup missed) */
   try {
     var path = (location.pathname.split("/").pop() || "index.html").toLowerCase();

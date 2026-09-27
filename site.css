@@ -360,6 +360,8 @@ img { max-width: 100%; height: auto; }
 .stat svg.stat-icon-wide { width: 38px; height: 21px; }
 /* home detail sections */
 .home-main { position: relative; z-index: 2; isolation: isolate; border-top: 1px solid rgba(255,255,255,0.12); background: #020202; }
+.home-main > #black-hole-root, .page-sub > #black-hole-root { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.black-hole-stage { position: sticky; top: 0; width: 100%; height: 100vh; height: 100dvh; overflow: hidden; pointer-events: none; }
 .home-main::before { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; background: radial-gradient(ellipse 50% 20% at 10% 10%, rgba(92,120,154,0.10), transparent 72%), radial-gradient(ellipse 44% 19% at 92% 30%, rgba(122,96,142,0.08), transparent 72%), radial-gradient(ellipse 52% 21% at 16% 62%, rgba(70,108,124,0.07), transparent 74%), radial-gradient(ellipse 46% 18% at 88% 88%, rgba(138,118,86,0.06), transparent 72%); }
 .home-main::after { content: ""; position: absolute; z-index: 1; inset: 0; pointer-events: none; opacity: 0.10; background-image: linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px); background-size: 84px 84px; -webkit-mask-image: linear-gradient(to bottom, #000, transparent 28%, transparent 76%, #000); mask-image: linear-gradient(to bottom, #000, transparent 28%, transparent 76%, #000); }
 .home-main > * { position: relative; z-index: 2; }

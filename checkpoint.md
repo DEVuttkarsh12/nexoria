@@ -1,5 +1,15 @@
 # Hero DitherVeil integration checkpoint
 
+## Black-hole background integration
+
+- Before edits: commit `154a54c8587d0bb3ecc0052ddf1583ce1ede89a6`. Branch `codex/checkpoint-pre-black-hole-background` points to this version.
+- The provided TSX component imports a renderer that was not supplied. This repository is static HTML/CSS/JS with a small React bundle, and has no Tailwind, TypeScript, or shadcn structure yet.
+- Goal: add the component and a self-contained interactive renderer under `components/ui`, then show it behind all non-hero sections across the site. Keep the existing homepage hero untouched.
+- [x] Added TypeScript, Tailwind without Preflight, `components/ui`, the supplied TSX component, an isolated demo, and a self-contained WebGL renderer. The static JS/CSS assets build and `npm run typecheck` passes.
+- [x] Replaced the existing secondary-section video background with the new component on the homepage and all four secondary pages. The homepage hero source, markup, and styles are untouched at this stage.
+- [x] Browser checks showed the background begins exactly below the homepage and Services heroes, follows pointer movement, stays behind readable content, and has no console errors. Mobile Services at 390px has no horizontal overflow. The 6 contact tests pass and `git diff --check` is clean.
+- [ ] Commit this integration and save a new checkpoint before the requested hero galaxy treatment.
+
 ## Hover reveal repair
 
 - Before edits: commit `2d3d3d212f4f59d5ab163bf9c5fd0a69d6f5e8ce`. Branch `codex/checkpoint-pre-hover-restore` points to this version.
