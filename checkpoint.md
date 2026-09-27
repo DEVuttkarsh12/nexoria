@@ -1,5 +1,16 @@
 # Hero DitherVeil integration checkpoint
 
+## Zykken logo replacement
+
+- Before edits: commit `ee159c468192c057b99bf16832e0c36dde88f643`. Branch `codex/checkpoint-pre-logo-replacement` points to that version.
+- User identified the current two-line mark as incorrect and requested the actual supplied Zykken logo everywhere, including the icon shown in the screenshot.
+- The user supplied three 1600×1600 JPEG logo variations: white mark and wordmark, white mark, and black mark. They are preserved in `assets/zykken-*.jpg`.
+- [x] Replaced the two-line mark in the headers, greeting loaders, and favicons on all six HTML pages; replaced footer brand text on the five content pages. The visible site uses cropped areas of the supplied logo images, and the favicon embeds the supplied white mark.
+- [x] Added the supplied full logo as the social preview image on the five content pages, and updated the local static server to serve SVG favicons.
+- [x] Browser checks: homepage and Services render the new header mark at phone width with no horizontal overflow; header, loader, footer, favicon, and social image references are present. The SVG favicon and all three source JPGs return HTTP 200 with the expected MIME types. A fresh homepage load and the Services page had no console errors.
+- [x] `git diff --check` is clean and the existing contact test suite passes (6/6).
+- [ ] Commit and publish the logo replacement and checkpoint branch; record the pushed commit below.
+
 ## Responsive site audit
 
 - Before these edits: commit `2750e4734952aedc08536cd36a5a29d2941e3b85`. Branch `codex/checkpoint-pre-responsive-audit` points to that exact version.
