@@ -357,14 +357,15 @@ void main() {
   float order = bayer(cell.yx);
   float low = order * (1.0 - uRim);
   color = mix(color, uRimColor, step(low, shown) * step(0.001, uRim));
-  color = mix(color, photo, step(low + uRim, shown));
+  float photoReveal = step(low + uRim, shown);
+  color = mix(color, photo, photoReveal);
 
   vec2 aspect = vec2(uResolution.x / uResolution.y, 1.0);
   float spread = length((cellUv - 0.5) * aspect) / length(aspect * 0.5);
   float appear = step(spread * 0.72 + bayer(cell + vec2(3.0, 5.0)) * 0.28, uIntro * 1.001);
   vec3 finalColor = mix(uInk, color, appear);
   float contrastFromInk = max(max(abs(finalColor.r - uInk.r), abs(finalColor.g - uInk.g)), abs(finalColor.b - uInk.b));
-  float opacity = smoothstep(0.015, 0.075, contrastFromInk);
+  float opacity = max(smoothstep(0.015, 0.075, contrastFromInk), photoReveal * within(photoUv) * appear);
   fragColor = vec4(finalColor, opacity);
 }
 `;

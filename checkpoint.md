@@ -1,5 +1,13 @@
 # Hero DitherVeil integration checkpoint
 
+## Hover reveal repair
+
+- Before edits: commit `2d3d3d212f4f59d5ab163bf9c5fd0a69d6f5e8ce`. Branch `codex/checkpoint-pre-hover-restore` points to this version.
+- The user reported that hover no longer behaves as before. The recent transparent-canvas shader hides dark pixels in the colour reveal; preserve transparency for the idle artwork while restoring opacity to the hover-revealed photo.
+- [x] Updated only the hover reveal shader and rebuilt `assets/hero-dither.js`. Revealed photo pixels regain full opacity while unrevealed ink pixels remain transparent.
+- [x] Verified pointer-only colour reveal in the local browser, the idle artwork, and no browser errors. `git diff --check` is clean; no layout or other site files changed.
+- [x] Saved this focused change on `codex/dither-hero` and pushed it with the recovery branch to GitHub.
+
 ## Seamless hero artwork follow-up
 
 - Before edits: commit `5c5049b54f7bc1479e9811d3fac73cfadbd7611a`. Branch `codex/checkpoint-pre-seamless-hero` points to this version.
