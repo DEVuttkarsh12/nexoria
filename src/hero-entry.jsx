@@ -13,7 +13,7 @@ if (mount && visual && document.createElement('canvas').getContext('webgl2')) {
       fit="contain"
       pattern="floyd"
       pixelSize={2}
-      inkColor="#111115"
+      inkColor="#050506"
       paperColor="#e7e5df"
       revealRadius={165}
       softness={0.7}
