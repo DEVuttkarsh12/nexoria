@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&family=Instrument+Serif:ital@1&display=swap" />
 <link rel="stylesheet" href="site.css" />
+<link rel="stylesheet" href="assets/hero-dither.css" />
 </head>
 <body>
 <div id="loader" aria-hidden="true">
@@ -32,11 +33,6 @@
   </div>
 </div>
 <div class="grain" aria-hidden="true"></div>
-<div class="hero-photo" aria-hidden="true">
-  <video autoplay muted loop playsinline preload="metadata" tabindex="-1">
-    <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260808_112712_da9d53df-6d27-4b12-bdf6-aa9dc2622bdf.mp4" type="video/mp4" />
-  </video>
-</div>
 <div class="page">
   <div class="menu-backdrop" aria-hidden="true"></div>
   <header class="header">
@@ -62,14 +58,19 @@
         Operational AI Agency
       </span>
       <h1>
-        <span class="headline-line appear appear--mask" style="--d:0.42s"><span>Build <em>AI systems</em> that</span></span>
-        <span class="headline-line appear appear--mask" style="--d:0.62s"><span>print revenue fast.</span></span>
+        <span class="headline-line appear appear--mask" style="--d:0.42s"><span>Build <em>AI systems</em></span></span>
+        <span class="headline-line appear appear--mask" style="--d:0.62s"><span>that print revenue fast.</span></span>
       </h1>
       <p class="lede appear appear--soft" style="--d:0.82s;animation-duration:1.25s">zykken designs AI automation, voice agents, premium websites &amp; custom software — live in 21 days. Senior-only, fixed-price, owned 100% by you.</p>
       <div class="hero-actions">
         <a class="btn btn-solid appear appear--btn" style="--d:0.96s" href="pricing.html#start">Get Free Audit</a>
         <a class="btn btn-ghost appear appear--side" style="--d:1.10s" href="work.html">See Our Work</a>
       </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <img class="hero-visual-fallback" src="assets/dither-hero.jpg" alt="" fetchpriority="high" />
+      <div id="hero-dither-root" class="hero-dither-root"></div>
+      <span class="hero-visual-caption">MOVE TO REVEAL <span aria-hidden="true">↗</span></span>
     </div>
   </main>
   <footer class="stats">
@@ -225,5 +226,6 @@
 </div>
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="site.js" defer></script>
+<script src="assets/hero-dither.js" defer></script>
 </body>
 </html>
