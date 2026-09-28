@@ -6,7 +6,7 @@
 - User requests a stronger, denser galaxy across the non-hero sections. Keep the near-black palette, readable text, and hero unchanged.
 - [x] Increased moving stars by roughly 50% and doubled the fine background stars and galaxy dust. Raised the edge nebula and dust-band glow slightly while retaining the near-black base. Hero files and section boundaries are unchanged.
 - [x] Checked the homepage at 1280px and Work at 390×844: denser stars remain behind readable text, the canvas begins exactly below the Work hero, and there is no horizontal overflow or browser console error. `npm run build:galaxy`, `npm run typecheck`, and `git diff --check` pass.
-- [ ] Commit and push the change with its recovery branch.
+- [x] Committed the density update as `989caf4` and pushed it to `origin/main` and `origin/codex/dither-hero`, with recovery branch `codex/checkpoint-pre-denser-galaxy`.
 
 ## Blacker galaxy and living hero neurons
 
