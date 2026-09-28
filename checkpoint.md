@@ -1,5 +1,13 @@
 # Hero DitherVeil integration checkpoint
 
+## Grainy grey greeting loader refinement
+
+- Before edits: commit `a0d21f36fd9250e7050ba0944bc0a3cbb423842f`; branch `codex/checkpoint-pre-grainy-greeting-loader` preserves the current loader.
+- User requests a more refined greeting loader with a grainy grey background inspired by the Apple greeting experience. Keep the existing multilingual sequence and all page backgrounds.
+- [x] Added a local SVG grain tile over neutral charcoal lighting. Refined the pearl-white typography, shorter blur/fade transitions, softer halo, compact progress line, and logo blending. The greeting sequence, loader timing, reduced-motion handling, and page backgrounds are unchanged.
+- [x] Inspected the loader at 1280px and 390×844. Grain is visible, the supplied logo blends cleanly, and text fits without horizontal overflow. The live phone sequence advanced from Hello to Bonjour, then removed the loader, released scroll lock, and revealed the hero canvas without console errors. SVG parsing and `git diff --check` pass. Removed the temporary design-preview page.
+- [ ] Commit and push the finished change and recovery branch.
+
 ## Denser non-hero galaxy
 
 - Before edits: commit `30dbdda1d7f9a1458d50213be638b3bb2d4183e3`; branch `codex/checkpoint-pre-denser-galaxy` preserves this version.
