@@ -1,5 +1,13 @@
 # Hero DitherVeil integration checkpoint
 
+## Denser non-hero galaxy
+
+- Before edits: commit `30dbdda1d7f9a1458d50213be638b3bb2d4183e3`; branch `codex/checkpoint-pre-denser-galaxy` preserves this version.
+- User requests a stronger, denser galaxy across the non-hero sections. Keep the near-black palette, readable text, and hero unchanged.
+- [x] Increased moving stars by roughly 50% and doubled the fine background stars and galaxy dust. Raised the edge nebula and dust-band glow slightly while retaining the near-black base. Hero files and section boundaries are unchanged.
+- [x] Checked the homepage at 1280px and Work at 390×844: denser stars remain behind readable text, the canvas begins exactly below the Work hero, and there is no horizontal overflow or browser console error. `npm run build:galaxy`, `npm run typecheck`, and `git diff --check` pass.
+- [ ] Commit and push the change with its recovery branch.
+
 ## Blacker galaxy and living hero neurons
 
 - Before edits: commit `ebb528f454eef18e5cb02374dc2d0bded0a5d656`; branch `codex/checkpoint-pre-black-galaxy-neuron-motion` points to this exact version.

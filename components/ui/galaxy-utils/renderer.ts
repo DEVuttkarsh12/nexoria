@@ -71,14 +71,14 @@ export function createRenderer(canvas: HTMLCanvasElement): Renderer {
 
       // Keep the brightest nebulae near the sides, away from the main copy.
       const span = Math.max(width, height);
-      addGlow(width * 0.08, height * 0.22, span * 0.7, "rgba(26,57,92,0.20)");
-      addGlow(width * 0.94, height * 0.72, span * 0.65, "rgba(66,42,88,0.17)");
-      addGlow(width * 0.63, height * 1.08, span * 0.57, "rgba(24,61,83,0.08)");
+      addGlow(width * 0.08, height * 0.22, span * 0.7, "rgba(26,57,92,0.25)");
+      addGlow(width * 0.94, height * 0.72, span * 0.65, "rgba(66,42,88,0.21)");
+      addGlow(width * 0.63, height * 1.08, span * 0.57, "rgba(24,61,83,0.10)");
       backdropContext.save();
       backdropContext.translate(width * 0.87, height * 0.52);
       backdropContext.rotate(-0.35);
       backdropContext.scale(0.35, 1.08);
-      addGlow(0, 0, span * 0.69, "rgba(93,105,153,0.09)");
+      addGlow(0, 0, span * 0.69, "rgba(93,105,153,0.14)");
       backdropContext.restore();
 
       const edge = backdropContext.createRadialGradient(
@@ -90,19 +90,19 @@ export function createRenderer(canvas: HTMLCanvasElement): Renderer {
       backdropContext.fillStyle = edge;
       backdropContext.fillRect(0, 0, width, height);
 
-      for (let i = 0; i < Math.min(170, Math.round(width * height / 6500)); i++) {
-        backdropContext.fillStyle = `rgba(166,191,226,${(0.035 + random() * 0.09).toFixed(3)})`;
+      for (let i = 0; i < Math.min(340, Math.round(width * height / 3500)); i++) {
+        backdropContext.fillStyle = `rgba(166,191,226,${(0.045 + random() * 0.11).toFixed(3)})`;
         backdropContext.fillRect(random() * width, random() * height, 1, 1);
       }
-      for (let i = 0; i < Math.min(115, Math.round(width * height / 9000)); i++) {
+      for (let i = 0; i < Math.min(250, Math.round(width * height / 4500)); i++) {
         const y = random() * height;
         const x = width * 0.87 - (y - height * 0.5) * 0.28 + (random() - 0.5) * width * 0.28;
-        backdropContext.fillStyle = `rgba(175,192,239,${(0.05 + random() * 0.12).toFixed(3)})`;
+        backdropContext.fillStyle = `rgba(175,192,239,${(0.06 + random() * 0.14).toFixed(3)})`;
         backdropContext.fillRect(x, y, 1, 1);
       }
     }
 
-    const count = Math.min(185, Math.max(90, Math.round(width * height / 6800)));
+    const count = Math.min(260, Math.max(140, Math.round(width * height / 4500)));
     stars = Array.from({ length: count }, () => {
       const x = random() * width;
       return {
