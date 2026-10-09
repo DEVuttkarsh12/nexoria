@@ -99,3 +99,39 @@ html.is-loading #loader,#loader.done{display:block}
 @keyframes loader-orbit{from{transform:translate(-50%,-50%) scale(.98);opacity:.28}to{transform:translate(-50%,-50%) scale(1.04);opacity:.44}}
 @media(max-width:560px){.loader-shell{padding:24px 20px max(28px,env(safe-area-inset-bottom))}.loader-mast{letter-spacing:.16em}.loader-mast>span:last-child{font-size:7.5px}.loader-stage::before{top:59%}.loader-stage::after{width:min(84vw,420px);height:130px}.loader-greetings{height:clamp(176px,32vh,250px)}.loader-greetings>span{font-size:clamp(58px,21vw,94px)}.loader-greetings>span[lang=ja]{font-size:clamp(48px,16.5vw,68px);letter-spacing:-.08em}.loader-meta{grid-template-columns:1fr auto;font-size:8px;letter-spacing:.16em}.loader-meta span:nth-child(2){display:none}}
 @media(prefers-reduced-motion:reduce){#loader{display:none!important}.loader-aura,.loader-mast,.loader-foot,.loader-stage::before,.loader-stage::after{animation:none}.loader-greetings>span{transition:none}}
+
+/* Signature systems: useful examples inside the existing silver visual language. */
+.system-card{height:auto;min-height:484px;gap:20px}
+.system-visual{position:relative;flex:none;height:228px;max-height:none;margin:0;isolation:isolate;overflow:hidden;border-radius:16px}
+.system-visual>img{position:absolute;inset:0;width:100%;height:100%;opacity:.3;z-index:-1;object-fit:contain}
+.system-receipt{width:min(290px,100%);padding:20px 18px;background:linear-gradient(135deg,#ffffffeb,#f6f6f6ed);border:2px solid #fff;border-radius:16px;box-shadow:0 10px 24px #00000016;transform:rotate(-3deg)}
+.system-receipt>.eyebrow{display:flex;align-items:center;gap:8px;font-size:9px;letter-spacing:.09em;margin-bottom:17px}
+.system-receipt>.eyebrow .icon{width:16px;height:16px}
+.system-receipt>div{display:flex;align-items:center;gap:9px;font-size:12px;line-height:1.45;padding:9px 0;border-top:1px solid #1212120c}
+.receipt-dot{width:5px;height:5px;border-radius:50%;background:#555;flex-shrink:0}
+.receipt-dot-open{background:transparent;border:1px solid #777}
+.service-category{display:block;font-size:11px;line-height:1.4;color:#626262;margin-bottom:9px}
+.system-card .feature-copy h3{font-size:28px;letter-spacing:-.05em;margin-bottom:12px}
+.system-card .feature-copy p{font-size:15px;line-height:1.5}
+.signature-label{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:12px;font-weight:500;border-top:1px solid #12121214;margin-top:20px;padding-top:14px}
+.signature-label .icon{width:16px;height:16px}
+.service-jump-links>a>span{min-width:0}
+.service-jump-links strong{display:block;font-size:16px;font-weight:500}
+.service-jump-links small{display:block;font-size:10px;font-weight:400;color:#626262;margin-top:4px}
+.service-scope-note{text-align:center;max-width:780px;margin:24px auto 0;font-size:14px;line-height:1.5}
+.service-copy .service-tagline{font-size:23px;line-height:1.3;font-weight:500;color:#333;letter-spacing:-.035em;margin-top:-8px;margin-bottom:24px}
+.signature-feature{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:40px;margin-top:40px;align-items:start}
+.signature-copy h3{font-size:32px;line-height:1.2;letter-spacing:-.045em;margin:14px 0 18px}
+.signature-copy>p{font-size:17px;line-height:1.5;max-width:510px}
+.signature-example{border-left:1px solid #bbb;margin-top:28px;padding-left:20px}
+.signature-example .eyebrow{font-size:10px;letter-spacing:.07em}
+.signature-example p{font-size:14px;line-height:1.6;margin-top:10px}
+.signature-steps{list-style:none;padding:0;margin:0;display:grid;gap:24px}
+.signature-steps li{display:flex;align-items:flex-start;gap:16px}
+.signature-step-number{display:grid;place-items:center;flex-shrink:0;width:36px;height:36px;border-radius:10px;background:linear-gradient(#454545,#121212);color:white;font-size:11px;box-shadow:0 4px 12px #0000001a}
+.signature-steps h4{font-size:17px;font-weight:500;letter-spacing:-.025em;margin-bottom:8px;line-height:1.3}
+.signature-steps p{font-size:14px;line-height:1.5}
+@media(min-width:1200px){.feature-grid .system-card:last-child{grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:36px}.feature-grid .system-card:last-child .system-visual{height:320px}.feature-grid .system-card:last-child .feature-copy{margin:0}}
+@media(max-width:1199px) and (min-width:810px){.feature-grid .system-card:last-child{height:auto;min-height:350px}.feature-grid .system-card:last-child .system-visual{height:280px}.signature-feature{gap:32px;padding:30px}}
+@media(max-width:809px){.system-card{height:auto;min-height:484px;padding:28px}.system-visual{height:224px}.signature-feature{grid-template-columns:1fr;gap:30px;padding:28px;margin-top:32px}.signature-copy h3{font-size:28px}.service-copy .service-tagline{font-size:21px}.service-jump-links small{font-size:11px}}
+@media(max-width:540px){.system-card{padding:26px 24px;min-height:480px}.system-visual{height:210px}.system-receipt{padding:17px 13px;transform:rotate(-2deg);width:calc(100% - 8px)}.system-receipt>div{font-size:11px}.service-scope-note{text-align:left}.signature-feature{padding:25px 22px}.signature-copy h3{font-size:27px}.signature-copy>p{font-size:16px}.signature-step-number{width:30px;height:30px}.signature-steps li{gap:12px}.signature-steps h4{font-size:16px}}

@@ -852,13 +852,25 @@ export const original = {
   }
 };
 export const caseStudies = original.cases;
-export const services = original.services;
+export {signatureServices as services} from './offers.mjs';
 export const testimonials = original.testimonials;
 export const team = original.team;
 export const values = original.values;
 export const timeline = original.timeline;
-export const process = original.process;
+export const process = [
+  {number:'01',title:'Map the real work',description:'Start with a call and a workflow recording. We identify the bottleneck, the people involved and a useful first outcome.'},
+  {number:'02',title:'Prove the signature feature',description:'Test the core behaviour on agreed sample data. Review the recovery, handoff, brief, preview or commitment flow before expanding.'},
+  {number:'03',title:'Build and connect',description:'Agree the scope, quote and timeline. Connect your tools, test the edge cases and give your team a working handover.'},
+  {number:'04',title:'Train and tune',description:'Review real use during the agreed support period. Refine the operating rules and keep the code, accounts and data under your ownership.'}
+];
 export const faqs = Object.fromEntries(Object.entries(original.faq).map(([key,items])=>[key,items.map(item=>[item.question,item.answer])]));
+faqs.services.unshift(
+  ['What makes the five Zykken systems different?', 'Each has a signature build: Flowback’s Safe Replay Desk, Carryline’s Context Passport, IntentPath’s Decision Brief, PreviewOps’ Change Rehearsal and PledgeDesk’s Commitment Radar. We define the feature, supported actions and integrations in your proposal.'],
+  ['Are these ready-made products or custom builds?', 'They are custom builds around your business. We agree which signature features, channels, integrations and operating rules belong in your scope. You own the resulting code, workflows and data in your accounts.']
+);
+faqs.services[2] = ['How fast can we get a first version?', 'We confirm a pilot and delivery plan after checking your existing tools, data and signature feature scope. You receive a clear timeline in your proposal and a Loom update every 48 hours during the build.'];
+faqs.index[0] = ['How fast can we get a first version?', 'We agree the first pilot and full delivery timeline after checking your tools and scope. Your proposal covers the signature feature, integrations and support.'];
+
 export const insights = [
   {
     "slug": "automate-your-highest-impact-workflow",

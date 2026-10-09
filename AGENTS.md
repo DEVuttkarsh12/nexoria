@@ -26,6 +26,7 @@ Read `README.md`, `docs/ORIGINAL_SITE_CONTEXT.md`, `docs/REFERENCE_DESIGN.md` an
 - Preserve service anchors `#automation`, `#voice`, `#web`, `#software`, `#crm`; inquiry anchor `#start`; and About testimonials anchor `#voices`. Custom proposals use `/custom-quote`; legacy `/pricing` and `/pricing.html` resolve there.
 - Keep content readable without JavaScript. FAQs are native `details`/`summary`; reveals are enhancement-only. Honor reduced motion and maintain keyboard access.
 - The old multilingual greeting loader is restored with a white grain theme. Its markup and fail-open bootstrap are shared in `layout.mjs`, behavior is in `app.mjs`, and styling is in `site.css`. Preserve Skip/Escape, reduced-motion bypass, shorter repeat visits, focus/inert restoration and the independent timeout. Read `docs/GREETING_LOADER.md` before changing it.
+- The current service catalog is in `offers.mjs`: Flowback, Carryline, IntentPath, PreviewOps and PledgeDesk. Keep the plain-language categories and concrete signature features with these names across home, services, forms and footer. `docs/SIGNATURE_SYSTEMS.md` explains their custom-build scope; do not advertise the illustrated client systems as live SaaS products or invent exclusivity/client results. Preserve the existing API values and fragment IDs.
 
 ## Contact contract
 

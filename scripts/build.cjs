@@ -5,9 +5,9 @@ const { pathToFileURL } = require('node:url');
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 const staticPages = {
-  '/': ['index.html', 'homePage', 'AI Automation & Digital Systems', 'AI automation, websites, voice agents, custom software, and CRM systems that help ambitious businesses work better.', 'home'],
+  '/': ['index.html', 'homePage', 'Signature AI & Business Systems', 'Flowback, Carryline, IntentPath, PreviewOps and PledgeDesk: custom workflow, conversation, website, software and CRM systems with a signature edge.', 'home'],
   '/about': ['about.html', 'aboutPage', 'About — Built Around Your Business', 'Meet Zykken, the team turning ambitious ideas into practical AI automation and digital systems.', 'about'],
-  '/services': ['services.html', 'servicesPage', 'Services', 'Explore AI automation, websites, voice and WhatsApp agents, software, and CRM services from Zykken.', 'services'],
+  '/services': ['services.html', 'servicesPage', 'Our Signature Systems', 'Explore Zykken’s five custom systems: Safe Replay Desk, Context Passport, Decision Brief, Change Rehearsal and Commitment Radar.', 'services'],
   '/work': ['work.html', 'workPage', 'Our Work', 'Explore selected Zykken projects, workflows, and digital experiences.', 'work'],
   '/custom-quote': ['custom-quote.html', 'customQuotePage', 'Request a Custom Quote', 'Every Zykken project is scoped and custom-priced around your business. Start with a free audit and receive a clear proposal.', 'custom-quote'],
   '/contact': ['contact.html', 'contactPage', 'Contact — Let’s Build What’s Next', 'Tell Zykken about your business, your goals, and the systems you want to build.', 'contact'],

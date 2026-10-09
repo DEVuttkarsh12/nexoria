@@ -1,11 +1,11 @@
 const TO_EMAIL = "info@zykken.com";
 const FROM_EMAIL = "Zykken Website <website@zykken.com>";
 const NEEDS = {
-  automation: "AI automation & workflows",
-  website: "Premium website",
-  voice: "Voice / WhatsApp agent",
-  software: "Custom software / SaaS",
-  crm: "CRM, funnels & nurture"
+  automation: "Flowback — Workflow automation",
+  website: "IntentPath — Websites & guided enquiries",
+  voice: "Carryline — Voice & conversation systems",
+  software: "PreviewOps — Custom software & business tools",
+  crm: "PledgeDesk — CRM & customer follow-through"
 };
 
 function field(value, maxLength) {

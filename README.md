@@ -38,6 +38,7 @@ The build recreates `dist/` with **19 pre-rendered pages**: nine main routes, si
 | Source | Purpose |
 | --- | --- |
 | `content.mjs` | Structured business content, six original cases, custom-quote FAQs, services, team, testimonials and three explanatory insights |
+| `offers.mjs` | Active signature systems: Flowback, Carryline, IntentPath, PreviewOps and PledgeDesk |
 | `layout.mjs` | Shared document metadata, navigation, footer, icons, buttons, page headings, native FAQs and contact form |
 | `home.mjs` | Homepage, custom-quote introduction, shared case and insight cards |
 | `pages.mjs` | Body-only render functions for inner pages, case details, articles and legal overviews |
@@ -64,6 +65,7 @@ Start with these durable records before future work:
 - `docs/VERIFICATION.md`: completed build, browser and interaction checks, remaining configuration and preview screenshots.
 - `docs/VERIFICATION_2026-10-09.md`: current custom-quote change and full responsive recheck before repository replacement.
 - `docs/GREETING_LOADER.md`: restored white grain greeting intro, behavior, asset provenance and verification.
+- `docs/SIGNATURE_SYSTEMS.md`: current named offers, feature blueprints, research and responsive checks.
 
 The template’s hand-to-hand hero is a transparent raster asset, not a Spline scene. The redesign stores that artwork, other silver illustrations, wave backgrounds and Geist fonts locally. Every service and ongoing support are **custom-quoted**. The user removed published packages, price tiers and Pricing navigation on October 9, 2026. Historical packages in the original context records are archival content; they are not current offers. Team cards use the original names and initials. No template office address, phone number or social profiles were adopted.
 
