@@ -2,7 +2,7 @@
   "name": "zykken-new",
   "version": "1.0.0",
   "private": true,
-  "description": "Custom-coded Zykken redesign based on the Axonix reference",
+  "description": "Custom-coded Zykken redesign based on the AgenAI reference",
   "scripts": {
     "dev": "node --watch scripts/dev-server.cjs",
     "start": "node scripts/dev-server.cjs",

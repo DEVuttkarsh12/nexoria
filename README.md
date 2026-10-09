@@ -1,6 +1,6 @@
 # Zykken New
 
-A custom-coded redesign of Zykken’s AI automation agency website, using the [Axonix Framer template](https://axonix.framer.ai/) as the visual reference. The business content, original logo and contact endpoint are retained. This project uses static HTML generated from JavaScript modules; editing Framer is not required.
+A custom-coded redesign of Zykken’s AI automation agency website, using the [AgenAI Framer template](https://agen-ai.framer.website/) as the visual reference. The business content, original logo and contact endpoint are retained. This project uses static HTML generated from JavaScript modules; editing Framer is not required.
 
 The user confirmed the brand spelling **Zykken**. The existing domain is **zykken.com**, its live site redirects to **www.zykken.com**, and the confirmed contact mailbox is **info@zykken.com**.
 
@@ -10,6 +10,7 @@ The user confirmed the brand spelling **Zykken**. The existing domain is **zykke
 - Redesign workspace: `/home/uttkarsh/Downloads/Zykken New`
 - Git repository checkout: `/home/uttkarsh/Downloads/Zykken GitHub` (origin `DEVuttkarsh12/nexoria`, branch `main`)
 - Recovery checkpoint: `/home/uttkarsh/Downloads/Zykken Checkpoint 2026-10-08`
+- Pre-Agen redesign recovery: `/home/uttkarsh/Downloads/Zykken Before AgenAI 2026-10-09.tar.gz`
 
 The checkpoint contains `zycon-original.tar.gz` (the original 41 project files), `sha256-manifest.json`, `original-home.jpg`, `ORIGINAL_SITE_CONTEXT.md` and `RESTORE.md`. It also holds `axonix-reference-capture.tar.gz`, preserving the reference’s source, route captures and downloaded assets. The original archive’s filename reflects the initially spoken brand spelling; its contents are the original Zykken site. Follow the checkpoint’s restore notes to extract into a fresh folder. Keep both the original folder and the archive intact.
 
@@ -59,7 +60,9 @@ Start with these durable records before future work:
 
 - `docs/ORIGINAL_SITE_CONTEXT.md`: original architecture, every route, detailed business context, contact contract, source hashes and full visible original text.
 - `docs/original-content.json`: extracted original content before the redesign.
-- `docs/REFERENCE_DESIGN.md`: captured reference structure, artwork, typography, geometry and breakpoint notes.
+- `docs/AGEN_REFERENCE.md` and `docs/AGEN_INNER_REFERENCE.md`: current reference structure, artwork, typography, geometry, animation and breakpoint notes.
+- `docs/AGEN_VERIFICATION.md`: current build, responsive browser and interaction checks.
+- `docs/REFERENCE_DESIGN.md`: historical Axonix reference capture.
 - `docs/reference-assets.json` and `docs/reference-inner-assets.json`: reference asset provenance.
 - `docs/CONTACT_SETUP.md`: original contact-delivery setup notes. Its old preview-port and form-location descriptions refer to the original site; use this README for the new preview.
 - `docs/VERIFICATION.md`: completed build, browser and interaction checks, remaining configuration and preview screenshots.
@@ -67,11 +70,11 @@ Start with these durable records before future work:
 - `docs/GREETING_LOADER.md`: restored white grain greeting intro, behavior, asset provenance and verification.
 - `docs/SIGNATURE_SYSTEMS.md`: current named offers, feature blueprints, research and responsive checks.
 
-The template’s hand-to-hand hero is a transparent raster asset, not a Spline scene. The redesign stores that artwork, other silver illustrations, wave backgrounds and Geist fonts locally. Every service and ongoing support are **custom-quoted**. The user removed published packages, price tiers and Pricing navigation on October 9, 2026. Historical packages in the original context records are archival content; they are not current offers. Team cards use the original names and initials. No template office address, phone number or social profiles were adopted.
+The current reference replaces the previous Axonix version. Its chrome-and-orange hero, floating tool tiles, accordion services, editorial project cards, three-step process, benefit diagrams, connector hub, spotlight team and slide components are custom-coded with local Urbanist fonts and optimized artwork. Exact reference captures, responsive measurements and animation settings are in `docs/AGEN_REFERENCE.md` and `docs/AGEN_INNER_REFERENCE.md`. Original artwork is retained for provenance; production copies only assets used by the generated pages and CSS. Every service and ongoing support are **custom-quoted**. The user removed published packages, price tiers and Pricing navigation on October 9, 2026. Historical packages in the original context records are archival content; they are not current offers. Team cards use the original names and initials. No template office address, phone number or social profiles were adopted.
 
-Client metrics, testimonials, team biographies and timeline statements came from the existing website. They were **not independently verified** through client dashboards or external evidence. Avoid inventing new proof. The six case photographs are the existing industry photos, not client screenshots. The new insights are original explanatory articles derived from Zykken’s existing service approach.
+Client metrics, testimonials, team biographies and timeline statements came from the existing website. They were **not independently verified** through client dashboards or external evidence. Avoid inventing new proof. Project covers are conceptual editorial illustrations from the template; they are not client interface screenshots. The original industry stock photographs are preserved in source assets. The new insights are original explanatory articles derived from Zykken’s existing service approach.
 
-The completed redesign was checked in the browser at desktop, tablet and phone sizes. The build passes and all fourteen automated tests pass, including the greeting-loader deadlines, dismissal and fallback behavior. See `docs/VERIFICATION_2026-10-09.md` and `docs/GREETING_LOADER.md` for the checks and their limits. The reference’s visual system and artwork are reproduced with Zykken’s content; business-specific pages and custom quoting reflect the agency’s offer.
+The Agen adaptation was checked across all 19 routes at 320, 390, 768, 1024 and 1440 CSS pixels. It builds all 19 pages and passes all seventeen automated tests, including greeting deadlines, dismissal, fallback, local artwork and slideshow controls/autoplay pauses. See `docs/AGEN_VERIFICATION.md` for current checks and limits. The reference’s visual system and artwork are reproduced with Zykken’s content; business-specific pages and custom quoting reflect the agency’s offer.
 
 The previous website’s eight-language greeting loader is restored in white with monochrome grain and dark serif lettering. It runs the full sequence on the first visit and a shorter Welcome on subsequent visits within the tab session. Visitors can skip it by button, Escape, or tapping the backdrop after a moment. Reduced motion bypasses it; a separate timeout prevents a failed script or stalled load from trapping the page.
 
@@ -89,4 +92,4 @@ Keep the file untracked. Never place keys in browser code, generated HTML or ass
 
 “Book a Free Audit” and consultation CTAs lead to the inquiry form. **No calendar-booking integration is configured.** Adding one requires a real business booking URL or service configuration.
 
-No deployment or domain cutover is implied by this local redesign. Review the rendered pages and contact configuration before publishing.
+The user authorized pushing this redesign to `DEVuttkarsh12/nexoria` on `main`, using the existing automatic Vercel production deployment. No domain or mail configuration changes are part of that request.

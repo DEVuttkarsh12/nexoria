@@ -72,13 +72,22 @@ async function build() {
   await fs.rm(dist, { recursive: true, force: true });
   await fs.mkdir(dist, { recursive: true });
   const routes = [...publicRoutes(site), '/404'];
+  const publicAssets = new Set();
+  const collectAssets = text => { for (const match of text.matchAll(/\/assets\/[^\s\"'()<>?#]+/g)) publicAssets.add(match[0]); };
+  collectAssets(await fs.readFile(path.join(root, 'site.css'), 'utf8'));
   for (const route of routes) {
     const page = await renderRoute(route, site);
+    collectAssets(page.html);
     const target = path.join(dist, page.filename);
     await fs.mkdir(path.dirname(target), { recursive: true });
     await fs.writeFile(target, page.html);
   }
-  await Promise.all(['assets', 'site.css', 'app.mjs'].map(copyIfPresent));
+  await Promise.all(['site.css', 'app.mjs'].map(copyIfPresent));
+  await Promise.all([...publicAssets].map(async asset => {
+    const target = path.join(dist, asset);
+    await fs.mkdir(path.dirname(target), {recursive: true});
+    await fs.copyFile(path.join(root, asset), target);
+  }));
   await fs.writeFile(path.join(dist, 'robots.txt'), robotsTxt);
   await fs.writeFile(path.join(dist, 'sitemap.xml'), sitemapXml(site));
   console.log(`Built ${routes.length} pre-rendered pages in ${dist}`);

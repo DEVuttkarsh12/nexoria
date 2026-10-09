@@ -1,0 +1,402 @@
+[
+  {
+    "original": "assets/agen/work-clinical.png",
+    "optimized": "assets/agen/optimized/work-clinical.webp",
+    "source_url": "https://framerusercontent.com/images/D3ZQRFsyC3I0z6aUqii7ffrCUo.png?width=3816&height=1980",
+    "original_bytes": 1095409,
+    "optimized_bytes": 140582,
+    "saved_percent": 87.2,
+    "original_sha256": "0e34680a46506c3744f8f023d3e77f1b891cb63ba737ab3b8f03efaf4d896460",
+    "optimized_sha256": "13dd4ef8bc3715a6cbd4689c0c33e86de1ff4590294da858c46314e8f4542b9a",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          3816,
+          1980
+        ],
+        "optimized": [
+          1600,
+          830
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/service-strategy.svg",
+    "optimized": "assets/agen/optimized/service-strategy.svg",
+    "source_url": "https://framerusercontent.com/images/N7WdKszYpXppuGfH2FoUpbIP2tw.svg?width=415&height=240",
+    "original_bytes": 384575,
+    "optimized_bytes": 29324,
+    "saved_percent": 92.4,
+    "original_sha256": "70de8eb10b745a0bb40a156f6f3e7bb16c3744b25c68065a030893baf64353c8",
+    "optimized_sha256": "34d222742d1e9888f7e69cdc5e6bff8c1b3279f29fe12d3bf7dcdd4ad877c995",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          585,
+          709
+        ],
+        "optimized": [
+          585,
+          709
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/service-agent.svg",
+    "optimized": "assets/agen/optimized/service-agent.svg",
+    "source_url": "https://framerusercontent.com/images/VNUMGxu8bHPlCHeUaFBUKKuh2OQ.svg?width=416&height=240",
+    "original_bytes": 954321,
+    "optimized_bytes": 65102,
+    "saved_percent": 93.2,
+    "original_sha256": "03ea0c9bf6a3ffd346c78e39500f6935f1cb87888ba79874bf1dfd5aeda69218",
+    "optimized_sha256": "0d9c06d7b66592fe50a626de13cef00afb88ff0fcb4cb261430c3c44a5d56309",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          1200,
+          655
+        ],
+        "optimized": [
+          1200,
+          655
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/work-underwriting.svg",
+    "optimized": "assets/agen/optimized/work-underwriting.svg",
+    "source_url": "https://framerusercontent.com/images/9ujF8ABgoO0V5nv7UJwe1WXY2Mw.svg?width=1272&height=660",
+    "original_bytes": 1002637,
+    "optimized_bytes": 70106,
+    "saved_percent": 93.0,
+    "original_sha256": "5d4327c06ede6a99977167e11faa685f8c6ee400596a42e3501303d031fd7b90",
+    "optimized_sha256": "2f17ffb2760fee1a460a6509a8c49a2d11f619d0efcfb64bd0ae20f1084eaa9a",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          992,
+          1200
+        ],
+        "optimized": [
+          992,
+          1200
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/hero-background.jpg",
+    "optimized": "assets/agen/optimized/hero-background.webp",
+    "source_url": "https://framerusercontent.com/images/5N22TgsC5COekVNfTUPjl3WiMQ.jpg?width=4224&height=2460",
+    "original_bytes": 414566,
+    "optimized_bytes": 33264,
+    "saved_percent": 92.0,
+    "original_sha256": "035cf1520e59474c8829c364ef0dbf7956494e929dc3871aee6a306b08704f29",
+    "optimized_sha256": "7b457b0859f4e6b57cb5f8ca5c75cf6fcffa1aaf2ff993ce6c5faa099d0a42c6",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          4224,
+          2460
+        ],
+        "optimized": [
+          2048,
+          1193
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/testimonial-decoration-2.svg",
+    "optimized": "assets/agen/optimized/testimonial-decoration-2.svg",
+    "source_url": "https://framerusercontent.com/images/m63vlc97c5z0RavU0rDAHvULw.svg?width=573&height=573",
+    "original_bytes": 2833355,
+    "optimized_bytes": 100259,
+    "saved_percent": 96.5,
+    "original_sha256": "fb34561b45b935ecdb94b597567dd615de6cdf4e46db7a63364867eba22e5db1",
+    "optimized_sha256": "5cf9e4d455b54094af156e5f015f9807c61d7409dbbf1e6b6e51b76c97ceffdb",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          2730,
+          4096
+        ],
+        "optimized": [
+          1066,
+          1600
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/testimonial-decoration-3.png",
+    "optimized": "assets/agen/optimized/testimonial-decoration-3.webp",
+    "source_url": "https://framerusercontent.com/images/TugH7LCEB6KlGiAMPCb4QnlMD4.png?width=1719&height=1719",
+    "original_bytes": 659705,
+    "optimized_bytes": 203320,
+    "saved_percent": 69.2,
+    "original_sha256": "b74a76407ee6be1fc3759e17434385c7007fc74316cd5e561d6054b74d27a096",
+    "optimized_sha256": "6ac460b63fbcbc71f6d35cb62e06a47224fe74a594a23da54ae7deaafee6bcae",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          1719,
+          1719
+        ],
+        "optimized": [
+          1100,
+          1100
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/testimonial-decoration-1.svg",
+    "optimized": "assets/agen/optimized/testimonial-decoration-1.svg",
+    "source_url": "https://framerusercontent.com/images/EN3OwpPWyqswwko0DLprPUpKjX0.svg?width=572&height=572",
+    "original_bytes": 2792677,
+    "optimized_bytes": 72585,
+    "saved_percent": 97.4,
+    "original_sha256": "280920d08537839057c5594b041802276a25abc5aa6e176ea5ca9b2848bddb36",
+    "optimized_sha256": "992c99ec640062c5beb61dd603dbd2cc9aa123958dd1ee997ed8e7b08aec899a",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          2304,
+          4096
+        ],
+        "optimized": [
+          900,
+          1600
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/work-catalog.jpg",
+    "optimized": "assets/agen/optimized/work-catalog.webp",
+    "source_url": "https://framerusercontent.com/images/JAwg2A4GAzIyvReM0mGSgTlkV5U.jpg?width=4452&height=2310",
+    "original_bytes": 3839862,
+    "optimized_bytes": 638146,
+    "saved_percent": 83.4,
+    "original_sha256": "381c1de69fa5c918695b21b94e1c0a2213e9404681c99a52375025f81f939723",
+    "optimized_sha256": "35521bec71e6a1188af3e292649368b015b4b200ef7fb4eab203f81a8991e93b",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          4452,
+          2310
+        ],
+        "optimized": [
+          2048,
+          1063
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/contact-background.png",
+    "optimized": "assets/agen/optimized/contact-background.webp",
+    "source_url": "https://framerusercontent.com/images/m80ZhxX0AHAi3ZQzPq6jtq80gTA.png?width=5632&height=3200",
+    "original_bytes": 2615307,
+    "optimized_bytes": 133888,
+    "saved_percent": 94.9,
+    "original_sha256": "a689152901f35d23ac0eaaaf9adf596535c0b400bb4da0214518bc43dc838564",
+    "optimized_sha256": "a5df121fa807aa6af68e08284fdd69e9103084c9a52e503854e2038142f13b24",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          5632,
+          3200
+        ],
+        "optimized": [
+          2048,
+          1164
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/tools-decoration.svg",
+    "optimized": "assets/agen/optimized/tools-decoration.svg",
+    "source_url": "https://framerusercontent.com/images/9l4yP2TozMt7PV8IQVfJVwfPXVc.svg?width=336&height=336",
+    "original_bytes": 2198057,
+    "optimized_bytes": 92813,
+    "saved_percent": 95.8,
+    "original_sha256": "d04fee3ebb479ca449d59ee7b356d735619762f089053e8beb31ae8d1daa8519",
+    "optimized_sha256": "79b02ddecd5662f9a252dd7039e7279d1687c10d503f8b5a15a47df045b9e28c",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          2731,
+          4096
+        ],
+        "optimized": [
+          1067,
+          1600
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/about-globe.png",
+    "optimized": "assets/agen/optimized/about-globe.webp",
+    "source_url": "https://framerusercontent.com/images/HbKIFNMRKRTXm5TU6Hop0JnwCxk.png?width=2984&height=2640",
+    "original_bytes": 341800,
+    "optimized_bytes": 114834,
+    "saved_percent": 66.4,
+    "original_sha256": "35a52f5ad52f492ff989b7ae93f7f9f98d42db8728de2c016f08b70478d6558e",
+    "optimized_sha256": "b1bf514162e95d76ccfbb8640ccb1912d6fe0cf7db618d7c0a1a866cdb3efb83",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          2984,
+          2640
+        ],
+        "optimized": [
+          1200,
+          1062
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/service-design.svg",
+    "optimized": "assets/agen/optimized/service-design.svg",
+    "source_url": "https://framerusercontent.com/images/tgFn5KOHxuVzRnxxY5K6e8rrbc.svg?width=414&height=240",
+    "original_bytes": 1831107,
+    "optimized_bytes": 179564,
+    "saved_percent": 90.2,
+    "original_sha256": "6d158c3aa05c2c21b98bfd83f2c0d44bbbb774bac6d130cfae02c71215c00829",
+    "optimized_sha256": "0f63742938bf103fbcf8679962eedf3348848ae0db8a46f54d475fcf0c0f4451",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          992,
+          1200
+        ],
+        "optimized": [
+          992,
+          1200
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/work-support.svg",
+    "optimized": "assets/agen/optimized/work-support.svg",
+    "source_url": "https://framerusercontent.com/images/3mYjyBkO1taOXWFFdYdWawzYdU.svg?width=1272&height=660",
+    "original_bytes": 2062035,
+    "optimized_bytes": 211692,
+    "saved_percent": 89.7,
+    "original_sha256": "0f8ff49b60a6c733c4d31ba950cab9b75cc4e358c0439aa62c9891b2c748a824",
+    "optimized_sha256": "948a2f9fc5b7af8381709d27d8a34d6dcd6598474a86819e072534a5091493e6",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          800,
+          1200
+        ],
+        "optimized": [
+          800,
+          1200
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/service-panel.png",
+    "optimized": "assets/agen/optimized/service-panel.webp",
+    "source_url": "https://framerusercontent.com/images/f6tt1LeAY01SkYHXO9Jbs2jj8.png?width=1908&height=1260",
+    "original_bytes": 137671,
+    "optimized_bytes": 60338,
+    "saved_percent": 56.2,
+    "original_sha256": "2c14dc8226cb1a0a767248e8b1edbc3c6308ead49d11925345bdd41dbcd72565",
+    "optimized_sha256": "f52a94361628f2188a32ac42f3e0de02ebec6606c92d41b17d4777253215c10b",
+    "mime": "image/webp",
+    "bitmap_sizes": [
+      {
+        "source": [
+          1908,
+          1260
+        ],
+        "optimized": [
+          1440,
+          951
+        ]
+      }
+    ],
+    "embedded_images": 0,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  },
+  {
+    "original": "assets/agen/service-data.svg",
+    "optimized": "assets/agen/optimized/service-data.svg",
+    "source_url": "https://framerusercontent.com/images/LQzz6Xgeq2bSRwjEyr5inS0xDw4.svg?width=416&height=240",
+    "original_bytes": 1173996,
+    "optimized_bytes": 23161,
+    "saved_percent": 98.0,
+    "original_sha256": "a9d455118111732d92628ba4b957b751932315fbb3190d7d2bf5964bed7f81c7",
+    "optimized_sha256": "94b20646f11f375428a1d90f1d8d666096e3985eabed3f2d527274229e9fb4a1",
+    "mime": "image/svg+xml",
+    "bitmap_sizes": [
+      {
+        "source": [
+          800,
+          1200
+        ],
+        "optimized": [
+          800,
+          1200
+        ]
+      }
+    ],
+    "embedded_images": 1,
+    "processing": "Pillow WebP quality90/method6, Lanczos thumbnail to fit. Original SVG framing, vector paths, gradients and alpha retained."
+  }
+]

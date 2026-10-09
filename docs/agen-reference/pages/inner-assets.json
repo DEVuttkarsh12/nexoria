@@ -1,0 +1,38 @@
+[
+  {
+    "path": "assets/agen-inner/work-support.svg",
+    "url": "https://framerusercontent.com/images/3mYjyBkO1taOXWFFdYdWawzYdU.svg?width=1272&height=660",
+    "sourcePage": "https://agen-ai.framer.website/work/support-copilot",
+    "type": "image/svg+xml",
+    "bytes": 2062035,
+    "role": "Template editorial artwork; not evidence of a Zykken client interface",
+    "acquired": "2026-10-09"
+  },
+  {
+    "path": "assets/agen-inner/work-risk.svg",
+    "url": "https://framerusercontent.com/images/9ujF8ABgoO0V5nv7UJwe1WXY2Mw.svg?width=1272&height=660",
+    "sourcePage": "https://agen-ai.framer.website/work/underwriting-risk-copilot",
+    "type": "image/svg+xml",
+    "bytes": 1002637,
+    "role": "Template editorial artwork; not evidence of a Zykken client interface",
+    "acquired": "2026-10-09"
+  },
+  {
+    "path": "assets/agen-inner/work-clinic.png",
+    "url": "https://framerusercontent.com/images/D3ZQRFsyC3I0z6aUqii7ffrCUo.png?width=3816&height=1980",
+    "sourcePage": "https://agen-ai.framer.website/work/clinical-note-summarizer",
+    "type": "image/png",
+    "bytes": 1095409,
+    "role": "Template editorial artwork; not evidence of a Zykken client interface",
+    "acquired": "2026-10-09"
+  },
+  {
+    "path": "assets/agen-inner/work-catalog.jpg",
+    "url": "https://framerusercontent.com/images/JAwg2A4GAzIyvReM0mGSgTlkV5U.jpg?width=4452&height=2310",
+    "sourcePage": "https://agen-ai.framer.website/work/catalog-intelligence-engine",
+    "type": "image/jpeg",
+    "bytes": 3839862,
+    "role": "Template editorial artwork; not evidence of a Zykken client interface",
+    "acquired": "2026-10-09"
+  }
+]

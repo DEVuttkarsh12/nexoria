@@ -182,26 +182,108 @@ function setupNavigation() {
     }
     if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); }
   });
-  window.matchMedia('(min-width: 1200px)').addEventListener?.('change', event => { if (event.matches) setOpen(false); });
+  window.matchMedia('(min-width: 810px)').addEventListener?.('change', event => { if (event.matches) setOpen(false); });
 }
 
-function setupCarousels() {
-  $$('[data-carousel]').forEach(carousel => {
-    const scope = carousel.parentElement;
-    const previous = $('[data-carousel-prev]', scope);
-    const next = $('[data-carousel-next]', scope);
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const update = () => {
-      const max = carousel.scrollWidth - carousel.clientWidth;
-      if (previous) previous.disabled = carousel.scrollLeft <= 2;
-      if (next) next.disabled = max < 2 || carousel.scrollLeft >= max - 2;
+export function nextSlideIndex(current, direction, count) {
+  if (!Number.isInteger(count) || count < 1) return 0;
+  return ((current + direction) % count + count) % count;
+}
+
+export function setupSliders() {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const bind = (shell, track, previous, next) => {
+    const slides = [...track.children];
+    if (slides.length < 2) return;
+    let index = 0, timer, inView = false, hovered = false, focused = false;
+    const interval = Number(shell.dataset.autoplay || track.dataset.autoplay || 0);
+    const label = shell.getAttribute('aria-label') || track.getAttribute('aria-label') || 'Slides';
+    const count = $('[data-slide-count]', shell);
+    const total = $('[data-slide-total]', shell);
+    if (total) total.textContent = String(slides.length).padStart(2,'0');
+    const report = () => {
+      index = Math.max(0, Math.min(slides.length-1, Math.round(track.scrollLeft / track.clientWidth)));
+      if (count) count.textContent = String(index+1).padStart(2,'0');
+      $$('.process-progress i',shell).forEach((dot,i)=>dot.classList.toggle('active',i===index));
+      track.setAttribute('aria-label', `${label}: ${index+1} of ${slides.length}`);
     };
-    previous?.addEventListener('click', () => carousel.scrollBy({ left: -carousel.clientWidth, behavior: reducedMotion ? 'instant' : 'smooth' }));
-    next?.addEventListener('click', () => carousel.scrollBy({ left: carousel.clientWidth, behavior: reducedMotion ? 'instant' : 'smooth' }));
-    carousel.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update, { passive: true });
-    update();
+    const select = direction => {
+      index = nextSlideIndex(index, direction, slides.length);
+      track.scrollTo({left:index*track.clientWidth, behavior:motion.matches?'instant':'smooth'});
+      if (count) count.textContent = String(index+1).padStart(2,'0');
+    };
+    const restart = () => {
+      clearInterval(timer);
+      if (interval && inView && !hovered && !focused && !document.hidden && !motion.matches) timer=setInterval(()=>select(1), interval);
+    };
+    previous?.addEventListener('click',()=>{select(-1);restart();});
+    next?.addEventListener('click',()=>{select(1);restart();});
+    track.addEventListener('scroll', report, {passive:true});
+    track.tabIndex=0;
+    track.addEventListener('keydown',event=>{
+      if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
+      event.preventDefault(); select(event.key==='ArrowRight'?1:-1); restart();
+    });
+    shell.addEventListener('mouseenter',()=>{hovered=true;restart();});
+    shell.addEventListener('mouseleave',()=>{hovered=false;restart();});
+    shell.addEventListener('focusin',()=>{focused=true;restart();});
+    shell.addEventListener('focusout',event=>{focused=shell.contains(event.relatedTarget);restart();});
+    document.addEventListener('visibilitychange',restart);
+    motion.addEventListener?.('change',restart);
+    let resizeFrame;
+    window.addEventListener('resize',()=>{cancelAnimationFrame(resizeFrame);resizeFrame=requestAnimationFrame(()=>{track.scrollTo({left:index*track.clientWidth,behavior:'instant'});report();});},{passive:true});
+    if ('IntersectionObserver' in window) new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;restart();},{threshold:.15}).observe(shell);
+    else {inView=true;restart();}
+    report();
+  };
+  $$('[data-slider]').forEach(shell=>bind(shell,$('.slide-track',shell),$('[data-slide-prev]',shell),$('[data-slide-next]',shell)));
+  $$('[data-carousel]').forEach(track=>{const shell=track.parentElement;bind(shell,track,$('[data-carousel-prev]',shell),$('[data-carousel-next]',shell));});
+}
+
+function setupServiceAccordion() {
+  $$('[data-service-accordion]').forEach(accordion=>{
+    const items=$$('details',accordion);
+    items.forEach(item=>item.addEventListener('toggle',()=>{
+      if (!item.open) return;
+      items.forEach(other=>{if(other!==item)other.open=false;});
+    }));
   });
+}
+
+function setupDisclosureMotion() {
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  $$('.service-accordion details, .faq-list details').forEach(item => {
+    let previousHeight = item.getBoundingClientRect().height;
+    let animation;
+    item.addEventListener('toggle', () => {
+      const startHeight = animation?.playState === 'running' ? item.getBoundingClientRect().height : previousHeight;
+      animation?.cancel();
+      const height = item.getBoundingClientRect().height;
+      if (!motion.matches && typeof item.animate === 'function' && Math.abs(height - startHeight) > 1) {
+        animation = item.animate([{height:`${startHeight}px`},{height:`${height}px`}], {duration:450,easing:'cubic-bezier(.22,1,.36,1)'});
+        if (item.open) item.querySelector('.service-open, .faq-answer')?.animate([{opacity:0,transform:'translateY(12px)'},{opacity:1,transform:'none'}],{duration:350,easing:'cubic-bezier(.22,1,.36,1)'});
+      }
+      previousHeight = height;
+    });
+  });
+}
+
+function setupMotion() {
+  const top=$('[data-back-to-top]');
+  let pending=false;
+  const update=()=>{
+    pending=false;
+    if (!top) return;
+    top.classList.toggle('is-visible',window.scrollY>300);
+    const available=document.documentElement.scrollHeight-window.innerHeight;
+    top.style.setProperty('--scroll',`${available>0?Math.min(100,window.scrollY/available*100):0}%`);
+  };
+  window.addEventListener('scroll',()=>{if(!pending){pending=true;requestAnimationFrame(update);}},{passive:true});
+  update();
+  if ('IntersectionObserver' in window) {
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('motion-paused',!entry.isIntersecting)),{rootMargin:'100px'});
+    $$('.benefit-art,.tools-stage,.brand-hub,.client-ticker,.metric-bars').forEach(el=>observer.observe(el));
+  }
 }
 
 function setupWorkFilters() {
@@ -345,7 +427,10 @@ if (typeof document !== 'undefined') {
   document.body.classList.add('js-enhanced');
   $$('.js-year').forEach(element => { element.textContent = new Date().getFullYear(); });
   setupNavigation();
-  setupCarousels();
+  setupSliders();
+  setupServiceAccordion();
+  setupDisclosureMotion();
+  setupMotion();
   setupWorkFilters();
   setupROICalculators();
   setupContactForms();

@@ -1,0 +1,57 @@
+[
+  {
+    "route": "work/support-copilot",
+    "status": 200,
+    "bytes": 485559
+  },
+  {
+    "route": "work/underwriting-risk-copilot",
+    "status": 200,
+    "bytes": 485392
+  },
+  {
+    "route": "work/clinical-note-summarizer",
+    "status": 200,
+    "bytes": 486910
+  },
+  {
+    "route": "work/catalog-intelligence-engine",
+    "status": 200,
+    "bytes": 483869
+  },
+  {
+    "route": "about",
+    "status": 404,
+    "bytes": 267707
+  },
+  {
+    "route": "services",
+    "status": 404,
+    "bytes": 267707
+  },
+  {
+    "route": "contact",
+    "status": 404,
+    "bytes": 267707
+  },
+  {
+    "route": "privacy",
+    "status": 404,
+    "bytes": 267707
+  },
+  {
+    "route": "terms",
+    "status": 404,
+    "bytes": 267707
+  },
+  {
+    "route": "404",
+    "status": 404,
+    "bytes": 267707
+  },
+  {
+    "route": "missing-audit-route",
+    "status": 404,
+    "bytes": 267707
+  }
+]
