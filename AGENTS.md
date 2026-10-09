@@ -25,6 +25,7 @@ Read `README.md`, `docs/ORIGINAL_SITE_CONTEXT.md`, `docs/REFERENCE_DESIGN.md` an
 - Use existing local `assets/` where appropriate. Reference-derived artwork and fonts have provenance in the two asset JSON records. Original case photos are industry stock imagery, not client interface screenshots.
 - Preserve service anchors `#automation`, `#voice`, `#web`, `#software`, `#crm`; inquiry anchor `#start`; and About testimonials anchor `#voices`. Custom proposals use `/custom-quote`; legacy `/pricing` and `/pricing.html` resolve there.
 - Keep content readable without JavaScript. FAQs are native `details`/`summary`; reveals are enhancement-only. Honor reduced motion and maintain keyboard access.
+- The old multilingual greeting loader is restored with a white grain theme. Its markup and fail-open bootstrap are shared in `layout.mjs`, behavior is in `app.mjs`, and styling is in `site.css`. Preserve Skip/Escape, reduced-motion bypass, shorter repeat visits, focus/inert restoration and the independent timeout. Read `docs/GREETING_LOADER.md` before changing it.
 
 ## Contact contract
 
@@ -37,6 +38,6 @@ Preserve `/api/contact` and its validated fields: `name`, `email`, optional `pho
 - Preview: `npm run dev` at `http://127.0.0.1:4180`.
 - Build: `npm run build`.
 - Relevant tests: `npm test`.
-- For source/template visual work, compare actual rendered pages at desktop, tablet and phone widths. Check page overflow, navigation, card layout, artwork sizing, filters, ROI, package fit and form errors. Report checks actually performed.
+- For source/template visual work, compare actual rendered pages at desktop, tablet and phone widths. Check page overflow, navigation, card layout, artwork sizing, filters, ROI, loader behavior and form errors. Report checks actually performed.
 - The current checks are recorded in `docs/VERIFICATION_2026-10-09.md`: 19 generated pages, ten passing tests, and all 19 pages checked at 320px, 390px, 768px, 1024px and 1440px. The previous report describes the pre-custom-quote version. Hosted routing and real email delivery remain unverified.
 - Keep a recoverable checkpoint before broad future visual changes. Do not deploy, replace the live domain or alter mail routing merely because local changes are ready.

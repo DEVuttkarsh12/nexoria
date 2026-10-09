@@ -2,6 +2,110 @@
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
 
+export function setupGreetingLoader(doc = document, win = window) {
+  const loader = doc.getElementById('loader');
+  if (!loader) return;
+  const motion = win.matchMedia('(prefers-reduced-motion: reduce)');
+  if (motion.matches || !doc.documentElement.classList.contains('is-loading')) {
+    loader.remove();
+    doc.documentElement.classList.remove('is-loading');
+    win.clearTimeout(win.zykkenLoaderTimeout);
+    return;
+  }
+  const words = [...loader.querySelectorAll('.loader-greetings > span')];
+  const language = doc.getElementById('loaderLanguage');
+  const count = doc.getElementById('loaderCount');
+  const bar = doc.getElementById('loaderBar');
+  const track = loader.querySelector('.loader-progress');
+  const skip = loader.querySelector('[data-loader-skip]');
+  const previousFocus = doc.activeElement;
+  const regions = [...doc.querySelectorAll('.skip-link, .site-header, main, .site-footer')].filter(el => !el.inert);
+  const sessionKey = 'zykken_greeting_boot_v3';
+  let repeat = false;
+  try { repeat = win.sessionStorage.getItem(sessionKey) === '1'; } catch {}
+  let active = -1;
+  let finished = false;
+  let loaded = doc.readyState === 'complete';
+  const started = win.performance.now();
+  const minimum = repeat ? 1180 : 4380;
+  const maximum = repeat ? 2200 : 6000;
+  let sequenceTimer, readyTimer, maximumTimer, exitTimer, removeTimer;
+  regions.forEach(el => { el.inert = true; el.setAttribute('data-loader-inert', ''); });
+  const showGreeting = index => {
+    active = Math.max(0, Math.min(words.length - 1, index));
+    words.forEach((word, i) => {
+      word.classList.remove('is-current', 'is-prev', 'is-next', 'is-past');
+      const distance = i - active;
+      if (distance === 0) word.classList.add('is-current');
+      else if (distance === -1) word.classList.add('is-prev');
+      else if (distance === 1) word.classList.add('is-next');
+      else if (distance < -1) word.classList.add('is-past');
+    });
+    const progress = (active + 1) / words.length;
+    language.textContent = words[active].dataset.language;
+    count.textContent = `${String(active + 1).padStart(2, '0')} / ${String(words.length).padStart(2, '0')}`;
+    bar.style.transform = `scaleX(${progress})`;
+    track.style.setProperty('--loader-progress', `${progress * 100}%`);
+  };
+  const onLoad = () => { loaded = true; };
+  const releasePage = () => {
+    win.clearTimeout(win.zykkenLoaderTimeout);
+    doc.documentElement.classList.remove('is-loading');
+    regions.forEach(el => { el.inert = false; el.removeAttribute('data-loader-inert'); });
+    if (loader.contains(doc.activeElement)) {
+      if (previousFocus !== doc.body && previousFocus?.isConnected) previousFocus.focus({preventScroll:true});
+      else doc.activeElement.blur();
+    }
+  };
+  const cleanup = () => {
+    [sequenceTimer, readyTimer].forEach(id => win.clearInterval(id));
+    [maximumTimer, exitTimer, removeTimer].forEach(id => win.clearTimeout(id));
+    win.removeEventListener('load', onLoad);
+    win.removeEventListener('zykken:loader-failsafe', dismissImmediately);
+    doc.removeEventListener('keydown', onKey);
+    motion.removeEventListener?.('change', onMotion);
+  };
+  const finish = () => {
+    if (finished) return;
+    finished = true;
+    cleanup();
+    showGreeting(words.length - 1);
+    try { win.sessionStorage.setItem(sessionKey, '1'); } catch {}
+    exitTimer = win.setTimeout(() => {
+      loader.classList.add('done');
+      releasePage();
+      loader.setAttribute('aria-hidden', 'true');
+      loader.removeAttribute('aria-modal');
+    }, repeat ? 260 : 420);
+    removeTimer = win.setTimeout(() => loader.remove(), (repeat ? 260 : 420) + 1320);
+  };
+  const dismissImmediately = () => {
+    finished = true;
+    cleanup();
+    try { win.sessionStorage.setItem(sessionKey, '1'); } catch {}
+    releasePage();
+    loader.remove();
+  };
+  const onKey = event => { if (event.key === 'Escape') dismissImmediately(); };
+  const onMotion = event => { if (event.matches) dismissImmediately(); };
+  skip.addEventListener('click', dismissImmediately);
+  loader.addEventListener('click', event => {
+    if (!event.target.closest('[data-loader-skip]') && win.performance.now() - started >= 1050) finish();
+  });
+  doc.addEventListener('keydown', onKey);
+  motion.addEventListener?.('change', onMotion);
+  win.addEventListener('load', onLoad, {once:true});
+  win.addEventListener('zykken:loader-failsafe', dismissImmediately, {once:true});
+  showGreeting(repeat ? words.length - 1 : 0);
+  skip.focus({preventScroll:true});
+  if (!repeat) sequenceTimer = win.setInterval(() => {
+    if (active < words.length - 1) showGreeting(active + 1);
+    else win.clearInterval(sequenceTimer);
+  }, 520);
+  readyTimer = win.setInterval(() => { if (loaded && win.performance.now() - started >= minimum) finish(); }, 80);
+  maximumTimer = win.setTimeout(finish, maximum);
+}
+
 export function validateInquiry(values) {
   const errors = {};
   const name = String(values.name || '').trim();
@@ -246,4 +350,5 @@ if (typeof document !== 'undefined') {
   setupROICalculators();
   setupContactForms();
   setupReveal();
+  setupGreetingLoader();
 }

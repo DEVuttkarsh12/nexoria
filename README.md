@@ -42,7 +42,7 @@ The build recreates `dist/` with **19 pre-rendered pages**: nine main routes, si
 | `home.mjs` | Homepage, custom-quote introduction, shared case and insight cards |
 | `pages.mjs` | Body-only render functions for inner pages, case details, articles and legal overviews |
 | `site.css` | Reference-inspired responsive visual system |
-| `app.mjs` | Progressive enhancements: navigation, reveals, carousel, work filters, ROI and form handling |
+| `app.mjs` | Progressive enhancements: greeting loader, navigation, reveals, carousel, work filters, ROI and form handling |
 | `scripts/build.cjs` | Route registry, aliases, document rendering and static generation |
 | `scripts/dev-server.cjs` | Local preview and contact API adapter; default port 4180 |
 | `api/contact.js` | Preserved Resend email handler |
@@ -63,12 +63,15 @@ Start with these durable records before future work:
 - `docs/CONTACT_SETUP.md`: original contact-delivery setup notes. Its old preview-port and form-location descriptions refer to the original site; use this README for the new preview.
 - `docs/VERIFICATION.md`: completed build, browser and interaction checks, remaining configuration and preview screenshots.
 - `docs/VERIFICATION_2026-10-09.md`: current custom-quote change and full responsive recheck before repository replacement.
+- `docs/GREETING_LOADER.md`: restored white grain greeting intro, behavior, asset provenance and verification.
 
 The template’s hand-to-hand hero is a transparent raster asset, not a Spline scene. The redesign stores that artwork, other silver illustrations, wave backgrounds and Geist fonts locally. Every service and ongoing support are **custom-quoted**. The user removed published packages, price tiers and Pricing navigation on October 9, 2026. Historical packages in the original context records are archival content; they are not current offers. Team cards use the original names and initials. No template office address, phone number or social profiles were adopted.
 
 Client metrics, testimonials, team biographies and timeline statements came from the existing website. They were **not independently verified** through client dashboards or external evidence. Avoid inventing new proof. The six case photographs are the existing industry photos, not client screenshots. The new insights are original explanatory articles derived from Zykken’s existing service approach.
 
-The completed local redesign was checked in the browser at desktop, tablet and phone sizes. The build passes and all ten automated tests pass. See `docs/VERIFICATION_2026-10-09.md` for the current checks and their limits. The reference’s visual system and artwork are reproduced with Zykken’s content; business-specific pages and custom quoting reflect the agency’s offer.
+The completed redesign was checked in the browser at desktop, tablet and phone sizes. The build passes and all fourteen automated tests pass, including the greeting-loader deadlines, dismissal and fallback behavior. See `docs/VERIFICATION_2026-10-09.md` and `docs/GREETING_LOADER.md` for the checks and their limits. The reference’s visual system and artwork are reproduced with Zykken’s content; business-specific pages and custom quoting reflect the agency’s offer.
+
+The previous website’s eight-language greeting loader is restored in white with monochrome grain and dark serif lettering. It runs the full sequence on the first visit and a shorter Welcome on subsequent visits within the tab session. Visitors can skip it by button, Escape, or tapping the backdrop after a moment. Reduced motion bypasses it; a separate timeout prevents a failed script or stalled load from trapping the page.
 
 ## Contact delivery
 
