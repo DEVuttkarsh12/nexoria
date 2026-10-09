@@ -1,0 +1,724 @@
+[
+  {
+    "width": 320,
+    "route": "/",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/about",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/services",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/work",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/custom-quote",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/contact",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/insights",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/privacy",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/terms",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/case-study/luxe-estates",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/case-study/velvet-co",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/case-study/pulse-fit-os",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/case-study/noir-clinic",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/case-study/kinetic-logistics",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/case-study/hearth-home",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 320,
+    "route": "/404",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 305
+  },
+  {
+    "width": 390,
+    "route": "/",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/about",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/services",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/work",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/custom-quote",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/contact",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/insights",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/privacy",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/terms",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/case-study/luxe-estates",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/case-study/velvet-co",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/case-study/pulse-fit-os",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/case-study/noir-clinic",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/case-study/kinetic-logistics",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/case-study/hearth-home",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 390,
+    "route": "/404",
+    "fieldOverflow": [],
+    "missingImages": [],
+    "overflow": false,
+    "pricingNav": false,
+    "retiredOffers": false,
+    "scrollWidth": 375
+  },
+  {
+    "width": 768,
+    "route": "/",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/about",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/services",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/work",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/custom-quote",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/contact",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/insights",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/privacy",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/terms",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/case-study/luxe-estates",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/case-study/velvet-co",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/case-study/pulse-fit-os",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/case-study/noir-clinic",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/case-study/kinetic-logistics",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/case-study/hearth-home",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 768,
+    "route": "/404",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/about",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/services",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/work",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/custom-quote",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/contact",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/insights",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/privacy",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/terms",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/case-study/luxe-estates",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/case-study/velvet-co",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/case-study/pulse-fit-os",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/case-study/noir-clinic",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/case-study/kinetic-logistics",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/case-study/hearth-home",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1024,
+    "route": "/404",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/about",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/services",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/work",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/custom-quote",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/contact",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/insights",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/privacy",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/terms",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/case-study/luxe-estates",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/case-study/velvet-co",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/case-study/pulse-fit-os",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/case-study/noir-clinic",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/case-study/kinetic-logistics",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/case-study/hearth-home",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "missingImages": [],
+    "overflow": false
+  },
+  {
+    "width": 1440,
+    "route": "/404",
+    "missingImages": [],
+    "overflow": false
+  }
+]
