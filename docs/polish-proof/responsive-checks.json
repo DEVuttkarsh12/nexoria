@@ -1,0 +1,762 @@
+[
+  {
+    "path": "/",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/about",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/services",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/work",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/custom-quote",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/contact",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/insights",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/privacy",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/terms",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/case-study/luxe-estates",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/case-study/velvet-co",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/case-study/pulse-fit-os",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/case-study/noir-clinic",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/case-study/kinetic-logistics",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/case-study/hearth-home",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/blog/automate-your-highest-impact-workflow",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/blog/from-first-enquiry-to-booked-call",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/blog/what-happens-after-your-ai-system-launches",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/404",
+    "requestedWidth": 320,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 305,
+    "width": 320
+  },
+  {
+    "path": "/",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/about",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/services",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/work",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/custom-quote",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/contact",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/insights",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/privacy",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/terms",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/case-study/luxe-estates",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/case-study/velvet-co",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/case-study/pulse-fit-os",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/case-study/noir-clinic",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/case-study/kinetic-logistics",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/case-study/hearth-home",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/blog/automate-your-highest-impact-workflow",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/blog/from-first-enquiry-to-booked-call",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/blog/what-happens-after-your-ai-system-launches",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/404",
+    "requestedWidth": 390,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 375,
+    "width": 390
+  },
+  {
+    "path": "/",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/about",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/services",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/work",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/custom-quote",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/contact",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/insights",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/privacy",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/terms",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/case-study/luxe-estates",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/case-study/velvet-co",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/case-study/pulse-fit-os",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/case-study/noir-clinic",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/case-study/kinetic-logistics",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/case-study/hearth-home",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/blog/automate-your-highest-impact-workflow",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/blog/from-first-enquiry-to-booked-call",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/blog/what-happens-after-your-ai-system-launches",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/404",
+    "requestedWidth": 768,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 753,
+    "width": 768
+  },
+  {
+    "path": "/",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/about",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/services",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/work",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/custom-quote",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/contact",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/insights",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/privacy",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/terms",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/case-study/luxe-estates",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/case-study/velvet-co",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/case-study/pulse-fit-os",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/case-study/noir-clinic",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/case-study/kinetic-logistics",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/case-study/hearth-home",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/blog/automate-your-highest-impact-workflow",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/blog/from-first-enquiry-to-booked-call",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/blog/what-happens-after-your-ai-system-launches",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/404",
+    "requestedWidth": 1024,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1009,
+    "width": 1024
+  },
+  {
+    "path": "/",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/about",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/services",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/work",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/custom-quote",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/contact",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/insights",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/privacy",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/terms",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/case-study/luxe-estates",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/case-study/velvet-co",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/case-study/pulse-fit-os",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/case-study/noir-clinic",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/case-study/kinetic-logistics",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/case-study/hearth-home",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/blog/automate-your-highest-impact-workflow",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/blog/from-first-enquiry-to-booked-call",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/blog/what-happens-after-your-ai-system-launches",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  },
+  {
+    "path": "/404",
+    "requestedWidth": 1440,
+    "h1": 1,
+    "overflow": [],
+    "pageWidth": 1425,
+    "width": 1440
+  }
+]

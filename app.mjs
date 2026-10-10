@@ -200,11 +200,16 @@ export function setupSliders() {
     const label = shell.getAttribute('aria-label') || track.getAttribute('aria-label') || 'Slides';
     const count = $('[data-slide-count]', shell);
     const total = $('[data-slide-total]', shell);
+    const stageButtons = $$('[data-slide-to]', shell);
     if (total) total.textContent = String(slides.length).padStart(2,'0');
     const report = () => {
       index = Math.max(0, Math.min(slides.length-1, Math.round(track.scrollLeft / track.clientWidth)));
       if (count) count.textContent = String(index+1).padStart(2,'0');
       $$('.process-progress i',shell).forEach((dot,i)=>dot.classList.toggle('active',i===index));
+      stageButtons.forEach(button=>{
+        if (Number(button.dataset.slideTo)===index) button.setAttribute('aria-current','step');
+        else button.removeAttribute('aria-current');
+      });
       track.setAttribute('aria-label', `${label}: ${index+1} of ${slides.length}`);
     };
     const select = direction => {
@@ -218,6 +223,13 @@ export function setupSliders() {
     };
     previous?.addEventListener('click',()=>{select(-1);restart();});
     next?.addEventListener('click',()=>{select(1);restart();});
+    stageButtons.forEach(button=>button.addEventListener('click',()=>{
+      const target=Number(button.dataset.slideTo);
+      if (!Number.isInteger(target) || target<0 || target>=slides.length) return;
+      index=target;
+      track.scrollTo({left:index*track.clientWidth,behavior:motion.matches?'instant':'smooth'});
+      restart();
+    }));
     track.addEventListener('scroll', report, {passive:true});
     track.tabIndex=0;
     track.addEventListener('keydown',event=>{
@@ -270,11 +282,12 @@ function setupDisclosureMotion() {
 
 function setupMotion() {
   const top=$('[data-back-to-top]');
+  const footer=$('.site-footer');
   let pending=false;
   const update=()=>{
     pending=false;
     if (!top) return;
-    top.classList.toggle('is-visible',window.scrollY>300);
+    top.classList.toggle('is-visible',window.scrollY>300 && (!footer || footer.getBoundingClientRect().top>window.innerHeight-80));
     const available=document.documentElement.scrollHeight-window.innerHeight;
     top.style.setProperty('--scroll',`${available>0?Math.min(100,window.scrollY/available*100):0}%`);
   };
@@ -282,7 +295,7 @@ function setupMotion() {
   update();
   if ('IntersectionObserver' in window) {
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('motion-paused',!entry.isIntersecting)),{rootMargin:'100px'});
-    $$('.benefit-art,.tools-stage,.brand-hub,.client-ticker,.metric-bars').forEach(el=>observer.observe(el));
+    $$('.benefit-art,.tools-stage,.brand-hub,.client-ticker,.metric-bars,.globe-visual,.process-workbench,.team-workbench').forEach(el=>observer.observe(el));
   }
 }
 

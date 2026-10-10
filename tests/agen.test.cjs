@@ -28,11 +28,12 @@ test('Agen adaptation retains semantic pages, contact contracts and valid local 
 
 test('slider controls wrap, update counts, and pause for hover, focus, visibility and reduced motion',async()=>{
  const {setupSliders}=await import('../app.mjs');
- const make=()=>({listeners:{},dataset:{},attrs:{},addEventListener(type,fn){(this.listeners[type]||=[]).push(fn);},emit(type,event={}){for(const fn of this.listeners[type]||[])fn(event);},getAttribute(name){return this.attrs[name]||null;},setAttribute(name,value){this.attrs[name]=value;}});
+ const make=()=>({listeners:{},dataset:{},attrs:{},addEventListener(type,fn){(this.listeners[type]||=[]).push(fn);},emit(type,event={}){for(const fn of this.listeners[type]||[])fn(event);},getAttribute(name){return this.attrs[name]||null;},setAttribute(name,value){this.attrs[name]=value;},removeAttribute(name){delete this.attrs[name];}});
  const track=Object.assign(make(),{children:[{},{},{}],scrollLeft:0,clientWidth:400,scrollTo({left}){this.scrollLeft=left;this.emit('scroll');}});
  const prev=make(),next=make(),count=make(),total=make();
  const dots=[0,1,2].map(()=>({classList:{toggle(){}}}));
- const shell=Object.assign(make(),{dataset:{autoplay:'3000'},querySelector(sel){return {'.slide-track':track,'[data-slide-prev]':prev,'[data-slide-next]':next,'[data-slide-count]':count,'[data-slide-total]':total}[sel]||null;},querySelectorAll(sel){return sel==='.process-progress i'?dots:[];},contains(el){return [track,prev,next].includes(el);}});
+ const stages=[0,1,2].map(i=>Object.assign(make(),{dataset:{slideTo:String(i)}}));
+ const shell=Object.assign(make(),{dataset:{autoplay:'3000'},querySelector(sel){return {'.slide-track':track,'[data-slide-prev]':prev,'[data-slide-next]':next,'[data-slide-count]':count,'[data-slide-total]':total}[sel]||null;},querySelectorAll(sel){return sel==='.process-progress i'?dots:sel==='[data-slide-to]'?stages:[];},contains(el){return [track,prev,next,...stages].includes(el);}});
  shell.attrs['aria-label']='Delivery steps';
  const doc=Object.assign(make(),{hidden:false,querySelectorAll(sel){return sel==='[data-slider]'?[shell]:[];}});
  const motion=Object.assign(make(),{matches:false});
@@ -55,5 +56,9 @@ test('slider controls wrap, update counts, and pause for hover, focus, visibilit
   doc.hidden=true;doc.emit('visibilitychange');assert.equal(timers.size,0);doc.hidden=false;doc.emit('visibilitychange');assert.equal(timers.size,1);
   observer([{isIntersecting:false}]);assert.equal(timers.size,0);observer([{isIntersecting:true}]);[...timers.values()][0]();assert.equal(track.scrollLeft,800);
   assert.equal(track.attrs['aria-label'],'Delivery steps: 3 of 3');
+  stages[0].emit('click');assert.equal(track.scrollLeft,0);assert.equal(count.textContent,'01');
+  assert.equal(stages[0].attrs['aria-current'],'step');assert.equal(stages[2].attrs['aria-current'],undefined);
+  stages[2].emit('click');assert.equal(track.scrollLeft,800);assert.equal(count.textContent,'03');
+  assert.equal(stages[2].attrs['aria-current'],'step');assert.equal(stages[0].attrs['aria-current'],undefined);
  }finally{for(const [key,value]of Object.entries(saved)){if(value===undefined)delete global[key];else global[key]=value;}}
 });

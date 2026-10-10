@@ -93,3 +93,7 @@ Keep the file untracked. Never place keys in browser code, generated HTML or ass
 “Book a Free Audit” and consultation CTAs lead to the inquiry form. **No calendar-booking integration is configured.** Adding one requires a real business booking URL or service configuration.
 
 The user authorized pushing this redesign to `DEVuttkarsh12/nexoria` on `main`, using the existing automatic Vercel production deployment. No domain or mail configuration changes are part of that request.
+
+### October 10 visual polish
+
+The hero is modestly wider (1560px maximum), with a visible native dotted globe beneath the About copy. Process stages have direct selection, the benefits use a balanced bento layout, and the connected feature hub remains visible on smaller screens. Role-specific team workbenches and client-result illustrations replace inherited portrait artwork. The shared footer is more compact. See `docs/POLISH_VERIFICATION_2026-10-10.md` for browser checks and recovery details.

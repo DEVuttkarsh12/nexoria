@@ -42,3 +42,11 @@ Preserve `/api/contact` and its validated fields: `name`, `email`, optional `pho
 - For source/template visual work, compare actual rendered pages at desktop, tablet and phone widths. Check page overflow, navigation, card layout, artwork sizing, filters, ROI, loader behavior and form errors. Report checks actually performed.
 - The current Agen checks are recorded in `docs/AGEN_VERIFICATION.md`: 19 generated pages, seventeen passing tests, all 19 routes checked at 320, 390, 768, 1024 and 1440 CSS pixels, actual slider/form/FAQ/navigation/ROI checks and tablet cover spacing corrections. Older reports describe earlier versions. Real email delivery remains untested.
 - Keep a recoverable checkpoint before broad future visual changes. The user has explicitly authorized this Agen redesign and a push to main for the existing automatic Vercel deployment; no additional release approval is required. Do not alter mail routing or domain configuration without a request. Pre-Agen recovery: `/home/uttkarsh/Downloads/Zykken Before AgenAI 2026-10-09.tar.gz`.
+
+## October 10 visual refinements
+
+The user requested a modestly wider hero and clearer About, process, benefits, features, team, testimonial and footer components. The homepage hero is now max1560px. `polish-visuals.mjs` renders the dotted globe, delivery diagrams, benefit consoles and testimonial emblems; `team-visuals.mjs` renders role-specific workbenches. All graphics are native, pre-rendered and decorative. The four supplied team identities and original client quotations/results remain unchanged. Do not replace conceptual visuals with unverified portrait photos.
+
+Process stage buttons use `data-slide-to` and the shared slider runtime updates `aria-current`; maintain slide widths equal to the track width. The feature hub stays visible on phones and tablets, with CSS connectors adapting to stacked cards. CSS for the new components lives in the October 10 refinement block in `site.css`, followed by the scoped `tw-*` workbench rules. The shared footer has a direct email link, compact destination cards and a smaller gap; the floating back-to-top control hides when the footer is visible.
+
+Read `docs/POLISH_VERIFICATION_2026-10-10.md` for the latest verification. Recovery checkpoint: `/home/uttkarsh/Downloads/Zykken Before Polish 2026-10-10.tar.gz`.
