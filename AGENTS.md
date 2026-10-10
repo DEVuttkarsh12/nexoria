@@ -9,7 +9,7 @@ The repository checkout for publication is `/home/uttkarsh/Downloads/Zykken GitH
 - Correct brand: **Zykken**, explicitly confirmed by the user. Initial speech said “Zycon”; existing archive filenames may retain that spelling.
 - Existing domain: `zykken.com`, live at `https://www.zykken.com/`.
 - Existing mailbox and fixed contact recipient: `info@zykken.com`. Do not invent or silently substitute an email, domain, address, phone or social account.
-- Current visual reference: `https://agen-ai.framer.website/`, explicitly replacing Axonix on October 9, 2026. Recreate the chrome/orange hero, floating tool tiles, raised light surfaces, editorial work cards, process/metric/testimonial slides and spotlight dark sections. The template has one home page and four work details; Zykken retains its 19 native routes with that design language. Keep its actual business content and original logo.
+- Current visual reference: `https://agen-ai.framer.website/`, explicitly replacing Axonix on October 9, 2026. Recreate the chrome/orange hero, floating tool tiles, raised light surfaces, editorial work cards, process/metric/testimonial slides and spotlight dark sections. The template has one home page and four work details; Zykken now has 29 public native routes with that design language. Keep its actual business content and original logo.
 - Five services, six case studies and existing client/team identities are preserved. On October 9, 2026, the user explicitly removed all fixed packages and published price tiers: **every service and ongoing support are custom-quoted**. Do not restore old pricing cards, package selectors, monthly tiers or Pricing navigation. Historical offers remain only in the original audit records.
 - Original claims and testimonials are supplied website content, not independently audited evidence. Do not fabricate new results, client photos or verification claims.
 
@@ -20,7 +20,7 @@ Read `README.md`, `docs/ORIGINAL_SITE_CONTEXT.md`, `docs/AGEN_REFERENCE.md`, `do
 - The main website is dependency-free pre-rendered HTML with progressive enhancement, not a React, Next.js or Framer application.
 - `layout.mjs` owns the complete HTML document and shared UI helpers. `home.mjs` and `pages.mjs` return **body-only markup**. Do not nest documents or duplicate shared card implementations.
 - Shared case and insight cards are exported from `home.mjs`. Keep homepage and inner-page card styling consistent.
-- Edit source modules and `site.css`, not `dist/`. `scripts/build.cjs` recreates `dist/` with 19 pages and copies local assets.
+- Edit source modules and `site.css`, not `dist/`. `scripts/build.cjs` recreates `dist/` with 30 pages (29 public routes and 404) and copies local assets.
 - Routes and aliases live in `scripts/build.cjs`; production clean URLs/detail rewrites live in `vercel.json`. Keep both consistent.
 - Use optimized `assets/agen/optimized/` artwork. Originals and exact provenance are retained in `assets/agen/provenance.json` and `docs/agen-reference/optimized-assets.json`. `caseVisual(c)` returns a src string for conceptual editorial illustration, not a client interface screenshot. The build copies only assets referenced by generated HTML and CSS; retain research sources outside production output.
 - Preserve service anchors `#automation`, `#voice`, `#web`, `#software`, `#crm`; inquiry anchor `#start`; and About testimonials anchor `#voices`. Custom proposals use `/custom-quote`; legacy `/pricing` and `/pricing.html` resolve there.
@@ -50,3 +50,13 @@ The user requested a modestly wider hero and clearer About, process, benefits, f
 Process stage buttons use `data-slide-to` and the shared slider runtime updates `aria-current`; maintain slide widths equal to the track width. The feature hub stays visible on phones and tablets, with CSS connectors adapting to stacked cards. CSS for the new components lives in the October 10 refinement block in `site.css`, followed by the scoped `tw-*` workbench rules. The shared footer has a direct email link, compact destination cards and a smaller gap; the floating back-to-top control hides when the footer is visible.
 
 Read `docs/POLISH_VERIFICATION_2026-10-10.md` for the latest verification. Recovery checkpoint: `/home/uttkarsh/Downloads/Zykken Before Polish 2026-10-10.tar.gz`.
+
+## October 10 multipage and readability expansion
+
+The homepage is a complete overview; its cards and section CTAs lead to detail pages. The shared navigation uses actual page URLs, six primary destinations, a native More disclosure and a footer directory. Header mobile navigation switches below 1100px; keep this CSS boundary consistent with setupNavigation. Every Back To Top link uses the current document's #top anchor.
+
+`topic-pages.mjs` owns six body-only pages: /process, /benefits, /features, /team, /testimonials and /faq. Features includes #integrations and #ownership. `service-pages.mjs` exports serviceDetailPage and serviceDetailRoutes for /services/{flowback,carryline,intentpath,previewops,pledgedesk}. All styles live in site.css. Do not restore the former /features redirect/alias to /services. Service details use the production /services/:slug -> /services/:slug/index rewrite. Keep publicRoutes, sitemap and the build output consistent.
+
+The active team export normalizes biographies around agreed scope and support while preserving the four supplied identities. The original archived content remains unchanged. Supporting visible text is at least 14px; descriptive copy generally uses 16–18px. Keep the larger native labels readable without shrinking them to fit; adjust geometry or simplify redundant decorations instead.
+
+Read docs/MULTIPAGE_VERIFICATION_2026-10-10.md before further changes. The 22 tests include all 29 routes, canonicals, unique IDs, every internal link/fragment, discoverability from the homepage and unknown-route 404s. Responsive proof covers all 30 rendered pages at 320/390/768/1024/1440px. Recovery checkpoint: /home/uttkarsh/Downloads/Zykken Before Multipage 2026-10-10.tar.gz.

@@ -32,7 +32,7 @@ npm run build
 npm test
 ```
 
-The build recreates `dist/` with **19 pre-rendered pages**: nine main routes, six case studies, three insight articles and the 404 page. It also copies browser runtime assets and generates a sitemap and robots file. The contact function remains at the project root in `api/contact.js` for serverless hosting; its source is excluded from the static output. Edit source files rather than generated files in `dist/`. The test suite covers the preserved contact API, inquiry validation, routing aliases and ROI calculation. Provider calls are mocked by the tests.
+The build recreates `dist/` with **30 pre-rendered pages**: fifteen main/topic routes, five service details, six case studies, three insight articles and the 404 page. It also copies browser runtime assets and generates a sitemap and robots file. The contact function remains at the project root in `api/contact.js` for serverless hosting; its source is excluded from the static output. Edit source files rather than generated files in `dist/`. The test suite covers the preserved contact API, inquiry validation, routing aliases and ROI calculation. Provider calls are mocked by the tests.
 
 ## Project map
 
@@ -43,6 +43,8 @@ The build recreates `dist/` with **19 pre-rendered pages**: nine main routes, si
 | `layout.mjs` | Shared document metadata, navigation, footer, icons, buttons, page headings, native FAQs and contact form |
 | `home.mjs` | Homepage, custom-quote introduction, shared case and insight cards |
 | `pages.mjs` | Body-only render functions for inner pages, case details, articles and legal overviews |
+| `topic-pages.mjs` | Detailed process, benefits, features/tools, team, client stories and FAQ pages |
+| `service-pages.mjs` | Five dedicated system pages with fit, features, examples, deliverables and operating rules |
 | `site.css` | Reference-inspired responsive visual system |
 | `app.mjs` | Progressive enhancements: greeting loader, navigation, reveals, carousel, work filters, ROI and form handling |
 | `scripts/build.cjs` | Route registry, aliases, document rendering and static generation |
@@ -52,7 +54,7 @@ The build recreates `dist/` with **19 pre-rendered pages**: nine main routes, si
 | `tests/` | Contact and interaction logic checks |
 | `vercel.json` | Build output, clean URLs, route aliases and detail-page rewrites |
 
-Main routes are `/`, `/about`, `/services`, `/work`, `/custom-quote`, `/contact`, `/insights`, `/privacy` and `/terms`. Details use `/case-study/:slug` and `/blog/:slug`. Legacy `.html` paths work in local preview; aliases include `/features`, `/case-study`, `/portfolio` and `/blog`. Both old pricing URLs resolve to the custom-quote page.
+Main routes are `/`, `/about`, `/services`, `/process`, `/benefits`, `/features`, `/team`, `/testimonials`, `/faq`, `/work`, `/custom-quote`, `/contact`, `/insights`, `/privacy` and `/terms`. Details use `/services/:slug`, `/case-study/:slug` and `/blog/:slug`. The five service slugs are `flowback`, `carryline`, `intentpath`, `previewops` and `pledgedesk`. `/features` is a real page. Legacy aliases include `/case-study`, `/portfolio` and `/blog`; both old pricing URLs resolve to the custom-quote page. Navigation uses real page destinations, with a native More disclosure and a complete footer directory. The detailed homepage remains an overview with direct links to the relevant pages.
 
 ## Content and design context
 
@@ -97,3 +99,7 @@ The user authorized pushing this redesign to `DEVuttkarsh12/nexoria` on `main`, 
 ### October 10 visual polish
 
 The hero is modestly wider (1560px maximum), with a visible native dotted globe beneath the About copy. Process stages have direct selection, the benefits use a balanced bento layout, and the connected feature hub remains visible on smaller screens. Role-specific team workbenches and client-result illustrations replace inherited portrait artwork. The shared footer is more compact. See `docs/POLISH_VERIFICATION_2026-10-10.md` for browser checks and recovery details.
+
+## October 10 multipage expansion
+
+The latest verification is in `docs/MULTIPAGE_VERIFICATION_2026-10-10.md`. Supporting labels and captions have a 14px minimum, descriptive copy generally uses 16–18px, and native diagrams have additional room for the larger text. The recoverable pre-expansion source is `/home/uttkarsh/Downloads/Zykken Before Multipage 2026-10-10.tar.gz`.

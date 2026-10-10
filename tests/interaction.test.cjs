@@ -13,15 +13,15 @@ test('clean route aliases resolve to the intended pages', () => {
   const { normalizeRoute } = require('../scripts/build.cjs');
   assert.equal(normalizeRoute('/index.html'), '/');
   assert.equal(normalizeRoute('/about.html'), '/about');
-  assert.equal(normalizeRoute('/features'), '/services');
+  assert.equal(normalizeRoute('/features'), '/features');
   assert.equal(normalizeRoute('/pricing.html'), '/custom-quote');
   assert.equal(normalizeRoute('/case-study/'), '/work');
   assert.equal(normalizeRoute('/case-study/example/index.html'), '/case-study/example');
 });
 test('all public pages use custom quotes and contain no retired package offers', async () => {
-  const {loadSite, renderRoute} = require('../scripts/build.cjs');
+  const {loadSite, renderRoute, publicRoutes} = require('../scripts/build.cjs');
   const site = await loadSite();
-  const routes = ['/', '/about', '/services', '/work', '/custom-quote', '/contact', '/insights', '/privacy', '/terms', ...site.content.caseStudies.map(item => `/case-study/${item.slug}`), ...site.content.insights.map(item => `/blog/${item.slug}`)];
+  const routes = publicRoutes(site);
   for (const route of routes) {
     const page = await renderRoute(route, site);
     assert.equal(page.status, 200, route);

@@ -854,7 +854,13 @@ export const original = {
 export const caseStudies = original.cases;
 export {signatureServices as services} from './offers.mjs';
 export const testimonials = original.testimonials;
-export const team = original.team;
+const teamDescriptions = {
+  Uttkarsh: 'Maps your workflow, reviews sales conversations and prioritizes practical opportunities. Keeps scope, decisions and business goals connected.',
+  'Ananya Rao': 'Connects copy, layout and motion around the customer journey. Designs interfaces that make the next action clear.',
+  'Kabir Shah': 'Builds voice and chat agents, integrations and operating checks. Defines evaluation scenarios, transcripts and human handoffs with your team.',
+  'Meera Iyer': 'Keeps delivery on track. Tests agreed scenarios, connects the CRM, trains your team and coordinates the support plan.'
+};
+export const team = original.team.map(person => ({...person, bio: teamDescriptions[person.name] || person.bio}));
 export const values = original.values;
 export const timeline = original.timeline;
 export const process = [

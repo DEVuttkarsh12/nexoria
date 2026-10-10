@@ -159,10 +159,14 @@ function setupROICalculators() {
 }
 
 function setupNavigation() {
+  const more = document.querySelector('.nav-more');
+  document.addEventListener('click', event => { if (more?.open && !more.contains(event.target)) more.open = false; });
+  more?.addEventListener('keydown', event => { if (event.key === 'Escape' && more.open) { event.stopPropagation(); more.open = false; more.querySelector('summary')?.focus(); } });
   const toggle = $('[data-menu-toggle]');
   const nav = $('[data-nav]');
   if (!toggle || !nav) return;
   const setOpen = open => {
+    if (!open && more) more.open = false;
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
     nav.classList.toggle('is-open', open);
@@ -182,7 +186,7 @@ function setupNavigation() {
     }
     if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); }
   });
-  window.matchMedia('(min-width: 810px)').addEventListener?.('change', event => { if (event.matches) setOpen(false); });
+  window.matchMedia('(min-width: 1100px)').addEventListener?.('change', event => { if (event.matches) setOpen(false); });
 }
 
 export function nextSlideIndex(current, direction, count) {

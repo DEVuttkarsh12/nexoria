@@ -5,17 +5,54 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/pricing", "destination": "/custom-quote", "permanent": true },
-    { "source": "/pricing.html", "destination": "/custom-quote", "permanent": true },
-    { "source": "/features", "destination": "/services", "permanent": true },
-    { "source": "/case-study", "destination": "/work", "permanent": true },
-    { "source": "/portfolio", "destination": "/work", "permanent": true },
-    { "source": "/blog", "destination": "/insights", "permanent": true },
-    { "source": "/privacy-policy", "destination": "/privacy", "permanent": true },
-    { "source": "/terms-and-conditions", "destination": "/terms", "permanent": true }
+    {
+      "source": "/pricing",
+      "destination": "/custom-quote",
+      "permanent": true
+    },
+    {
+      "source": "/pricing.html",
+      "destination": "/custom-quote",
+      "permanent": true
+    },
+    {
+      "source": "/case-study",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/work",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/insights",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions",
+      "destination": "/terms",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/case-study/:slug", "destination": "/case-study/:slug/index" },
-    { "source": "/blog/:slug", "destination": "/blog/:slug/index" }
+    {
+      "source": "/services/:slug",
+      "destination": "/services/:slug/index"
+    },
+    {
+      "source": "/case-study/:slug",
+      "destination": "/case-study/:slug/index"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blog/:slug/index"
+    }
   ]
 }

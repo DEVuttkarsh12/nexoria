@@ -11,9 +11,9 @@ test('slides wrap correctly in either direction, including one or zero slides', 
  assert.equal(nextSlideIndex(0,1,0),0);
 });
 test('Agen adaptation retains semantic pages, contact contracts and valid local artwork',async()=>{
- const {loadSite,renderRoute}=require('../scripts/build.cjs');
+ const {loadSite,renderRoute,publicRoutes}=require('../scripts/build.cjs');
  const site=await loadSite();
- const routes=['/','/about','/services','/work','/custom-quote','/contact','/insights','/privacy','/terms','/404',...site.content.caseStudies.map(c=>`/case-study/${c.slug}`),...site.content.insights.map(c=>`/blog/${c.slug}`)];
+ const routes=[...publicRoutes(site),'/404'];
  for(const route of routes){
   const {html}=await renderRoute(route,site);
   assert.equal((html.match(/<h1(?:\s|>)/g)||[]).length,1,route);

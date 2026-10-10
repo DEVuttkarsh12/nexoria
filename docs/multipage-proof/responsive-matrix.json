@@ -1,0 +1,1052 @@
+[
+  {
+    "route": "/",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/about",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/services",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/process",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/benefits",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/features",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/team",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/testimonials",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/faq",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/work",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/custom-quote",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/contact",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/insights",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/privacy",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/terms",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/services/flowback",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/services/carryline",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/services/intentpath",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/services/previewops",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/services/pledgedesk",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/case-study/luxe-estates",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/case-study/velvet-co",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/case-study/pulse-fit-os",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/case-study/noir-clinic",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/case-study/kinetic-logistics",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/case-study/hearth-home",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/404",
+    "clipped": [],
+    "page": 305,
+    "tiny": [],
+    "width": 320
+  },
+  {
+    "route": "/",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/about",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/services",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/process",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/benefits",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/features",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/team",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/testimonials",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/faq",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/work",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/custom-quote",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/contact",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/insights",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/privacy",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/terms",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/services/flowback",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/services/carryline",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/services/intentpath",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/services/previewops",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/services/pledgedesk",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/case-study/luxe-estates",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/case-study/velvet-co",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/case-study/pulse-fit-os",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/case-study/noir-clinic",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/case-study/kinetic-logistics",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/case-study/hearth-home",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/404",
+    "clipped": [],
+    "page": 375,
+    "tiny": [],
+    "width": 390
+  },
+  {
+    "route": "/",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/about",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/services",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/process",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/benefits",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/features",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/team",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/testimonials",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/faq",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/work",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/custom-quote",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/contact",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/insights",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/privacy",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/terms",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/services/flowback",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/services/carryline",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/services/intentpath",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/services/previewops",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/services/pledgedesk",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/case-study/luxe-estates",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/case-study/velvet-co",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/case-study/pulse-fit-os",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/case-study/noir-clinic",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/case-study/kinetic-logistics",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/case-study/hearth-home",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/404",
+    "clipped": [],
+    "page": 753,
+    "tiny": [],
+    "width": 768
+  },
+  {
+    "route": "/",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/about",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/services",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/process",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/benefits",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/features",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/team",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/testimonials",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/faq",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/work",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/custom-quote",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/contact",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/insights",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/privacy",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/terms",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/services/flowback",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/services/carryline",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/services/intentpath",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/services/previewops",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/services/pledgedesk",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/case-study/luxe-estates",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/case-study/velvet-co",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/case-study/pulse-fit-os",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/case-study/noir-clinic",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/case-study/kinetic-logistics",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/case-study/hearth-home",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/404",
+    "clipped": [],
+    "page": 1009,
+    "tiny": [],
+    "width": 1024
+  },
+  {
+    "route": "/",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/about",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/services",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/process",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/benefits",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/features",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/team",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/testimonials",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/faq",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/work",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/custom-quote",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/contact",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/insights",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/privacy",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/terms",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/services/flowback",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/services/carryline",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/services/intentpath",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/services/previewops",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/services/pledgedesk",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/case-study/luxe-estates",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/case-study/velvet-co",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/case-study/pulse-fit-os",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/case-study/noir-clinic",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/case-study/kinetic-logistics",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/case-study/hearth-home",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/blog/automate-your-highest-impact-workflow",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/blog/from-first-enquiry-to-booked-call",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/blog/what-happens-after-your-ai-system-launches",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  },
+  {
+    "route": "/404",
+    "clipped": [],
+    "page": 1425,
+    "tiny": [],
+    "width": 1440
+  }
+]

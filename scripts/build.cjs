@@ -8,6 +8,12 @@ const staticPages = {
   '/': ['index.html', 'homePage', 'Signature AI & Business Systems', 'Flowback, Carryline, IntentPath, PreviewOps and PledgeDesk: custom workflow, conversation, website, software and CRM systems with a signature edge.', 'home'],
   '/about': ['about.html', 'aboutPage', 'About — Built Around Your Business', 'Meet Zykken, the team turning ambitious ideas into practical AI automation and digital systems.', 'about'],
   '/services': ['services.html', 'servicesPage', 'Our Signature Systems', 'Explore Zykken’s five custom systems: Safe Replay Desk, Context Passport, Decision Brief, Change Rehearsal and Commitment Radar.', 'services'],
+  '/process': ['process.html', 'processPage', 'Our Process', 'How Zykken maps, proves, builds and hands over a custom AI system, with clear checkpoints at every stage.', 'process'],
+  '/benefits': ['benefits.html', 'benefitsPage', 'Why Work with Zykken', 'Explore the practical benefits of outcome-led, carefully tested and design-led business systems.', 'benefits'],
+  '/features': ['features.html', 'featuresPage', 'Features & Tools', 'Five signature capabilities, connected tools and ownership from day one. Explore how Zykken builds useful systems.', 'features'],
+  '/team': ['team.html', 'teamPage', 'Meet the Team', 'Meet the people responsible for strategy, design, engineering and delivery at Zykken.', 'team'],
+  '/testimonials': ['testimonials.html', 'testimonialsPage', 'Client Stories', 'Read client perspectives alongside the Zykken projects and systems behind them.', 'testimonials'],
+  '/faq': ['faq.html', 'faqPage', 'Your Questions, Answered', 'Practical answers about Zykken services, project scope, custom quotes, ownership and ongoing care.', 'faq'],
   '/work': ['work.html', 'workPage', 'Our Work', 'Explore selected Zykken projects, workflows, and digital experiences.', 'work'],
   '/custom-quote': ['custom-quote.html', 'customQuotePage', 'Request a Custom Quote', 'Every Zykken project is scoped and custom-priced around your business. Start with a free audit and receive a clear proposal.', 'custom-quote'],
   '/contact': ['contact.html', 'contactPage', 'Contact — Let’s Build What’s Next', 'Tell Zykken about your business, your goals, and the systems you want to build.', 'contact'],
@@ -15,7 +21,7 @@ const staticPages = {
   '/privacy': ['privacy.html', 'legalPage', 'Privacy', 'Read how Zykken handles information shared through this website.', 'privacy'],
   '/terms': ['terms.html', 'legalPage', 'Terms', 'Read the terms for using the Zykken website.', 'terms']
 };
-const aliases = { '/pricing': '/custom-quote', '/features': '/services', '/case-study': '/work', '/portfolio': '/work', '/blog': '/insights', '/privacy-policy': '/privacy', '/terms-and-conditions': '/terms' };
+const aliases = { '/pricing': '/custom-quote', '/case-study': '/work', '/portfolio': '/work', '/blog': '/insights', '/privacy-policy': '/privacy', '/terms-and-conditions': '/terms' };
 
 async function importSource(filename, fresh = false) {
   const fullPath = path.join(root, filename);
@@ -24,11 +30,12 @@ async function importSource(filename, fresh = false) {
   return import(url.href);
 }
 async function loadSite(fresh = false) {
-  const [layout, home, pages, content] = await Promise.all([
+  const [layout, home, pages, content, topics, servicePages] = await Promise.all([
     importSource('layout.mjs', fresh), importSource('home.mjs', fresh),
-    importSource('pages.mjs', fresh), importSource('content.mjs', fresh)
+    importSource('pages.mjs', fresh), importSource('content.mjs', fresh),
+    importSource('topic-pages.mjs', fresh), importSource('service-pages.mjs', fresh)
   ]);
-  return { layout, home, pages, content };
+  return { layout, home, pages, content, topics, servicePages };
 }
 function normalizeRoute(pathname) {
   const route = pathname.replace(/\/index\.html$/, '').replace(/\.html$/, '').replace(/\/+$/, '') || '/';
@@ -39,9 +46,14 @@ async function renderRoute(pathname, site) {
   const entry = staticPages[route];
   if (entry) {
     const [filename, renderName, title, description, page] = entry;
-    const render = renderName === 'homePage' ? site.home[renderName] : site.pages[renderName];
+    const render = renderName === 'homePage' ? site.home[renderName] : (site.pages[renderName] || site.topics[renderName]);
     const body = await render(...(renderName === 'legalPage' ? [page] : []));
     return { filename, html: site.layout.documentHtml(title, description, body, page), status: 200 };
+  }
+  const serviceMatch = /^\/services\/([^/]+)$/.exec(route);
+  if (serviceMatch) {
+    const item = site.servicePages.serviceDetailRoutes.find(item => item.slug === serviceMatch[1]);
+    if (item) return { filename: `services/${item.slug}/index.html`, html: site.layout.documentHtml(item.title, item.description, await site.servicePages.serviceDetailPage(item.slug), `services/${item.slug}`), status: 200 };
   }
   const caseMatch = /^\/case-study\/([^/]+)$/.exec(route);
   if (caseMatch) {
@@ -57,7 +69,7 @@ async function renderRoute(pathname, site) {
   return { filename: '404.html', html: site.layout.documentHtml('Page Not Found', 'Return to the Zykken website.', body, '404'), status: 404 };
 }
 function publicRoutes(site) {
-  return [...Object.keys(staticPages), ...(site.content.caseStudies || []).map(item => `/case-study/${item.slug}`), ...(site.content.insights || []).map(item => `/blog/${item.slug}`)];
+  return [...Object.keys(staticPages), ...site.servicePages.serviceDetailRoutes.map(item => item.path), ...(site.content.caseStudies || []).map(item => `/case-study/${item.slug}`), ...(site.content.insights || []).map(item => `/blog/${item.slug}`)];
 }
 function sitemapXml(site) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicRoutes(site).map(route => `  <url><loc>https://www.zykken.com${route}</loc></url>`).join('\n')}\n</urlset>\n`;
@@ -93,5 +105,5 @@ async function build() {
   console.log(`Built ${routes.length} pre-rendered pages in ${dist}`);
   return routes.length;
 }
-module.exports = { root, dist, build, loadSite, renderRoute, normalizeRoute, sitemapXml, robotsTxt };
+module.exports = { root, dist, build, loadSite, renderRoute, normalizeRoute, publicRoutes, sitemapXml, robotsTxt };
 if (require.main === module) build().catch(error => { console.error(error); process.exitCode = 1; });
