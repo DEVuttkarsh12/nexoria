@@ -68,3 +68,7 @@ All six project details now use normal document flow through the shared `caseStu
 Project layout styles use `project-*` selectors. The hero stacks below 900px; result cards stack below 700px; narrow-phone facts become labeled rows. Supporting text remains at least 14px. Shared inner heroes and article openings are content-driven; articles lead directly into their readable body without a second decorative cover. Tablet insight/service/quote cards have wider columns.
 
 Recovery checkpoint: `/home/uttkarsh/Downloads/Zykken Before Page Structure 2026-10-11.tar.gz` (source at d7eab20). Read `docs/PAGE_STRUCTURE_VERIFICATION_2026-10-11.md` for checks and any pending browser verification before further layout work.
+
+## October 11 supplied transparent logos
+
+The navbar and greeting loader use the user's exact transparent PNGs through the shared `brand()` helper: `assets/zykken-monogram-transparent.png` and `assets/zykken-wordmark-transparent.png`. Keep their source bytes unchanged. `site.css` frames the visible artwork with overflow-hidden wrappers and proportional offsets, so the large transparent source margins do not shrink the displayed logo. The base widths are 34px/100px, with 32px/96px at 810–1199px. Do not restore the old JPEG backgrounds, wordmark inversion or multiply blend. Existing loader behavior is preserved. Read `docs/BRAND_VERIFICATION_2026-10-11.md` for checks and provenance.
