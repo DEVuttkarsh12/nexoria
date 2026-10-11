@@ -72,3 +72,9 @@ Recovery checkpoint: `/home/uttkarsh/Downloads/Zykken Before Page Structure 2026
 ## October 11 supplied transparent logos
 
 The navbar and greeting loader use the user's exact transparent PNGs through the shared `brand()` helper: `assets/zykken-monogram-transparent.png` and `assets/zykken-wordmark-transparent.png`. Keep their source bytes unchanged. `site.css` frames the visible artwork with overflow-hidden wrappers and proportional offsets, so the large transparent source margins do not shrink the displayed logo. The base widths are 34px/100px, with 32px/96px at 810–1199px. Do not restore the old JPEG backgrounds, wordmark inversion or multiply blend. Existing loader behavior is preserved. Read `docs/BRAND_VERIFICATION_2026-10-11.md` for checks and provenance.
+
+## October 11 hero headline and falling tools
+
+The user requested the original homepage headline: **Build AI systems that print revenue fast.** It is restored exactly in `home.mjs`; current supporting copy and custom-quote CTAs remain. The user's latest animation request supersedes the reference's clipped floating cards: the shared `heroMark()` now uses authentic n8n, Make and Zapier SVGs from `assets/tools/`, and the cards visibly fall below the red capsule, fade out and reset invisibly. Source provenance and the upstream CC0 license are retained beside these assets. Do not identify the older generically named Framer SVGs as genuine OpenAI/Claude/Gemini icons.
+
+The native CSS animation is `hero-tool-drop`, 3.6 seconds with staggered delays. Keep capsule overflow visible, enough clear space for the drop trajectory, an invisible reset, and three still visible cards for reduced motion. Hero typography and capsule wrapping adapt to the longer original headline. Read `docs/HERO_VERIFICATION_2026-10-11.md` for actual checks and any pending browser verification.

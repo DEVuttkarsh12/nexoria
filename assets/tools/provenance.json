@@ -1,0 +1,40 @@
+{
+  "retrieved": "2026-10-11",
+  "repository": "https://github.com/simple-icons/simple-icons",
+  "license": "CC0-1.0; trademark rights remain with respective owners",
+  "icons": [
+    {
+      "name": "n8n",
+      "file": "n8n.svg",
+      "upstream": "https://raw.githubusercontent.com/simple-icons/simple-icons/dc7b10662a0a2cfdfc9305e2a2b06c023c30724a/icons/n8n.svg",
+      "upstreamCommit": "dc7b10662a0a2cfdfc9305e2a2b06c023c30724a",
+      "upstreamSha256": "f5a606188c78bf134fe7d85ae3d1310f6f4b7beafcd1d2fbdef2af02c92240a8",
+      "fileSha256": "2a415d5d2dea1903450d0df1b2b76866948d12a704e13378e54ed6896830c2e9",
+      "fill": "#EA4B71",
+      "brandSource": "https://n8n.io/press",
+      "changes": "Only SVG root fill set to upstream metadata hex; all path data, viewBox and title unchanged."
+    },
+    {
+      "name": "Make",
+      "file": "make.svg",
+      "upstream": "https://raw.githubusercontent.com/simple-icons/simple-icons/dc7b10662a0a2cfdfc9305e2a2b06c023c30724a/icons/make.svg",
+      "upstreamCommit": "dc7b10662a0a2cfdfc9305e2a2b06c023c30724a",
+      "upstreamSha256": "3985e5ed42709d253a772f99e56c5436af98c35d45bebc36b0aef29a9c9e7828",
+      "fileSha256": "454b57e9280a5218d256ac35974408a6a955f089fd6a854c14bb08add3a088c4",
+      "fill": "#6D00CC",
+      "brandSource": "https://www.make.com/en/press",
+      "changes": "Only SVG root fill set to upstream metadata hex; all path data, viewBox and title unchanged."
+    },
+    {
+      "name": "Zapier",
+      "file": "zapier.svg",
+      "upstream": "https://raw.githubusercontent.com/simple-icons/simple-icons/dc7b10662a0a2cfdfc9305e2a2b06c023c30724a/icons/zapier.svg",
+      "upstreamCommit": "dc7b10662a0a2cfdfc9305e2a2b06c023c30724a",
+      "upstreamSha256": "51fa9cca6198c74f924600e6972520541261e2f74ff80b6bec5bbd60a4bdcc73",
+      "fileSha256": "6831d26f31b07ffd71af6818113f0431992b60746c8da94a94d753054d9d6f85",
+      "fill": "#FF4F00",
+      "brandSource": "https://www.figma.com/file/NQFxTCE5pGR3dHZt0DkOyy/Zapier-Brand-Guidelines-%5BExternal%5D?type=design&node-id=101-9701&mode=design",
+      "changes": "Only SVG root fill set to upstream metadata hex; all path data, viewBox and title unchanged."
+    }
+  ]
+}
