@@ -1,0 +1,72 @@
+/* Quiet studio records. Line studies illustrate responsibility, not data. */
+.pe-team-grid{gap:22px;max-width:1180px}
+.pe-team-card,.dark-world .pe-team-card{border:1px solid #d3d3ce;border-radius:8px;background:#f5f4ef;color:#1d1e20;box-shadow:none}
+.pe-team-band{padding:20px 28px;background:transparent;border-bottom:1px solid #d8d8d1;color:#252628;gap:15px}
+.pe-team-discipline{font-size:15px;font-weight:500;gap:16px}
+.pe-team-discipline>span{padding-right:16px;border-right:1px solid #ccccc5;color:#616367;font-size:14px}
+.pe-team-note{font-size:14px;line-height:20px;color:#64666a}
+.pe-team-body{padding:30px 28px 24px}
+.pe-team-heading{grid-template-columns:44px minmax(0,1fr);gap:16px;align-items:start}
+.pe-person-initials,.pe-team-heading>.pe-person-initials{width:44px;height:44px;border-radius:2px;border:1px solid #c9cbc2;background:none;color:#393b3f;font-size:15px;font-weight:500}
+.pe-team-heading h3{font-size:29px;line-height:1.2;letter-spacing:-.65px;color:#1e2023}
+.pe-team-card .pe-team-role{margin-top:6px;font-size:16px;line-height:24px;font-weight:400;color:#585b60}
+.pe-team-card .pe-team-bio{font-size:17px;line-height:1.65;max-width:46ch;margin-top:24px;color:#50545a}
+.pe-discipline-study{margin-top:26px;padding-top:8px;border-top:1px solid #d3d5d5;color:#676d73}
+.pe-discipline-study>svg{display:block;width:100%;height:102px;max-width:330px;margin:0 auto}
+.pe-study-structure{opacity:.6}
+.pe-study-route{stroke:#303840;stroke-dasharray:42 220;animation:pe-route-trace 8s linear infinite}
+.pe-discipline-study>ol{list-style:none;padding:0;margin:0 auto;display:flex;justify-content:space-between;gap:10px;max-width:330px}
+.pe-discipline-study li{font-size:14px;line-height:22px;color:#5c636b}
+.pe-team-specialty{display:block;font-size:15px;line-height:24px;font-weight:400;margin-top:24px;padding-top:16px;border-top:1px solid #d3d5d5;color:#525960}
+.pe-team-specialty>span{display:none}
+.pe-client-emblem{border:1px solid #46494d;border-radius:8px;background:#262a2e;color:#f0f1ec;padding:28px;gap:24px;min-height:340px}
+.pe-client-top{font-size:14px;line-height:22px;color:#b8bdc3;letter-spacing:0}
+.pe-client-top>span:last-child{color:#c3cbd1}
+.pe-client-identity{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:14px;flex:1}
+.pe-client-name{font-size:clamp(30px,3vw,42px);line-height:1.06;letter-spacing:-1.2px;font-weight:500;overflow-wrap:anywhere;color:#f3f3ed}
+.pe-client-industry{font-size:14px;line-height:22px;margin:0;color:#bdc4cd;letter-spacing:.8px}
+.pe-client-result{padding-top:24px;border-top:1px solid #50565d;display:flex;flex-direction:column;gap:10px}
+.pe-client-result>strong{font-size:46px;line-height:1.1;letter-spacing:-1.2px;color:#e7ecee;font-weight:500}
+.pe-client-result>span{font-size:16px;line-height:24px;color:#c4cbd2;max-width:25ch}
+.pe-client-project{font-size:14px;line-height:22px;display:flex;flex-wrap:wrap;gap:6px 16px;color:#b5bec8;padding-top:4px}
+.pe-story-grid{gap:24px}
+.pe-story-card{padding:30px;border:1px solid #d2d4d3;border-radius:8px;background:#f6f6f0;box-shadow:none;color:#25292e}
+.pe-story-header{gap:18px;padding-bottom:22px;border-bottom:1px solid #d7dad9}
+.pe-story-index{font-size:14px;line-height:24px;color:#69717b;border-right:1px solid #c7ced4;padding-right:18px;align-self:flex-start;font-variant-numeric:tabular-nums}
+.pe-story-header h3{font-size:26px;line-height:1.2;color:#2c333b;font-weight:500;letter-spacing:-.55px}
+.pe-story-header div>span{font-size:14px;line-height:22px;color:#626c76;letter-spacing:.4px;margin-top:5px}
+.pe-story-card blockquote{font-size:22px;line-height:1.55;font-weight:400;letter-spacing:-.1px;color:#373e47;margin:24px 0 28px}
+.pe-story-person .pe-person-initials{width:40px;height:40px;font-size:14px;border-radius:2px}
+.pe-story-person strong{font-size:16px;line-height:24px;color:#333c47}
+.pe-story-person div>span{font-size:15px;line-height:23px;color:#616d7a}
+.pe-story-results{margin-top:24px;padding-top:22px;border-top:1px solid #d4dadb;gap:20px}
+.pe-story-results>div{gap:10px}
+.pe-story-results dt{font-size:14px;line-height:22px;font-weight:400;color:#646e78}
+.pe-story-results dd{font-size:27px;line-height:34px;font-weight:500;letter-spacing:-.65px;color:#37424e}
+.pe-story-link{margin-top:26px;padding-top:18px;font-size:16px;line-height:24px;border-top:1px solid #d4dadb;font-weight:500;color:#3d4752}
+.pe-story-link>.icon,.pe-story-link:hover{color:#293744}
+@keyframes pe-route-trace{from{stroke-dashoffset:262}to{stroke-dashoffset:0}}
+@media(max-width:1000px){
+ .pe-team-band{padding:20px 24px}.pe-team-body{padding:28px 24px 24px}.pe-team-note{display:none}.pe-team-heading h3{font-size:27px}
+ .pe-story-card{padding:26px}.pe-story-header h3{font-size:24px}.pe-story-card blockquote{font-size:21px}.pe-story-results{gap:13px}.pe-story-results dd{font-size:25px}
+ .pe-client-emblem{padding:24px}.pe-client-name{font-size:34px}
+}
+@media(max-width:779.98px){
+ .pe-team-grid,.pe-story-grid{grid-template-columns:minmax(0,1fr);gap:20px;max-width:620px}
+ .pe-team-note{display:block}.pe-team-heading h3{font-size:29px}
+ .pe-client-emblem,.inner-testimonial-slide>.pe-client-emblem{min-height:0;padding:24px;gap:20px}
+ .pe-client-identity{flex-direction:column;align-items:flex-start;gap:10px}.pe-client-name{font-size:34px}
+ .pe-client-result{flex-direction:row;align-items:center;padding-top:18px;gap:20px}.pe-client-result>strong{font-size:38px;line-height:1.1}.pe-client-result>span{font-size:16px;line-height:24px}
+}
+@media(max-width:479.98px){
+ .pe-team-card,.pe-story-card{border-radius:6px}.pe-team-band{padding:18px 20px}.pe-team-body{padding:24px 20px 20px}.pe-team-note{display:none}
+ .pe-team-heading{grid-template-columns:40px minmax(0,1fr);gap:13px}.pe-team-heading>.pe-person-initials{width:40px;height:40px;font-size:14px;border-radius:2px}.pe-team-heading h3{font-size:26px;line-height:1.2}
+ .pe-team-card .pe-team-bio{font-size:16px;line-height:1.65;margin-top:22px}.pe-team-specialty{font-size:15px;line-height:23px;margin-top:22px;padding-top:16px}
+ .pe-discipline-study>svg{height:96px}.pe-discipline-study>ol{gap:5px}.pe-discipline-study li{font-size:14px}
+ .pe-story-card{padding:24px 20px}.pe-story-header{gap:13px;padding-bottom:20px}.pe-story-index{padding-right:13px}.pe-story-header h3{font-size:24px;line-height:1.2}.pe-story-card blockquote{font-size:20px;line-height:1.55;margin:22px 0 24px}
+ .pe-story-results{grid-template-columns:minmax(0,1fr);gap:0;margin-top:24px;padding-top:4px}.pe-story-results>div{flex-direction:row;align-items:center;justify-content:space-between;gap:16px;padding:15px 0;border-bottom:1px solid #d9dfe1}.pe-story-results dt{max-width:160px}.pe-story-results dd{font-size:26px;line-height:32px;white-space:nowrap}.pe-story-link{margin-top:10px;padding-top:18px;border-top:0}
+ .pe-client-emblem{padding:22px;gap:18px;border-radius:6px}.pe-client-name{font-size:32px}.pe-client-result{gap:16px}.pe-client-result>strong{font-size:34px}.pe-client-result>span{font-size:15px;line-height:22px}.pe-client-project{gap:5px 12px}
+}
+@media(prefers-reduced-motion:reduce){.pe-study-route{animation:none;stroke-dasharray:none}}
+/* Light roster records keep their own text contrast inside the dark homepage. */
+.pe-team-card .pe-team-specialty{color:#525960}

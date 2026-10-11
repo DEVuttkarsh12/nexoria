@@ -1,3 +1,4 @@
+import {serviceSpecimen} from './systems-visuals.mjs';
 import {services} from './content.mjs';
 import {escapeHtml as e, icon, tag, button} from './layout.mjs';
 
@@ -81,17 +82,7 @@ export const serviceDetailRoutes = services.map(item => ({
 
 const checkedList = items => `<ul class="detail-check-list">${items.map(item => `<li>${icon('check')}<span>${e(item)}</span></li>`).join('')}</ul>`;
 
-function receipt(item) {
-  return `<aside class="detail-receipt" aria-label="Illustrative ${e(item.signature.name)} flow">
-    <div class="detail-receipt-top"><span>${icon(item.icon)} ${e(item.title)}</span><span>Illustrative flow</span></div>
-    <h3>${e(item.signature.name)}</h3>
-    <ol class="detail-receipt-list">${item.signature.preview.map((row, i) => {
-      const [title, status] = row.split(' · ');
-      return `<li><span class="detail-receipt-node" aria-hidden="true">0${i + 1}</span><div><strong>${e(title)}</strong><span>${e(status || '')}</span></div>${icon(i === 2 ? 'shield' : 'check')}</li>`;
-    }).join('')}</ol>
-    <div class="detail-receipt-foot">${icon('workflow')}<span>Built around your tools and approval rules.</span></div>
-  </aside>`;
-}
+function receipt(item) { return serviceSpecimen(item); }
 
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;

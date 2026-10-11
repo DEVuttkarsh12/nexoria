@@ -96,3 +96,17 @@ Read `docs/EDITORIAL_VERIFICATION_2026-10-11.md` and its150-check responsive JSO
 The user reported a horizontal line crossing the falling cards. The thin `.hero-mark::after` lower-edge overlay is removed. `heroToolCards(repeat)` renders two decorative triplets of the same authentic tool assets. The1.8s fall cycle uses primary delays-.12/-.28/-.44s; `.tile-echo` follows0.9s later. This keeps multiple cards flowing out of the capsule together. Preserve the inside origin, unchanged trajectory, invisible reset and emission mask. Hide `.tile-echo` under reduced motion, leaving exactly the three original still cards.
 
 Read `docs/CAPSULE_CASCADE_VERIFICATION_2026-10-11.md`. The previous release is recoverable at Git commit71ec2e0; this is a focused CSS/shared-helper change. New-only native proofs and responsive/release JSON stay in the redesign docs folder.
+
+## October 11 graphite identity and visual explanations
+
+The user's latest correction retains the original flowing shard WebP (`assets/agen/optimized/hero-background.webp`) and rounded hero geometry. Recolor the orange hue light gray using `background-blend-mode: luminosity` over a neutral background; preserve the original responsive cropping and corner radii. The large Z background is removed. The falling-tool capsule is graphite. Shared labels, buttons, borders and surfaces are quieter and neutral. Preserve the supplied transparent logos, original H1 and 1.8-second inside-origin cascade. Apply background blending only to the background so text, logos and authentic tool icons retain their colors.
+
+Shared component styles are linked after site.css in layout.mjs: assets/ui/editorial.css, systems.css, narrative.css and people-editorial.css. The build recursively collects local asset references in those CSS files. Do not use a late CSS @import; it would be ignored. Edit the native source components rather than generated dist files.
+
+`systems-visuals.mjs` exports systemsOperatingSheet() and serviceSpecimen(item). Five native radios inspect one illustrative enquiry through IntentPath, Carryline, PledgeDesk, PreviewOps and Flowback. These are educational scenarios, not live software/telemetry. The same five specimens now appear across Services, service details and Features. Container queries adapt their diagrams when a nested specimen is much narrower than its viewport. Preserve native keyboard selection, hidden inactive panels, all actual service links and ownership.
+
+`narrative-visuals.mjs` exports serviceFlow, integrationRoutes, outcomeComparisons and insightVisual. They replace recycled reference artwork, generic tool tiles and random metric bars. Charts show the exact supplied before/after figures; their labels identify source measures and each pair's scale. The service ROI calculator includes a dynamic 0–120-hour weekly comparison using its existing 80% recovery assumption. Do not introduce invented metrics or trend lines.
+
+Delivery stages include native checkpoint diagrams. Team cards contain discipline-specific vector studies; testimonials use typographic client identity rather than oversized generic badges. Motion pauses offscreen and respects reduced motion. Source biographies, quotations and project results stay unchanged. Legal and FAQ content remains straightforward readable prose.
+
+Recovery: Git commit 059d270 and `/home/uttkarsh/Downloads/Zykken Before Graphite 2026-10-11.tar.gz`. Read docs/GRAPHITE_VERIFICATION_2026-10-11.md for the completed checks and remaining limits.

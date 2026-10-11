@@ -1,5 +1,6 @@
 import {services} from './content.mjs';
 import {escapeHtml as e, icon} from './layout.mjs';
+import {systemsOperatingSheet} from './systems-visuals.mjs';
 
 // Delivery artifacts describe what gets agreed; they are not client dashboard captures.
 const stages = [
@@ -25,6 +26,12 @@ const stages = [
 
 const textLink = (label, href) => `<a class="ds-link" href="${href}"><span>${e(label)}</span>${icon('arrow')}</a>`;
 
+function stageDiagram(index) {
+  if (index===0) return `<div class="ed-stage-study ed-map-study"><span class="ed-study-label">Trace one real task</span><div class="ed-task-line"><span>${icon('mail')}<strong>Input</strong></span><i aria-hidden="true"></i><span class="ed-task-focus">${icon('voice')}<strong>Handoff</strong></span><i aria-hidden="true"></i><span>${icon('check')}<strong>Outcome</strong></span></div><span class="ed-study-caption">Find the repeated work between the tools.</span></div>`;
+  if (index===1) return `<div class="ed-stage-study ed-pilot-study"><span class="ed-study-label">Check both paths</span><div class="ed-pilot-lines"><div><span>Complete input</span><i aria-hidden="true"></i><strong>Continue</strong></div><div><span>Missing context</span><i aria-hidden="true"></i><strong>Human review</strong></div></div><span class="ed-study-caption">A useful pilot includes the exception.</span></div>`;
+  return `<div class="ed-stage-study ed-launch-study"><span class="ed-study-label">Leave a working handover</span><div class="ed-handover-stack"><span class="ed-handover-back" aria-hidden="true"></span><span class="ed-handover-middle" aria-hidden="true"></span><div>${icon('code')}<strong>Code & workflows</strong><span>Operating guide · Team training</span></div></div><span class="ed-study-caption">In your accounts. With a named owner.</span></div>`;
+}
+
 export function deliveryArtifact(index) {
   const samples = [
     {heading: 'The project brief', label: 'Agree before we build', rows: [['Outcome', 'One useful first result'], ['Scope', 'Tools, actions and boundaries'], ['Plan', 'Milestones and responsibilities']]},
@@ -32,7 +39,7 @@ export function deliveryArtifact(index) {
     {heading: 'The handover', label: 'Ready for everyday use', rows: [['Build', 'Code and workflows in your accounts'], ['Guide', 'Operating notes and team training'], ['Care', 'The agreed support coverage']]}
   ];
   const sample = samples[index % samples.length];
-  return `<div class="ds-artifact ds-artifact-${index + 1}" aria-label="Illustrative ${e(sample.heading.toLowerCase())}"><div class="ds-artifact-head"><span class="ds-artifact-symbol">${icon(['workflow', 'code', 'shield'][index])}</span><div><strong>${e(sample.heading)}</strong><span>${e(sample.label)}</span></div></div><dl class="ds-artifact-rows">${sample.rows.map(([label, value]) => `<div><dt>${e(label)}</dt><dd>${e(value)}</dd></div>`).join('')}</dl></div>`;
+  return `<div class="ds-artifact ds-artifact-${index + 1}" aria-label="Illustrative ${e(sample.heading.toLowerCase())}"><div class="ds-artifact-head"><span class="ds-artifact-symbol">${icon(['workflow', 'code', 'shield'][index])}</span><div><strong>${e(sample.heading)}</strong><span>${e(sample.label)}</span></div></div>${stageDiagram(index)}<dl class="ds-artifact-rows">${sample.rows.map(([label, value]) => `<div><dt>${e(label)}</dt><dd>${e(value)}</dd></div>`).join('')}</dl></div>`;
 }
 
 export const processArtifact = deliveryArtifact;
@@ -59,14 +66,6 @@ export function homeBenefits() {
   return `<div class="ds-benefits-grid">${benefits.map(([title, description, caption, href], index) => `<article class="ds-benefit"><div class="ds-benefit-copy"><span class="ds-benefit-number" aria-hidden="true">0${index + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></div>${benefitArtifact(index)}<div class="ds-benefit-foot"><p>${e(caption)}</p>${textLink('See the approach', href)}</div></article>`).join('')}</div>`;
 }
 
-const systemDescriptions = {
-  Flowback: 'Inspect the failed step. Approve the supported recovery.',
-  Carryline: 'Carry confirmed context into the next conversation.',
-  IntentPath: 'Turn the visitor’s goal into a reviewed enquiry brief.',
-  PreviewOps: 'Review the impact before applying a business change.',
-  PledgeDesk: 'Give each customer promise an owner and a next step.'
-};
-
 export function systemsShowcase() {
-  return `<div class="ds-systems"><div class="ds-systems-top"><span>${icon('workflow')}One considered architecture</span><span>Custom-built around your business</span></div><div class="ds-systems-grid"><div class="ds-system-foundation"><span class="ds-foundation-symbol">${icon('chip')}</span><span class="ds-label">The starting point</span><h3>Your work.<br>Your rules.</h3><p>Your tools, people and operating decisions shape the system.</p><ul><li>${icon('check')}Connected tools</li><li>${icon('check')}Agreed approvals</li><li>${icon('check')}Named next owners</li></ul></div><div class="ds-systems-list">${services.map(system => `<a class="ds-system-row" href="/services/${system.title.toLowerCase()}"><span class="ds-system-icon">${icon(system.icon)}</span><div class="ds-system-name"><span class="ds-system-category">${e(system.category)}</span><h3>${e(system.title)}</h3></div><div class="ds-system-purpose"><strong>${e(system.signature.name)}</strong><p>${e(systemDescriptions[system.title])}</p></div><span class="ds-system-arrow" aria-hidden="true">${icon('arrow')}</span></a>`).join('')}</div></div><div class="ds-ownership"><span class="ds-ownership-icon">${icon('shield')}</span><div><h3>Built in your accounts. Owned by your team.</h3><p>Your code, workflows and operating notes come with a working handover. We agree the supported connections and scope in your proposal.</p></div>${textLink('Explore ownership', '/features#ownership')}</div></div>`;
+  return systemsOperatingSheet();
 }

@@ -149,6 +149,16 @@ function setupROICalculators() {
         const output = $(selector, calculator);
         if (output) output.textContent = value;
       });
+      const weekly = Math.max(0, Number(hours.value) || 0);
+      const remaining = weekly * .2;
+      const beforeBar = $('[data-roi-before-bar]', calculator);
+      const afterBar = $('[data-roi-after-bar]', calculator);
+      if (beforeBar) beforeBar.style.setProperty('--roi-width', `${weekly / 120 * 100}%`);
+      if (afterBar) afterBar.style.setProperty('--roi-width', `${remaining / 120 * 100}%`);
+      const beforeHours = $('[data-roi-before-hours]', calculator);
+      const afterHours = $('[data-roi-after-hours]', calculator);
+      if (beforeHours) beforeHours.textContent = `${number.format(weekly)} hrs/wk`;
+      if (afterHours) afterHours.textContent = `${number.format(remaining)} hrs/wk`;
       hours.setAttribute('aria-valuetext', `${number.format(hours.value)} hours per week`);
       cost.setAttribute('aria-valuetext', `${currency.format(cost.value)} per hour`);
     };
@@ -299,7 +309,7 @@ function setupMotion() {
   update();
   if ('IntersectionObserver' in window) {
     const observer=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('motion-paused',!entry.isIntersecting)),{rootMargin:'100px'});
-    $$('.benefit-art,.tools-stage,.brand-hub,.client-ticker,.metric-bars,.globe-visual,.process-workbench,.team-workbench').forEach(el=>observer.observe(el));
+    $$('.benefit-art,.tools-stage,.brand-hub,.client-ticker,.metric-bars,.globe-visual,.process-workbench,.team-workbench,.nv-flow,.nv-integrations,.nv-results,.sx-sheet,.ed-stage-study,.pe-discipline-study').forEach(el=>observer.observe(el));
   }
 }
 

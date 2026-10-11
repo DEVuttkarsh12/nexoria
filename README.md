@@ -1,6 +1,6 @@
 # Zykken New
 
-A custom-coded redesign of Zykken’s AI automation agency website, using the [AgenAI Framer template](https://agen-ai.framer.website/) as the visual reference. The business content, original logo and contact endpoint are retained. This project uses static HTML generated from JavaScript modules; editing Framer is not required.
+A custom-coded Zykken agency website with a graphite visual identity, native interactive system studies and project-specific visual explanations. Earlier versions used the AgenAI Framer template as a starting reference; the current direction uses custom Zykken artwork and components. The business content, original logo and contact endpoint are retained. This project uses static HTML generated from JavaScript modules; editing Framer is not required.
 
 The user confirmed the brand spelling **Zykken**. The existing domain is **zykken.com**, its live site redirects to **www.zykken.com**, and the confirmed contact mailbox is **info@zykken.com**.
 
@@ -103,3 +103,7 @@ The hero is modestly wider (1560px maximum), with a visible native dotted globe 
 ## October 10 multipage expansion
 
 The latest verification is in `docs/MULTIPAGE_VERIFICATION_2026-10-10.md`. Supporting labels and captions have a 14px minimum, descriptive copy generally uses 16–18px, and native diagrams have additional room for the larger text. The recoverable pre-expansion source is `/home/uttkarsh/Downloads/Zykken Before Multipage 2026-10-10.tar.gz`.
+
+## October 11 graphite direction
+
+The latest hero correction retains the original flowing WebP shard and rounded hero geometry, recoloring its orange hue light gray with `background-blend-mode: luminosity` over a neutral background. The large Z study is removed. Restrained surfaces and custom explanatory components remain. `systems-visuals.mjs` provides the native selectable systems study and five shared specimens; `narrative-visuals.mjs` provides request flow, authentic integration paths, source-result comparisons and insight artwork. The service ROI calculator now includes a dynamic weekly-hours graph. Four component stylesheets in `assets/ui/` load after `site.css`; the build includes their local asset references. Read `docs/GRAPHITE_VERIFICATION_2026-10-11.md` for verification and recovery.

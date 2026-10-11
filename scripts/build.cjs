@@ -94,6 +94,10 @@ async function build() {
     await fs.mkdir(path.dirname(target), { recursive: true });
     await fs.writeFile(target, page.html);
   }
+  // Shared component stylesheets may reference their own local fonts or artwork.
+  for (const asset of publicAssets) {
+    if (asset.endsWith('.css')) collectAssets(await fs.readFile(path.join(root, asset), 'utf8'));
+  }
   await Promise.all(['site.css', 'app.mjs'].map(copyIfPresent));
   await Promise.all([...publicAssets].map(async asset => {
     const target = path.join(dist, asset);
