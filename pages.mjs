@@ -1,5 +1,5 @@
 import {original, caseStudies, services, testimonials, team, values, timeline, process, faqs, insights} from './content.mjs';
-import {escapeHtml as e, icon, tag, button, sectionHeading, pageHero, ctaSection, faqSection, contactForm, heroMark} from './layout.mjs';
+import {escapeHtml as e, icon, tag, button, sectionHeading, pageHero, ctaSection, faqSection, contactForm} from './layout.mjs';
 import {caseCard, insightCards, caseVisual} from './home.mjs';
 
 const list = items => `<ul class="feature-list">${items.map(item => `<li>${icon('check')}<span>${e(item)}</span></li>`).join('')}</ul>`;
@@ -73,15 +73,33 @@ export function caseStudyPage(slug) {
  const next = caseStudies[(caseStudies.indexOf(item)+1)%caseStudies.length];
  const suffix = (item.title.split(' — ')[1] || 'A connected business system').replace(/^the /,'');
  const deliverables = caseDeliverables[item.slug];
- const quotes = [item,...caseStudies.filter(c=>c.slug!==slug).slice(0,2)];
- return `<section class="case-hero"><div class="case-hero-panel"><div class="case-hero-copy">${tag('Selected project',true)}<h1><span>${e(item.client)}</span><span class="case-title-second">${heroMark()}<span>${e(suffix)}</span></span></h1><p>${e(item.industry)} · ${e(item.categoryLabel)} · Built in ${e(item.elapsed)}</p></div><figure class="case-cover" data-case-parallax><div class="case-cover-inner"><img src="${e(caseVisual(item))}" width="1272" height="660" alt="Editorial illustration of ${e(item.categoryLabel.toLowerCase())} systems"></div></figure></div></section>
- <section class="case-project-content"><div class="container case-narrative"><article class="case-narrative-section reveal"><h2>Project details</h2><p>${e(item.build)}</p><div class="case-project-meta"><div><span class="eyebrow">DELIVERABLES</span><div class="deliverable-pills">${deliverables.map(label=>`<span>${e(label)}</span>`).join('')}</div></div><div><span class="eyebrow">INDUSTRY</span><div class="deliverable-pills"><span>${e(item.industry)}</span></div></div></div></article>
- <figure class="case-project-media surface reveal"><img src="${e(caseVisual(item))}" width="1272" height="660" alt="Conceptual illustration of the connected ${e(item.categoryLabel.toLowerCase())} workflow" loading="lazy"></figure>
- <article class="case-narrative-section reveal"><h2>Project research</h2><p>${e(item.problem)}</p><div class="case-requirements"><h3>What the system needed to do</h3>${list(caseRequirements[item.slug])}</div></article>
- <article class="case-narrative-section reveal"><h2>Project results</h2><p>A ${e(item.elapsed)} build connected the work around ${e(item.client)}’s needs. The project outcomes are recorded below.</p>${metrics(item.results,'case-results-grid')}</article>
- <div class="case-detail-gallery"><figure class="case-gallery-art surface reveal"><img src="${e(caseVisual(item))}" width="720" height="720" alt="Editorial system illustration" loading="lazy"></figure><figure class="case-gallery-art surface reveal"><img src="${e(item.localImage)}" width="800" height="600" alt="${e(item.imageAlt)} — industry image" loading="lazy"></figure></div></div></section>
- ${testimonialSection(quotes)}
- <section class="section next-project-section"><div class="container">${sectionHeading('Keep exploring','Next project')}<div class="case-grid case-grid-single">${caseCard(next)}</div></div></section>`;
+ const overviews = {
+  'luxe-estates':'Lead qualification, viewing bookings and follow-up connected to the agents’ existing workflow.',
+  'velvet-co':'An editorial storefront with a bilingual AI concierge and a clearer journey from discovery to checkout.',
+  'pulse-fit-os':'Bookings, payments and coach-reviewed plans brought together in one member and trainer platform.',
+  'noir-clinic':'A bilingual voice assistant connects callers, appointments and reminders, with urgent enquiries handed to staff.',
+  'kinetic-logistics':'Document extraction, reconciliation and an exception inbox connect the everyday delivery workflow.',
+  'hearth-home':'A website, CRM and quote flow keep enquiries and follow-up moving together.',
+ };
+ const servicePath = {automation:'flowback',website:'intentpath',saas:'previewops',voice:'carryline',crm:'pledgedesk'}[item.category];
+ return `<div class="project-page">
+ <section class="project-hero" aria-labelledby="project-title"><div class="project-hero-panel">
+ <nav class="project-breadcrumb" aria-label="Breadcrumb"><a href="/work">Selected work</a><span aria-hidden="true">/</span><span aria-current="page">${e(item.client)}</span></nav>
+ <div class="project-hero-grid"><div class="project-hero-copy">${tag('Selected project',true)}<h1 id="project-title">${e(item.client)}</h1><p class="project-deck">${e(suffix)}</p><p class="project-summary">${e(overviews[item.slug])}</p>
+ <dl class="project-facts"><div><dt>Industry</dt><dd>${e(item.industry)}</dd></div><div><dt>Project</dt><dd>${e(item.categoryLabel)}</dd></div><div><dt>Build time</dt><dd>${e(item.elapsed)}</dd></div></dl>
+ <div class="project-actions">${button('Explore the project','#project-challenge')}<a class="text-link" href="/work">All projects ${icon('arrow')}</a></div></div>
+ <figure class="project-cover surface"><div class="project-cover-image"><img src="${e(caseVisual(item))}" width="1272" height="660" alt="Conceptual illustration of ${e(item.client)}’s connected ${e(item.categoryLabel.toLowerCase())} system" fetchpriority="high"></div><figcaption><span>${e(item.client)} / ${e(item.categoryLabel)}</span><span>Conceptual system illustration</span></figcaption></figure>
+ </div></div></section>
+ <div class="container project-story">
+ <nav class="project-section-nav" aria-label="On this project"><span>Inside the project</span><a href="#project-challenge">01 · The challenge</a><a href="#project-solution">02 · The solution</a><a href="#project-results">03 · The results</a></nav>
+ <section class="project-story-row" id="project-challenge" aria-labelledby="challenge-title"><div class="project-section-heading"><span class="project-index">01 / THE STARTING POINT</span><h2 id="challenge-title">The challenge.</h2></div><div class="project-story-copy"><p>${e(item.problem)}</p><div class="project-requirements surface"><h3>What needed to change</h3>${list(caseRequirements[item.slug])}</div></div></section>
+ <section class="project-story-row" id="project-solution" aria-labelledby="solution-title"><div class="project-section-heading"><span class="project-index">02 / THE BUILD</span><h2 id="solution-title">A connected solution.</h2><a class="text-link" href="/services/${servicePath}">Explore this expertise ${icon('arrow')}</a></div><div class="project-story-copy"><p>${e(item.build)}</p><div class="project-deliverables"><h3>What we delivered</h3><ul>${deliverables.map((label,i)=>`<li><span aria-hidden="true">0${i+1}</span><strong>${e(label)}</strong>${icon('check')}</li>`).join('')}</ul></div></div></section>
+ <section class="project-results-section" id="project-results" aria-labelledby="results-title"><div class="project-results-heading"><div class="project-section-heading"><span class="project-index">03 / THE OUTCOME</span><h2 id="results-title">The results.</h2></div><p>The project outcomes for ${e(item.client)}, following a ${e(item.elapsed)} build around their team’s needs.</p></div><dl class="project-results-grid">${item.results.map(result=>`<div class="project-result surface"><dt>${e(result.label)}</dt><dd>${e(result.value)}</dd></div>`).join('')}</dl></section>
+ <section class="project-perspective" aria-labelledby="perspective-title"><div><span class="project-index">THE CLIENT PERSPECTIVE</span><h2 id="perspective-title">In their words.</h2><div class="quote-author"><span class="initial-avatar" aria-hidden="true">${e(item.initials)}</span><div><strong>${e(item.person)}</strong><span>${e(item.role)}</span></div></div></div><blockquote><span aria-hidden="true">“</span><p>${e(item.quote).replace(/zykken/g,'Zykken')}</p></blockquote></section>
+ </div>
+ <section class="section project-next"><div class="container"><div class="project-next-heading"><div><span class="project-index">KEEP EXPLORING</span><h2>Next project.</h2></div><a class="text-link" href="/work">Back to all work ${icon('arrow')}</a></div><div class="case-grid case-grid-single">${caseCard(next)}</div></div></section>
+ ${ctaSection()}
+ </div>`;
 }
 export function insightsPage() {
  return `${pageHero('The journal','Clear thinking.<br>Useful next steps.','Practical notes on choosing a first workflow, connecting your sales systems, and keeping them useful after launch.')}<section class="section section-tight"><div class="container">${insightCards()}</div></section>${ctaSection()}`;
@@ -89,8 +107,8 @@ export function insightsPage() {
 export function blogPage(slug) {
  const item=insights.find(i=>i.slug===slug);
  if (!item) return null;
- return `${pageHero('The journal',e(item.title),`${e(item.category)} · ${e(item.readTime)}`)}
- <section class="section section-tight"><div class="container"><a class="back-link text-link" href="/insights">All insights ${icon('arrow')}</a><div class="article-cover surface reveal"><div class="article-cover-pattern" aria-hidden="true">${heroMark()}</div><span class="article-cover-label">ZYKKEN / ${e(item.category)}</span></div><article class="article-body prose reveal"><p class="article-intro">${e(item.intro)}</p>${item.sections.map(([title,copy])=>`<h2>${e(title)}</h2><p>${e(copy)}</p>`).join('')}<div class="article-audit surface"><h3>Start with your free audit.</h3><p>One workflow recording. Three opportunities. A clear scope and a custom quote.</p>${button('Request your free audit','/contact')}</div></article></div></section><section class="section section-muted"><div class="container">${sectionHeading('Keep exploring','More practical insights.')}${insightCards(insights.filter(i=>i.slug!==slug))}</div></section>${ctaSection()}`;
+ return `<section class="page-hero article-hero"><div class="article-hero-inner"><nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>${tag('The journal',true)}<h1>${e(item.title)}</h1><div class="article-meta"><span>${e(item.category)}</span><span>${e(item.readTime)}</span></div></div></section>
+ <section class="section article-reading"><div class="container"><article class="article-body prose"><p class="article-intro">${e(item.intro)}</p>${item.sections.map(([title,copy])=>`<section class="article-chapter"><h2>${e(title)}</h2><p>${e(copy)}</p></section>`).join('')}<div class="article-audit surface"><h3>Start with your free audit.</h3><p>One workflow recording. Three opportunities. A clear scope and a custom quote.</p>${button('Request your free audit','/contact')}</div><a class="back-link text-link" href="/insights">All insights ${icon('arrow')}</a></article></div></section><section class="section section-muted"><div class="container">${sectionHeading('Keep exploring','More practical insights.')}${insightCards(insights.filter(i=>i.slug!==slug))}</div></section>${ctaSection()}`;
 }
 export function legalPage(kind) {
  const privacy=kind==='privacy';

@@ -60,3 +60,11 @@ The homepage is a complete overview; its cards and section CTAs lead to detail p
 The active team export normalizes biographies around agreed scope and support while preserving the four supplied identities. The original archived content remains unchanged. Supporting visible text is at least 14px; descriptive copy generally uses 16–18px. Keep the larger native labels readable without shrinking them to fit; adjust geometry or simplify redundant decorations instead.
 
 Read docs/MULTIPAGE_VERIFICATION_2026-10-10.md before further changes. The 22 tests include all 29 routes, canonicals, unique IDs, every internal link/fragment, discoverability from the homepage and unknown-route 404s. Responsive proof covers all 30 rendered pages at 320/390/768/1024/1440px. Recovery checkpoint: /home/uttkarsh/Downloads/Zykken Before Multipage 2026-10-10.tar.gz.
+
+## October 11 page structure refinements
+
+All six project details now use normal document flow through the shared `caseStudyPage` renderer: breadcrumb, separate client title and project deck, three labeled facts, a contained conceptual illustration, and numbered challenge/solution/results sections. They finish with the current client's quotation, a next-project card and the custom-project CTA. The former absolute cover, inline headline capsule and manual cover spacer are retired. Keep hero, story and related-project gutters aligned, and preserve each case's exact source problem, build, results and quotation.
+
+Project layout styles use `project-*` selectors. The hero stacks below 900px; result cards stack below 700px; narrow-phone facts become labeled rows. Supporting text remains at least 14px. Shared inner heroes and article openings are content-driven; articles lead directly into their readable body without a second decorative cover. Tablet insight/service/quote cards have wider columns.
+
+Recovery checkpoint: `/home/uttkarsh/Downloads/Zykken Before Page Structure 2026-10-11.tar.gz` (source at d7eab20). Read `docs/PAGE_STRUCTURE_VERIFICATION_2026-10-11.md` for checks and any pending browser verification before further layout work.
