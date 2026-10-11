@@ -1,0 +1,1505 @@
+{
+  "date": "2026-10-11T12:12:00.636Z",
+  "checks": [
+    {
+      "route": "/",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/about",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/services",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/process",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/benefits",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/features",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/team",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/testimonials",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/faq",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/work",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/custom-quote",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/contact",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/insights",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/privacy",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/terms",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/services/flowback",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/services/carryline",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/services/intentpath",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/services/previewops",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/services/pledgedesk",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/case-study/luxe-estates",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/case-study/velvet-co",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/case-study/pulse-fit-os",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/case-study/noir-clinic",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/case-study/kinetic-logistics",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/case-study/hearth-home",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/blog/automate-your-highest-impact-workflow",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/blog/from-first-enquiry-to-booked-call",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/blog/what-happens-after-your-ai-system-launches",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/404",
+      "brokenImages": [],
+      "client": 320,
+      "clipped": [],
+      "h1": 1,
+      "page": 305,
+      "tiny": [],
+      "width": 320
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/about",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/services",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/process",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/benefits",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/features",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/team",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/testimonials",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/faq",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/work",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/custom-quote",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/contact",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/insights",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/privacy",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/terms",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/services/flowback",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/services/carryline",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/services/intentpath",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/services/previewops",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/services/pledgedesk",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/case-study/luxe-estates",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/case-study/velvet-co",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/case-study/pulse-fit-os",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/case-study/noir-clinic",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/case-study/kinetic-logistics",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/case-study/hearth-home",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/blog/automate-your-highest-impact-workflow",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/blog/from-first-enquiry-to-booked-call",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/blog/what-happens-after-your-ai-system-launches",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/404",
+      "brokenImages": [],
+      "client": 390,
+      "clipped": [],
+      "h1": 1,
+      "page": 375,
+      "tiny": [],
+      "width": 390
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/about",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/services",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/process",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/benefits",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/features",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/team",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/testimonials",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/faq",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/work",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/custom-quote",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/contact",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/insights",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/privacy",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/terms",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/services/flowback",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/services/carryline",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/services/intentpath",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/services/previewops",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/services/pledgedesk",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/case-study/luxe-estates",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/case-study/velvet-co",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/case-study/pulse-fit-os",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/case-study/noir-clinic",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/case-study/kinetic-logistics",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/case-study/hearth-home",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/blog/automate-your-highest-impact-workflow",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/blog/from-first-enquiry-to-booked-call",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/blog/what-happens-after-your-ai-system-launches",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/404",
+      "brokenImages": [],
+      "client": 768,
+      "clipped": [],
+      "h1": 1,
+      "page": 753,
+      "tiny": [],
+      "width": 768
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/about",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/services",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/process",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/benefits",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/features",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/team",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/testimonials",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/faq",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/work",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/custom-quote",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/contact",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/insights",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/privacy",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/terms",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/services/flowback",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/services/carryline",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/services/intentpath",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/services/previewops",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/services/pledgedesk",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/case-study/luxe-estates",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/case-study/velvet-co",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/case-study/pulse-fit-os",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/case-study/noir-clinic",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/case-study/kinetic-logistics",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/case-study/hearth-home",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/blog/automate-your-highest-impact-workflow",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/blog/from-first-enquiry-to-booked-call",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/blog/what-happens-after-your-ai-system-launches",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/404",
+      "brokenImages": [],
+      "client": 1024,
+      "clipped": [],
+      "h1": 1,
+      "page": 1009,
+      "tiny": [],
+      "width": 1024
+    },
+    {
+      "route": "/",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/about",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/services",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/process",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/benefits",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/features",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/team",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/testimonials",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/faq",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/work",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/custom-quote",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/contact",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/insights",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/privacy",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/terms",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/services/flowback",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/services/carryline",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/services/intentpath",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/services/previewops",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/services/pledgedesk",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/case-study/luxe-estates",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/case-study/velvet-co",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/case-study/pulse-fit-os",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/case-study/noir-clinic",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/case-study/kinetic-logistics",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/case-study/hearth-home",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/blog/automate-your-highest-impact-workflow",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/blog/from-first-enquiry-to-booked-call",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/blog/what-happens-after-your-ai-system-launches",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    },
+    {
+      "route": "/404",
+      "brokenImages": [],
+      "client": 1440,
+      "clipped": [],
+      "h1": 1,
+      "page": 1425,
+      "tiny": [],
+      "width": 1440
+    }
+  ]
+}
