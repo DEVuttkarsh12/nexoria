@@ -1164,13 +1164,14 @@ p{color:#52525b}
  border:1px solid #ffffffd9;border-radius:12px;background:#fff;
  box-shadow:0 4px 8px #32110818,0 12px 20px #3211081c;
  transform:translate3d(-50%,-50%,0) rotate(var(--tilt));
- animation:hero-tool-drop 3.6s linear infinite;animation-delay:var(--delay);
+ animation:hero-tool-drop 1.8s linear infinite;animation-delay:var(--delay);
 }
 .hero-tile img{width:36px;height:36px;object-fit:contain;flex:none}
-.tile-one{left:24%;--tilt:-16deg;--drift:-22px;--spin:-24deg;--delay:-.2s}
+.hero-tile.tile-echo{animation-delay:calc(var(--delay) - .9s)}
+.tile-one{left:24%;--tilt:-16deg;--drift:-22px;--spin:-24deg;--delay:-.12s}
 .tile-one img{width:40px;height:40px}
-.tile-two{left:51%;--tilt:12deg;--drift:10px;--spin:26deg;--delay:-1.4s}
-.tile-three{left:78%;--tilt:-10deg;--drift:24px;--spin:-18deg;--delay:-2.6s}
+.tile-two{left:51%;--tilt:12deg;--drift:10px;--spin:26deg;--delay:-.28s}
+.tile-three{left:78%;--tilt:-10deg;--drift:24px;--spin:-18deg;--delay:-.44s}
 @keyframes hero-tool-drop{
  0%{opacity:0;transform:translate3d(-50%,-50%,0) rotate(var(--tilt)) scale(.82)}
  12%{opacity:1;transform:translate3d(-50%,-48%,0) rotate(var(--tilt)) scale(1)}
@@ -1198,12 +1199,12 @@ p{color:#52525b}
 }
 @media(prefers-reduced-motion:reduce){
  .hero-tile{animation:none;opacity:1;transform:translate3d(-50%,-50%,0) rotate(var(--tilt))}
+ .hero-tile.tile-echo{display:none}
 }
 
 
 /* A masked emission plane keeps the origin inside the capsule, never above it. */
 .hero-emission{position:absolute;inset:0;display:block;clip-path:inset(0 -40px -190px);isolation:isolate}
-.hero-mark::after{content:"";position:absolute;z-index:2;left:3px;right:3px;bottom:0;height:5px;border-radius:0 0 100px 100px;background:linear-gradient(180deg,#fa3d2510,#bc251b28);pointer-events:none}
 @media(min-width:1200px){
  .header-inner{min-width:min(920px,calc(100vw - 64px));justify-content:space-between;padding:9px 10px 9px 30px;gap:34px}
  .main-nav{gap:26px}

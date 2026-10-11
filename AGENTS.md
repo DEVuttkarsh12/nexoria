@@ -77,7 +77,7 @@ The navbar and greeting loader use the user's exact transparent PNGs through the
 
 The user requested the original homepage headline: **Build AI systems that print revenue fast.** It is restored exactly in `home.mjs`; current supporting copy and custom-quote CTAs remain. The user's latest animation request supersedes the reference's clipped floating cards: the shared `heroMark()` now uses authentic n8n, Make and Zapier SVGs from `assets/tools/`, and the cards visibly fall below the red capsule, fade out and reset invisibly. Source provenance and the upstream CC0 license are retained beside these assets. Do not identify the older generically named Framer SVGs as genuine OpenAI/Claude/Gemini icons.
 
-The native CSS animation is `hero-tool-drop`, 3.6 seconds with staggered delays. Keep capsule overflow visible, enough clear space for the drop trajectory, an invisible reset, and three still visible cards for reduced motion. Hero typography and capsule wrapping adapt to the longer original headline. Read `docs/HERO_VERIFICATION_2026-10-11.md` for actual checks and any pending browser verification.
+The native CSS animation is `hero-tool-drop`, now1.8 seconds with two staggered triplets0.9 seconds apart. Keep capsule overflow visible, enough clear space for the drop trajectory, an invisible reset, and three still visible cards for reduced motion. Hero typography and capsule wrapping adapt to the longer original headline. Read `docs/HERO_VERIFICATION_2026-10-11.md` for actual checks and any pending browser verification.
 
 ## October 11 editorial refinement
 
@@ -90,3 +90,9 @@ The latest user request supersedes the older process/workbench/hub artwork. `del
 The hero emission plane clips above the capsule: tools begin inside and fall out of its bottom, with an invisible reset and reduced-motion still state. The desktop navigation is920px with balanced spacing; mobile navigation behavior is unchanged. The exact original headline and supplied transparent PNGs remain.
 
 Read `docs/EDITORIAL_VERIFICATION_2026-10-11.md` and its150-check responsive JSON for actual checks. Recovery: `/home/uttkarsh/Downloads/Zykken Before Editorial Refine 2026-10-11.tar.gz`. Live release evidence lives in the Zykken New/docs folder. Continue syncing the two redesign folders without overwriting local-only proof/environment files or changing the original.
+
+## October11 faster capsule cascade
+
+The user reported a horizontal line crossing the falling cards. The thin `.hero-mark::after` lower-edge overlay is removed. `heroToolCards(repeat)` renders two decorative triplets of the same authentic tool assets. The1.8s fall cycle uses primary delays-.12/-.28/-.44s; `.tile-echo` follows0.9s later. This keeps multiple cards flowing out of the capsule together. Preserve the inside origin, unchanged trajectory, invisible reset and emission mask. Hide `.tile-echo` under reduced motion, leaving exactly the three original still cards.
+
+Read `docs/CAPSULE_CASCADE_VERIFICATION_2026-10-11.md`. The previous release is recoverable at Git commit71ec2e0; this is a focused CSS/shared-helper change. New-only native proofs and responsive/release JSON stay in the redesign docs folder.
