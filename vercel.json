@@ -54,6 +54,11 @@
       "source": "/cancellation-policy",
       "destination": "/cancellation-refunds",
       "permanent": true
+    },
+    {
+      "source": "/legal",
+      "destination": "/privacy",
+      "permanent": true
     }
   ],
   "rewrites": [

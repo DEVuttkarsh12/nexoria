@@ -32,7 +32,7 @@ npm run build
 npm test
 ```
 
-The build recreates `dist/` with **34 pre-rendered pages**: nineteen main/topic/policy routes, five service details, six case studies, three insight articles and the 404 page. It also copies browser runtime assets and generates a sitemap and robots file. The contact function remains at the project root in `api/contact.js` for serverless hosting; its source is excluded from the static output. Edit source files rather than generated files in `dist/`. The test suite covers the preserved contact API, inquiry validation, routing aliases and ROI calculation. Provider calls are mocked by the tests.
+The build recreates `dist/` with **33 pre-rendered pages**: eighteen main/topic/policy routes, five service details, six case studies, three insight articles and the 404 page. It also copies browser runtime assets and generates a sitemap and robots file. The contact function remains at the project root in `api/contact.js` for serverless hosting; its source is excluded from the static output. Edit source files rather than generated files in `dist/`. The test suite covers the preserved contact API, inquiry validation, routing aliases and ROI calculation. Provider calls are mocked by the tests.
 
 ## Project map
 
@@ -54,7 +54,7 @@ The build recreates `dist/` with **34 pre-rendered pages**: nineteen main/topic/
 | `tests/` | Contact and interaction logic checks |
 | `vercel.json` | Build output, clean URLs, route aliases and detail-page rewrites |
 
-Main routes are `/`, `/about`, `/services`, `/process`, `/benefits`, `/features`, `/team`, `/testimonials`, `/faq`, `/work`, `/custom-quote`, `/contact`, `/insights`, `/privacy`, `/terms`, `/cookies`, `/cancellation-refunds`, `/disclaimer` and `/legal`. Details use `/services/:slug`, `/case-study/:slug` and `/blog/:slug`. The five service slugs are `flowback`, `carryline`, `intentpath`, `previewops` and `pledgedesk`. `/features` is a real page. Legacy aliases include `/case-study`, `/portfolio` and `/blog`; both old pricing URLs resolve to the custom-quote page. Navigation uses real page destinations, with a native More disclosure and a complete footer directory. The detailed homepage remains an overview with direct links to the relevant pages.
+Main routes are `/`, `/about`, `/services`, `/process`, `/benefits`, `/features`, `/team`, `/testimonials`, `/faq`, `/work`, `/custom-quote`, `/contact`, `/insights`, `/privacy`, `/terms`, `/cookies`, `/cancellation-refunds` and `/disclaimer`. Details use `/services/:slug`, `/case-study/:slug` and `/blog/:slug`. The five service slugs are `flowback`, `carryline`, `intentpath`, `previewops` and `pledgedesk`. `/features` is a real page. Legacy aliases include `/case-study`, `/portfolio` and `/blog`; both old pricing URLs resolve to the custom-quote page. Navigation uses real page destinations, with a native More disclosure and a complete footer directory. The detailed homepage remains an overview with direct links to the relevant pages.
 
 ## Content and design context
 
@@ -110,4 +110,4 @@ The latest hero correction retains the original flowing WebP shard and rounded h
 
 ## October 12 website policies
 
-The policy hub at `/legal` links to Privacy, Terms & Conditions, Cookie & Storage, Cancellation & Refund, and Website & AI Disclaimer pages. `legal-data.mjs` owns the content and link registry, `legal-pages.mjs` renders the reading layouts, and `assets/ui/legal.css` loads last. Each enquiry form includes a Privacy Policy link. The site builds 34 documents and passes 24 tests. See `docs/LEGAL_POLICIES_2026-10-12.md` for verified behavior, sources and identity details that have not been supplied.
+The footer links directly to Privacy, Terms & Conditions, Cookie & Storage, Cancellation & Refund, and Website & AI Disclaimer pages. There is no policy hub or policy item in the main navigation. `legal-data.mjs` owns the content and link registry, `legal-pages.mjs` renders the reading layouts, and `assets/ui/legal.css` loads last. Each enquiry form includes a plain-language purpose notice. Policy links appear in the footer. The site builds 33 documents and passes 24 tests. See `docs/LEGAL_POLICIES_2026-10-12.md` for verified behavior, sources and identity details that have not been supplied.

@@ -4,9 +4,9 @@ The user requested Privacy Policy, Terms & Conditions, other relevant website po
 
 ## Published scope
 
-The public policy set is `/privacy`, `/terms`, `/cookies`, `/cancellation-refunds` and `/disclaimer`, with an index at `/legal`. Every shared footer links to all six pages above the final wordmark. The enquiry form now includes a plain-language purpose notice and a Privacy Policy link; its fields, validation, delivery recipient and API payload are unchanged.
+The public policy set is `/privacy`, `/terms`, `/cookies`, `/cancellation-refunds` and `/disclaimer`. Following the user’s clarification, links to these pages appear only in the shared footer and open their individual documents. The separate hub and related-policy directory are removed; `/legal` redirects to `/privacy` for existing bookmarks. No policy section is added to the homepage or main navigation. The enquiry form retains a plain-language purpose notice; its fields, validation, delivery recipient and API payload are unchanged.
 
-`legal-data.mjs` owns the policy copy and shared link registry. `legal-pages.mjs` renders body-only pages with dated headings, anchored chapter navigation and related policies. `assets/ui/legal.css` supplies readable desktop and phone layouts. `pages.mjs` delegates legal rendering. The route catalog, sitemap and Vercel redirects include the additions and legacy cookie/refund/cancellation URLs.
+`legal-data.mjs` owns the policy copy and shared link registry. `legal-pages.mjs` renders body-only pages with dated headings, anchored chapter navigation. `assets/ui/legal.css` supplies readable desktop and phone layouts. `pages.mjs` delegates legal rendering. The route catalog, sitemap and Vercel redirects include the additions and legacy cookie/refund/cancellation URLs.
 
 The copy describes the implemented form, Resend delivery, Vercel hosting, optional enquiry fields, technical records, retention criteria, rights requests and the actual greeting session-storage key. It distinguishes website terms from accepted project agreements. Cancellation/refund copy does not invent refund percentages, deposits or universal deadlines. The disclaimer identifies supplied case-study claims, conceptual illustrations, the existing calculator assumptions and the need for appropriate AI review.
 
@@ -20,10 +20,10 @@ The copy describes the implemented form, Resend delivery, Vercel hosting, option
 
 ## Checks
 
-- Build: 34 pre-rendered documents, comprising 33 public routes and 404.
+- Build: 33 pre-rendered documents, comprising 32 public routes and 404.
 - Tests: 24 pass. Coverage includes all internal links and fragments, canonicals and headings, legal page discovery and aliases, dates, and privacy notices on each enquiry form without changing the validated payload.
-- Native browser: all six legal pages checked at 320, 390, 768 and 1440px (24 checks), with no horizontal document overflow; each has one H1, all six footer destinations, and the wordmark below the links.
-- Desktop screenshot inspection covers the legal hub and Privacy Policy; phone inspection covers the Cookie & Storage Policy and native chapter navigation. The contact form's privacy link opens the expected policy. The privacy rights anchor resolves to `/privacy#rights`.
+- Initial native browser checks covered six pages at four widths. After removing the hub, the five retained policy pages are checked at 320, 390, 768 and 1440px. Tests verify that all five direct links appear in the footer and are absent from main navigation and homepage content.
+- Initial screenshot inspection covered the hub and Privacy Policy; phone inspection covered the Cookie & Storage Policy and chapter navigation. Final inspection covers the corrected footer and direct Privacy Policy destination. The privacy rights anchor resolves to `/privacy#rights`. The old hub screenshot is historical proof of the superseded layout.
 - Rapid test navigation produced one browser-generated view-transition abort message; the checked pages and links still rendered. No application exception or contact request was triggered.
 - Local browser evidence stays in the preview export's `docs/legal-proof/` folder, outside the publication checkout.
 
