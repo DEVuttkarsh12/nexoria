@@ -18,10 +18,14 @@ const staticPages = {
   '/custom-quote': ['custom-quote.html', 'customQuotePage', 'Request a Custom Quote', 'Every Zykken project is scoped and custom-priced around your business. Start with a free audit and receive a clear proposal.', 'custom-quote'],
   '/contact': ['contact.html', 'contactPage', 'Contact — Let’s Build What’s Next', 'Tell Zykken about your business, your goals, and the systems you want to build.', 'contact'],
   '/insights': ['insights.html', 'insightsPage', 'Insights', 'Ideas and practical perspectives on automation, websites, and digital growth from Zykken.', 'insights'],
-  '/privacy': ['privacy.html', 'legalPage', 'Privacy', 'Read how Zykken handles information shared through this website.', 'privacy'],
-  '/terms': ['terms.html', 'legalPage', 'Terms', 'Read the terms for using the Zykken website.', 'terms']
+  '/privacy': ['privacy.html', 'legalPage', 'Privacy Policy', 'How Zykken handles website enquiries, technical information, retention and privacy requests.', 'privacy'],
+  '/terms': ['terms.html', 'legalPage', 'Terms & Conditions', 'Terms for website use, project quotations, ownership and working with Zykken.', 'terms'],
+  '/cookies': ['cookies.html', 'legalPage', 'Cookie & Storage Policy', 'The browser storage and hosting technologies used by the Zykken website.', 'cookies'],
+  '/cancellation-refunds': ['cancellation-refunds.html', 'legalPage', 'Cancellation & Refund Policy', 'How to discuss a pause, cancellation or refund under your Zykken project agreement.', 'cancellation-refunds'],
+  '/disclaimer': ['disclaimer.html', 'legalPage', 'Website & AI Disclaimer', 'Understand Zykken illustrations, client stories, calculator estimates and AI limitations.', 'disclaimer'],
+  '/legal': ['legal.html', 'legalPage', 'Legal & Policies', 'Find Zykken privacy, terms, cookies, cancellation and disclaimer policies.', 'legal']
 };
-const aliases = { '/pricing': '/custom-quote', '/case-study': '/work', '/portfolio': '/work', '/blog': '/insights', '/privacy-policy': '/privacy', '/terms-and-conditions': '/terms' };
+const aliases = { '/pricing': '/custom-quote', '/case-study': '/work', '/portfolio': '/work', '/blog': '/insights', '/privacy-policy': '/privacy', '/terms-and-conditions': '/terms', '/cookie-policy': '/cookies', '/refund-policy': '/cancellation-refunds', '/cancellation-policy': '/cancellation-refunds' };
 
 async function importSource(filename, fresh = false) {
   const fullPath = path.join(root, filename);

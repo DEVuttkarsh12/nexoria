@@ -39,6 +39,21 @@
       "source": "/terms-and-conditions",
       "destination": "/terms",
       "permanent": true
+    },
+    {
+      "source": "/cookie-policy",
+      "destination": "/cookies",
+      "permanent": true
+    },
+    {
+      "source": "/refund-policy",
+      "destination": "/cancellation-refunds",
+      "permanent": true
+    },
+    {
+      "source": "/cancellation-policy",
+      "destination": "/cancellation-refunds",
+      "permanent": true
     }
   ],
   "rewrites": [

@@ -1,3 +1,4 @@
+import {renderLegalPage} from './legal-pages.mjs';
 import {original, caseStudies, services, testimonials, team, values, timeline, faqs, insights} from './content.mjs';
 import {escapeHtml as e, icon, tag, button, sectionHeading, pageHero, ctaSection, faqSection, contactForm} from './layout.mjs';
 import {caseCard, insightCards} from './home.mjs';
@@ -113,21 +114,4 @@ export function blogPage(slug) {
  return `<section class="page-hero article-hero"><div class="article-hero-inner"><nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>${tag('The journal',true)}<h1>${e(item.title)}</h1><div class="article-meta"><span>${e(item.category)}</span><span>${e(item.readTime)}</span></div></div></section>
  <section class="section article-reading"><div class="container"><article class="article-body prose"><p class="article-intro">${e(item.intro)}</p>${item.sections.map(([title,copy])=>`<section class="article-chapter"><h2>${e(title)}</h2><p>${e(copy)}</p></section>`).join('')}<div class="article-audit surface"><h3>Start with your free audit.</h3><p>One workflow recording. Three opportunities. A clear scope and a custom quote.</p>${button('Request your free audit','/contact')}</div><a class="back-link text-link" href="/insights">All insights ${icon('arrow')}</a></article></div></section><section class="section section-muted"><div class="container">${sectionHeading('Keep exploring','More practical insights.')}${insightCards(insights.filter(i=>i.slug!==slug))}</div></section>${ctaSection()}`;
 }
-export function legalPage(kind) {
- const privacy=kind==='privacy';
- const title=privacy?'Privacy policy':'Terms & conditions';
- const sections=privacy ? [
-  ['Information you provide','The inquiry form asks for your name, email address, the service you are interested in, and any details you choose to share about your project. A phone or WhatsApp number and a message are optional.'],
-  ['How your inquiry is handled','The form sends your inquiry to info@zykken.com through Resend, our email delivery provider. Your email address is used as Reply-To so we can respond to your request. We use the details you provide to discuss your project and prepare the requested audit or quote.'],
-  ['Form validation','The website validates the information you enter and uses a hidden form field to reduce automated spam. It reports success only after the email provider accepts the inquiry. If delivery fails, your form details remain available for you to retry or contact us by email.'],
-  ['Your choices','You can contact us directly at info@zykken.com instead of submitting the form. Send questions about information you have shared, or requests relating to your inquiry, to that same address.'],
- ] : [
-  ['Project scope and quotations','Every service receives a custom quote based on your requirements. Following discovery, the deliverables, timeline, project investment, payment milestones and post-launch support are set out in your proposal before work begins. The agreed project proposal defines your engagement.'],
-  ['Additional work','Changes inside the agreed outcome are handled within the project scope. New workflows, integrations or other additional build work are scoped and fixed-quoted for your approval before work begins.'],
-  ['Separate operating costs','Your proposal identifies applicable taxes and relevant operating costs. Software subscriptions, hosting and API, AI, SMS, WhatsApp or email usage are separate from build and management fees. Relevant third-party costs are identified during discovery.'],
-  ['Ownership and handover','Code, workflows, prompts, CRM, analytics, documentation and data are owned by you and built in your accounts from day one. The handover, team training and post-launch support are agreed in your project scope.'],
-  ['Optional ongoing care','Ongoing care is separate from implementation and is customized to system complexity and ongoing workload. Additional build work requires a separate scope and quote.'],
-  ['Get in touch','For questions about a proposal, project or this website, contact info@zykken.com.'],
- ];
- return `${pageHero(privacy?'Your information':'Working with Zykken',title,privacy?'How inquiries through this website are handled.':'An overview of our project approach. Your agreed proposal sets out your project terms.')}<section class="section section-tight"><div class="container"><article class="legal-content prose surface reveal">${sections.map(([heading,copy])=>`<h2>${e(heading)}</h2><p>${e(copy)}</p>`).join('')}<p><a class="text-link" href="mailto:info@zykken.com">info@zykken.com ${icon('arrow')}</a></p></article></div></section>`;
-}
+export const legalPage = renderLegalPage;
