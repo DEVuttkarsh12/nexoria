@@ -1,30 +1,7 @@
-import {services} from './content.mjs';
 import {escapeHtml as e, icon} from './layout.mjs';
-import {systemsOperatingSheet} from './systems-visuals.mjs';
+import {visualTimeline, visualBenefits, openSystems} from './homepage-visuals.mjs';
 
 // Delivery artifacts describe what gets agreed; they are not client dashboard captures.
-const stages = [
-  {
-    title: 'Map & Scope',
-    description: 'Follow the real workflow. Choose the first outcome, then agree the feature, tools and boundaries of the build.',
-    review: 'You approve the scope, custom quote and delivery plan.',
-    href: '/process#map'
-  },
-  {
-    title: 'Prove & Build',
-    description: 'Prove the difficult part with a working pilot. Connect the surrounding experience and review progress with the builder.',
-    review: 'We review real scenarios and agree the exception path.',
-    href: '/process#prove'
-  },
-  {
-    title: 'Validate & Launch',
-    description: 'Check the whole journey with your team. Prepare the operating notes, training and ownership before launch.',
-    review: 'Your team receives the build, handover and agreed support plan.',
-    href: '/process#launch'
-  }
-];
-
-const textLink = (label, href) => `<a class="ds-link" href="${href}"><span>${e(label)}</span>${icon('arrow')}</a>`;
 
 function stageDiagram(index) {
   if (index===0) return `<div class="ed-stage-study ed-map-study"><span class="ed-study-label">Trace one real task</span><div class="ed-task-line"><span>${icon('mail')}<strong>Input</strong></span><i aria-hidden="true"></i><span class="ed-task-focus">${icon('voice')}<strong>Handoff</strong></span><i aria-hidden="true"></i><span>${icon('check')}<strong>Outcome</strong></span></div><span class="ed-study-caption">Find the repeated work between the tools.</span></div>`;
@@ -45,15 +22,9 @@ export function deliveryArtifact(index) {
 export const processArtifact = deliveryArtifact;
 
 export function homeProcess() {
-  return `<div class="ds-roadmap"><ol class="ds-stage-grid">${stages.map((stage, index) => `<li class="ds-stage"><div class="ds-stage-heading"><span class="ds-stage-number" aria-hidden="true">0${index + 1}</span><h3>${e(stage.title)}</h3></div><p class="ds-stage-description">${e(stage.description)}</p>${deliveryArtifact(index)}<div class="ds-stage-review"><span class="ds-label">Your checkpoint</span><p>${e(stage.review)}</p></div>${textLink(`Explore stage ${index + 1}`, stage.href)}</li>`).join('')}</ol><div class="ds-roadmap-foot"><span>${icon('voice')}Reviews with the person doing the work.</span><span>${icon('shield')}A clear scope. A usable handover.</span></div></div>`;
+  return visualTimeline();
 }
 
-const benefits = [
-  ['Outcome over Output', 'Start with the work that matters. Agree the result your team needs before choosing the technology.', 'An agreed outcome, with a useful first version.', '/benefits#outcomes'],
-  ['Prove the Difficult Part', 'Test the journey early, including missing information, repeated requests and failed integrations.', 'Real scenarios. A clear path when things change.', '/benefits#checks'],
-  ['Control Built In', 'Important actions have approval rules, named owners and a clear record of what happened.', 'Your rules, your accounts and your ownership.', '/benefits#control'],
-  ['Design-Led Experiences', 'Make the next action clear. Give customers and operators the context they need to move forward.', 'Readable journeys, from first enquiry to handover.', '/benefits#experience']
-];
 
 export function benefitArtifact(index) {
   if (index === 0) return `<div class="ds-benefit-art ds-outcome-art" aria-label="Illustrative scope agreement"><div class="ds-art-top"><span>${icon('workflow')}The first useful build</span><span class="ds-art-stamp">Agreed together</span></div><div class="ds-outcome-flow"><div><span>Understand</span><strong>The real bottleneck</strong></div><span class="ds-art-arrow" aria-hidden="true">${icon('arrow')}</span><div><span>Define</span><strong>A focused first outcome</strong></div></div><div class="ds-art-note">Scope follows the workflow. Tools follow the scope.</div></div>`;
@@ -63,9 +34,9 @@ export function benefitArtifact(index) {
 }
 
 export function homeBenefits() {
-  return `<div class="ds-benefits-grid">${benefits.map(([title, description, caption, href], index) => `<article class="ds-benefit"><div class="ds-benefit-copy"><span class="ds-benefit-number" aria-hidden="true">0${index + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></div>${benefitArtifact(index)}<div class="ds-benefit-foot"><p>${e(caption)}</p>${textLink('See the approach', href)}</div></article>`).join('')}</div>`;
+  return visualBenefits();
 }
 
 export function systemsShowcase() {
-  return systemsOperatingSheet();
+  return openSystems();
 }
