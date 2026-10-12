@@ -227,3 +227,25 @@
 @media(prefers-reduced-motion:reduce){
  .hv-benefit,.os-orb,.hv-standard-arrow{transition:none}
 }
+
+/* About: visible native artwork replaces the nearly blank reference image. */
+.page-about .about-inner-grid{align-items:center}
+.page-about .about-system-visual{display:flex;flex-direction:column;justify-content:center;gap:18px;padding:30px 28px;background:#171d22;border:1px solid #3b454d;border-radius:24px;min-height:500px}
+.about-visual-label{display:block;color:#c0cbd0;font-size:14px;line-height:22px;letter-spacing:.08em;text-transform:uppercase}
+.page-about .about-system-visual .globe-visual{flex:none;min-height:0;padding:0;width:100%}
+.page-about .about-system-visual .globe-visual>svg{width:min(100%,580px);height:auto;max-height:none;margin:0;animation:none}
+.page-about .about-system-visual .globe-caption{margin:0;font-size:14px;line-height:23px;color:#c0c9d0;padding:0;text-align:center}
+.about-visual-flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:6px;padding-top:20px;border-top:1px solid #53626c}
+.about-visual-flow li{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;line-height:24px;color:#e6edf0;min-width:0}
+.about-visual-flow .icon{width:19px;height:19px;color:#bacbd3}
+.about-visual-flow li:not(:last-child):after{content:'→';position:absolute;right:-12px;color:#8a9ba5;font-size:15px}
+@media(max-width:809px){
+ .page-about .about-system-visual{min-height:0;padding:26px 24px;max-width:620px;width:100%;margin:auto}
+ .page-about .about-inner-grid{padding-inline:24px}
+}
+@media(max-width:400px){
+ .page-about .about-system-visual{padding:24px 18px;gap:16px}
+ .about-visual-flow{gap:12px;padding-top:18px}
+ .about-visual-flow li{flex-direction:column;gap:6px;font-size:14px;line-height:22px}
+ .about-visual-flow li:not(:last-child):after{top:15px;right:-12px}
+}

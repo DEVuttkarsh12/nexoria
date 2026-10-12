@@ -1,9 +1,10 @@
+import {dottedGlobe} from './polish-visuals.mjs';
 import {renderLegalPage} from './legal-pages.mjs';
-import {original, caseStudies, services, testimonials, team, values, timeline, faqs, insights} from './content.mjs';
+import {original, caseStudies, services, testimonials, values, timeline, faqs, insights} from './content.mjs';
 import {escapeHtml as e, icon, tag, button, sectionHeading, pageHero, ctaSection, faqSection, contactForm} from './layout.mjs';
 import {caseCard, insightCards} from './home.mjs';
 import {projectVisual} from './project-visuals.mjs';
-import {teamCards,clientEmblem} from './people-visuals.mjs';
+import {clientEmblem} from './people-visuals.mjs';
 import {homeProcess} from './delivery-visuals.mjs';
 import {serviceSpecimen} from './systems-visuals.mjs';
 
@@ -15,11 +16,10 @@ const testimonialSection = (items = testimonials.slice(0,3)) => `<section class=
 const auditSection = () => `<section class="section" id="start"><div class="container contact-grid"><div class="contact-copy reveal">${tag('Let’s talk')}<h2>One call.<br>A clear way forward.</h2><p>${e(original.contact.description)}</p>${contactDetails()}<div class="audit-inclusions">${list(['One 30-minute call + one workflow recording','Three opportunities ranked by potential return','Your scope, custom quote and delivery plan'])}</div></div>${contactForm()}</div></section>`;
 
 export function aboutPage() {
- return `${pageHero('About Zykken','People who build.<br>Systems that work.','A compact senior team. Strategy, design and engineering under one roof. The person who scopes your system is the person who ships it.')}
+ return `${pageHero('About Zykken','Connected thinking.<br>Systems that work.','Strategy, design and engineering brought together to build practical AI systems around the way your business works.')}
  <section class="section section-tight"><div class="container">${metrics(agencyStats)}</div></section>
- <section class="section"><div class="container about-inner-grid"><div class="about-inner-art surface reveal"><img src="/assets/agen/optimized/about-globe.webp" width="1200" height="1200" alt="A softly lit globe representing connected systems" loading="lazy"><span class="about-art-caption">CONNECTED THINKING.<br>REAL-WORLD DELIVERY.</span></div><div class="split-copy reveal">${tag('Our approach')}<h2>Senior people.<br>No hand-offs.</h2><p>${e(original.about.description.replace(' Contact: info@zykken.com','').replace(/^zykken/,'Zykken'))}</p><p>Three clients a month max. One person who knows your business. A Loom from the builder every 48 hours.</p>${button('Build with Zykken','/contact')}</div></div></section>
+ <section class="section"><div class="container about-inner-grid"><div class="about-inner-art about-system-visual reveal"><span class="about-visual-label">Connected by design</span>${dottedGlobe()}<ol class="about-visual-flow" aria-label="An enquiry becomes a useful action"><li>${icon('mail')}<span>Enquiry</span></li><li>${icon('workflow')}<span>Decision</span></li><li>${icon('check')}<span>Action</span></li></ol></div><div class="split-copy reveal">${tag('Our approach')}<h2>Built around<br>your real work.</h2><p>${e(original.about.description.replace(' Contact: info@zykken.com','').replace(/^zykken/,'Zykken'))}</p><p>Three clients a month max. One person who knows your business. A Loom from the builder every 48 hours.</p>${button('Build with Zykken','/contact')}</div></div></section>
  <section class="section section-muted"><div class="container">${sectionHeading('Our commitments','Useful by design.<br>Yours from day one.','Clear scope, useful systems, and ownership from the first working version.')}<div class="value-grid">${values.map((item,i) => `<article class="value-card card surface reveal"><span class="card-icon">${icon(['heart','chart','shield','chip','clock','workflow'][i])}</span><h3>${e(item.title)}</h3><p>${e(item.description)}</p></article>`).join('')}</div></div></section>
- <section class="section"><div class="container">${sectionHeading('The team','The people shipping<br>your next system.',e(original.about.teamDescription))}${teamCards(team)}<div class="section-end">${button('Meet the Team','/team',true)}</div></div></section>
  <section class="section section-muted"><div class="container">${sectionHeading('Our journey','One useful system<br>at a time.','From early automation rescues to connected systems for growing businesses.')}<div class="timeline-grid">${timeline.map(item => `<article class="timeline-card reveal"><span class="timeline-year">${e(item.year)}</span><h3>${e(item.title)}</h3><p>${e(item.description.replace('This site is our standard: black, calm, fast — proof over promises.','Our standard is calm, useful systems — proof over promises.').replace(/zykken/g,'Zykken'))}</p></article>`).join('')}</div></div></section>
  <div id="voices">${testimonialSection(testimonials)}</div><div class="container section-end">${button('Explore All Client Stories','/testimonials',true)}</div>${ctaSection()}`;
 }
