@@ -1,12 +1,12 @@
 // Current custom-build offers. Historical service copy stays in the original audit.
 export const signatureServices = [
   {
-    id: 'automation', need: 'automation', number: '01', title: 'Flowback',
-    category: 'Business Automations', icon: 'workflow', visual: '/assets/analytics-dial.png',
+    id: 'automation', need: 'automation', number: '01', title: 'Business Automation', slug: 'flowback',
+    category: 'AI workflow automation', icon: 'workflow', visual: '/assets/analytics-dial.png',
     tagline: 'Keep the work moving. Recover the part that stopped.',
     description: 'Connected workflows with a recovery desk: see what completed, isolate what failed, and approve a safe next step.',
     detailParagraphs: [
-      'We build lead routing, onboarding, document processing and reporting around your existing tools. Flowback adds a recovery desk that shows the completed steps, the failed handoff and the person responsible for getting it moving again.',
+      'We build lead routing, onboarding, document processing and reporting around your existing tools. Business Automation adds a recovery desk that shows the completed steps, the failed handoff and the person responsible for getting it moving again.',
       'A delayed invoice sync should not restart a paid order. We design each supported recovery path to check what already happened, then resume only the unfinished work. Uncertain actions go to your team for review.'
     ],
     signature: {
@@ -27,12 +27,12 @@ export const signatureServices = [
     ]
   },
   {
-    id: 'voice', need: 'voice', number: '02', title: 'Carryline',
-    category: 'WhatsApp & Voice Agents', icon: 'voice', visual: '/assets/process-hands.png',
+    id: 'voice', need: 'voice', number: '02', title: 'WhatsApp & Voice AI Agents', slug: 'carryline',
+    category: 'Hindi & English chatbots and voice agents', icon: 'voice', visual: '/assets/process-hands.png',
     tagline: 'The conversation changes channel. The context comes along.',
     description: 'Voice, chat and WhatsApp connected by a shared handoff brief: what was asked, what was agreed, and who takes over.',
     detailParagraphs: [
-      'We build Hindi and English agents for enquiries, qualification and booking. Carryline connects the channels you choose to the same conversation brief, so an approved handoff carries useful context into the next interaction.',
+      'We build Hindi and English agents for enquiries, qualification and booking. Our WhatsApp & Voice AI Agents connect the channels you choose to the same conversation brief, so an approved handoff carries useful context into the next interaction.',
       'The brief separates confirmed facts, unresolved questions and promised next steps. A human handoff gets a named owner, an acceptance status and a fallback if nobody picks it up. Customer records are linked through verified details or a continuation link.'
     ],
     signature: {
@@ -53,12 +53,12 @@ export const signatureServices = [
     ]
   },
   {
-    id: 'web', need: 'website', number: '03', title: 'IntentPath',
-    category: 'Websites & Guided Enquiries', icon: 'globe', visual: '/assets/growth-chart.png',
+    id: 'web', need: 'website', number: '03', title: 'Website Design & Development', slug: 'intentpath',
+    category: 'Websites with guided enquiries', icon: 'globe', visual: '/assets/growth-chart.png',
     tagline: 'Turn “I’m interested” into a brief worth answering.',
     description: 'A carefully designed website that helps visitors choose a route, build an editable brief, and reach the right person.',
     detailParagraphs: [
-      'We bring copy, design, development and measurement into one build. IntentPath adds a guided enquiry journey that helps visitors describe their goal, constraints and next step without navigating a wall of services.',
+      'We bring copy, design, development and measurement into one build. Website Design & Development adds a guided enquiry journey that helps visitors describe their goal, constraints and next step without navigating a wall of services.',
       'Their answers become a Decision Brief they can check and edit before sending. Your team receives the need, the relevant route and the questions still open. Suggestions follow your approved service rules; quotes remain yours to prepare.'
     ],
     signature: {
@@ -79,12 +79,12 @@ export const signatureServices = [
     ]
   },
   {
-    id: 'software', need: 'software', number: '04', title: 'PreviewOps',
-    category: 'Custom Software & Portals', icon: 'code', visual: '/assets/about-sculpture.png',
+    id: 'software', need: 'software', number: '04', title: 'Custom Software & Portals', slug: 'previewops',
+    category: 'Portals, dashboards & internal tools', icon: 'code', visual: '/assets/about-sculpture.png',
     tagline: 'See the change before your team commits to it.',
     description: 'Portals and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.',
     detailParagraphs: [
-      'We build the member apps, dashboards, portals and internal tools your team actually needs. PreviewOps gives selected business actions a Change Rehearsal: the records involved, the proposed changes and the checks required before approval.',
+      'We build the member apps, dashboards, portals and internal tools your team actually needs. Custom Software & Portals gives selected business actions a Change Rehearsal: the records involved, the proposed changes and the checks required before approval.',
       'An operator can review a bulk update or scheduling change before it reaches live records. The system checks permissions and whether the data has changed since the preview, then saves a before-and-after receipt for the approved action.'
     ],
     signature: {
@@ -105,12 +105,12 @@ export const signatureServices = [
     ]
   },
   {
-    id: 'crm', need: 'crm', number: '05', title: 'PledgeDesk',
-    category: 'CRM & Follow-Through', icon: 'chart', visual: '/assets/analytics-dial.png',
+    id: 'crm', need: 'crm', number: '05', title: 'CRM & Lead Follow-up', slug: 'pledgedesk',
+    category: 'Pipeline & follow-up tracking', icon: 'chart', visual: '/assets/analytics-dial.png',
     tagline: 'Every customer promise gets an owner and a next step.',
     description: 'A CRM that tracks the commitments inside conversations, with source evidence, confirmed deadlines and follow-up ownership.',
     detailParagraphs: [
-      'We connect your pipeline, enquiries and follow-up around how you sell. PledgeDesk adds a Commitment Radar for the small promises that disappear into call notes: send the quote, confirm availability, arrange the demo or call back on Friday.',
+      'We connect your pipeline, enquiries and follow-up around how you sell. CRM & Lead Follow-up adds a Commitment Radar for the small promises that disappear into call notes: send the quote, confirm availability, arrange the demo or call back on Friday.',
       'From the notes and messages you approve, it drafts a commitment with a source excerpt, owner and proposed due date. Your team confirms ambiguous details. Reminders follow the agreed rules, and the item closes when completion is recorded.'
     ],
     signature: {

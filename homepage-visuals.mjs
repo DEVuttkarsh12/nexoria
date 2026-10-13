@@ -31,13 +31,13 @@ export function visualBenefits() {
 
 export function openSystems() {
   const items=[
-    ['IntentPath','Website','Shape the enquiry','globe'],
-    ['Carryline','Voice & chat','Carry the context','voice'],
-    ['PledgeDesk','CRM','Own the follow-up','chart'],
-    ['PreviewOps','Software','Approve the change','code'],
-    ['Flowback','Automation','Recover the workflow','workflow']
+    ['Website Design & Development','Website','Shape the enquiry','globe'],
+    ['WhatsApp & Voice AI Agents','Voice & chat','Carry the context','voice'],
+    ['CRM & Lead Follow-up','CRM','Own the follow-up','chart'],
+    ['Custom Software & Portals','Software','Approve the change','code'],
+    ['Business Automation','Automation','Recover the workflow','workflow']
   ];
-  return `<div class="os-map"><svg class="os-connections" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M500 295C380 295 370 48 205 48M500 295C360 295 370 336 190 336M500 295C640 295 620 48 805 48M500 295C640 295 640 336 810 336M500 295v178"/><circle cx="500" cy="295" r="95" stroke-dasharray="3 9"/><circle cx="500" cy="295" r="130" opacity=".4"/></svg><div class="os-core"><span class="os-core-orb">${icon('chip')}</span><strong>Your business</strong><span>One connected workflow</span></div>${items.map(([name,category,action,symbol],i)=>`<a class="os-node os-node-${i+1}" href="/services/${name.toLowerCase()}"><span class="os-orb">${icon(symbol)}</span><span class="os-category">0${i+1} / ${category}</span><h3>${name}</h3><p>${action} ${icon('arrow')}</p></a>`).join('')}</div><div class="os-foundation">${icon('shield')}<span>Your tools. Your rules. Your ownership.</span><a href="/features#ownership">How it connects ${icon('arrow')}</a></div>`;
+  return `<div class="os-map"><svg class="os-connections" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path d="M500 295C380 295 370 48 205 48M500 295C360 295 370 336 190 336M500 295C640 295 620 48 805 48M500 295C640 295 640 336 810 336M500 295v178"/><circle cx="500" cy="295" r="95" stroke-dasharray="3 9"/><circle cx="500" cy="295" r="130" opacity=".4"/></svg><div class="os-core"><span class="os-core-orb">${icon('chip')}</span><strong>Your business</strong><span>One connected workflow</span></div>${items.map(([name,category,action,symbol],i)=>`<a class="os-node os-node-${i+1}" href="/services/${{'Business Automation':'flowback','WhatsApp & Voice AI Agents':'carryline','Website Design & Development':'intentpath','Custom Software & Portals':'previewops','CRM & Lead Follow-up':'pledgedesk'}[name]}"><span class="os-orb">${icon(symbol)}</span><span class="os-category">0${i+1} / ${category}</span><h3>${name}</h3><p>${action} ${icon('arrow')}</p></a>`).join('')}</div><div class="os-foundation">${icon('shield')}<span>Your tools. Your rules. Your ownership.</span><a href="/features#ownership">How it connects ${icon('arrow')}</a></div>`;
 }
 
 export function deliveryStandards() {

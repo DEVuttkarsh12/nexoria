@@ -72,12 +72,19 @@ const context = {
   }
 };
 
-const slugOf = item => item.title.toLowerCase();
+const slugOf = item => item.slug;
+const SEO = {
+  flowback: ['Business Automation & AI Workflow Automation in India', 'Zykken builds AI workflow automation for lead routing, onboarding, document processing and reporting around your existing tools, with a recovery desk for failed steps. Custom-quoted; free 30-minute audit.'],
+  carryline: ['WhatsApp Chatbot & AI Voice Agents in Hindi and English', 'WhatsApp chatbots and AI voice agents for businesses in India, in Hindi and English, for enquiries, qualification and booking, with a shared handoff brief for your team.'],
+  intentpath: ['Website Design & Development Company in India', 'Zykken website design and development: copy, design, development and measurement in one build, with a guided enquiry journey that sends visitors to the right person.'],
+  previewops: ['Custom Software Development, Portals & Dashboards', 'Custom portals, dashboards, member apps and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.'],
+  pledgedesk: ['CRM & Lead Follow-up for Real Estate and Sales Teams', 'A custom CRM that tracks leads and the commitments inside conversations. For Luxe Estates, real estate lead follow-up went from 6 hours to 38 seconds.']
+};
 export const serviceDetailRoutes = services.map(item => ({
   slug: slugOf(item),
   path: `/services/${slugOf(item)}`,
-  title: `${item.title} — ${item.category}`,
-  description: item.description
+  title: SEO[item.slug]?.[0] || `${item.title} — ${item.category}`,
+  description: SEO[item.slug]?.[1] || item.description
 }));
 
 const checkedList = items => `<ul class="detail-check-list">${items.map(item => `<li>${icon('check')}<span>${e(item)}</span></li>`).join('')}</ul>`;

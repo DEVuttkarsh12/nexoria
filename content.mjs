@@ -871,7 +871,7 @@ export const process = [
 ];
 export const faqs = Object.fromEntries(Object.entries(original.faq).map(([key,items])=>[key,items.map(item=>[item.question,item.answer])]));
 faqs.services.unshift(
-  ['What makes the five Zykken systems different?', 'Each has a signature build: Flowback’s Safe Replay Desk, Carryline’s Context Passport, IntentPath’s Decision Brief, PreviewOps’ Change Rehearsal and PledgeDesk’s Commitment Radar. We define the feature, supported actions and integrations in your proposal.'],
+  ['What makes the five Zykken systems different?', 'Each has a signature feature: Safe Replay Desk (Business Automation), Context Passport (WhatsApp & Voice AI Agents), Decision Brief (Website Design & Development), Change Rehearsal (Custom Software & Portals) and Commitment Radar (CRM & Lead Follow-up). We define the feature, supported actions and integrations in your proposal.'],
   ['Are these ready-made products or custom builds?', 'They are custom builds around your business. We agree which signature features, channels, integrations and operating rules belong in your scope. You own the resulting code, workflows and data in your accounts.']
 );
 faqs.services[2] = ['How fast can we get a first version?', 'We confirm a pilot and delivery plan after checking your existing tools, data and signature feature scope. You receive a clear timeline in your proposal and a Loom update every 48 hours during the build.'];
