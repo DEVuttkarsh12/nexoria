@@ -5,9 +5,9 @@ const { pathToFileURL } = require('node:url');
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 const staticPages = {
-  '/': ['index.html', 'homePage', 'Signature AI & Business Systems', 'Flowback, Carryline, IntentPath, PreviewOps and PledgeDesk: custom workflow, conversation, website, software and CRM systems with a signature edge.', 'home'],
+  '/': ['index.html', 'homePage', 'AI & Business Systems Studio in India', 'Zykken builds custom websites (IntentPath), Hindi and English WhatsApp and voice agents (Carryline), CRM (PledgeDesk), automations (Flowback) and business software (PreviewOps). Book a free 30-minute audit.', 'home'],
   '/about': ['about.html', 'aboutPage', 'About — Built Around Your Business', 'Meet Zykken, the team turning ambitious ideas into practical AI automation and digital systems.', 'about'],
-  '/services': ['services.html', 'servicesPage', 'Our Signature Systems', 'Explore Zykken’s five custom systems: Safe Replay Desk, Context Passport, Decision Brief, Change Rehearsal and Commitment Radar.', 'services'],
+  '/services': ['services.html', 'servicesPage', 'Our Signature Systems', 'Five custom-quoted Zykken systems: Flowback (business automations), Carryline (WhatsApp & voice agents), IntentPath (websites), PreviewOps (custom software & portals) and PledgeDesk (CRM).', 'services'],
   '/process': ['process.html', 'processPage', 'Our Process', 'How Zykken maps, proves, builds and hands over a custom AI system, with clear checkpoints at every stage.', 'process'],
   '/benefits': ['benefits.html', 'benefitsPage', 'Why Work with Zykken', 'Explore the practical benefits of outcome-led, carefully tested and design-led business systems.', 'benefits'],
   '/features': ['features.html', 'featuresPage', 'Features & Tools', 'Five signature capabilities, connected tools and ownership from day one. Explore how Zykken builds useful systems.', 'features'],
@@ -75,9 +75,9 @@ function publicRoutes(site) {
   return [...Object.keys(staticPages), ...site.servicePages.serviceDetailRoutes.map(item => item.path), ...(site.content.caseStudies || []).map(item => `/case-study/${item.slug}`), ...(site.content.insights || []).map(item => `/blog/${item.slug}`)];
 }
 function sitemapXml(site) {
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicRoutes(site).map(route => `  <url><loc>https://www.zykken.com${route}</loc></url>`).join('\n')}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicRoutes(site).map(route => `  <url><loc>https://www.zykken.com${route}</loc><lastmod>${new Date().toISOString().slice(0,10)}</lastmod></url>`).join('\n')}\n</urlset>\n`;
 }
-const robotsTxt = 'User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://www.zykken.com/sitemap.xml\n';
+const robotsTxt = ['GPTBot','OAI-SearchBot','ChatGPT-User','PerplexityBot','ClaudeBot','Claude-Web','Google-Extended','Applebot-Extended','*'].map(a=>`User-agent: ${a}\nAllow: /\nDisallow: /api/\n`).join('\n') + '\nSitemap: https://www.zykken.com/sitemap.xml\n';
 async function copyIfPresent(filename) {
   try { await fs.cp(path.join(root, filename), path.join(dist, filename), { recursive: true }); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
@@ -108,6 +108,7 @@ async function build() {
     await fs.copyFile(path.join(root, asset), target);
   }));
   await fs.writeFile(path.join(dist, 'robots.txt'), robotsTxt);
+  await fs.copyFile(path.join(root, 'llms.txt'), path.join(dist, 'llms.txt'));
   await fs.writeFile(path.join(dist, 'sitemap.xml'), sitemapXml(site));
   console.log(`Built ${routes.length} pre-rendered pages in ${dist}`);
   return routes.length;

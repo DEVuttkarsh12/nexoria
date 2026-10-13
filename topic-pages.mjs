@@ -88,6 +88,14 @@ export function testimonialsPage(){
 }
 
 const faqGroups = [
+  {id:'about-zykken',title:'About Zykken',description:'Quick, factual answers about who we are and what we build.',items:[
+    ['What is Zykken?','Zykken is an AI and business-systems studio in India. We build custom websites, WhatsApp and voice agents, CRM, business software and automations, and every project is custom-quoted.'],
+    ['What services does Zykken offer?','Five systems: IntentPath (websites and guided enquiries), Carryline (WhatsApp and voice agents in Hindi and English), PledgeDesk (CRM and customer follow-through), Flowback (business automations) and PreviewOps (custom software, portals and internal tools with an approval preview).'],
+    ['Do Carryline agents speak Hindi?','Yes. Carryline WhatsApp and voice agents work in Hindi and English, with a shared handoff brief so your team knows what was asked, what was agreed and who takes over.'],
+    ['How much does a Zykken project cost?','All work is custom-quoted. We do not publish fixed packages; you receive a proposal after a free 30-minute audit of your business and tools.'],
+    ['What results has Zykken delivered?','For Luxe Estates, a real estate business, lead follow-up time went from 6 hours to 38 seconds. See the Work page for case studies.'],
+    ['How do I get started with Zykken?','Book a free 30-minute audit through the contact page or email info@zykken.com.']
+  ]},
   {id:'getting-started',title:'Getting started',description:'What to bring, how we scope the first version and whether your existing system can be improved.',items:[faqs.index[0],faqs.services[3],faqs.services[8],['How do we start?','Request a free audit through our contact form. We begin with a conversation and a workflow recording, then confirm the scope, custom quote and delivery plan.']]},
   {id:'systems',title:'Systems and integrations',description:'How the signature builds work and how they connect to the tools your business already uses.',items:[faqs.services[0],faqs.services[1],faqs.services[7]]},
   {id:'ownership',title:'Ownership, revisions and support',description:'What belongs to you, how scope changes are handled and what happens after launch.',items:[faqs.services[5],faqs.services[6],faqs.services[4]]},

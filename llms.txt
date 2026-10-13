@@ -1,0 +1,21 @@
+# Zykken
+
+> Zykken is an AI and business-systems studio in India. We build custom websites, WhatsApp and voice agents (Hindi and English), CRM, business software and automations. All work is custom-quoted, and every project starts with a free 30-minute audit. Contact: info@zykken.com
+
+## Services
+- [IntentPath — Websites & Guided Enquiries](https://www.zykken.com/services/intentpath): A carefully designed website that helps visitors choose a route, build an editable brief and reach the right person.
+- [Carryline — WhatsApp & Voice Agents](https://www.zykken.com/services/carryline): WhatsApp, voice and chat agents in Hindi and English, connected by a shared handoff brief: what was asked, what was agreed and who takes over.
+- [PledgeDesk — CRM & Follow-Through](https://www.zykken.com/services/pledgedesk): A CRM that tracks the commitments inside conversations, with source evidence, confirmed deadlines and follow-up ownership.
+- [Flowback — Business Automations](https://www.zykken.com/services/flowback): Connected workflows with a recovery desk: see what completed, isolate what failed and approve a safe next step.
+- [PreviewOps — Custom Software & Portals](https://www.zykken.com/services/previewops): Portals and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.
+
+## Results
+- Luxe Estates (real estate): lead follow-up time went from 6 hours to 38 seconds. See https://www.zykken.com/work
+
+## Key pages
+- [Services](https://www.zykken.com/services)
+- [Work / case studies](https://www.zykken.com/work)
+- [FAQs](https://www.zykken.com/faq)
+- [Custom quote](https://www.zykken.com/custom-quote): no fixed packages; all work is custom-quoted.
+- [Contact / free 30-minute audit](https://www.zykken.com/contact)
+- [About](https://www.zykken.com/about)

@@ -2,7 +2,7 @@
 export const signatureServices = [
   {
     id: 'automation', need: 'automation', number: '01', title: 'Flowback',
-    category: 'Workflow automation', icon: 'workflow', visual: '/assets/analytics-dial.png',
+    category: 'Business Automations', icon: 'workflow', visual: '/assets/analytics-dial.png',
     tagline: 'Keep the work moving. Recover the part that stopped.',
     description: 'Connected workflows with a recovery desk: see what completed, isolate what failed, and approve a safe next step.',
     detailParagraphs: [
@@ -28,7 +28,7 @@ export const signatureServices = [
   },
   {
     id: 'voice', need: 'voice', number: '02', title: 'Carryline',
-    category: 'Voice & conversation systems', icon: 'voice', visual: '/assets/process-hands.png',
+    category: 'WhatsApp & Voice Agents', icon: 'voice', visual: '/assets/process-hands.png',
     tagline: 'The conversation changes channel. The context comes along.',
     description: 'Voice, chat and WhatsApp connected by a shared handoff brief: what was asked, what was agreed, and who takes over.',
     detailParagraphs: [
@@ -54,7 +54,7 @@ export const signatureServices = [
   },
   {
     id: 'web', need: 'website', number: '03', title: 'IntentPath',
-    category: 'Websites & guided enquiries', icon: 'globe', visual: '/assets/growth-chart.png',
+    category: 'Websites & Guided Enquiries', icon: 'globe', visual: '/assets/growth-chart.png',
     tagline: 'Turn “I’m interested” into a brief worth answering.',
     description: 'A carefully designed website that helps visitors choose a route, build an editable brief, and reach the right person.',
     detailParagraphs: [
@@ -80,7 +80,7 @@ export const signatureServices = [
   },
   {
     id: 'software', need: 'software', number: '04', title: 'PreviewOps',
-    category: 'Custom software & business tools', icon: 'code', visual: '/assets/about-sculpture.png',
+    category: 'Custom Software & Portals', icon: 'code', visual: '/assets/about-sculpture.png',
     tagline: 'See the change before your team commits to it.',
     description: 'Portals and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.',
     detailParagraphs: [
@@ -106,7 +106,7 @@ export const signatureServices = [
   },
   {
     id: 'crm', need: 'crm', number: '05', title: 'PledgeDesk',
-    category: 'CRM & customer follow-through', icon: 'chart', visual: '/assets/analytics-dial.png',
+    category: 'CRM & Follow-Through', icon: 'chart', visual: '/assets/analytics-dial.png',
     tagline: 'Every customer promise gets an owner and a next step.',
     description: 'A CRM that tracks the commitments inside conversations, with source evidence, confirmed deadlines and follow-up ownership.',
     detailParagraphs: [
