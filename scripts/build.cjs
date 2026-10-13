@@ -5,7 +5,7 @@ const { pathToFileURL } = require('node:url');
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 const staticPages = {
-  '/': ['index.html', 'homePage', 'AI Automation Agency in India for Growing Businesses', 'Zykken is an AI automation agency in India building WhatsApp chatbots, Hindi and English AI voice agents, CRM with lead follow-up, website development and custom software. Book a free 30-minute audit.', 'home'],
+  '/': ['index.html', 'homePage', 'Zykken — AI Agents, Automation & CRM That Grow Your Business', 'Answer leads in seconds, not hours, with Hindi & English WhatsApp and voice AI agents, CRM and automation. Book your free 30-minute audit.', 'home'],
   '/about': ['about.html', 'aboutPage', 'About Zykken — AI & Business Systems Studio in India', 'Zykken is an AI and business-systems studio in India that builds practical automation, AI agents, CRM, websites and custom software for growing businesses.', 'about'],
   '/services': ['services.html', 'servicesPage', 'AI Automation, WhatsApp Chatbot, CRM & Website Development Services', 'Five custom-quoted services from Zykken, India: Business Automation, WhatsApp & Voice AI Agents (Hindi and English), Website Design & Development, Custom Software & Portals, and CRM & Lead Follow-up.', 'services'],
   '/process': ['process.html', 'processPage', 'Our Process', 'How Zykken maps, proves, builds and hands over a custom AI system, with clear checkpoints at every stage.', 'process'],
