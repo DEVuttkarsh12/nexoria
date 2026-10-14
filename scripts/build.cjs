@@ -61,7 +61,7 @@ async function renderRoute(pathname, site) {
   const caseMatch = /^\/case-study\/([^/]+)$/.exec(route);
   if (caseMatch) {
     const item = (site.content.caseStudies || []).find(item => item.slug === caseMatch[1]);
-    if (item) return { filename: `case-study/${item.slug}/index.html`, html: site.layout.documentHtml(item.title || item.name || 'Case Study', item.description || item.summary || 'Explore a selected project from Zykken.', await site.pages.caseStudyPage(item.slug), `case-study/${item.slug}`), status: 200 };
+    if (item) return { filename: `case-study/${item.slug}/index.html`, html: site.layout.documentHtml(item.title || item.name || 'Case Study', item.seoDescription || item.description || item.summary || 'Explore a selected project from Zykken.', await site.pages.caseStudyPage(item.slug), `case-study/${item.slug}`), status: 200 };
   }
   const blogMatch = /^\/blog\/([^/]+)$/.exec(route);
   if (blogMatch) {
