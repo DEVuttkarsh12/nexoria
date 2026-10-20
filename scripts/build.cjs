@@ -17,7 +17,7 @@ const staticPages = {
   '/work': ['work.html', 'workPage', 'Case Studies: AI Automation & CRM Results', 'Selected Zykken projects, including Luxe Estates, where real estate lead follow-up went from 6 hours to 38 seconds.', 'work'],
   '/custom-quote': ['custom-quote.html', 'customQuotePage', 'Custom Quote for AI Automation & Website Projects', 'Every Zykken project is scoped and custom-priced around your business. Start with a free 30-minute audit and receive a clear proposal.', 'custom-quote'],
   '/contact': ['contact.html', 'contactPage', 'Contact Zykken — Book a Free 30-Minute Audit', 'Tell Zykken about your business and the automation, WhatsApp agent, CRM or website you need. Book a free 30-minute audit or email info@zykken.com.', 'contact'],
-  '/insights': ['insights.html', 'insightsPage', 'Insights', 'Ideas and practical perspectives on automation, websites, and digital growth from Zykken.', 'insights'],
+  '/insights': ['insights.html', 'insightsPage', 'Insights on AI Automation, Lead Follow-up & CRM', 'Practical guides from Zykken on picking the first workflow to automate, connecting leads to your CRM and booked calls, and running an AI system after launch.', 'insights'],
   '/privacy': ['privacy.html', 'legalPage', 'Privacy Policy', 'How Zykken handles website enquiries, technical information, retention and privacy requests.', 'privacy'],
   '/terms': ['terms.html', 'legalPage', 'Terms & Conditions', 'Terms for website use, project quotations, ownership and working with Zykken.', 'terms'],
   '/cookies': ['cookies.html', 'legalPage', 'Cookie & Storage Policy', 'The browser storage and hosting technologies used by the Zykken website.', 'cookies'],

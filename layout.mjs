@@ -1,5 +1,5 @@
 import {legalLinks} from './legal-data.mjs';
-import {services} from './content.mjs';
+import {services,insights,caseStudies} from './content.mjs';
 export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export const icon = (name='spark', cls='') => {
  const paths = {
@@ -45,6 +45,9 @@ function structuredData(page,canonical,title,body,fullTitle,description){
  const seen=new Set(),uniq=qa.filter(([q])=>!seen.has(q)&&seen.add(q));
  if(uniq.length) graph.push({'@type':'FAQPage','@id':canonical+'#faq',mainEntity:uniq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
  if(page.startsWith('services/')) graph.push({'@type':'Service','@id':canonical+'#service',name:title,url:canonical,provider:{'@id':SITE+'/#organization'},areaServed:{'@type':'Country',name:'India'}});
+ if(page.startsWith('blog/')){const post=insights.find(i=>`blog/${i.slug}`===page);if(post){const mins=String(post.readTime||'').match(/\d+/);const words=stripTags([post.intro,...(post.sections||[]).flat()].join(' ')).split(' ').filter(Boolean).length;graph.push({'@type':'BlogPosting','@id':canonical+'#article',headline:stripTags(post.title),...(description?{description:stripTags(description)}:{}),url:canonical,mainEntityOfPage:{'@id':canonical+'#webpage'},image:SITE+'/assets/zykken-lockup-white.jpg',inLanguage:'en-IN',articleSection:post.category?post.category.charAt(0)+post.category.slice(1).toLowerCase():undefined,...(mins?{timeRequired:`PT${mins[0]}M`}:{}),wordCount:words,author:{'@id':SITE+'/#organization'},publisher:{'@id':SITE+'/#organization'},isPartOf:{'@id':SITE+'/#website'}});}}
+ const hubList=page==='insights'?insights.map(i=>[stripTags(i.title),`${SITE}/blog/${i.slug}`]):page==='work'?caseStudies.map(c=>[stripTags(c.title),`${SITE}/case-study/${c.slug}`]):null;
+ if(hubList){graph[2]['@type']='CollectionPage';graph.push({'@type':'ItemList','@id':canonical+'#list',itemListElement:hubList.map(([name,url],i)=>({'@type':'ListItem',position:i+1,name,url}))});graph[2].mainEntity={'@id':canonical+'#list'};}
  return {'@context':'https://schema.org','@graph':graph};
 }
 export function documentHtml(title,description,body,page='home'){
