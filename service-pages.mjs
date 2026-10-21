@@ -1,6 +1,7 @@
 import {serviceSpecimen} from './systems-visuals.mjs';
 import {services} from './content.mjs';
 import {escapeHtml as e, icon, tag, button} from './layout.mjs';
+import {serviceRelatedLinks} from './related-links.mjs';
 
 // These pages explain the custom builds in offers.mjs. The receipts are examples,
 // rather than interactive products or promises about an unscoped integration.
@@ -121,6 +122,8 @@ export function serviceDetailPage(slug) {
     <section class="section detail-section detail-safeguards"><div class="container"><div class="detail-safety-grid"><div class="detail-copy reveal">${tag('Useful guardrails')}<h2>A system your team can understand.</h2><p>${e(copy.proof)}</p><a class="detail-text-link" href="/process">Explore testing, launch and handover ${icon('arrow')}</a></div><div class="detail-boundary-list">${copy.boundaries.map(([title, description]) => `<article class="reveal"><span aria-hidden="true">${icon('shield')}</span><div><h3>${e(title)}</h3><p>${e(description)}</p></div></article>`).join('')}</div></div></div></section>
 
     <section class="section detail-section"><div class="container detail-faq-grid"><div class="detail-section-heading heading-left reveal">${tag('Before we build')}<h2>A few useful answers.</h2><p>Bring your real workflow to the first conversation. We’ll help define what belongs in the scope.</p></div>${faq(faqs)}</div></section>
+
+    <section class="section detail-section detail-related-section" aria-labelledby="related-title"><div class="container"><div class="detail-section-heading reveal">${tag('Related work and reading')}<h2 id="related-title">See ${e(item.title)} in practice.</h2><p>Client projects that used this kind of build, and practical notes on planning it.</p></div>${serviceRelatedLinks(slug)}</div></section>
 
     <section class="detail-next-section"><div class="container"><div class="detail-next-heading"><div><span class="detail-label">Explore another starting point</span><h2>Next: ${e(next.title)}</h2><p>${e(next.category)}</p></div>${button(`Explore ${next.title}`, `/services/${slugOf(next)}`, true)}</div><nav class="detail-service-navigation" aria-label="Service pages">${services.map(service => `<a href="/services/${slugOf(service)}" ${service === item ? 'aria-current="page"' : ''}>${icon(service.icon)}<span>${e(service.title)}</span></a>`).join('')}</nav></div></section>
 

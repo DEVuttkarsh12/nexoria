@@ -3,6 +3,7 @@ import {renderLegalPage} from './legal-pages.mjs';
 import {original, caseStudies, services, testimonials, values, timeline, faqs, insights} from './content.mjs';
 import {escapeHtml as e, icon, tag, button, sectionHeading, pageHero, ctaSection, faqSection, contactForm} from './layout.mjs';
 import {caseCard, insightCards} from './home.mjs';
+import {insightRelatedServices} from './related-links.mjs';
 import {projectVisual} from './project-visuals.mjs';
 import {clientEmblem} from './people-visuals.mjs';
 import {homeProcess} from './delivery-visuals.mjs';
@@ -112,6 +113,6 @@ export function blogPage(slug) {
  const item=insights.find(i=>i.slug===slug);
  if (!item) return null;
  return `<section class="page-hero article-hero"><div class="article-hero-inner"><nav class="article-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/insights">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Article</span></nav>${tag('The journal',true)}<h1>${e(item.title)}</h1><div class="article-meta"><span>${e(item.category)}</span><span>${e(item.readTime)}</span></div></div></section>
- <section class="section article-reading"><div class="container"><article class="article-body prose"><p class="article-intro">${e(item.intro)}</p>${item.sections.map(([title,copy])=>`<section class="article-chapter"><h2>${e(title)}</h2><p>${e(copy)}</p></section>`).join('')}<div class="article-audit surface"><h3>Start with your free audit.</h3><p>One workflow recording. Three opportunities. A clear scope and a custom quote.</p>${button('Request your free audit','/contact')}</div><a class="back-link text-link" href="/insights">All insights ${icon('arrow')}</a></article></div></section><section class="section section-muted"><div class="container">${sectionHeading('Keep exploring','More practical insights.')}${insightCards(insights.filter(i=>i.slug!==slug))}</div></section>${ctaSection()}`;
+ <section class="section article-reading"><div class="container"><article class="article-body prose"><p class="article-intro">${e(item.intro)}</p>${item.sections.map(([title,copy])=>`<section class="article-chapter"><h2>${e(title)}</h2><p>${e(copy)}</p></section>`).join('')}${insightRelatedServices(item.slug)}<div class="article-audit surface"><h3>Start with your free audit.</h3><p>One workflow recording. Three opportunities. A clear scope and a custom quote.</p>${button('Request your free audit','/contact')}</div><a class="back-link text-link" href="/insights">All insights ${icon('arrow')}</a></article></div></section><section class="section section-muted"><div class="container">${sectionHeading('Keep exploring','More practical insights.')}${insightCards(insights.filter(i=>i.slug!==slug))}</div></section>${ctaSection()}`;
 }
 export const legalPage = renderLegalPage;
