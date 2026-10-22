@@ -886,6 +886,7 @@ faqs.index[0] = ['How fast can we get a first version?', 'We agree the first pil
 export const insights = [
   {
     "slug": "automate-your-highest-impact-workflow",
+    "description": "Which workflow should you automate first? Find the repeated task that costs the most time, errors or sales, then build one clear first win.",
     "title": "Start with the workflow that costs you the most.",
     "category": "AUTOMATION",
     "image": "/assets/insight-1.png",
@@ -912,6 +913,7 @@ export const insights = [
   },
   {
     "slug": "from-first-enquiry-to-booked-call",
+    "description": "How to connect website and ad enquiries to your CRM, qualify and follow up fast, and turn more leads into booked calls.",
     "title": "Connect your leads, your CRM, and your next booked call.",
     "category": "GROWTH SYSTEMS",
     "image": "/assets/insight-2.png",

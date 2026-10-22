@@ -75,9 +75,9 @@ const context = {
 
 const slugOf = item => item.slug;
 const SEO = {
-  flowback: ['Business Automation & AI Workflow Automation in India', 'Zykken builds AI workflow automation for lead routing, onboarding, document processing and reporting around your existing tools, with a recovery desk for failed steps. Custom-quoted; free 30-minute audit.'],
-  carryline: ['WhatsApp Chatbot & AI Voice Agents in Hindi and English', 'WhatsApp chatbots and AI voice agents for businesses in India, in Hindi and English, for enquiries, qualification and booking, with a shared handoff brief for your team.'],
-  intentpath: ['Website Design & Development Company in India', 'Zykken website design and development: copy, design, development and measurement in one build, with a guided enquiry journey that sends visitors to the right person.'],
+  flowback: ['Business Automation & AI Workflow Automation in India', 'AI workflow automation for lead routing, onboarding, documents and reporting, built around your existing tools. Custom-quoted, with a free 30-minute audit.'],
+  carryline: ['WhatsApp Chatbot & AI Voice Agents in Hindi and English', 'WhatsApp chatbots and AI voice agents in Hindi and English for Indian businesses: answer enquiries, qualify leads, book calls and hand off to your team.'],
+  intentpath: ['Website Design & Development Company in India', 'Website design and development in India: copy, design, build and measurement in one project, with a guided enquiry journey to the right person.'],
   previewops: ['Custom Software Development, Portals & Dashboards', 'Custom portals, dashboards, member apps and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.'],
   pledgedesk: ['CRM & Lead Follow-up for Real Estate and Sales Teams', 'A custom CRM that tracks leads and the commitments inside conversations. For Luxe Estates, real estate lead follow-up went from 6 hours to 38 seconds.']
 };
