@@ -126,3 +126,18 @@ test('unknown detail routes remain real 404s and the Features page is no longer 
     assert.equal((page.html.match(/<h1(?:\s|>)/g) || []).length, 1, `${route}: one page heading`);
   }
 });
+
+test('service pages publish an enriched Service JSON-LD linked as the page main entity', async () => {
+  const site = await loadSite();
+  for (const route of serviceRoutes) {
+    const {html} = await renderRoute(route, site);
+    const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].flatMap(m => JSON.parse(m[1])['@graph']);
+    const service = graph.find(node => node['@type'] === 'Service');
+    const page = graph.find(node => String(node['@id']).endsWith('#webpage'));
+    assert.ok(service, `${route} has Service`);
+    assert.equal(page.mainEntity['@id'], service['@id']);
+    for (const key of ['serviceType', 'description', 'alternateName', 'availableChannel', 'offers']) assert.ok(service[key], `${route} Service.${key}`);
+    assert.deepEqual(service.availableChannel.availableLanguage.map(l => l.alternateName), ['en', 'hi']);
+    assert.equal(service.areaServed.name, 'India');
+  }
+});
