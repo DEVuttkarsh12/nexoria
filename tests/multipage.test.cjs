@@ -141,3 +141,14 @@ test('service pages publish an enriched Service JSON-LD linked as the page main 
     assert.equal(service.areaServed.name, 'India');
   }
 });
+
+test('case studies and insight posts use descriptive search titles while keeping their headlines', async () => {
+  const fs = require('node:fs'); const path = require('node:path');
+  const read = rel => fs.readFileSync(path.join(__dirname, '..', 'dist', rel), 'utf8');
+  const luxe = read('case-study/luxe-estates/index.html');
+  assert.match(luxe, /<title>Real Estate Follow-up in 38 Seconds: Luxe Estates Case Study — Zykken<\/title>/);
+  assert.match(luxe, /38-second follow-up/);
+  const post = read('blog/automate-your-highest-impact-workflow/index.html');
+  assert.match(post, /<title>Which Business Process Should You Automate First\? — Zykken<\/title>/);
+  assert.match(post, /Start with the workflow that costs you the most\./);
+});

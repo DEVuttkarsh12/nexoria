@@ -857,6 +857,16 @@ export const original = {
     "pricesAreCustom": true
   }
 };
+// Search-result titles (the on-page headline stays as written).
+const caseSeoTitles = {
+  "luxe-estates": "Real Estate Follow-up in 38 Seconds: Luxe Estates Case Study",
+  "velvet-co": "E-commerce Website Rebuilt in 18 Days: Velvet & Co Case Study",
+  "pulse-fit-os": "Fitness App & Trainer Dashboard: Pulse Fit OS Case Study",
+  "noir-clinic": "Hindi & English AI Voice Receptionist: Noir Clinic Case Study",
+  "kinetic-logistics": "Logistics Document Automation: Kinetic Logistics Case Study",
+  "hearth-home": "Home Services CRM & Website: Hearth & Home Case Study"
+};
+for (const item of original.cases) if (caseSeoTitles[item.slug]) item.seoTitle = caseSeoTitles[item.slug];
 export const caseStudies = original.cases;
 export {signatureServices as services} from './offers.mjs';
 export const testimonials = original.testimonials;
@@ -886,6 +896,7 @@ faqs.index[0] = ['How fast can we get a first version?', 'We agree the first pil
 export const insights = [
   {
     "slug": "automate-your-highest-impact-workflow",
+    "seoTitle": "Which Business Process Should You Automate First?",
     "description": "Which workflow should you automate first? Find the repeated task that costs the most time, errors or sales, then build one clear first win.",
     "title": "Start with the workflow that costs you the most.",
     "category": "AUTOMATION",
@@ -913,6 +924,7 @@ export const insights = [
   },
   {
     "slug": "from-first-enquiry-to-booked-call",
+    "seoTitle": "How to Connect Website Leads to Your CRM and Book More Calls",
     "description": "How to connect website and ad enquiries to your CRM, qualify and follow up fast, and turn more leads into booked calls.",
     "title": "Connect your leads, your CRM, and your next booked call.",
     "category": "GROWTH SYSTEMS",
@@ -936,6 +948,7 @@ export const insights = [
   },
   {
     "slug": "what-happens-after-your-ai-system-launches",
+    "seoTitle": "After Your AI System Launches: Handover, Monitoring & Support",
     "title": "Your AI system is live. Here’s what comes next.",
     "category": "AI & OPERATIONS",
     "image": "/assets/insight-3.png",

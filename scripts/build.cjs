@@ -61,12 +61,12 @@ async function renderRoute(pathname, site) {
   const caseMatch = /^\/case-study\/([^/]+)$/.exec(route);
   if (caseMatch) {
     const item = (site.content.caseStudies || []).find(item => item.slug === caseMatch[1]);
-    if (item) return { filename: `case-study/${item.slug}/index.html`, html: site.layout.documentHtml(item.title || item.name || 'Case Study', item.seoDescription || item.description || item.summary || 'Explore a selected project from Zykken.', await site.pages.caseStudyPage(item.slug), `case-study/${item.slug}`), status: 200 };
+    if (item) return { filename: `case-study/${item.slug}/index.html`, html: site.layout.documentHtml(item.seoTitle || item.title || item.name || 'Case Study', item.seoDescription || item.description || item.summary || 'Explore a selected project from Zykken.', await site.pages.caseStudyPage(item.slug), `case-study/${item.slug}`), status: 200 };
   }
   const blogMatch = /^\/blog\/([^/]+)$/.exec(route);
   if (blogMatch) {
     const item = (site.content.insights || []).find(item => item.slug === blogMatch[1]);
-    if (item) return { filename: `blog/${item.slug}/index.html`, html: site.layout.documentHtml(item.title || 'Insight', item.description || item.summary || item.intro || 'Practical insights from Zykken.', await site.pages.blogPage(item.slug), `blog/${item.slug}`), status: 200 };
+    if (item) return { filename: `blog/${item.slug}/index.html`, html: site.layout.documentHtml(item.seoTitle || item.title || 'Insight', item.description || item.summary || item.intro || 'Practical insights from Zykken.', await site.pages.blogPage(item.slug), `blog/${item.slug}`), status: 200 };
   }
   const body = '<section class="page-hero section"><div class="container"><span class="eyebrow">404 / Page not found</span><h1>Let’s get you<br>back on track.</h1><p>The page you are looking for could not be found.</p><a class="button button-dark" href="/">Back to home <span aria-hidden="true">↗</span></a></div></section>';
   return { filename: '404.html', html: site.layout.documentHtml('Page Not Found', 'Return to the Zykken website.', body, '404'), status: 404 };
