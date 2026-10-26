@@ -9,8 +9,18 @@
 - [Business Automation](https://www.zykken.com/services/flowback): Connected workflows with a recovery desk: see what completed, isolate what failed and approve a safe next step.
 - [Custom Software & Portals](https://www.zykken.com/services/previewops): Portals and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.
 
-## Results
-- Luxe Estates (real estate): lead follow-up time went from 6 hours to 38 seconds. See https://www.zykken.com/work
+## Results (case studies)
+- [Luxe Estates, real estate, Mumbai](https://www.zykken.com/case-study/luxe-estates): a WhatsApp and voice lead qualifier with CRM routing cut lead follow-up from 6 hours to 38 seconds.
+- [Velvet & Co, e-commerce, Delhi](https://www.zykken.com/case-study/velvet-co): storefront rebuilt in 18 days, with 1.1s LCP on 4G mobile and conversion up from 0.9% to 3.1%.
+- [Pulse Fit OS, fitness](https://www.zykken.com/case-study/pulse-fit-os): member app, trainer dashboard and AI plan generator built in 19 days, saving 1,100 admin hours a year.
+- [Noir Clinic, healthcare, Pune](https://www.zykken.com/case-study/noir-clinic): a Hindi and English AI voice receptionist with WhatsApp reminders answers the line 24/7, with zero missed calls in 4 months.
+- [Kinetic Logistics, logistics](https://www.zykken.com/case-study/kinetic-logistics): document AI reads PODs and invoices and syncs them to sheet and CRM, saving the ops team 31 hours a week.
+- [Hearth & Home, home services](https://www.zykken.com/case-study/hearth-home): CRM and website with quotes in under 60 seconds and 60-day auto follow-up, giving 2.6x enquiries with no new hires.
+
+## Guides
+- [Which business process should you automate first?](https://www.zykken.com/blog/automate-your-highest-impact-workflow): find the repeated task that costs the most time, errors or sales, then build one clear first win.
+- [How to connect website leads to your CRM and book more calls](https://www.zykken.com/blog/from-first-enquiry-to-booked-call): connect website and ad enquiries to a CRM, qualify and follow up fast.
+- [After your AI system launches: handover, monitoring and support](https://www.zykken.com/blog/what-happens-after-your-ai-system-launches): why monitoring, clear handover and a scoped support plan keep a system useful.
 
 ## Key pages
 - [Services](https://www.zykken.com/services)
@@ -19,3 +29,4 @@
 - [Custom quote](https://www.zykken.com/custom-quote): no fixed packages; all work is custom-quoted.
 - [Contact / free 30-minute audit](https://www.zykken.com/contact)
 - [About](https://www.zykken.com/about)
+- [Insights / guides](https://www.zykken.com/insights)

@@ -152,3 +152,13 @@ test('case studies and insight posts use descriptive search titles while keeping
   assert.match(post, /<title>Which Business Process Should You Automate First\? — Zykken<\/title>/);
   assert.match(post, /Start with the workflow that costs you the most\./);
 });
+
+test('llms.txt lists every case study and insight', async () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const txt = fs.readFileSync(path.join(__dirname, '..', 'llms.txt'), 'utf8');
+  const { caseStudies, insights } = await import('../content.mjs').then(m => m.default || m.content || m);
+  for (const item of [...caseStudies.map(c => `/case-study/${c.slug}`), ...insights.map(i => `/blog/${i.slug}`)]) {
+    assert.ok(txt.includes(`https://www.zykken.com${item}`), `llms.txt missing ${item}`);
+  }
+});
