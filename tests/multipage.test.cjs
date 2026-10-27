@@ -162,3 +162,18 @@ test('llms.txt lists every case study and insight', async () => {
     assert.ok(txt.includes(`https://www.zykken.com${item}`), `llms.txt missing ${item}`);
   }
 });
+
+test('case studies carry Article structured data linked to their service', async () => {
+  const site = await loadSite();
+  const expected = {'luxe-estates': 'flowback', 'velvet-co': 'intentpath', 'pulse-fit-os': 'previewops', 'noir-clinic': 'carryline', 'kinetic-logistics': 'flowback', 'hearth-home': 'pledgedesk'};
+  for (const [slug, svc] of Object.entries(expected)) {
+    const page = await renderRoute(`/case-study/${slug}`, site);
+    const blocks = [...page.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
+    const graph = blocks.flatMap(b => b['@graph'] || [b]);
+    const article = graph.find(node => node['@type'] === 'Article');
+    assert.ok(article, `${slug} missing Article`);
+    assert.equal(article.about['@id'], `${origin}/services/${svc}#service`);
+    assert.ok(article.headline && article.description && article.mentions.name);
+    assert.ok(!('aggregateRating' in article) && !('review' in article));
+  }
+});
