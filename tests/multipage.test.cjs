@@ -177,3 +177,19 @@ test('case studies carry Article structured data linked to their service', async
     assert.ok(!('aggregateRating' in article) && !('review' in article));
   }
 });
+
+test('insight posts show quick answers marked up as FAQPage, and BlogPosting links its services', async () => {
+  const site = await loadSite();
+  const { insights } = await import('../content.mjs');
+  for (const post of insights) {
+    const page = await renderRoute(`/blog/${post.slug}`, site);
+    assert.match(page.html, /Quick answers/);
+    const graph = [...page.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+    const faq = graph.find(n => n['@type'] === 'FAQPage');
+    assert.ok(faq && faq.mainEntity.length === post.faqs.length, `${post.slug} FAQPage`);
+    const article = graph.find(n => n['@type'] === 'BlogPosting');
+    assert.ok(article.about && article.about.length >= 1, `${post.slug} about`);
+    assert.equal(article.image, `${origin}${post.image}`);
+    assert.equal(graph.find(n => n['@type'] === 'WebPage').mainEntity['@id'], `${origin}/blog/${post.slug}#article`);
+  }
+});

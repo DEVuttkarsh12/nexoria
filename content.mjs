@@ -896,6 +896,7 @@ faqs.index[0] = ['How fast can we get a first version?', 'We agree the first pil
 export const insights = [
   {
     "slug": "automate-your-highest-impact-workflow",
+    "faqs": [["Which workflow should a business automate first?", "Start with the repeated task that costs the most time, creates the most errors, or delays your next sale. Record one real workflow from beginning to end; the repeated handoffs between inboxes, spreadsheets, calendars and your CRM often reveal the best starting point."], ["How do you compare automation opportunities?", "Compare hours spent, response delays, errors and missed opportunities. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return, with a fixed scope and go-live date."], ["How do you know the first automation worked?", "Track the same measure before and after launch, such as hours saved, speed-to-lead, booked calls or support tickets. Expand when the first workflow delivers."]],
     "seoTitle": "Which Business Process Should You Automate First?",
     "description": "Which workflow should you automate first? Find the repeated task that costs the most time, errors or sales, then build one clear first win.",
     "title": "Start with the workflow that costs you the most.",
@@ -924,6 +925,7 @@ export const insights = [
   },
   {
     "slug": "from-first-enquiry-to-booked-call",
+    "faqs": [["How do you connect website leads to a CRM?", "Bring website and ad enquiries into one CRM. Define the information you need to qualify a lead, remove duplicates and route each enquiry to the right person."], ["How should new leads be followed up?", "Use email, WhatsApp or voice agents for follow-up and appointment reminders, and make the human handoff clear when a lead needs personal attention."], ["Who should own the lead and CRM system?", "Your team. Build it in your own accounts so you own its code, workflows, prompts, CRM and analytics, and know how to respond to exceptions."]],
     "seoTitle": "How to Connect Website Leads to Your CRM and Book More Calls",
     "description": "How to connect website and ad enquiries to your CRM, qualify and follow up fast, and turn more leads into booked calls.",
     "title": "Connect your leads, your CRM, and your next booked call.",
@@ -948,6 +950,7 @@ export const insights = [
   },
   {
     "slug": "what-happens-after-your-ai-system-launches",
+    "faqs": [["What happens after an AI system launches?", "Your team gets a working handover: documentation and a Loom walkthrough explaining how the system works, which tools it uses and who handles exceptions, plus training for the people who use it every day."], ["How is an AI system monitored after launch?", "During the agreed post-launch support period, review bookings, response times and transcripts, then fix misfires and add guardrails based on the actual cases your team sees."], ["How is ongoing support priced?", "Monthly retainers are separate from the build and reflect system complexity. Software, hosting and usage costs stay visible, and new workflows get a fixed quote before they are added."]],
     "seoTitle": "After Your AI System Launches: Handover, Monitoring & Support",
     "title": "Your AI system is live. Here’s what comes next.",
     "category": "AI & OPERATIONS",
