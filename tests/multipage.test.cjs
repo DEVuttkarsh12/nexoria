@@ -193,3 +193,16 @@ test('insight posts show quick answers marked up as FAQPage, and BlogPosting lin
     assert.equal(graph.find(n => n['@type'] === 'WebPage').mainEntity['@id'], `${origin}/blog/${post.slug}#article`);
   }
 });
+
+test('header and footer logo images are sized for display, not full-resolution', async () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  for (const name of ['zykken-monogram-transparent.png', 'zykken-wordmark-transparent.png']) {
+    const size = fs.statSync(path.join(__dirname, '..', 'assets', name)).size;
+    assert.ok(size < 60000, `${name} is ${size} bytes`);
+  }
+  const site = await loadSite();
+  const page = await renderRoute('/', site);
+  assert.match(page.html, /zykken-monogram-transparent\.png" width="256" height="256"/);
+  assert.match(page.html, /zykken-wordmark-transparent\.png" width="640" height="213"/);
+});
