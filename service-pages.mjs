@@ -75,11 +75,11 @@ const context = {
 
 const slugOf = item => item.slug;
 const SEO = {
-  flowback: ['Business Automation & AI Workflow Automation in India', 'AI workflow automation for lead routing, onboarding, documents and reporting, built around your existing tools. Custom-quoted, with a free 30-minute audit.'],
-  carryline: ['WhatsApp Chatbot & AI Voice Agents in Hindi and English', 'WhatsApp chatbots and AI voice agents in Hindi and English for Indian businesses: answer enquiries, qualify leads, book calls and hand off to your team.'],
+  flowback: ['AI Workflow & Business Automation in India', 'AI workflow automation for lead routing, onboarding, documents and reporting, built around your existing tools. Custom-quoted, with a free 30-minute audit.'],
+  carryline: ['WhatsApp Chatbot & Hindi AI Voice Agents in India', 'WhatsApp chatbots and AI voice agents in Hindi and English for Indian businesses: answer enquiries, qualify leads, book calls and hand off to your team.'],
   intentpath: ['Website Design & Development Company in India', 'Website design and development in India: copy, design, build and measurement in one project, with a guided enquiry journey to the right person.'],
   previewops: ['Custom Software Development, Portals & Dashboards', 'Custom portals, dashboards, member apps and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.'],
-  pledgedesk: ['CRM & Lead Follow-up for Real Estate and Sales Teams', 'A custom CRM that tracks leads and the commitments inside conversations. For Luxe Estates, real estate lead follow-up went from 6 hours to 38 seconds.']
+  pledgedesk: ['CRM for Real Estate & Sales Teams in India', 'A custom CRM that tracks leads and the commitments inside conversations. For Luxe Estates, real estate lead follow-up went from 6 hours to 38 seconds.']
 };
 export const serviceDetailRoutes = services.map(item => ({
   slug: slugOf(item),

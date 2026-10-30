@@ -146,7 +146,7 @@ test('case studies and insight posts use descriptive search titles while keeping
   const fs = require('node:fs'); const path = require('node:path');
   const read = rel => fs.readFileSync(path.join(__dirname, '..', 'dist', rel), 'utf8');
   const luxe = read('case-study/luxe-estates/index.html');
-  assert.match(luxe, /<title>Real Estate Follow-up in 38 Seconds: Luxe Estates Case Study — Zykken<\/title>/);
+  assert.match(luxe, /<title>Luxe Estates: Real Estate Follow-up in 38 Seconds — Zykken<\/title>/);
   assert.match(luxe, /38-second follow-up/);
   const post = read('blog/automate-your-highest-impact-workflow/index.html');
   assert.match(post, /<title>Which Business Process Should You Automate First\? — Zykken<\/title>/);
@@ -205,4 +205,18 @@ test('header and footer logo images are sized for display, not full-resolution',
   const page = await renderRoute('/', site);
   assert.match(page.html, /zykken-monogram-transparent\.png" width="256" height="256"/);
   assert.match(page.html, /zykken-wordmark-transparent\.png" width="640" height="213"/);
+});
+
+test('every built page has a search title of 60 characters or fewer so results do not cut it off', async () => {
+  const fs = require('node:fs'); const path = require('node:path');
+  const dist = path.join(__dirname, '..', 'dist');
+  const files = [];
+  (function walk(d) { for (const e of fs.readdirSync(d, {withFileTypes: true})) { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (e.name.endsWith('.html')) files.push(p); } })(dist);
+  assert.ok(files.length > 20);
+  for (const f of files) {
+    const m = /<title>([^<]*)<\/title>/.exec(fs.readFileSync(f, 'utf8'));
+    if (!m) continue;
+    const title = decodeEntities(m[1]);
+    assert.ok(title.length <= 60, `${path.relative(dist, f)}: "${title}" is ${title.length} chars`);
+  }
 });

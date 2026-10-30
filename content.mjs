@@ -859,12 +859,12 @@ export const original = {
 };
 // Search-result titles (the on-page headline stays as written).
 const caseSeoTitles = {
-  "luxe-estates": "Real Estate Follow-up in 38 Seconds: Luxe Estates Case Study",
-  "velvet-co": "E-commerce Website Rebuilt in 18 Days: Velvet & Co Case Study",
-  "pulse-fit-os": "Fitness App & Trainer Dashboard: Pulse Fit OS Case Study",
-  "noir-clinic": "Hindi & English AI Voice Receptionist: Noir Clinic Case Study",
-  "kinetic-logistics": "Logistics Document Automation: Kinetic Logistics Case Study",
-  "hearth-home": "Home Services CRM & Website: Hearth & Home Case Study"
+  "luxe-estates": "Luxe Estates: Real Estate Follow-up in 38 Seconds",
+  "velvet-co": "Velvet & Co: E-commerce Website Rebuilt in 18 Days",
+  "pulse-fit-os": "Pulse Fit OS: Fitness App & Trainer Dashboard",
+  "noir-clinic": "Noir Clinic: Hindi & English AI Voice Receptionist",
+  "kinetic-logistics": "Kinetic Logistics: Document Automation Case Study",
+  "hearth-home": "Hearth & Home: Home Services CRM & Website"
 };
 for (const item of original.cases) if (caseSeoTitles[item.slug]) item.seoTitle = caseSeoTitles[item.slug];
 export const caseStudies = original.cases;
@@ -926,7 +926,7 @@ export const insights = [
   {
     "slug": "from-first-enquiry-to-booked-call",
     "faqs": [["How do you connect website leads to a CRM?", "Bring website and ad enquiries into one CRM. Define the information you need to qualify a lead, remove duplicates and route each enquiry to the right person."], ["How should new leads be followed up?", "Use email, WhatsApp or voice agents for follow-up and appointment reminders, and make the human handoff clear when a lead needs personal attention."], ["Who should own the lead and CRM system?", "Your team. Build it in your own accounts so you own its code, workflows, prompts, CRM and analytics, and know how to respond to exceptions."]],
-    "seoTitle": "How to Connect Website Leads to Your CRM and Book More Calls",
+    "seoTitle": "How to Connect Website Leads to Your CRM",
     "description": "How to connect website and ad enquiries to your CRM, qualify and follow up fast, and turn more leads into booked calls.",
     "title": "Connect your leads, your CRM, and your next booked call.",
     "category": "GROWTH SYSTEMS",
@@ -951,7 +951,7 @@ export const insights = [
   {
     "slug": "what-happens-after-your-ai-system-launches",
     "faqs": [["What happens after an AI system launches?", "Your team gets a working handover: documentation and a Loom walkthrough explaining how the system works, which tools it uses and who handles exceptions, plus training for the people who use it every day."], ["How is an AI system monitored after launch?", "During the agreed post-launch support period, review bookings, response times and transcripts, then fix misfires and add guardrails based on the actual cases your team sees."], ["How is ongoing support priced?", "Monthly retainers are separate from the build and reflect system complexity. Software, hosting and usage costs stay visible, and new workflows get a fixed quote before they are added."]],
-    "seoTitle": "After Your AI System Launches: Handover, Monitoring & Support",
+    "seoTitle": "After Your AI System Launches: Handover & Support",
     "title": "Your AI system is live. Here’s what comes next.",
     "category": "AI & OPERATIONS",
     "image": "/assets/insight-3.png",
