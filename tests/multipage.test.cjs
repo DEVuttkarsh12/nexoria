@@ -220,3 +220,19 @@ test('every built page has a search title of 60 characters or fewer so results d
     assert.ok(title.length <= 60, `${path.relative(dist, f)}: "${title}" is ${title.length} chars`);
   }
 });
+
+test('FAQPage questions are clean questions, not page text or numbered labels', async () => {
+  const site = await loadSite();
+  for (const route of publicRoutes(site)) {
+    const { html } = await renderRoute(route, site);
+    const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+    const faq = graph.find(n => n['@type'] === 'FAQPage');
+    if (!faq) continue;
+    if (route === '/') assert.ok(faq.mainEntity.some(q => q.name === 'How do we start?'), 'homepage keeps How do we start?');
+    for (const q of faq.mainEntity) {
+      assert.ok(q.name.length <= 160, `${route} question too long: ${q.name.slice(0, 80)}`);
+      assert.ok(!/^\d/.test(q.name), `${route} question starts with a number: ${q.name}`);
+      assert.ok(q.name.trim().endsWith('?'), `${route} question should end with ?: ${q.name}`);
+    }
+  }
+});
