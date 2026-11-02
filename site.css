@@ -1570,3 +1570,6 @@ p{color:#52525b}
 .article-related h3{font-size:26px;margin:0 0 20px}
 .prose .article-related .related-link-text{margin:0}
 @media(prefers-reduced-motion:reduce){.related-link-card{transition:none}.related-link-card:hover{transform:none}}
+
+.project-questions{padding:72px 0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}.project-faq-list{max-width:none;margin:0}.project-faq-list details{background:#f4f4f5}.project-faq-list summary{font-size:18px;line-height:26px;min-height:68px}
+@media (max-width:860px){.project-questions{grid-template-columns:1fr;gap:24px;padding:40px 0}}

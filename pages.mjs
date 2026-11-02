@@ -72,6 +72,22 @@ const caseRequirements = {
  'kinetic-logistics':['Extract useful fields from delivery and invoice documents','Send incomplete or uncertain cases to one exception inbox','Connect driver updates, records and reconciliation'],
  'hearth-home':['Give the founder a simple enquiry and quote flow','Keep follow-up moving beyond the first two days','Summarize the day’s activity in one place'],
 };
+const caseQuestions = {
+ 'luxe-estates':'How did Luxe Estates cut lead follow-up from 6 hours to 38 seconds?',
+ 'velvet-co':'How did Velvet & Co lift conversion from 0.9% to 3.1%?',
+ 'pulse-fit-os':'How did Pulse Fit OS save 1,100 admin hours a year?',
+ 'noir-clinic':'How did Noir Clinic reach zero missed calls?',
+ 'kinetic-logistics':'How did Kinetic Logistics get 31 hours a week back?',
+ 'hearth-home':'How did Hearth & Home grow enquiries 2.6× without new hires?',
+};
+function caseFaqs(item, service) {
+ const results = item.results.map(r => `${r.label}: ${r.value}`).join('; ');
+ return [
+  [caseQuestions[item.slug], item.build],
+  [`What results did ${item.client} get?`, `${results}.`],
+  [`How long did the ${item.client} project take?`, `The build took ${item.elapsed} and went live in ${item.delivered} for ${item.client} in ${item.city}. It used Zykken’s ${service.title} service, scoped and custom-quoted for the project.`],
+ ];
+}
 export function caseStudyPage(slug) {
  const item = caseStudies.find(c => c.slug === slug);
  if (!item) return null;
@@ -100,6 +116,7 @@ export function caseStudyPage(slug) {
  <section class="project-story-row" id="project-challenge" aria-labelledby="challenge-title"><div class="project-section-heading"><span class="project-index">01 / THE STARTING POINT</span><h2 id="challenge-title">The challenge.</h2></div><div class="project-story-copy"><p>${e(item.problem)}</p><div class="project-requirements surface"><h3>What needed to change</h3>${list(caseRequirements[item.slug])}</div></div></section>
  <section class="project-story-row" id="project-solution" aria-labelledby="solution-title"><div class="project-section-heading"><span class="project-index">02 / THE BUILD</span><h2 id="solution-title">A connected solution.</h2><a class="text-link" href="/services/${servicePath}">Explore this expertise ${icon('arrow')}</a></div><div class="project-story-copy"><p>${e(item.build)}</p><div class="project-deliverables"><h3>What we delivered</h3><ul>${deliverables.map((label,i)=>`<li><span aria-hidden="true">0${i+1}</span><strong>${e(label)}</strong>${icon('check')}</li>`).join('')}</ul></div></div></section>
  <section class="project-results-section" id="project-results" aria-labelledby="results-title"><div class="project-results-heading"><div class="project-section-heading"><span class="project-index">03 / THE OUTCOME</span><h2 id="results-title">The results.</h2></div><p>The project outcomes for ${e(item.client)}, following a ${e(item.elapsed)} build around their team’s needs.</p></div><dl class="project-results-grid">${item.results.map(result=>`<div class="project-result surface"><dt>${e(result.label)}</dt><dd>${e(result.value)}</dd></div>`).join('')}</dl></section>
+ <section class="project-questions" id="project-questions" aria-labelledby="project-questions-title"><div class="project-section-heading"><span class="project-index">QUICK ANSWERS</span><h2 id="project-questions-title">Project questions.</h2></div><div class="faq-list project-faq-list">${caseFaqs(item, services.find(s => s.slug === servicePath)).map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></section>
  <section class="project-perspective" aria-labelledby="perspective-title"><div><span class="project-index">THE CLIENT PERSPECTIVE</span><h2 id="perspective-title">In their words.</h2><div class="quote-author"><span class="initial-avatar" aria-hidden="true">${e(item.initials)}</span><div><strong>${e(item.person)}</strong><span>${e(item.role)}</span></div></div></div><blockquote><span aria-hidden="true">“</span><p>${e(item.quote).replace(/zykken/g,'Zykken')}</p></blockquote></section>
  </div>
  <section class="section project-next"><div class="container"><div class="project-next-heading"><div><span class="project-index">KEEP EXPLORING</span><h2>Next project.</h2></div><a class="text-link" href="/work">Back to all work ${icon('arrow')}</a></div><div class="case-grid case-grid-single">${caseCard(next)}</div></div></section>
