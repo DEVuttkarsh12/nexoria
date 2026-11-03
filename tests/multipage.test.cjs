@@ -259,3 +259,16 @@ test('case studies answer project questions visibly and as FAQPage', async () =>
     for (const q of faq.mainEntity) assert.ok(q.acceptedAnswer.text.length > 20 && !/undefined/.test(q.acceptedAnswer.text), `${slug} answer filled`);
   }
 });
+
+test('about page answers who-is-Zykken questions visibly, as FAQPage and AboutPage', async () => {
+  const site = await loadSite();
+  const { html } = await renderRoute('/about', site);
+  assert.ok(html.includes('id="about-questions"'), 'visible about FAQ section');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+  assert.ok(graph.some(n => n['@type'] === 'AboutPage'), 'about page typed AboutPage');
+  const faq = graph.find(n => n['@type'] === 'FAQPage');
+  assert.ok(faq && faq.mainEntity.length === 9, 'about FAQPage has 9 questions');
+  assert.ok(faq.mainEntity.some(q => q.name === 'What is Zykken?'));
+  const contact = await renderRoute('/contact', site);
+  assert.ok(contact.html.includes('"ContactPage"'), 'contact page typed ContactPage');
+});

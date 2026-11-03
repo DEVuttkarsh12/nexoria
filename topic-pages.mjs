@@ -97,8 +97,7 @@ export function testimonialsPage(){
     ${related('Explore the work','See the workflow<br>behind each result.','Each project page explains the original bottleneck, the system built and the results supplied in that client story.',[['Browse all projects','/work'],['Explore the services','/services'],['Discuss your workflow','/contact']])}${ctaSection()}`);
 }
 
-const faqGroups = [
-  {id:'about-zykken',title:'About Zykken',description:'Quick, factual answers about who we are and what we build.',items:[
+export const aboutZykkenFaqs = [
     ['What is Zykken?','Zykken is an AI automation agency and business-systems studio in India. We build business automation, WhatsApp and voice AI agents, website design and development, custom software and CRM for growing businesses, and every project is custom-quoted.'],
     ['What services does Zykken offer?','Five services: Website Design & Development, WhatsApp & Voice AI Agents (in Hindi and English), CRM & Lead Follow-up, Business Automation, and Custom Software & Portals (portals, dashboards and internal tools with an approval preview).'],
     ['Do you build WhatsApp chatbots for businesses in India?','Yes. We build WhatsApp chatbots and AI agents for enquiries, qualification and booking, connected to the other channels you choose so an approved handoff keeps its context.'],
@@ -108,6 +107,10 @@ const faqGroups = [
     ['Do you work with small businesses?','Yes. Every project is scoped around your business and custom-quoted, so you only pay for the system you need. Start with a free 30-minute audit.'],
     ['How much does a Zykken project cost?','All work is custom-quoted. We do not publish fixed packages; you receive a proposal after a free 30-minute audit of your business and tools.'],
     ['How do I get started with Zykken?','Book a free 30-minute audit through the contact page or email info@zykken.com.']
+];
+
+const faqGroups = [
+  {id:'about-zykken',title:'About Zykken',description:'Quick, factual answers about who we are and what we build.',items:[...aboutZykkenFaqs
   ]},
   {id:'getting-started',title:'Getting started',description:'What to bring, how we scope the first version and whether your existing system can be improved.',items:[faqs.index[0],faqs.services[3],faqs.services[8],['How do we start?','Request a free audit through our contact form. We begin with a conversation and a workflow recording, then confirm the scope, custom quote and delivery plan.']]},
   {id:'systems',title:'Systems and integrations',description:'How the signature builds work and how they connect to the tools your business already uses.',items:[faqs.services[0],faqs.services[1],faqs.services[7]]},
