@@ -3,11 +3,11 @@
 > Zykken is an AI automation agency and business-systems studio in India. We build business automation, WhatsApp chatbots and AI voice agents (Hindi and English), CRM with lead follow-up, website design and development, and custom software for growing businesses. All work is custom-quoted, and every project starts with a free 30-minute audit. Contact: info@zykken.com
 
 ## Services
-- [Website Design & Development](https://www.zykken.com/services/intentpath): A carefully designed website that helps visitors choose a route, build an editable brief and reach the right person.
-- [WhatsApp & Voice AI Agents](https://www.zykken.com/services/carryline): WhatsApp chatbots, AI voice agents and chat agents in Hindi and English, connected by a shared handoff brief: what was asked, what was agreed and who takes over.
-- [CRM & Lead Follow-up](https://www.zykken.com/services/pledgedesk): A CRM that tracks the commitments inside conversations, with source evidence, confirmed deadlines and follow-up ownership.
-- [Business Automation](https://www.zykken.com/services/flowback): Connected workflows with a recovery desk: see what completed, isolate what failed and approve a safe next step.
-- [Custom Software & Portals](https://www.zykken.com/services/previewops): Portals and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.
+- [Website Design & Development](https://www.zykken.com/services/intentpath): Website design and development in India: copy, design, build and measurement in one project, with a guided enquiry journey to the right person.
+- [WhatsApp & Voice AI Agents](https://www.zykken.com/services/carryline): WhatsApp chatbots and AI voice agents in Hindi and English for Indian businesses: answer enquiries, qualify leads, book calls and hand off to your team.
+- [CRM & Lead Follow-up](https://www.zykken.com/services/pledgedesk): A custom CRM that tracks leads and the commitments inside conversations, built for real estate and sales teams in India.
+- [Business Automation](https://www.zykken.com/services/flowback): AI workflow automation for lead routing, onboarding, documents and reporting, built around your existing tools.
+- [Custom Software & Portals](https://www.zykken.com/services/previewops): Custom portals, dashboards, member apps and internal tools, with a preview step to review a change before it goes live.
 
 ## Results (case studies)
 - [Luxe Estates, real estate, Mumbai](https://www.zykken.com/case-study/luxe-estates): a WhatsApp and voice lead qualifier with CRM routing cut lead follow-up from 6 hours to 38 seconds.
@@ -30,3 +30,4 @@
 - [Contact / free 30-minute audit](https://www.zykken.com/contact)
 - [About](https://www.zykken.com/about)
 - [Insights / guides](https://www.zykken.com/insights)
+- [Full details for AI assistants](https://www.zykken.com/llms-full.txt): every page's summary and the questions it answers.

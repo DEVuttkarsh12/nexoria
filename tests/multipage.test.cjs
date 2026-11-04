@@ -272,3 +272,22 @@ test('about page answers who-is-Zykken questions visibly, as FAQPage and AboutPa
   const contact = await renderRoute('/contact', site);
   assert.ok(contact.html.includes('"ContactPage"'), 'contact page typed ContactPage');
 });
+
+test('build writes llms-full.txt with every page and its published FAQ answers', async () => {
+  const fs = require('node:fs');
+  const path = require('node:path');
+  const { build, dist } = require('../scripts/build.cjs');
+  await build();
+  const full = fs.readFileSync(path.join(dist, 'llms-full.txt'), 'utf8');
+  const llms = fs.readFileSync(path.join(__dirname, '..', 'llms.txt'), 'utf8');
+  assert.ok(llms.includes('https://www.zykken.com/llms-full.txt'), 'llms.txt should link llms-full.txt');
+  assert.ok(full.startsWith(llms.trim()), 'llms-full.txt should start with llms.txt');
+  for (const route of ['/services/carryline', '/services/pledgedesk', '/case-study/luxe-estates', '/faq', '/process']) {
+    assert.ok(full.includes(`URL: https://www.zykken.com${route}\n`), `llms-full.txt missing ${route}`);
+  }
+  assert.ok(!full.includes('URL: https://www.zykken.com/privacy'), 'legal pages stay out');
+  assert.match(full, /Q: Can your AI voice agents speak Hindi\?\nA: Yes\./);
+  assert.doesNotMatch(full, /<\/?[a-z][^>]*>|&amp;/, 'plain text only');
+  const questions = [...full.matchAll(/^Q: (.+)$/gm)].map(m => m[1].toLowerCase());
+  assert.equal(new Set(questions).size, questions.length, 'no repeated questions');
+});

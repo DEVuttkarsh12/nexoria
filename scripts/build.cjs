@@ -78,6 +78,29 @@ function sitemapXml(site) {
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${publicRoutes(site).map(route => `  <url><loc>https://www.zykken.com${route}</loc><lastmod>${new Date().toISOString().slice(0,10)}</lastmod></url>`).join('\n')}\n</urlset>\n`;
 }
 const robotsTxt = ['GPTBot','OAI-SearchBot','ChatGPT-User','PerplexityBot','ClaudeBot','Claude-Web','Google-Extended','Applebot-Extended','*'].map(a=>`User-agent: ${a}\nAllow: /\nDisallow: /api/\n`).join('\n') + '\nSitemap: https://www.zykken.com/sitemap.xml\n';
+// Plain-text companion to llms.txt for AI assistants: every page's title, URL,
+// summary and the exact Q&A already published in its FAQPage schema.
+function decodeEntities(text) {
+  return String(text).replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ');
+}
+function pageFacts(route, html) {
+  const title = decodeEntities((/<title>([^<]*)<\/title>/.exec(html) || [])[1] || '');
+  const description = decodeEntities((/<meta name="description" content="([^"]*)"/.exec(html) || [])[1] || '');
+  const blocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1]));
+  const graph = blocks.flatMap(b => b['@graph'] || [b]);
+  const faqs = graph.filter(node => node['@type'] === 'FAQPage').flatMap(node => node.mainEntity || [])
+    .map(q => ({ question: String(q.name || '').trim(), answer: String((q.acceptedAnswer || {}).text || '').replace(/\s+/g, ' ').trim() }))
+    .filter(q => q.question && q.answer);
+  return { route, url: `https://www.zykken.com${route === '/' ? '/' : route}`, title, description, faqs };
+}
+function llmsFullTxt(llms, pages) {
+  const seen = new Set();
+  const sections = pages.filter(p => !['/privacy','/terms','/cookies','/cancellation-refunds','/disclaimer'].includes(p.route)).map(p => {
+    const faqs = p.faqs.filter(q => { const key = q.question.toLowerCase(); if (seen.has(key)) return false; seen.add(key); return true; });
+    return [`### ${p.title}`, `URL: ${p.url}`, p.description, ...faqs.map(q => `\nQ: ${q.question}\nA: ${q.answer}`)].join('\n');
+  });
+  return `${llms.trim()}\n\n## Page details and answers\nEach page below lists its summary and the questions it answers, in the same words as on the page.\n\n${sections.join('\n\n')}\n`;
+}
 async function copyIfPresent(filename) {
   try { await fs.cp(path.join(root, filename), path.join(dist, filename), { recursive: true }); }
   catch (error) { if (error.code !== 'ENOENT') throw error; }
@@ -88,11 +111,13 @@ async function build() {
   await fs.mkdir(dist, { recursive: true });
   const routes = [...publicRoutes(site), '/404'];
   const publicAssets = new Set();
+  const facts = [];
   const collectAssets = text => { for (const match of text.matchAll(/\/assets\/[^\s\"'()<>?#]+/g)) publicAssets.add(match[0]); };
   collectAssets(await fs.readFile(path.join(root, 'site.css'), 'utf8'));
   for (const route of routes) {
     const page = await renderRoute(route, site);
     collectAssets(page.html);
+    if (page.status === 200) facts.push(pageFacts(route, page.html));
     const target = path.join(dist, page.filename);
     await fs.mkdir(path.dirname(target), { recursive: true });
     await fs.writeFile(target, page.html);
@@ -109,9 +134,10 @@ async function build() {
   }));
   await fs.writeFile(path.join(dist, 'robots.txt'), robotsTxt);
   await fs.copyFile(path.join(root, 'llms.txt'), path.join(dist, 'llms.txt'));
+  await fs.writeFile(path.join(dist, 'llms-full.txt'), llmsFullTxt(await fs.readFile(path.join(root, 'llms.txt'), 'utf8'), facts));
   await fs.writeFile(path.join(dist, 'sitemap.xml'), sitemapXml(site));
   console.log(`Built ${routes.length} pre-rendered pages in ${dist}`);
   return routes.length;
 }
-module.exports = { root, dist, build, loadSite, renderRoute, normalizeRoute, publicRoutes, sitemapXml, robotsTxt };
+module.exports = { llmsFullTxt, pageFacts, root, dist, build, loadSite, renderRoute, normalizeRoute, publicRoutes, sitemapXml, robotsTxt };
 if (require.main === module) build().catch(error => { console.error(error); process.exitCode = 1; });
