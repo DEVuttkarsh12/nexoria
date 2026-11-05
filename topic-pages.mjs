@@ -62,10 +62,20 @@ const benefitDetails = [
   {id:'experience',title:'An experience people can use',description:'Clear interfaces and thoughtful context make the system easier to understand in everyday work.',body:'We shape the copy, layout and interaction around the task. A customer should know the next step, and an operator should be able to find the context without piecing together separate messages.',points:['Make the next action clear','Carry useful context across the journey','Keep the experience readable on phone and desktop'],example:'the Decision Brief on our websites lets a visitor review their goal and constraints before sending an enquiry your sales team can act on.'}
 ];
 
+// Benefits FAQs: every answer restates the benefit copy above or the existing ownership/support FAQs; no new claims.
+const benefitFaqs = [
+  ['Why choose Zykken for business automation?', 'We start with the result you need, then choose the smallest system that can make it happen. We map the current workflow, agree which result the first version should improve, check the complete journey before launch and hand over a system your team owns.'],
+  ['Where should the first version of a system start?', 'With one clear outcome, such as a faster handoff, fewer repeated updates or clearer customer context. That is more useful than adding AI to every step, so we agree the first outcome and connect the workflow to the tools you already use.'],
+  ['How do you test a system before launch?', 'We check the complete journey, including the moments when information is missing or a connected tool fails. The build has agreed test scenarios, a sensible recovery path and clear rules for when a person should take over.'],
+  ['Do we stay in control of important decisions?', 'Yes. Your proposal identifies the supported actions, access needs and approval steps, and sensitive actions can require approval before they run.'],
+  ['Who owns what Zykken builds?', 'You do. Code, prompts, workflows, documentation and accounts belong to you, with an agreed handover and support plan.']
+];
+
 export function benefitsPage(){
   return page(`${pageHero('Why Zykken','Built for your work.<br>Designed for your people.','The value is in a clearer workflow, a useful customer experience and a system your team can own.')}
     ${jumpLinks(benefitDetails.map(b=>[b.title,`#${b.id}`]))}
     <section class="section"><div class="container">${sectionHeading('What changes','Less friction.<br>More room for real work.','We make the intended outcome and operating rules part of the build, so the technology serves the task.')}<div class="topic-benefit-list">${benefitDetails.map((b,i)=>`<article class="topic-benefit surface reveal" id="${b.id}"><div class="topic-benefit-art">${benefitArtifact(i)}</div><div class="topic-benefit-copy"><span class="topic-meta">0${i+1} / THE BENEFIT</span><h3>${e(b.title)}</h3><p class="topic-lead">${e(b.description)}</p><p>${e(b.body)}</p>${list(b.points)}<div class="topic-example"><strong>In practice</strong><p>${e(b.example)}</p></div></div></article>`).join('')}</div></div></section>
+    <section class="section faq-section" id="benefit-questions"><div class="container">${sectionHeading('Why Zykken questions','What working with us<br><span>actually changes</span>')}<div class="faq-list reveal">${benefitFaqs.map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></div></section>
     ${related('From benefit to build','See the systems<br>behind the experience.','Explore the signature capabilities, the delivery process and the results described in our client stories.',[['Explore the features','/features'],['See how we work','/process'],['Read client projects','/work']])}${ctaSection()}`);
 }
 

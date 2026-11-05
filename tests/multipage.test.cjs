@@ -291,3 +291,14 @@ test('build writes llms-full.txt with every page and its published FAQ answers',
   const questions = [...full.matchAll(/^Q: (.+)$/gm)].map(m => m[1].toLowerCase());
   assert.equal(new Set(questions).size, questions.length, 'no repeated questions');
 });
+
+test('benefits page answers why-Zykken questions visibly and as FAQPage', async () => {
+  const site = await loadSite();
+  const { html } = await renderRoute('/benefits', site);
+  assert.ok(html.includes('id="benefit-questions"'), 'visible benefits FAQ section');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+  const faq = graph.find(n => n['@type'] === 'FAQPage');
+  assert.ok(faq && faq.mainEntity.length === 5, 'benefits FAQPage has 5 questions');
+  assert.ok(faq.mainEntity.some(q => q.name === 'Who owns what Zykken builds?'));
+  for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
+});
