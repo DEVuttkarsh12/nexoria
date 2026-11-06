@@ -302,3 +302,15 @@ test('benefits page answers why-Zykken questions visibly and as FAQPage', async 
   assert.ok(faq.mainEntity.some(q => q.name === 'Who owns what Zykken builds?'));
   for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
 });
+
+test('features page answers feature questions visibly and as FAQPage', async () => {
+  const site = await loadSite();
+  const { html } = await renderRoute('/features', site);
+  assert.ok(html.includes('id="feature-questions"'), 'visible features FAQ section');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+  const faq = graph.find(n => n['@type'] === 'FAQPage');
+  assert.ok(faq && faq.mainEntity.length === 5, 'features FAQPage has 5 questions');
+  assert.ok(faq.mainEntity.some(q => q.name === 'Who owns the features Zykken builds?'));
+  assert.ok(faq.mainEntity.some(q => q.name === 'How does the Context Passport help with WhatsApp and voice handoffs?'));
+  for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
+});
