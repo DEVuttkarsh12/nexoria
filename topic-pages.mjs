@@ -105,10 +105,20 @@ const teamPractice = [
   ['A usable handover','The project finishes with ownership, documentation and training. The people running the system know where to find help and what happens next.','shield']
 ];
 
+// Team FAQs: every answer restates the team bios, practice copy or page intro above; no new claims.
+const teamFaqs = [
+  ['Who is on the Zykken team?', 'Four specialists with distinct responsibilities and a shared delivery standard. Uttkarsh (Founder, Systems) maps your workflow, reviews sales conversations and prioritizes practical opportunities. Ananya Rao (Design lead) connects copy, layout and motion around the customer journey. Kabir Shah (AI engineer) builds voice and chat agents, integrations and operating checks. Meera Iyer (Delivery lead) keeps delivery on track, tests agreed scenarios, connects the CRM, trains your team and coordinates the support plan.'],
+  ['Who will I work with on a project?', 'You work with the people building the system. Reviews focus on the workflow, the experience and the decisions needed to move forward.'],
+  ['How do project reviews work with the team?', 'Walkthroughs make progress visible. Your team can review the pilot, understand the operating rules and raise changes within the agreed scope.'],
+  ['What do we receive at handover?', 'The project finishes with ownership, documentation and training. The people running the system know where to find help and what happens next.'],
+  ['How does the team work together?', 'Strategy, design, engineering and delivery work together from the first workflow map to the final handover. Your business knowledge shapes the system. We bring the specialist work and make the decisions easy to review.']
+];
+
 export function teamPage(){
   return page(`${pageHero('The team','The people shipping<br>your next system.','Strategy, design, engineering and delivery work together from the first workflow map to the final handover.')}
     <section class="section"><div class="container">${sectionHeading('Four specialists','Close to the work.<br>Clear about the outcome.','A compact team with distinct responsibilities and a shared delivery standard.')}${teamCards(team)}</div></section>
     <section class="section topic-dark-band"><div class="container">${sectionHeading('Working together','Your team is part<br>of the build.','Your business knowledge shapes the system. We bring the specialist work and make the decisions easy to review.')}<div class="topic-practice-grid">${teamPractice.map(([title,description,symbol])=>`<article class="topic-practice reveal"><span>${icon(symbol)}</span><h3>${e(title)}</h3><p>${e(description)}</p></article>`).join('')}</div><div class="topic-band-action">${button('Meet us through your project','/contact',true)}</div></div></section>
+    <section class="section faq-section" id="team-questions"><div class="container">${sectionHeading('Team questions','Who builds with you<br><span>and how we work</span>')}<div class="faq-list reveal">${teamFaqs.map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></div></section>
     ${related('Get to know Zykken','People, process<br>and practical work.','Read the story behind the agency, see the delivery journey and explore the projects described by our clients.',[['About Zykken','/about'],['Our process','/process'],['Client stories','/testimonials']])}${ctaSection()}`);
 }
 
