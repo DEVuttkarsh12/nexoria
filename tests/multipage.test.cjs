@@ -326,3 +326,15 @@ test('team page answers team questions visibly and as FAQPage', async () => {
   assert.ok(faq.mainEntity.some(q => q.name === 'What do we receive at handover?'));
   for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
 });
+
+test('testimonials page answers client-story questions visibly and as FAQPage', async () => {
+  const site = await loadSite();
+  const { html } = await renderRoute('/testimonials', site);
+  assert.ok(html.includes('id="testimonial-questions"'), 'visible testimonials FAQ section');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+  const faq = graph.find(n => n['@type'] === 'FAQPage');
+  assert.ok(faq && faq.mainEntity.length === 5, 'testimonials FAQPage has 5 questions');
+  assert.ok(faq.mainEntity.some(q => q.name === 'Whose client stories are on this page?'));
+  assert.ok(faq.mainEntity.some(q => q.name === 'How can I read the full story behind a quotation?'));
+  for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
+});
