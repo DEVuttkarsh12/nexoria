@@ -338,3 +338,16 @@ test('testimonials page answers client-story questions visibly and as FAQPage', 
   assert.ok(faq.mainEntity.some(q => q.name === 'How can I read the full story behind a quotation?'));
   for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
 });
+
+test('work page answers project questions visibly and as FAQPage', async () => {
+  const site = await loadSite();
+  const { html } = await renderRoute('/work', site);
+  assert.ok(html.includes('id="work-questions"'), 'visible work FAQ section');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+  const faq = graph.find(n => n['@type'] === 'FAQPage');
+  assert.ok(faq && faq.mainEntity.length === 5, 'work FAQPage has 5 questions');
+  const time = faq.mainEntity.find(q => q.name === 'How long did these projects take to build?');
+  assert.ok(time && time.acceptedAnswer.text.includes('Noir Clinic took 11 days'));
+  assert.ok(faq.mainEntity.some(q => q.name === 'Which Zykken service did each project use?'));
+  for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
+});

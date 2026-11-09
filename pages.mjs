@@ -42,10 +42,25 @@ export function servicesPage() {
 }
 
 const caseCards = (items = caseStudies) => items.map(item => caseCard(item)).join('');
+// Work hub FAQs: every answer is generated from the published case-study data (industry, city, build time, service) or existing audit copy; no new claims.
+const caseServiceSlug = {automation:'flowback',website:'intentpath',saas:'previewops',voice:'carryline',crm:'pledgedesk'};
+const industryName = c => c.industry.toLowerCase();
+function workFaqs() {
+ const list = items => items.length > 1 ? `${items.slice(0,-1).join(', ')} and ${items[items.length-1]}` : items[0];
+ const byTime = [...caseStudies].sort((a,b)=>a.elapsedDays-b.elapsedDays);
+ const svc = c => services.find(s => s.slug === caseServiceSlug[c.category]).title;
+ return [
+  ['What kinds of projects has Zykken built?', `Six systems for teams in ${list(caseStudies.map(c=>`${industryName(c)} (${c.client}, ${c.city})`))}. The work covers automation, websites, software, voice and CRM, and you can filter the projects by type on this page.`],
+  ['How long did these projects take to build?', `Each build was measured in days: ${list(byTime.map(c=>`${c.client} took ${c.elapsed}`))}.`],
+  ['Which Zykken service did each project use?', `${list(caseStudies.map(c=>`${c.client} used ${svc(c)}`))}. Each project page links to the service behind it.`],
+  ['What does each case study explain?', 'Each project page explains the challenge, the system built, what was delivered and the results that followed, with the client’s own words on the outcome.'],
+  ['How do I start a project like these?', 'Start with a free audit. One workflow recording. Three opportunities. A clear scope and a custom quote before work begins.']
+ ];
+}
 export function workPage() {
  const categories=[['all','All work'],['automation','Automation'],['website','Websites'],['saas','Software'],['voice','Voice'],['crm','CRM']];
  return `${pageHero('Selected work','Real problems.<br>Working solutions.','Six systems. Clear problems, considered builds, and the results that followed. Discover what we built for teams like yours.')}
- <section class="section section-tight"><div class="container"><div class="case-filters" role="group" aria-label="Filter case studies">${categories.map(([value,label],i)=>`<button type="button" class="filter-button ${i===0?'active':''}" data-filter="${value}" aria-pressed="${i===0}">${label}</button>`).join('')}</div><div class="case-grid">${caseCards()}</div><p class="filter-result" data-filter-count role="status" aria-live="polite">Showing all 6 case studies</p></div></section>${testimonialSection()}${ctaSection()}`;
+ <section class="section section-tight"><div class="container"><div class="case-filters" role="group" aria-label="Filter case studies">${categories.map(([value,label],i)=>`<button type="button" class="filter-button ${i===0?'active':''}" data-filter="${value}" aria-pressed="${i===0}">${label}</button>`).join('')}</div><div class="case-grid">${caseCards()}</div><p class="filter-result" data-filter-count role="status" aria-live="polite">Showing all 6 case studies</p></div></section><section class="section faq-section" id="work-questions"><div class="container">${sectionHeading('Project questions','What we built<br><span>and how long it took</span>')}<div class="faq-list reveal">${workFaqs().map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></div></section>${testimonialSection()}${ctaSection()}`;
 }
 export function customQuotePage() {
  return `${pageHero('Your custom quote','Your business.<br>Your build plan.','Your workflows, goals, integrations and support needs shape your proposal. Start with a free audit and receive a clear custom quote before work begins.')}
