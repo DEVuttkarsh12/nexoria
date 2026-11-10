@@ -140,8 +140,21 @@ export function caseStudyPage(slug) {
  ${ctaSection()}
  </div>`;
 }
+// Insights hub FAQs: every answer is generated from the published articles (titles, categories, read times, quick answers) or existing audit copy; no new claims.
+function insightsFaqs() {
+ const list = items => items.length > 1 ? `${items.slice(0,-1).join(', ')} and ${items[items.length-1]}` : items[0];
+ const cat = i => i.category.toLowerCase().replace('ai &', 'AI and');
+ const quick = insights.reduce((n,i)=>n+(i.faqs?.length||0),0);
+ return [
+  ['What does the Zykken journal cover?', `${insights.length} practical articles: ${list(insights.map(i=>`“${i.title.replace(/\.$/,'')}” (${cat(i)})`))}.`],
+  ['Which article should I read first?', `If you are starting out, read “${insights[0].title.replace(/\.$/,'')}”. ${insights[0].intro}`],
+  ['How long does each article take to read?', `${list(insights.map(i=>`“${i.title.replace(/\.$/,'')}” is a ${i.readTime}`))}.`],
+  ['Do the articles include quick answers?', `Yes. Each article ends with short quick answers, ${quick} in total, covering questions like ${list(insights.map(i=>`“${i.faqs[0][0]}”`))}`],
+  ['How do I apply these ideas to my business?', 'Start with a free audit. One workflow recording. Three opportunities. A clear scope and a custom quote before work begins.']
+ ];
+}
 export function insightsPage() {
- return `${pageHero('The journal','Clear thinking.<br>Useful next steps.','Practical notes on choosing a first workflow, connecting your sales systems, and keeping them useful after launch.')}<section class="section section-tight"><div class="container">${insightCards()}</div></section>${ctaSection()}`;
+ return `${pageHero('The journal','Clear thinking.<br>Useful next steps.','Practical notes on choosing a first workflow, connecting your sales systems, and keeping them useful after launch.')}<section class="section section-tight"><div class="container">${insightCards()}</div></section><section class="section faq-section" id="insights-questions"><div class="container">${sectionHeading('Journal questions','What we write about<br><span>and where to start</span>')}<div class="faq-list reveal">${insightsFaqs().map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></div></section>${ctaSection()}`;
 }
 export function blogPage(slug) {
  const item=insights.find(i=>i.slug===slug);

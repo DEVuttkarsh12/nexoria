@@ -351,3 +351,14 @@ test('work page answers project questions visibly and as FAQPage', async () => {
   assert.ok(faq.mainEntity.some(q => q.name === 'Which Zykken service did each project use?'));
   for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
 });
+
+test('insights page answers journal questions visibly and as FAQPage', async () => {
+  const site = await loadSite();
+  const { html } = await renderRoute('/insights', site);
+  assert.ok(html.includes('id="insights-questions"'), 'visible insights FAQ section');
+  const graph = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
+  const faq = graph.find(n => n['@type'] === 'FAQPage');
+  assert.ok(faq && faq.mainEntity.length === 5, 'insights FAQPage has 5 questions');
+  assert.ok(faq.mainEntity.some(q => q.name === 'Which article should I read first?'));
+  for (const q of faq.mainEntity) assert.ok(!/98%|guarantee/i.test(q.acceptedAnswer.text), 'no unverified claims');
+});
