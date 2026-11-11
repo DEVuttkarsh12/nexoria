@@ -1573,3 +1573,4 @@ p{color:#52525b}
 
 .project-questions{padding:72px 0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}.project-faq-list{max-width:none;margin:0}.project-faq-list details{background:#f4f4f5}.project-faq-list summary{font-size:18px;line-height:26px;min-height:68px}
 @media (max-width:860px){.project-questions{grid-template-columns:1fr;gap:24px;padding:40px 0}}
+.project-related{padding:72px 0 8px}.project-related>p{max-width:640px;color:#71717a;margin:16px 0 28px}

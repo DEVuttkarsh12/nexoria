@@ -3,7 +3,7 @@ import {renderLegalPage} from './legal-pages.mjs';
 import {original, caseStudies, services, testimonials, values, timeline, faqs, insights} from './content.mjs';
 import {escapeHtml as e, icon, tag, button, sectionHeading, pageHero, ctaSection, faqSection, contactForm} from './layout.mjs';
 import {caseCard, insightCards} from './home.mjs';
-import {insightRelatedServices} from './related-links.mjs';
+import {insightRelatedServices, caseRelatedLinks} from './related-links.mjs';
 import {projectVisual} from './project-visuals.mjs';
 import {clientEmblem} from './people-visuals.mjs';
 import {homeProcess} from './delivery-visuals.mjs';
@@ -135,6 +135,7 @@ export function caseStudyPage(slug) {
  <section class="project-results-section" id="project-results" aria-labelledby="results-title"><div class="project-results-heading"><div class="project-section-heading"><span class="project-index">03 / THE OUTCOME</span><h2 id="results-title">The results.</h2></div><p>The project outcomes for ${e(item.client)}, following a ${e(item.elapsed)} build around their team’s needs.</p></div><dl class="project-results-grid">${item.results.map(result=>`<div class="project-result surface"><dt>${e(result.label)}</dt><dd>${e(result.value)}</dd></div>`).join('')}</dl></section>
  <section class="project-questions" id="project-questions" aria-labelledby="project-questions-title"><div class="project-section-heading"><span class="project-index">QUICK ANSWERS</span><h2 id="project-questions-title">Project questions.</h2></div><div class="faq-list project-faq-list">${caseFaqs(item, services.find(s => s.slug === servicePath)).map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></section>
  <section class="project-perspective" aria-labelledby="perspective-title"><div><span class="project-index">THE CLIENT PERSPECTIVE</span><h2 id="perspective-title">In their words.</h2><div class="quote-author"><span class="initial-avatar" aria-hidden="true">${e(item.initials)}</span><div><strong>${e(item.person)}</strong><span>${e(item.role)}</span></div></div></div><blockquote><span aria-hidden="true">“</span><p>${e(item.quote).replace(/zykken/g,'Zykken')}</p></blockquote></section>
+ <section class="project-related" id="project-related" aria-labelledby="project-related-title"><div class="project-section-heading"><span class="project-index">SERVICES AND READING</span><h2 id="project-related-title">Behind this project.</h2></div><p>The services used to build ${e(item.client)}’s system, and practical notes on planning the same kind of work.</p>${caseRelatedLinks(item.slug, servicePath)}</section>
  </div>
  <section class="section project-next"><div class="container"><div class="project-next-heading"><div><span class="project-index">KEEP EXPLORING</span><h2>Next project.</h2></div><a class="text-link" href="/work">Back to all work ${icon('arrow')}</a></div><div class="case-grid case-grid-single">${caseCard(next)}</div></div></section>
  ${ctaSection()}

@@ -34,3 +34,15 @@ export function insightRelatedServices(insightSlug) {
   if (!items.length) return '';
   return `<aside class="article-related" aria-labelledby="article-related-title"><h3 id="article-related-title">Services for this step</h3><ul class="related-link-grid">${items.map(s => card(`/services/${s.slug}`, s.category, s.title, s.description)).join('')}</ul></aside>`;
 }
+
+// Case study pages: the services that project used (per serviceRelated) and the articles tied to those services.
+export function caseRelatedLinks(caseSlug, primaryService) {
+  const used = Object.entries(serviceRelated).filter(([, rel]) => rel.cases.includes(caseSlug)).map(([s]) => s);
+  const slugs = [...new Set([primaryService, ...used].filter(Boolean))];
+  const reading = [...new Set(slugs.flatMap(s => serviceRelated[s]?.insights || []))].slice(0, 3);
+  const items = [
+    ...slugs.map(serviceCopy).filter(Boolean).map(s => card(`/services/${s.slug}`, `Service · ${s.category}`, s.title, s.description)),
+    ...reading.map(insightCopy).filter(Boolean).map(i => card(`/blog/${i.slug}`, `Insight · ${i.readTime}`, i.title, i.intro))
+  ];
+  return items.length ? `<ul class="related-link-grid">${items.join('')}</ul>` : '';
+}
