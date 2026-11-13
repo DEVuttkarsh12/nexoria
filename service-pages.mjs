@@ -1,7 +1,7 @@
 import {serviceSpecimen} from './systems-visuals.mjs';
-import {services} from './content.mjs';
+import {services, caseStudies} from './content.mjs';
 import {escapeHtml as e, icon, tag, button} from './layout.mjs';
-import {serviceRelatedLinks} from './related-links.mjs';
+import {serviceRelatedLinks, serviceRelated} from './related-links.mjs';
 
 // These pages explain the custom builds in offers.mjs. The receipts are examples,
 // rather than interactive products or promises about an unscoped integration.
@@ -92,6 +92,18 @@ const checkedList = items => `<ul class="detail-check-list">${items.map(item => 
 
 function receipt(item) { return serviceSpecimen(item); }
 
+// A factual FAQ built only from the published case studies mapped to this service.
+export function serviceProjectsFaq(slug, title) {
+  const used = (serviceRelated[slug]?.cases || []).map(id => caseStudies.find(c => c.slug === id)).filter(Boolean);
+  if (!used.length) return null;
+  const lines = used.map(c => {
+    const r = c.results?.[0];
+    return `${c.client} (${c.industry.toLowerCase()}, ${c.city}), live in ${c.elapsed}${r ? ` (${r.label.charAt(0).toLowerCase()}${r.label.slice(1)}: ${r.value})` : ''}`;
+  });
+  const count = ['', 'one published project', 'two published projects', 'three published projects'][used.length] || `${used.length} published projects`;
+  return [`Which Zykken projects used ${title}?`, `We used ${title} on ${count} in India: ${lines.join('; ')}. Each case study on the Work page explains the problem, the build and the results.`];
+}
+
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;
 }
@@ -104,9 +116,10 @@ export function serviceDetailPage(slug) {
   const next = services[(index + 1) % services.length];
   const faqs = [
     copy.faq,
+    serviceProjectsFaq(slug, item.title),
     ['Do we have to replace our current tools?', 'We begin with the tools you already use. Discovery checks their available integrations, permissions and data before we recommend the build. Any new software and third-party usage costs are made clear in the proposal.'],
     ['What will the proposal and handover include?', 'Your proposal defines the selected feature, deliverables, integrations, delivery plan, investment and support. Every project is custom-quoted. You own the resulting code, workflows and data in your accounts, with documentation and a working team handover.']
-  ];
+  ].filter(Boolean);
   return `<div class="service-dedicated">
     <section class="detail-hero"><div class="detail-hero-inner">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/services">Services</a><span aria-hidden="true">/</span><span aria-current="page">${e(item.title)}</span></nav>
