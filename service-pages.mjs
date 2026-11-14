@@ -81,6 +81,21 @@ const SEO = {
   previewops: ['Custom Software Development, Portals & Dashboards', 'Custom portals, dashboards, member apps and internal tools with an approval preview: inspect affected records, review the change, then commit with a receipt.'],
   pledgedesk: ['CRM for Real Estate & Sales Teams in India', 'A custom CRM that tracks leads and the commitments inside conversations. For Luxe Estates, real estate lead follow-up went from 6 hours to 38 seconds.']
 };
+// Visible hero sentence that repeats each page's search phrase in plain words,
+// followed by the first published project mapped to the service (client, industry, city).
+const LEDE = {
+  flowback: 'AI workflow and business automation for businesses in India, built around the tools your team already uses.',
+  carryline: 'WhatsApp chatbots and AI voice agents in Hindi and English for businesses in India.',
+  intentpath: 'A website design and development company in India for service businesses with complex enquiries.',
+  previewops: 'Custom software development for businesses in India: portals, dashboards, member apps and internal tools.',
+  pledgedesk: 'A custom CRM for real estate and sales teams in India, so every lead gets an owner and a follow-up.'
+};
+export function serviceHeroLede(slug) {
+  if (!LEDE[slug]) return '';
+  const c = caseStudies.find(x => x.slug === serviceRelated[slug]?.cases?.[0]);
+  const proof = c ? ` See it in practice: <a href="/case-study/${e(c.slug)}">${e(c.client)} (${e(c.industry.toLowerCase())}, ${e(c.city)})</a>.` : '';
+  return `<p class="detail-hero-lede">${e(LEDE[slug])}${proof}</p>`;
+}
 export const serviceDetailRoutes = services.map(item => ({
   slug: slugOf(item),
   path: `/services/${slugOf(item)}`,
@@ -123,7 +138,7 @@ export function serviceDetailPage(slug) {
   return `<div class="service-dedicated">
     <section class="detail-hero"><div class="detail-hero-inner">
       <nav class="detail-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/services">Services</a><span aria-hidden="true">/</span><span aria-current="page">${e(item.title)}</span></nav>
-      <div class="detail-hero-grid"><div class="detail-hero-copy reveal">${tag(item.category, true)}<h1>${e(item.title)}</h1><p class="detail-hero-headline">${e(copy.headline)}</p><p>${e(item.description)}</p><div class="detail-actions">${button(`Discuss ${item.title}`, '/contact#start')}${button('Explore the signature build', '#signature-build', true)}</div></div>${receipt(item)}</div>
+      <div class="detail-hero-grid"><div class="detail-hero-copy reveal">${tag(item.category, true)}<h1>${e(item.title)}</h1><p class="detail-hero-headline">${e(copy.headline)}</p>${serviceHeroLede(slug)}<p>${e(item.description)}</p><div class="detail-actions">${button(`Discuss ${item.title}`, '/contact#start')}${button('Explore the signature build', '#signature-build', true)}</div></div>${receipt(item)}</div>
     </div></section>
 
     <section class="section detail-section"><div class="container detail-fit-grid"><div class="detail-copy reveal">${tag('The right starting point')}<h2>When ${e(item.title)} makes sense.</h2><p>${e(copy.fit)}</p>${item.detailParagraphs.map(paragraph => `<p>${e(paragraph)}</p>`).join('')}</div><aside class="detail-fit-card surface reveal"><span class="detail-label">Start with these questions</span><h3>Map the work before choosing the build.</h3>${checkedList(copy.questions)}<a class="detail-text-link" href="/process">See how we scope a project ${icon('arrow')}</a></aside></div></section>

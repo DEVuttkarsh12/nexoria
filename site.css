@@ -827,6 +827,7 @@ p{color:#52525b}
 .detail-hero-copy h1{font-size:clamp(54px,6.5vw,88px);line-height:1.04;letter-spacing:-.045em;font-weight:600;margin:20px 0 22px}
 .detail-hero-copy .detail-hero-headline{font-size:clamp(23px,2.8vw,31px);line-height:1.24;color:#09090b;font-weight:600;letter-spacing:-.02em;margin-bottom:18px}
 .detail-hero-copy>p{max-width:590px}
+.detail-hero-lede{font-weight:500;color:#27272a}.detail-hero-lede a{color:inherit;text-decoration:underline;text-underline-offset:3px}
 .detail-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px;margin-top:30px}
 .detail-actions .button{text-align:center;min-height:48px;white-space:normal}
 .detail-receipt{position:relative;min-width:0;background:#f7f7f8e6;padding:28px;border:1px solid #ffffffb3;border-radius:30px;box-shadow:inset 0 2px 2px #fff,0 20px 40px #4343481f;backdrop-filter:blur(20px)}
