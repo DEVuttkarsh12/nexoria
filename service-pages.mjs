@@ -107,6 +107,21 @@ const checkedList = items => `<ul class="detail-check-list">${items.map(item => 
 
 function receipt(item) { return serviceSpecimen(item); }
 
+// Key-term pricing question per service. Answers restate the site's published pricing
+// policy (custom-priced, third-party usage separate, free audit first); no prices are invented.
+const COST = {
+  flowback: ['How much does business automation cost in India?', 'how many workflows and tools are connected, which steps need recovery paths, and the support plan you choose'],
+  carryline: ['How much does a WhatsApp chatbot or AI voice agent cost in India?', 'the channels (WhatsApp, phone or chat), the languages (Hindi, English or both), booking and calendar connections, and the handoff rules for your team'],
+  intentpath: ['How much does website design and development cost in India?', 'the number of pages and customer journeys, copy and brand work, the guided enquiry flow, and any CMS, analytics or CRM connections'],
+  previewops: ['How much does custom software development cost in India?', 'the portals, dashboards or MVP features in scope, the roles and permissions, which actions get an approval preview, and the integrations'],
+  pledgedesk: ['How much does a custom CRM for real estate or sales teams cost in India?', 'your pipeline stages and lead sources, how enquiries are routed, which notes and messages are tracked for follow-up, and the reminder rules']
+};
+export function serviceCostFaq(slug) {
+  const c = COST[slug];
+  if (!c) return null;
+  return [c[0], `Every Zykken project is custom-quoted; we do not sell fixed packages. The price depends on ${c[1]}. Software subscriptions, hosting and API, AI, SMS, WhatsApp or email usage are separate from our build fee, and we list them during discovery. Start with a free 30-minute audit; you see the full scope, price and payment schedule in your proposal before approving the build.`];
+}
+
 // A factual FAQ built only from the published case studies mapped to this service.
 export function serviceProjectsFaq(slug, title) {
   const used = (serviceRelated[slug]?.cases || []).map(id => caseStudies.find(c => c.slug === id)).filter(Boolean);
@@ -132,6 +147,7 @@ export function serviceDetailPage(slug) {
   const faqs = [
     copy.faq,
     serviceProjectsFaq(slug, item.title),
+    serviceCostFaq(slug),
     ['Do we have to replace our current tools?', 'We begin with the tools you already use. Discovery checks their available integrations, permissions and data before we recommend the build. Any new software and third-party usage costs are made clear in the proposal.'],
     ['What will the proposal and handover include?', 'Your proposal defines the selected feature, deliverables, integrations, delivery plan, investment and support. Every project is custom-quoted. You own the resulting code, workflows and data in your accounts, with documentation and a working team handover.']
   ].filter(Boolean);
