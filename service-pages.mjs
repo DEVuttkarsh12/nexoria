@@ -134,6 +134,27 @@ export function serviceProjectsFaq(slug, title) {
   return [`Which Zykken projects used ${title}?`, `We used ${title} on ${count} in India: ${lines.join('; ')}. Each case study on the Work page explains the problem, the build and the results.`];
 }
 
+// Hindi & English voice agent section for the WhatsApp & Voice AI Agents page.
+// Every line restates published facts: the service copy (offers.mjs/content.mjs) and the
+// Noir Clinic case study (build, city, build time, first result, client quote). No new capabilities.
+export function hindiVoiceSection(slug) {
+  if (slug !== 'carryline') return null;
+  const c = caseStudies.find(x => x.slug === 'noir-clinic');
+  if (!c) return null;
+  const r = c.results[0];
+  const cards = [
+    ['Hindi, English or both', `We build Hindi and English agents for enquiries, qualification and booking on your website, WhatsApp and phone line. Trained on your FAQs, pricing and tone, they qualify with 3 smart questions and book straight into your calendar. The languages are agreed in discovery.`],
+    ['Callers who mix Hindi and English', `Hinglish means moving between Hindi and English within one sentence. At ${c.client} in ${c.city}, ${c.person} describes the agent: “it switches between Hindi and English mid-sentence, books politely, and sends prep on WhatsApp.”`],
+    ['What it handles on a clinic line', `In ${c.elapsed} we put a Hindi + English voice agent on ${c.client}'s line plus WhatsApp reminders. It books, reschedules, sends prep notes, confirms the day before and escalates anything urgent to a human with the full transcript. Result: ${r.value} ${r.label.charAt(0).toLowerCase()}${r.label.slice(1)}.`]
+  ];
+  const faqs = [
+    ['Can an AI voice agent talk in Hindi and Hinglish?', `Yes. We build Hindi and English voice agents, and the languages are agreed in discovery. At ${c.client} in ${c.city}, the Hindi and English voice agent switches between the two languages mid-sentence. Requests outside the agreed booking, qualification and response rules go to your team.`],
+    ['Do we need a new phone number for a Hindi voice agent?', `Not necessarily. ${c.client}'s Hindi + English voice agent went live on the clinic's existing line in ${c.elapsed}, with zero change to the clinic's number. Phone and channel permissions are checked in discovery for your setup.`]
+  ];
+  const html = `<section class="section detail-section detail-hindi-voice" id="hindi-voice-agents" aria-labelledby="hindi-voice-title"><div class="container"><div class="detail-section-heading reveal">${tag('Hindi & English voice agents')}<h2 id="hindi-voice-title">AI voice agents that speak Hindi and English.</h2><p>For businesses in India, we build voice agents in Hindi and English that answer enquiries in seconds, qualify leads, book calls and hand off hot or hard cases to a human with full transcript and summary.</p></div><div class="detail-deliverable-grid">${cards.map(([title, text], i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['voice', 'workflow', 'shield'][i])}</span><h3>${e(title)}</h3><p>${e(text)}</p></article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(c.slug)}">Read the ${e(c.client)} Hindi voice agent case study ${icon('arrow')}</a></div></section>`;
+  return {html, faqs};
+}
+
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;
 }
@@ -144,8 +165,10 @@ export function serviceDetailPage(slug) {
   const copy = context[slug];
   const index = services.indexOf(item);
   const next = services[(index + 1) % services.length];
+  const hindi = hindiVoiceSection(slug);
   const faqs = [
     copy.faq,
+    ...(hindi ? hindi.faqs : []),
     serviceProjectsFaq(slug, item.title),
     serviceCostFaq(slug),
     ['Do we have to replace our current tools?', 'We begin with the tools you already use. Discovery checks their available integrations, permissions and data before we recommend the build. Any new software and third-party usage costs are made clear in the proposal.'],
@@ -158,7 +181,7 @@ export function serviceDetailPage(slug) {
     </div></section>
 
     <section class="section detail-section"><div class="container detail-fit-grid"><div class="detail-copy reveal">${tag('The right starting point')}<h2>When ${e(item.title)} makes sense.</h2><p>${e(copy.fit)}</p>${item.detailParagraphs.map(paragraph => `<p>${e(paragraph)}</p>`).join('')}</div><aside class="detail-fit-card surface reveal"><span class="detail-label">Start with these questions</span><h3>Map the work before choosing the build.</h3>${checkedList(copy.questions)}<a class="detail-text-link" href="/process">See how we scope a project ${icon('arrow')}</a></aside></div></section>
-
+${hindi ? `\n    ${hindi.html}\n` : ''}
     <section class="section detail-section detail-feature-section" id="signature-build"><div class="container"><div class="detail-section-heading reveal">${tag('The signature build')}<h2>${e(item.signature.name)}</h2><p>${e(item.signature.description)}</p></div><ol class="detail-step-grid">${item.signature.steps.map(([title, description], i) => `<li class="surface reveal"><span class="detail-step-index" aria-hidden="true">0${i + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></li>`).join('')}</ol><div class="detail-example surface reveal"><span class="detail-example-symbol" aria-hidden="true">${icon(item.icon)}</span><div><span class="detail-label">A practical example</span><p>${e(item.signature.example)}</p></div></div></div></section>
 
     <section class="section detail-section"><div class="container"><div class="detail-section-heading reveal">${tag('Your project scope')}<h2>The pieces of your build.</h2><p>We agree the useful first version, the connected tools and the operating rules before expanding the system.</p></div><div class="detail-deliverable-grid">${item.details.map((detail, i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['code', 'workflow', 'shield'][i])}</span><h3>${e(['What we deliver', 'Where it fits', 'What we agree together'][i])}</h3>${checkedList(detail.items)}</article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(copy.case[0])}">${e(copy.case[1])} ${icon('arrow')}</a></div></section>
