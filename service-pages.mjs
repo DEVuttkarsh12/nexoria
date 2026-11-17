@@ -155,6 +155,27 @@ export function hindiVoiceSection(slug) {
   return {html, faqs};
 }
 
+// Website development section for the Website Design & Development page, targeting
+// "website development company India". Every figure restates the published Velvet & Co
+// and Hearth & Home case studies (content.mjs); no new clients, prices or results.
+export function websiteIndiaSection(slug) {
+  if (slug !== 'intentpath') return null;
+  const v = caseStudies.find(x => x.slug === 'velvet-co');
+  const h = caseStudies.find(x => x.slug === 'hearth-home');
+  if (!v || !h) return null;
+  const cards = [
+    ['Fast on Indian mobile networks', `${v.client} in ${v.city} had a 4.2-second theme store converting at 0.9%. In ${v.elapsed} we rebuilt it on Next.js with sub-second loads on 4G. Results: ${v.results[1].value} LCP on 4G mobile, and conversion rate up from 0.9% to 3.1%.`],
+    ['Hindi and English, with answers on the page', `The ${v.client} rebuild added Hindi + English support and an AI concierge that answers sizing, pairing and gifting questions and routes visitors to checkout. Support tickets fell ${v.results[2].value.replace('−', '')} in 60 days.`],
+    ['A website connected to your CRM', `For ${h.client}, a home services business in ${h.city}, we built a calm site plus CRM in ${h.elapsed}: accurate quotes in under 60 seconds and 60-day auto follow-up. Enquiries rose ${h.results[0].value} with no new hires.`]
+  ];
+  const faqs = [
+    ['How long does it take to build a business website?', `It depends on the scope agreed in your proposal. For reference, we rebuilt the ${v.client} e-commerce website in ${v.elapsed}, and the ${h.client} website and CRM went live in ${h.elapsed}. Your proposal sets the delivery plan before the build starts.`],
+    ['Can you build a website in Hindi and English?', `Yes. The ${v.client} rebuild included Hindi + English support, along with an AI concierge for sizing, pairing and gifting questions. The languages and content for your site are agreed in discovery.`]
+  ];
+  const html = `<section class="section detail-section detail-website-india" id="website-development-india" aria-labelledby="website-india-title"><div class="container"><div class="detail-section-heading reveal">${tag('Website development in India')}<h2 id="website-india-title">Website development for businesses in India.</h2><p>We design and build websites that load fast on mobile, answer common questions in Hindi or English, and send every enquiry to the right person. Copy, design, development and measurement are one project.</p></div><div class="detail-deliverable-grid">${cards.map(([title, text], i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['globe', 'code', 'workflow'][i])}</span><h3>${e(title)}</h3><p>${e(text)}</p></article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(v.slug)}">Read the ${e(v.client)} website case study ${icon('arrow')}</a> <a class="detail-text-link detail-related-work" href="/case-study/${e(h.slug)}">Read the ${e(h.client)} website and CRM case study ${icon('arrow')}</a></div></section>`;
+  return {html, faqs};
+}
+
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;
 }
@@ -166,9 +187,11 @@ export function serviceDetailPage(slug) {
   const index = services.indexOf(item);
   const next = services[(index + 1) % services.length];
   const hindi = hindiVoiceSection(slug);
+  const web = websiteIndiaSection(slug);
   const faqs = [
     copy.faq,
     ...(hindi ? hindi.faqs : []),
+    ...(web ? web.faqs : []),
     serviceProjectsFaq(slug, item.title),
     serviceCostFaq(slug),
     ['Do we have to replace our current tools?', 'We begin with the tools you already use. Discovery checks their available integrations, permissions and data before we recommend the build. Any new software and third-party usage costs are made clear in the proposal.'],
@@ -181,7 +204,7 @@ export function serviceDetailPage(slug) {
     </div></section>
 
     <section class="section detail-section"><div class="container detail-fit-grid"><div class="detail-copy reveal">${tag('The right starting point')}<h2>When ${e(item.title)} makes sense.</h2><p>${e(copy.fit)}</p>${item.detailParagraphs.map(paragraph => `<p>${e(paragraph)}</p>`).join('')}</div><aside class="detail-fit-card surface reveal"><span class="detail-label">Start with these questions</span><h3>Map the work before choosing the build.</h3>${checkedList(copy.questions)}<a class="detail-text-link" href="/process">See how we scope a project ${icon('arrow')}</a></aside></div></section>
-${hindi ? `\n    ${hindi.html}\n` : ''}
+${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}
     <section class="section detail-section detail-feature-section" id="signature-build"><div class="container"><div class="detail-section-heading reveal">${tag('The signature build')}<h2>${e(item.signature.name)}</h2><p>${e(item.signature.description)}</p></div><ol class="detail-step-grid">${item.signature.steps.map(([title, description], i) => `<li class="surface reveal"><span class="detail-step-index" aria-hidden="true">0${i + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></li>`).join('')}</ol><div class="detail-example surface reveal"><span class="detail-example-symbol" aria-hidden="true">${icon(item.icon)}</span><div><span class="detail-label">A practical example</span><p>${e(item.signature.example)}</p></div></div></div></section>
 
     <section class="section detail-section"><div class="container"><div class="detail-section-heading reveal">${tag('Your project scope')}<h2>The pieces of your build.</h2><p>We agree the useful first version, the connected tools and the operating rules before expanding the system.</p></div><div class="detail-deliverable-grid">${item.details.map((detail, i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['code', 'workflow', 'shield'][i])}</span><h3>${e(['What we deliver', 'Where it fits', 'What we agree together'][i])}</h3>${checkedList(detail.items)}</article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(copy.case[0])}">${e(copy.case[1])} ${icon('arrow')}</a></div></section>
