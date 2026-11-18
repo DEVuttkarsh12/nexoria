@@ -176,6 +176,28 @@ export function websiteIndiaSection(slug) {
   return {html, faqs};
 }
 
+// Real estate CRM section for the CRM & Lead Follow-up page, targeting "CRM for real estate India".
+// Every figure restates the published Luxe Estates and Hearth & Home case studies (content.mjs);
+// no new clients, prices or results.
+export function realEstateCrmSection(slug) {
+  if (slug !== 'pledgedesk') return null;
+  const l = caseStudies.find(x => x.slug === 'luxe-estates');
+  const h = caseStudies.find(x => x.slug === 'hearth-home');
+  if (!l || !h) return null;
+  const lc = s => s.charAt(0).toLowerCase() + s.slice(1);
+  const cards = [
+    ['Every portal and ad lead answered in seconds', `${l.client} in ${l.city} ran Meta and portal leads into a shared inbox, and median first response was 6 hours. In ${l.elapsed} we put a WhatsApp + voice qualifier on every ad and portal, with instant CRM routing and duplicate detection. Result: ${l.results[1].value} ${lc(l.results[1].label)}.`],
+    ['Viewings booked into each agent\'s calendar', `The ${l.client} CRM includes a viewing scheduler synced to each agent's calendar, so agents talk to people ready to visit and owners see hot, booked viewings. Result: ${l.results[0].value} ${lc(l.results[0].label)}.`],
+    ['Follow-up that keeps going after day 2', `A 90-day nurture revives cold ${l.client} enquiries automatically. For ${h.client} in ${h.city}, follow-ups used to die after day 2; their site + CRM build added a 60-day auto follow-up, and enquiries rose ${h.results[0].value} with no new hires.`]
+  ];
+  const faqs = [
+    ['How fast can a real estate CRM follow up with new leads?', `For ${l.client} in ${l.city}, median speed-to-lead went from 6 hours to ${l.results[1].value.replace('s', ' seconds')}, 24/7. Leads from Meta ads and property portals are qualified on WhatsApp and voice, routed in the CRM and booked into an agent's calendar. Your lead sources and routing rules are agreed in discovery.`],
+    ['How long does it take to set up a CRM for a real estate business?', `It depends on the scope agreed in your proposal. For reference, the ${l.client} lead qualifier, CRM routing, viewing scheduler and 90-day nurture went live in ${l.elapsed}. Your proposal sets the delivery plan before the build starts.`]
+  ];
+  const html = `<section class="section detail-section detail-realestate-crm" id="real-estate-crm-india" aria-labelledby="realestate-crm-title"><div class="container"><div class="detail-section-heading reveal">${tag('CRM for real estate')}<h2 id="realestate-crm-title">CRM for real estate businesses in India.</h2><p>We build custom CRMs for real estate teams in India: every enquiry from ads and property portals gets a fast reply, an owner, a booked viewing or a follow-up plan, so hot buyers do not wait until morning.</p></div><div class="detail-deliverable-grid">${cards.map(([title, text], i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['workflow', 'shield', 'code'][i])}</span><h3>${e(title)}</h3><p>${e(text)}</p></article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(l.slug)}">Read the ${e(l.client)} real estate case study ${icon('arrow')}</a> <a class="detail-text-link detail-related-work" href="/case-study/${e(h.slug)}">Read the ${e(h.client)} CRM case study ${icon('arrow')}</a></div></section>`;
+  return {html, faqs};
+}
+
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;
 }
@@ -188,10 +210,12 @@ export function serviceDetailPage(slug) {
   const next = services[(index + 1) % services.length];
   const hindi = hindiVoiceSection(slug);
   const web = websiteIndiaSection(slug);
+  const crm = realEstateCrmSection(slug);
   const faqs = [
     copy.faq,
     ...(hindi ? hindi.faqs : []),
     ...(web ? web.faqs : []),
+    ...(crm ? crm.faqs : []),
     serviceProjectsFaq(slug, item.title),
     serviceCostFaq(slug),
     ['Do we have to replace our current tools?', 'We begin with the tools you already use. Discovery checks their available integrations, permissions and data before we recommend the build. Any new software and third-party usage costs are made clear in the proposal.'],
@@ -204,7 +228,7 @@ export function serviceDetailPage(slug) {
     </div></section>
 
     <section class="section detail-section"><div class="container detail-fit-grid"><div class="detail-copy reveal">${tag('The right starting point')}<h2>When ${e(item.title)} makes sense.</h2><p>${e(copy.fit)}</p>${item.detailParagraphs.map(paragraph => `<p>${e(paragraph)}</p>`).join('')}</div><aside class="detail-fit-card surface reveal"><span class="detail-label">Start with these questions</span><h3>Map the work before choosing the build.</h3>${checkedList(copy.questions)}<a class="detail-text-link" href="/process">See how we scope a project ${icon('arrow')}</a></aside></div></section>
-${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}
+${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}${crm ? `\n    ${crm.html}\n` : ''}
     <section class="section detail-section detail-feature-section" id="signature-build"><div class="container"><div class="detail-section-heading reveal">${tag('The signature build')}<h2>${e(item.signature.name)}</h2><p>${e(item.signature.description)}</p></div><ol class="detail-step-grid">${item.signature.steps.map(([title, description], i) => `<li class="surface reveal"><span class="detail-step-index" aria-hidden="true">0${i + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></li>`).join('')}</ol><div class="detail-example surface reveal"><span class="detail-example-symbol" aria-hidden="true">${icon(item.icon)}</span><div><span class="detail-label">A practical example</span><p>${e(item.signature.example)}</p></div></div></div></section>
 
     <section class="section detail-section"><div class="container"><div class="detail-section-heading reveal">${tag('Your project scope')}<h2>The pieces of your build.</h2><p>We agree the useful first version, the connected tools and the operating rules before expanding the system.</p></div><div class="detail-deliverable-grid">${item.details.map((detail, i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['code', 'workflow', 'shield'][i])}</span><h3>${e(['What we deliver', 'Where it fits', 'What we agree together'][i])}</h3>${checkedList(detail.items)}</article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(copy.case[0])}">${e(copy.case[1])} ${icon('arrow')}</a></div></section>
