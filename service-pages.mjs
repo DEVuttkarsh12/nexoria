@@ -198,6 +198,29 @@ export function realEstateCrmSection(slug) {
   return {html, faqs};
 }
 
+// WhatsApp chatbot section for the WhatsApp & Voice AI Agents page, targeting "WhatsApp chatbot for business India".
+// Every figure restates the published Luxe Estates, Noir Clinic and Kinetic Logistics case studies (content.mjs)
+// and the service copy (Hindi + English, WhatsApp API in the stack, usage billed separately). No new clients, prices or results.
+export function whatsappChatbotSection(slug) {
+  if (slug !== 'carryline') return null;
+  const l = caseStudies.find(x => x.slug === 'luxe-estates');
+  const n = caseStudies.find(x => x.slug === 'noir-clinic');
+  const k = caseStudies.find(x => x.slug === 'kinetic-logistics');
+  if (!l || !n || !k) return null;
+  const lc = s => s.charAt(0).toLowerCase() + s.slice(1);
+  const cards = [
+    ['Every ad and portal lead answered on WhatsApp', `${l.client} in ${l.city} ran Meta and portal leads into a shared inbox, and median first response was 6 hours. In ${l.elapsed} we put a WhatsApp + voice qualifier on every ad and portal, with instant CRM routing. Follow-up went from 6 hours to ${l.results[1].value.replace('s', ' seconds')}, and qualified viewings rose ${l.results[0].value} in 90 days.`],
+    ['Reminders and prep notes on WhatsApp', `At ${n.client} in ${n.city}, 40% of calls went unanswered at lunch and after hours. In ${n.elapsed} we added a Hindi + English voice agent plus WhatsApp reminders: it books, sends prep notes on WhatsApp and confirms the day before. Result: ${n.results[0].value} ${lc(n.results[0].label)}.`],
+    ['Driver updates on WhatsApp, read for you', `At ${k.client} in ${k.city}, PODs, invoices and driver WhatsApp updates ate the ops manager's entire week. In ${k.elapsed} we added a driver update parser alongside document AI that syncs to sheet + CRM and flags only exceptions. Result: ${k.results[0].value} ${lc(k.results[0].label)}.`]
+  ];
+  const faqs = [
+    ['Can a WhatsApp chatbot reply in Hindi and English?', `Yes. Our WhatsApp agents work in Hindi and English, trained on your FAQs, pricing and tone. They answer in seconds, qualify with 3 smart questions, book into your calendar and hand off hot or hard cases to your team with the full transcript and summary. The languages are agreed in discovery.`],
+    ['Do we need the WhatsApp Business API for a WhatsApp chatbot?', `Our WhatsApp agents are built on the WhatsApp API, and we start from the tools you already use. Any new subscription is in your name, and WhatsApp usage is billed separately from our project fee. We check your current setup, permissions and third-party costs during discovery, so your proposal is clear.`]
+  ];
+  const html = `<section class="section detail-section detail-whatsapp-chatbot" id="whatsapp-chatbot-india" aria-labelledby="whatsapp-chatbot-title"><div class="container"><div class="detail-section-heading reveal">${tag('WhatsApp chatbots')}<h2 id="whatsapp-chatbot-title">WhatsApp chatbots for businesses in India.</h2><p>We build WhatsApp chatbots for businesses in India that answer enquiries in seconds, qualify leads, book calls and send reminders, then hand hot or hard cases to your team with the full conversation.</p></div><div class="detail-deliverable-grid">${cards.map(([title, text], i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['workflow', 'voice', 'code'][i])}</span><h3>${e(title)}</h3><p>${e(text)}</p></article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(l.slug)}">Read the ${e(l.client)} WhatsApp lead case study ${icon('arrow')}</a> <a class="detail-text-link detail-related-work" href="/case-study/${e(n.slug)}">Read the ${e(n.client)} case study ${icon('arrow')}</a> <a class="detail-text-link detail-related-work" href="/case-study/${e(k.slug)}">Read the ${e(k.client)} case study ${icon('arrow')}</a></div></section>`;
+  return {html, faqs};
+}
+
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;
 }
@@ -211,9 +234,11 @@ export function serviceDetailPage(slug) {
   const hindi = hindiVoiceSection(slug);
   const web = websiteIndiaSection(slug);
   const crm = realEstateCrmSection(slug);
+  const wa = whatsappChatbotSection(slug);
   const faqs = [
     copy.faq,
     ...(hindi ? hindi.faqs : []),
+    ...(wa ? wa.faqs : []),
     ...(web ? web.faqs : []),
     ...(crm ? crm.faqs : []),
     serviceProjectsFaq(slug, item.title),
@@ -228,7 +253,7 @@ export function serviceDetailPage(slug) {
     </div></section>
 
     <section class="section detail-section"><div class="container detail-fit-grid"><div class="detail-copy reveal">${tag('The right starting point')}<h2>When ${e(item.title)} makes sense.</h2><p>${e(copy.fit)}</p>${item.detailParagraphs.map(paragraph => `<p>${e(paragraph)}</p>`).join('')}</div><aside class="detail-fit-card surface reveal"><span class="detail-label">Start with these questions</span><h3>Map the work before choosing the build.</h3>${checkedList(copy.questions)}<a class="detail-text-link" href="/process">See how we scope a project ${icon('arrow')}</a></aside></div></section>
-${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}${crm ? `\n    ${crm.html}\n` : ''}
+${wa ? `\n    ${wa.html}\n` : ''}${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}${crm ? `\n    ${crm.html}\n` : ''}
     <section class="section detail-section detail-feature-section" id="signature-build"><div class="container"><div class="detail-section-heading reveal">${tag('The signature build')}<h2>${e(item.signature.name)}</h2><p>${e(item.signature.description)}</p></div><ol class="detail-step-grid">${item.signature.steps.map(([title, description], i) => `<li class="surface reveal"><span class="detail-step-index" aria-hidden="true">0${i + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></li>`).join('')}</ol><div class="detail-example surface reveal"><span class="detail-example-symbol" aria-hidden="true">${icon(item.icon)}</span><div><span class="detail-label">A practical example</span><p>${e(item.signature.example)}</p></div></div></div></section>
 
     <section class="section detail-section"><div class="container"><div class="detail-section-heading reveal">${tag('Your project scope')}<h2>The pieces of your build.</h2><p>We agree the useful first version, the connected tools and the operating rules before expanding the system.</p></div><div class="detail-deliverable-grid">${item.details.map((detail, i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['code', 'workflow', 'shield'][i])}</span><h3>${e(['What we deliver', 'Where it fits', 'What we agree together'][i])}</h3>${checkedList(detail.items)}</article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(copy.case[0])}">${e(copy.case[1])} ${icon('arrow')}</a></div></section>
