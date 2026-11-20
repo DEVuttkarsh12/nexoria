@@ -221,6 +221,29 @@ export function whatsappChatbotSection(slug) {
   return {html, faqs};
 }
 
+// AI automation section for the Business Automation page, targeting "AI automation agency India".
+// Every figure restates the published Kinetic Logistics, Hearth & Home and Luxe Estates case studies (content.mjs)
+// and the service copy (workflows we prioritise). No new clients, prices or results.
+export function automationIndiaSection(slug) {
+  if (slug !== 'flowback') return null;
+  const k = caseStudies.find(x => x.slug === 'kinetic-logistics');
+  const h = caseStudies.find(x => x.slug === 'hearth-home');
+  const l = caseStudies.find(x => x.slug === 'luxe-estates');
+  if (!k || !h || !l) return null;
+  const lc = s => s.charAt(0).toLowerCase() + s.slice(1);
+  const cards = [
+    ['Documents and invoices that process themselves', `At ${k.client} in ${k.city}, PODs, invoices and driver WhatsApp updates ate the ops manager's entire week. In ${k.elapsed} we added document AI that extracts POD + invoice fields, syncs to sheet + CRM and flags only exceptions in one inbox, plus Friday auto-reconciliation. Results: the ops team got ${k.results[0].value} back per week, and billing disputes fell ${k.results[1].value.replace('−', '')} in 60 days.`],
+    ['First automation live in 2 days', `${h.client} in ${h.city} had a non-technical founder, slow manual quotes and follow-ups that died after day 2. We recorded one sales call, mapped 3 automations and had the first live in 2 days: accurate quotes in under 60 seconds, 60-day auto follow-up and one Slack summary a day. Enquiries rose ${h.results[0].value} with no new hires.`],
+    ['Lead routing and follow-up without a shared inbox', `${l.client} in ${l.city} ran Meta and portal leads into a shared inbox. In ${l.elapsed} we added instant CRM routing, duplicate detection and a 90-day nurture that revives cold enquiries automatically. Result: ${l.results[1].value} ${lc(l.results[1].label)}.`]
+  ];
+  const faqs = [
+    ['What business tasks can AI automation handle?', `We prioritise the workflows that burn the most hours: lead routing and instant follow-up, onboarding and reminders, reporting and reconciliation. For ${k.client}, that meant reading PODs and invoices and syncing them to sheet + CRM; for ${h.client}, instant quotes and 60-day follow-up. Your workflows and integrations are scoped in discovery.`],
+    ['How long does it take to set up AI automation for a business?', `It depends on the scope agreed in your proposal. For reference, ${h.client}'s first automation went live in 2 days, and the ${k.client} document AI and reconciliation build went from audit to live in ${k.elapsed}. Your proposal sets the delivery plan before the build starts.`]
+  ];
+  const html = `<section class="section detail-section detail-automation-india" id="ai-automation-india" aria-labelledby="automation-india-title"><div class="container"><div class="detail-section-heading reveal">${tag('AI automation in India')}<h2 id="automation-india-title">AI automation for businesses in India.</h2><p>We build AI automation for businesses in India around the tools your team already uses: inbox, sheets, CRM and invoices. The work that waits for a person moves on its own, and only exceptions reach your team.</p></div><div class="detail-deliverable-grid">${cards.map(([title, text], i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['code', 'workflow', 'shield'][i])}</span><h3>${e(title)}</h3><p>${e(text)}</p></article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(k.slug)}">Read the ${e(k.client)} automation case study ${icon('arrow')}</a> <a class="detail-text-link detail-related-work" href="/case-study/${e(h.slug)}">Read the ${e(h.client)} case study ${icon('arrow')}</a> <a class="detail-text-link detail-related-work" href="/case-study/${e(l.slug)}">Read the ${e(l.client)} case study ${icon('arrow')}</a></div></section>`;
+  return {html, faqs};
+}
+
 function faq(items) {
   return `<div class="detail-faq-list">${items.map(([question, answer]) => `<details><summary><span>${e(question)}</span><span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(answer)}</p></div></details>`).join('')}</div>`;
 }
@@ -235,10 +258,12 @@ export function serviceDetailPage(slug) {
   const web = websiteIndiaSection(slug);
   const crm = realEstateCrmSection(slug);
   const wa = whatsappChatbotSection(slug);
+  const auto = automationIndiaSection(slug);
   const faqs = [
     copy.faq,
     ...(hindi ? hindi.faqs : []),
     ...(wa ? wa.faqs : []),
+    ...(auto ? auto.faqs : []),
     ...(web ? web.faqs : []),
     ...(crm ? crm.faqs : []),
     serviceProjectsFaq(slug, item.title),
@@ -253,7 +278,7 @@ export function serviceDetailPage(slug) {
     </div></section>
 
     <section class="section detail-section"><div class="container detail-fit-grid"><div class="detail-copy reveal">${tag('The right starting point')}<h2>When ${e(item.title)} makes sense.</h2><p>${e(copy.fit)}</p>${item.detailParagraphs.map(paragraph => `<p>${e(paragraph)}</p>`).join('')}</div><aside class="detail-fit-card surface reveal"><span class="detail-label">Start with these questions</span><h3>Map the work before choosing the build.</h3>${checkedList(copy.questions)}<a class="detail-text-link" href="/process">See how we scope a project ${icon('arrow')}</a></aside></div></section>
-${wa ? `\n    ${wa.html}\n` : ''}${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}${crm ? `\n    ${crm.html}\n` : ''}
+${auto ? `\n    ${auto.html}\n` : ''}${wa ? `\n    ${wa.html}\n` : ''}${hindi ? `\n    ${hindi.html}\n` : ''}${web ? `\n    ${web.html}\n` : ''}${crm ? `\n    ${crm.html}\n` : ''}
     <section class="section detail-section detail-feature-section" id="signature-build"><div class="container"><div class="detail-section-heading reveal">${tag('The signature build')}<h2>${e(item.signature.name)}</h2><p>${e(item.signature.description)}</p></div><ol class="detail-step-grid">${item.signature.steps.map(([title, description], i) => `<li class="surface reveal"><span class="detail-step-index" aria-hidden="true">0${i + 1}</span><h3>${e(title)}</h3><p>${e(description)}</p></li>`).join('')}</ol><div class="detail-example surface reveal"><span class="detail-example-symbol" aria-hidden="true">${icon(item.icon)}</span><div><span class="detail-label">A practical example</span><p>${e(item.signature.example)}</p></div></div></div></section>
 
     <section class="section detail-section"><div class="container"><div class="detail-section-heading reveal">${tag('Your project scope')}<h2>The pieces of your build.</h2><p>We agree the useful first version, the connected tools and the operating rules before expanding the system.</p></div><div class="detail-deliverable-grid">${item.details.map((detail, i) => `<article class="detail-deliverable surface reveal"><span class="detail-card-symbol" aria-hidden="true">${icon(['code', 'workflow', 'shield'][i])}</span><h3>${e(['What we deliver', 'Where it fits', 'What we agree together'][i])}</h3>${checkedList(detail.items)}</article>`).join('')}</div><a class="detail-text-link detail-related-work" href="/case-study/${e(copy.case[0])}">${e(copy.case[1])} ${icon('arrow')}</a></div></section>
