@@ -1575,5 +1575,6 @@ p{color:#52525b}
 .project-questions{padding:72px 0;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:48px;align-items:start}.project-faq-list{max-width:none;margin:0}.project-faq-list details{background:#f4f4f5}.project-faq-list summary{font-size:18px;line-height:26px;min-height:68px}
 @media (max-width:860px){.project-questions{grid-template-columns:1fr;gap:24px;padding:40px 0}}
 .project-related{padding:72px 0 8px}.project-related>p{max-width:640px;color:#71717a;margin:16px 0 28px}
+.case-india-links{margin-top:40px}.case-india-links h3{font-size:20px;line-height:1.3;font-weight:600;margin:0 0 16px}.case-india-links ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}.case-india-links li{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px;color:#71717a}.case-india-links .detail-text-link{color:#18181b}
 .detail-website-india .detail-related-work{margin-right:28px}
 .detail-realestate-crm .detail-related-work{margin-right:28px}

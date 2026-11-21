@@ -17,6 +17,24 @@ const serviceCopy = slug => services.find(s => s.slug === slug);
 
 const card = (href, label, title, text) => `<li><a class="related-link-card surface reveal" href="${e(href)}"><span class="detail-label">${e(label)}</span><strong>${e(title)}</strong><span class="related-link-text">${e(text)}</span><span class="related-link-arrow" aria-hidden="true">${icon('arrow')}</span></a></li>`;
 
+// India-focused sections on the service pages and the published case studies each one cites
+// (mirrors hindiVoiceSection, whatsappChatbotSection, automationIndiaSection, websiteIndiaSection
+// and realEstateCrmSection in service-pages.mjs). Used to deep-link case studies to those sections.
+export const indiaSections = [
+  {service: 'carryline', id: 'whatsapp-chatbot-india', title: 'WhatsApp chatbots for businesses in India', cases: ['luxe-estates', 'noir-clinic', 'kinetic-logistics']},
+  {service: 'carryline', id: 'hindi-voice-agents', title: 'AI voice agents that speak Hindi and English', cases: ['noir-clinic']},
+  {service: 'flowback', id: 'ai-automation-india', title: 'AI automation for businesses in India', cases: ['kinetic-logistics', 'hearth-home', 'luxe-estates']},
+  {service: 'intentpath', id: 'website-development-india', title: 'Website development for businesses in India', cases: ['velvet-co', 'hearth-home']},
+  {service: 'pledgedesk', id: 'real-estate-crm-india', title: 'CRM for real estate businesses in India', cases: ['luxe-estates', 'hearth-home']}
+];
+
+export function caseIndiaLinks(caseSlug) {
+  const c = caseCopy(caseSlug);
+  const items = indiaSections.filter(sec => sec.cases.includes(caseSlug)).map(sec => ({sec, svc: serviceCopy(sec.service)})).filter(x => x.svc);
+  if (!c || !items.length) return '';
+  return `<div class="case-india-links"><h3>Where ${e(c.client)} appears on our service pages</h3><ul>${items.map(({sec, svc}) => `<li><a class="detail-text-link" href="/services/${e(sec.service)}#${e(sec.id)}">${e(sec.title)} ${icon('arrow')}</a><span> on the ${e(svc.title)} page</span></li>`).join('')}</ul></div>`;
+}
+
 export function serviceRelatedLinks(slug) {
   const rel = serviceRelated[slug];
   if (!rel) return '';
