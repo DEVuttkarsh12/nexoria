@@ -38,6 +38,9 @@ test('speed-to-lead insight is built only from published case-study facts and li
     const s = await renderRoute(`/services/${svc}`, site);
     assert.ok(s.html.includes('href="/blog/reply-to-every-lead-in-seconds"'), `${svc} links the article`);
   }
+  const hub = await renderRoute('/insights', site);
+  const hubDesc = hub.html.match(/<meta name="description" content="([^"]*)"/)[1];
+  assert.ok(hubDesc.length <= 160, `insights description ${hubDesc.length} chars`);
   const graph = [...page.html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(m => JSON.parse(m[1])).flatMap(b => b['@graph'] || [b]);
   const article = graph.find(n => n['@type'] === 'BlogPosting');
   assert.equal(article.url, `${origin}/blog/reply-to-every-lead-in-seconds`);
