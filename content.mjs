@@ -971,5 +971,56 @@ export const insights = [
         "Monthly retainers are separate from the build and reflect system complexity. Keep software, hosting and usage costs visible, and agree a fixed quote before adding new workflows."
       ]
     ]
+  },
+  {
+    "slug": "reply-to-every-lead-in-seconds",
+    "cases": [
+      "luxe-estates",
+      "noir-clinic",
+      "hearth-home"
+    ],
+    "faqs": [
+      [
+        "How fast should a business reply to a new lead?",
+        "As fast as you can, including nights and weekends. Luxe Estates in Mumbai cut its median first response from 6 hours to 38 seconds with a WhatsApp and voice qualifier, and qualified viewings rose 312% in 90 days."
+      ],
+      [
+        "How can a business answer enquiries after office hours?",
+        "Put an AI agent on the channels customers already use. Noir Clinic in Pune runs a Hindi and English voice agent on its existing number, with WhatsApp reminders. It books, reschedules and passes anything urgent to staff, and the clinic has had zero missed calls in 4 months."
+      ],
+      [
+        "What should happen after the first reply to a lead?",
+        "Qualify the lead, route it to the right person and keep following up. Hearth & Home sends accurate quotes in under 60 seconds and follows up automatically for 60 days, and Luxe Estates runs a 90-day nurture that revives cold enquiries."
+      ]
+    ],
+    "seoTitle": "Reply to Every Lead in Seconds, Even After Hours",
+    "description": "Slow replies lose leads. How Luxe Estates cut follow-up from 6 hours to 38 seconds and Noir Clinic went 4 months without a missed call.",
+    "title": "Reply to every enquiry in seconds, even at night.",
+    "category": "LEAD FOLLOW-UP",
+    "image": "/assets/insight-2.png",
+    "readTime": "3 min read",
+    "intro": "When enquiries wait for office hours, night and weekend leads go cold. Three Zykken projects in India show what changes when every enquiry gets an answer within seconds, and a person steps in when it matters.",
+    "sections": [
+      [
+        "Find where enquiries wait",
+        "Look at the gap between an enquiry arriving and someone replying. At Luxe Estates in Mumbai, Meta and portal leads landed in a shared inbox with a median first response of 6 hours, and night and weekend enquiries sat until morning. At Noir Clinic in Pune, 40% of calls went unanswered at lunch and after hours."
+      ],
+      [
+        "Answer on the channel the lead used",
+        "Luxe Estates added a WhatsApp and voice qualifier to every ad and portal, with instant CRM routing and duplicate detection. Median speed-to-lead fell to 38 seconds, 24/7, and qualified viewings rose 312% in 90 days. Noir Clinic put a Hindi and English voice agent on its existing number, with WhatsApp reminders, and has had zero missed calls in 4 months."
+      ],
+      [
+        "Keep following up after the first reply",
+        "A fast first reply is only the start. Luxe Estates runs a 90-day nurture that revives cold enquiries automatically. Hearth & Home in Kochi sends accurate quotes in under 60 seconds and follows up automatically for 60 days. Its enquiries rose 2.6 times with no new hires."
+      ],
+      [
+        "Hand the right conversations to people",
+        "Speed should not remove the human touch. At Luxe Estates, owners only see hot, booked viewings. Noir Clinic's voice agent escalates anything urgent to a person instantly, with the full transcript."
+      ],
+      [
+        "Measure speed-to-lead before and after",
+        "Note your median first response time today, then track it after launch next to the result you care about: viewings, bookings or enquiries. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return."
+      ]
+    ]
   }
 ];

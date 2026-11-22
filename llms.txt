@@ -21,6 +21,7 @@
 - [Which business process should you automate first?](https://www.zykken.com/blog/automate-your-highest-impact-workflow): find the repeated task that costs the most time, errors or sales, then build one clear first win.
 - [How to connect website leads to your CRM and book more calls](https://www.zykken.com/blog/from-first-enquiry-to-booked-call): connect website and ad enquiries to a CRM, qualify and follow up fast.
 - [After your AI system launches: handover, monitoring and support](https://www.zykken.com/blog/what-happens-after-your-ai-system-launches): why monitoring, clear handover and a scoped support plan keep a system useful.
+- [How to reply to every lead in seconds, even after hours](https://www.zykken.com/blog/reply-to-every-lead-in-seconds): speed-to-lead from Luxe Estates (6 hours to 38 seconds), Noir Clinic (zero missed calls in 4 months) and Hearth & Home (quotes under 60 seconds).
 
 ## Key pages
 - [Services](https://www.zykken.com/services)
