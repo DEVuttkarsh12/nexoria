@@ -155,7 +155,7 @@ function insightsFaqs() {
  ];
 }
 export function insightsPage() {
- return `${pageHero('The journal','Clear thinking.<br>Useful next steps.','Practical notes on choosing a first workflow, connecting your sales systems, replying to every lead fast, and keeping them useful after launch.')}<section class="section section-tight"><div class="container">${insightCards()}</div></section><section class="section faq-section" id="insights-questions"><div class="container">${sectionHeading('Journal questions','What we write about<br><span>and where to start</span>')}<div class="faq-list reveal">${insightsFaqs().map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></div></section>${ctaSection()}`;
+ return `${pageHero('The journal','Clear thinking.<br>Useful next steps.','Practical notes on choosing a first workflow, connecting your sales systems, replying to every lead fast, automating invoice paperwork, and keeping them useful after launch.')}<section class="section section-tight"><div class="container">${insightCards()}</div></section><section class="section faq-section" id="insights-questions"><div class="container">${sectionHeading('Journal questions','What we write about<br><span>and where to start</span>')}<div class="faq-list reveal">${insightsFaqs().map(([q,a],i)=>`<details ${i===0?'open':''}><summary>${e(q)}<span class="faq-plus" aria-hidden="true"></span></summary><div class="faq-answer"><p>${e(a)}</p></div></details>`).join('')}</div></div></section>${ctaSection()}`;
 }
 export function blogPage(slug) {
  const item=insights.find(i=>i.slug===slug);

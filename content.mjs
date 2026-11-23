@@ -1022,5 +1022,58 @@ export const insights = [
         "Note your median first response time today, then track it after launch next to the result you care about: viewings, bookings or enquiries. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return."
       ]
     ]
+  },
+  {
+    "slug": "automate-invoices-and-delivery-paperwork",
+    "cases": [
+      "kinetic-logistics"
+    ],
+    "faqs": [
+      [
+        "Can AI read invoices and proof-of-delivery documents?",
+        "Yes. At Kinetic Logistics in Goa, document AI extracts the fields from each POD and invoice and syncs them to the team's sheet and CRM, so nobody copies them across by hand. The ops team got 31 hours a week back."
+      ],
+      [
+        "What happens when a document cannot be matched automatically?",
+        "It goes to a person. Only exceptions land in one inbox, with the document and everything attached, so the team checks the few that need judgement instead of every page."
+      ],
+      [
+        "How long does invoice and document automation take to set up?",
+        "Kinetic Logistics went from audit to live in 14 days, shipped four days early, with training done on two Loom videos. Your timeline depends on your documents and tools, and every project is scoped and custom-quoted after a free audit."
+      ]
+    ],
+    "seoTitle": "Invoice & POD Automation for Logistics in India",
+    "description": "How Kinetic Logistics in Goa automated PODs, invoices and driver WhatsApp updates in 14 days, got 31 hours a week back and halved billing disputes.",
+    "title": "Stop retyping invoices and delivery proofs.",
+    "category": "DOCUMENT AUTOMATION",
+    "image": "/assets/insight-1.png",
+    "readTime": "3 min read",
+    "intro": "Paperwork quietly eats an operations week. At Kinetic Logistics in Goa, proofs of delivery, invoices and driver WhatsApp updates took up the ops manager's entire week. Here is what changed when documents started reading themselves and only exceptions reached a person.",
+    "sections": [
+      [
+        "Find where the paperwork piles up",
+        "Kinetic's ops manager spent the week on PODs, invoices and driver WhatsApp updates. Details were copied from a sheet into the CRM by hand, invoicing turned into a Friday marathon, and missing proofs led to billing disputes."
+      ],
+      [
+        "Let document AI read PODs and invoices",
+        "Document AI now extracts the fields from each proof of delivery and invoice and syncs them to the sheet and the CRM. The copy-paste step is gone, and each record carries the document it came from."
+      ],
+      [
+        "Send only the exceptions to a person",
+        "Not every page needs a human. Only exceptions land in one inbox, with everything attached, so the team spends its time on the documents that need judgement."
+      ],
+      [
+        "Turn driver WhatsApp updates into records",
+        "Drivers already send updates on WhatsApp. A parser reads those messages and turns them into updates the team can use, without anyone retyping them."
+      ],
+      [
+        "Reconcile automatically on Friday",
+        "The Friday invoicing marathon became an automatic reconciliation. The result: the ops team got 31 hours a week back, and billing disputes fell 50% within 60 days."
+      ],
+      [
+        "Start small and measure",
+        "Kinetic went from audit to live in 14 days, four days early, with training on two Loom videos. Note your weekly hours on paperwork and your dispute count before you start, then track both after launch. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return."
+      ]
+    ]
   }
 ];
