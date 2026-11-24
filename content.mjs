@@ -1075,5 +1075,58 @@ export const insights = [
         "Kinetic went from audit to live in 14 days, four days early, with training on two Loom videos. Note your weekly hours on paperwork and your dispute count before you start, then track both after launch. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return."
       ]
     ]
+  },
+  {
+    "slug": "ai-voice-receptionist-hindi-english",
+    "cases": [
+      "noir-clinic"
+    ],
+    "faqs": [
+      [
+        "Can an AI voice agent answer calls in Hindi and English?",
+        "Yes. At Noir Clinic in Pune, a Hindi and English voice agent answers the clinic line 24/7. Dr. Rohan Shah says it switches between Hindi and English mid-sentence and books politely. The languages for your agent are agreed in discovery."
+      ],
+      [
+        "What can an AI voice receptionist do for a clinic?",
+        "At Noir Clinic it books and reschedules appointments, sends prep notes, confirms the day before with WhatsApp reminders, and passes anything urgent to a person instantly with the full transcript. The clinic has had zero missed calls in 4 months."
+      ],
+      [
+        "How long does a Hindi voice agent take to set up?",
+        "Noir Clinic's agent went live in 11 days on the clinic's existing number, with zero change to the number. Your timeline depends on your calls and tools, and every project is scoped and custom-quoted after a free audit."
+      ]
+    ],
+    "seoTitle": "Hindi & English AI Voice Receptionist for Clinics",
+    "description": "How Noir Clinic in Pune put a Hindi and English AI voice agent on its existing line in 11 days and went 4 months without a missed call.",
+    "title": "A receptionist that answers in Hindi and English, day and night.",
+    "category": "VOICE AGENTS",
+    "image": "/assets/insight-3.png",
+    "readTime": "3 min read",
+    "intro": "Callers in India often move between Hindi and English in one sentence, and they call at lunch and after hours too. At Noir Clinic in Pune, 40% of calls went unanswered at those times. Here is what changed when a Hindi and English voice agent started answering the clinic line.",
+    "sections": [
+      [
+        "Count the calls nobody answers",
+        "Before the project, 40% of Noir Clinic's calls went unanswered at lunch and after hours. The front desk was juggling ringing phones, walk-ins and reschedules, bookings leaked daily, and staff had little time left for care."
+      ],
+      [
+        "Answer in the language the caller uses",
+        "Zykken put a Hindi and English voice agent on the clinic line. Dr. Rohan Shah says patients can't tell it's AI: it switches between Hindi and English mid-sentence and books politely. For your business, the languages are agreed in discovery."
+      ],
+      [
+        "Let the agent handle routine calls",
+        "The agent books and reschedules appointments, sends prep notes and confirms the day before. WhatsApp reminders go out alongside, so booking, reminders and prep run 24/7."
+      ],
+      [
+        "Hand urgent calls to a person",
+        "Speed should not replace care. Anything urgent goes to a human instantly, with the full transcript, so staff see the whole conversation before they step in."
+      ],
+      [
+        "Keep the number patients already know",
+        "The agent went live on the clinic's existing number, with zero change to it. Patients kept calling the same line they always had."
+      ],
+      [
+        "Start small and measure",
+        "Noir Clinic went live in 11 days and has had zero missed calls in 4 months. Note how many calls you miss today and when, then track that number after launch. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return."
+      ]
+    ]
   }
 ];

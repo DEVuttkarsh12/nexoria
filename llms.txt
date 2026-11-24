@@ -23,6 +23,7 @@
 - [After your AI system launches: handover, monitoring and support](https://www.zykken.com/blog/what-happens-after-your-ai-system-launches): why monitoring, clear handover and a scoped support plan keep a system useful.
 - [How to reply to every lead in seconds, even after hours](https://www.zykken.com/blog/reply-to-every-lead-in-seconds): speed-to-lead from Luxe Estates (6 hours to 38 seconds), Noir Clinic (zero missed calls in 4 months) and Hearth & Home (quotes under 60 seconds).
 - [How to automate invoices and proof-of-delivery paperwork](https://www.zykken.com/blog/automate-invoices-and-delivery-paperwork): Kinetic Logistics in Goa automated PODs, invoices and driver WhatsApp updates in 14 days, got 31 hours a week back and cut billing disputes by 50% in 60 days.
+- [How an AI voice receptionist answers calls in Hindi and English](https://www.zykken.com/blog/ai-voice-receptionist-hindi-english): Noir Clinic in Pune put a Hindi and English voice agent on its existing number in 11 days, with WhatsApp reminders and urgent calls passed to staff, and has had zero missed calls in 4 months.
 
 ## Key pages
 - [Services](https://www.zykken.com/services)

@@ -54,7 +54,7 @@ function siteFixture() {
 
 test('all overview and service-detail pages render with unique semantics, exact canonicals and custom quotes', async () => {
   const {site, routes, pages} = await siteFixture();
-  assert.equal(routes.length, 34, 'The site has 34 public pages plus its 404 document');
+  assert.equal(routes.length, 35, 'The site has 35 public pages plus its 404 document');
   assert.equal(new Set(routes).size, routes.length, 'The public catalog contains no duplicates');
   for (const route of [...overviewRoutes, ...serviceRoutes]) assert.ok(pages.has(route), `Missing dedicated page ${route}`);
 

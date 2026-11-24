@@ -5,7 +5,7 @@ import {escapeHtml as e, icon} from './layout.mjs';
 // Each pairing follows what the existing case study or article actually describes.
 export const serviceRelated = {
   flowback: {cases: ['kinetic-logistics', 'luxe-estates'], insights: ['automate-your-highest-impact-workflow', 'what-happens-after-your-ai-system-launches', 'automate-invoices-and-delivery-paperwork']},
-  carryline: {cases: ['noir-clinic', 'luxe-estates'], insights: ['from-first-enquiry-to-booked-call', 'what-happens-after-your-ai-system-launches', 'reply-to-every-lead-in-seconds']},
+  carryline: {cases: ['noir-clinic', 'luxe-estates'], insights: ['ai-voice-receptionist-hindi-english', 'from-first-enquiry-to-booked-call', 'what-happens-after-your-ai-system-launches', 'reply-to-every-lead-in-seconds']},
   intentpath: {cases: ['velvet-co', 'hearth-home'], insights: ['from-first-enquiry-to-booked-call']},
   previewops: {cases: ['pulse-fit-os'], insights: ['what-happens-after-your-ai-system-launches']},
   pledgedesk: {cases: ['luxe-estates', 'hearth-home'], insights: ['from-first-enquiry-to-booked-call', 'automate-your-highest-impact-workflow', 'reply-to-every-lead-in-seconds']}
