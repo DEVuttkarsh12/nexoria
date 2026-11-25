@@ -6,7 +6,7 @@ import {escapeHtml as e, icon} from './layout.mjs';
 export const serviceRelated = {
   flowback: {cases: ['kinetic-logistics', 'luxe-estates'], insights: ['automate-your-highest-impact-workflow', 'what-happens-after-your-ai-system-launches', 'automate-invoices-and-delivery-paperwork']},
   carryline: {cases: ['noir-clinic', 'luxe-estates'], insights: ['ai-voice-receptionist-hindi-english', 'from-first-enquiry-to-booked-call', 'what-happens-after-your-ai-system-launches', 'reply-to-every-lead-in-seconds']},
-  intentpath: {cases: ['velvet-co', 'hearth-home'], insights: ['from-first-enquiry-to-booked-call']},
+  intentpath: {cases: ['velvet-co', 'hearth-home'], insights: ['website-that-loads-fast-and-sells', 'from-first-enquiry-to-booked-call']},
   previewops: {cases: ['pulse-fit-os'], insights: ['what-happens-after-your-ai-system-launches']},
   pledgedesk: {cases: ['luxe-estates', 'hearth-home'], insights: ['from-first-enquiry-to-booked-call', 'automate-your-highest-impact-workflow', 'reply-to-every-lead-in-seconds']}
 };
@@ -65,7 +65,9 @@ export function insightRelatedCases(insightSlug) {
 export function caseRelatedLinks(caseSlug, primaryService) {
   const used = Object.entries(serviceRelated).filter(([, rel]) => rel.cases.includes(caseSlug)).map(([s]) => s);
   const slugs = [...new Set([primaryService, ...used].filter(Boolean))];
-  const reading = [...new Set(slugs.flatMap(s => serviceRelated[s]?.insights || []))].slice(0, 3);
+  // Articles built from this case study come first, then articles tied to its services.
+  const citing = insights.filter(i => (i.cases || []).includes(caseSlug)).map(i => i.slug);
+  const reading = [...new Set([...citing, ...slugs.flatMap(s => serviceRelated[s]?.insights || [])])].slice(0, 3);
   const items = [
     ...slugs.map(serviceCopy).filter(Boolean).map(s => card(`/services/${s.slug}`, `Service · ${s.category}`, s.title, s.description)),
     ...reading.map(insightCopy).filter(Boolean).map(i => card(`/blog/${i.slug}`, `Insight · ${i.readTime}`, i.title, i.intro))

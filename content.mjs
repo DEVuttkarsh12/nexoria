@@ -1128,5 +1128,59 @@ export const insights = [
         "Noir Clinic went live in 11 days and has had zero missed calls in 4 months. Note how many calls you miss today and when, then track that number after launch. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return."
       ]
     ]
+  },
+  {
+    "slug": "website-that-loads-fast-and-sells",
+    "cases": [
+      "velvet-co",
+      "hearth-home"
+    ],
+    "faqs": [
+      [
+        "What should a business website in India do?",
+        "Load fast on mobile, answer common questions in the visitor's language and move every enquiry forward. Velvet & Co in Delhi rebuilt its store with sub-second loads on 4G, Hindi + English support and an AI concierge, and conversion rose from 0.9% to 3.1%."
+      ],
+      [
+        "Does website speed affect sales?",
+        "For Velvet & Co it did. Its old theme store took 4.2 seconds and converted at 0.9%. After the rebuild, its largest contentful paint (LCP) on 4G mobile is 1.1 seconds and conversion is 3.1%, alongside new product pages, one-click checkout and the AI concierge."
+      ],
+      [
+        "How long does it take to build a business website?",
+        "It depends on the scope agreed in your proposal. Velvet & Co's e-commerce rebuild took 18 days, and Hearth & Home's website and CRM went live in 12 days. Every project is custom-quoted after a free audit."
+      ]
+    ],
+    "seoTitle": "Website Development in India: Fast Sites That Sell",
+    "description": "How Velvet & Co in Delhi rebuilt its store in 18 days with 1.1s loads on 4G mobile, Hindi + English support, and conversion up from 0.9% to 3.1%.",
+    "title": "A website that loads fast and turns visitors into buyers.",
+    "category": "WEBSITES",
+    "image": "/assets/insight-1.png",
+    "readTime": "3 min read",
+    "intro": "Most visitors in India arrive on a phone, often on 4G, and many ask questions before they buy. Velvet & Co, a fashion store in Delhi, had a slow theme store converting at 0.9%. Here is what changed when the site was rebuilt to load fast, answer questions and lead straight to checkout.",
+    "sections": [
+      [
+        "Measure how slow the site is today",
+        "Before the rebuild, Velvet & Co ran a 4.2-second theme store converting at 0.9%. Mobile visitors bounced, sizing questions flooded support, and checkout felt generic, nothing like the premium products on sale."
+      ],
+      [
+        "Build for phones on 4G first",
+        "Zykken rebuilt the store on Next.js in 18 days, with sub-second loads on 4G. The largest content on the page now appears in 1.1 seconds on 4G mobile."
+      ],
+      [
+        "Answer questions on the page, in Hindi and English",
+        "The new site added Hindi + English support and an AI concierge that answers sizing, pairing and gifting questions, then routes visitors straight to checkout. Support tickets fell 41% in 60 days. CEO Sara Kapoor says the concierge handles sizing better than the old FAQ ever did."
+      ],
+      [
+        "Make the path to checkout short",
+        "Cinematic product pages and one-click checkout keep the journey from product to purchase clear. Velvet & Co's conversion rate went from 0.9% to 3.1%, a 3.4× lift."
+      ],
+      [
+        "Connect the website to follow-up",
+        "A website should not stop at the contact form. For Hearth & Home, a home services business in Kochi, Zykken built a calm site plus CRM in 12 days: accurate quotes in under 60 seconds, 60-day auto follow-up and one daily summary. Enquiries rose 2.6× with no new hires."
+      ],
+      [
+        "Start with your numbers",
+        "Note your load time on a phone, your conversion rate and the questions support answers most, then track them after launch. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return, and every website is custom-quoted."
+      ]
+    ]
   }
 ];
