@@ -1182,5 +1182,55 @@ export const insights = [
         "Note your load time on a phone, your conversion rate and the questions support answers most, then track them after launch. Zykken's free audit turns one workflow recording into three opportunities ranked by potential return, and every website is custom-quoted."
       ]
     ]
+  },
+  {
+    "slug": "real-estate-crm-india",
+    "cases": [
+      "luxe-estates",
+      "hearth-home"
+    ],
+    "faqs": [
+      [
+        "What should a real estate CRM in India do?",
+        "Catch every lead from Meta ads and property portals, reply fast on WhatsApp and voice, route each lead to the right agent, book viewings and keep following up. For Luxe Estates in Mumbai, that cut follow-up from 6 hours to 38 seconds, and qualified viewings rose 312% in 90 days."
+      ],
+      [
+        "How fast can a real estate CRM reply to new leads?",
+        "Within seconds, day or night. Luxe Estates' median speed-to-lead went from 6 hours to 38 seconds, 24/7. Night enquiries get qualified on WhatsApp and voice before the team wakes up, and agents only talk to people ready to visit."
+      ],
+      [
+        "How long does it take to set up a CRM for a real estate business?",
+        "It depends on the scope agreed in your proposal. The Luxe Estates lead qualifier, CRM routing, viewing scheduler and 90-day nurture went live in 16 days, and Hearth & Home's website and CRM went live in 12 days. Every CRM is custom-quoted after a free 30-minute audit."
+      ]
+    ],
+    "seoTitle": "CRM for Real Estate in India: Follow Up in Seconds",
+    "description": "How Luxe Estates in Mumbai cut lead follow-up from 6 hours to 38 seconds with a real estate CRM, and qualified viewings rose 312% in 90 days.",
+    "title": "A real estate CRM that replies in seconds and books viewings.",
+    "category": "CRM",
+    "image": "/assets/insight-3.png",
+    "readTime": "3 min read",
+    "intro": "Property buyers in India enquire from ads and portals at all hours, and the agent who replies first usually gets the viewing. Luxe Estates, a real estate business in Mumbai, was losing hot buyers to slow replies. Here is what changed when its leads, viewings and follow-up moved into one CRM.",
+    "sections": [
+      [
+        "Count how long leads wait today",
+        "Luxe Estates ran high-intent Meta and portal leads into a shared inbox. Median first response was 6 hours, night and weekend enquiries sat until morning, and agents chased cold leads while hot buyers booked viewings elsewhere."
+      ],
+      [
+        "Answer every portal and ad lead in seconds",
+        "In 16 days, Zykken put a WhatsApp + voice qualifier on every ad and portal, with instant CRM routing and duplicate detection. Median speed-to-lead fell to 38 seconds, 24/7. Founder Aarav Mehta says night enquiries now get qualified before his team wakes up."
+      ],
+      [
+        "Book viewings into each agent's calendar",
+        "The CRM includes a viewing scheduler synced to each agent's calendar, so agents only talk to people ready to visit, and owners only see hot, booked viewings. Qualified viewings rose 312% in 90 days."
+      ],
+      [
+        "Keep following up after the first week",
+        "Many buyers are not ready on day one. A 90-day nurture revives cold Luxe Estates enquiries automatically. The same idea works outside real estate: Hearth & Home, a home services business in Kochi, saw follow-ups die after day 2. Its website and CRM, live in 12 days, sends accurate quotes in under 60 seconds and follows up automatically for 60 days. Enquiries rose 2.6× with no new hires."
+      ],
+      [
+        "Start with your numbers",
+        "Note your median first response time, how many leads come from each ad or portal, and how many become viewings, then track them after launch. Zykken's free 30-minute audit turns one workflow recording into three opportunities ranked by potential return, and every CRM is custom-quoted."
+      ]
+    ]
   }
 ];

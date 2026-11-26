@@ -8,7 +8,7 @@ export const serviceRelated = {
   carryline: {cases: ['noir-clinic', 'luxe-estates'], insights: ['ai-voice-receptionist-hindi-english', 'from-first-enquiry-to-booked-call', 'what-happens-after-your-ai-system-launches', 'reply-to-every-lead-in-seconds']},
   intentpath: {cases: ['velvet-co', 'hearth-home'], insights: ['website-that-loads-fast-and-sells', 'from-first-enquiry-to-booked-call']},
   previewops: {cases: ['pulse-fit-os'], insights: ['what-happens-after-your-ai-system-launches']},
-  pledgedesk: {cases: ['luxe-estates', 'hearth-home'], insights: ['from-first-enquiry-to-booked-call', 'automate-your-highest-impact-workflow', 'reply-to-every-lead-in-seconds']}
+  pledgedesk: {cases: ['luxe-estates', 'hearth-home'], insights: ['real-estate-crm-india', 'from-first-enquiry-to-booked-call', 'automate-your-highest-impact-workflow', 'reply-to-every-lead-in-seconds']}
 };
 
 const caseCopy = slug => caseStudies.find(c => c.slug === slug);
